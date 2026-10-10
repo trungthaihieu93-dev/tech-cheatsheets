@@ -1,6 +1,6 @@
 # Cloudflare cheatsheet library
 
-Status: In progress
+Status: Complete
 
 ## Outcome
 
@@ -13,6 +13,10 @@ published. The personal interview page is intentionally public.
 1. Add a safe local sync command that builds `site/` from the supplied folder.
 2. Verify the generated site, links, stale-file removal, and ZIP safety.
 3. Commit and push the site, connect GitHub to Cloudflare Pages, and smoke test its URL.
+
+Cloudflare Pages project: https://tech-cheatsheets.pages.dev/. The initial
+Git-based production deployment succeeded. Live checks passed for the catalog,
+all 11 entry pages, a nested image, and expected 404 paths.
 
 ## Dependencies and acceptance
 

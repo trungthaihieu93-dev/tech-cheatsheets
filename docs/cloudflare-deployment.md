@@ -5,6 +5,10 @@ committed to Git so Cloudflare Pages can deploy it without access to the local
 source folder. Original ZIP downloads are not published; each pack is extracted
 into a browsable directory.
 
+Live site: [tech-cheatsheets.pages.dev](https://tech-cheatsheets.pages.dev/).
+The production branch is `master` in
+[trungthaihieu93-dev/tech-cheatsheets](https://github.com/trungthaihieu93-dev/tech-cheatsheets).
+
 ## Refresh the site
 
 Run from the repository root, changing the source path if needed:
