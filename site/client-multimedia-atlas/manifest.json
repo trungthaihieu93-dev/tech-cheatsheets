@@ -1,0 +1,284 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1283,
+      "sha256": "543b873ece5058d658dd35a8e80659339d2250df9c83e7e79ab32778aa44e3a9"
+    },
+    {
+      "path": "examples/04-videojs.txt",
+      "bytes": 317,
+      "sha256": "7eee2b99ce981ee9d9870b8a202ccc9b2a81c2a689a2dc16e3c244621d299f9b"
+    },
+    {
+      "path": "examples/05-reactplayer.txt",
+      "bytes": 294,
+      "sha256": "c84df9524b6f50513b00384768b5f27808369b6bf9cec3ab5eaf1a5556c9165b"
+    },
+    {
+      "path": "examples/06-react-youtube.txt",
+      "bytes": 355,
+      "sha256": "ab8ffe348d3c4bc85967ece42b196c2f52b17063c76515a48e81cf4ef5120e0a"
+    },
+    {
+      "path": "examples/07-mux-player.txt",
+      "bytes": 284,
+      "sha256": "3596589d22c642562fa1d9a3426bc272cda89eaa42d91248e4ec8593fe3f9203"
+    },
+    {
+      "path": "examples/08-vidstack.txt",
+      "bytes": 276,
+      "sha256": "12aa2646371f2cc6d16b34e95f93becb483ec6247a129281c2f10220f26bd2a2"
+    },
+    {
+      "path": "examples/09-hlsjs.txt",
+      "bytes": 755,
+      "sha256": "97b754a05f23fcee3331aaee0d41ace8a3054e30c74d35a235b29c61b5edd0a3"
+    },
+    {
+      "path": "examples/10-dashjs.txt",
+      "bytes": 336,
+      "sha256": "831bf20b3dcaad7a307e634142ab39598b7da1772262a41452b3e6478b869e34"
+    },
+    {
+      "path": "examples/11-clappr.txt",
+      "bytes": 306,
+      "sha256": "bb4add27316cacb4b83029025259423911f0e2b5addccd0da7e1a3445db30fb9"
+    },
+    {
+      "path": "examples/12-case-portal.txt",
+      "bytes": 267,
+      "sha256": "80594962784f9e76c8791023233b1441f9473f63e60c5614f308d01ce4c2af7e"
+    },
+    {
+      "path": "examples/15-lifecycle-accessibility.txt",
+      "bytes": 268,
+      "sha256": "39bf49dd14d94b92d6998498f2c20b3319adc6402d8509325786f827c7b15844"
+    },
+    {
+      "path": "figures/01-layers.svg",
+      "bytes": 4168,
+      "sha256": "b11f28b0822882678504382f07883ba8d9adba047b7a6c84e54fd3672ec73c41"
+    },
+    {
+      "path": "figures/02-pipeline.svg",
+      "bytes": 4854,
+      "sha256": "8c55ac8d57c9e1c9899ee9c5b60571fa3932f732dd6f6b170f70df95f37e94fc"
+    },
+    {
+      "path": "figures/03-abr.svg",
+      "bytes": 4332,
+      "sha256": "20e85ae72682d7a1fdaab14e7b2f4f179691fc510acaf3bfff120867a76a3a4c"
+    },
+    {
+      "path": "figures/04-videojs.svg",
+      "bytes": 4029,
+      "sha256": "4792d09a6dd3b916cbe40db4d4cf37310d0727e9d0a3d05d5a6fee2e12f83156"
+    },
+    {
+      "path": "figures/05-reactplayer.svg",
+      "bytes": 5194,
+      "sha256": "cb081a4298287d8eaead4d1c4c3947a693d510053b010290a632202f14a74f66"
+    },
+    {
+      "path": "figures/06-youtube.svg",
+      "bytes": 4858,
+      "sha256": "da3d79f3e94d7dc813872b93700828d601e77ed1483a07ccadd9c440481a97ec"
+    },
+    {
+      "path": "figures/07-mux.svg",
+      "bytes": 4581,
+      "sha256": "9f85838194272e3b0292cdda79fe16a42cf31813c2b1a46e753510a85b8fb207"
+    },
+    {
+      "path": "figures/08-vidstack.svg",
+      "bytes": 4326,
+      "sha256": "9b5f9d164c1cc9d19da33a0fa8228bf5096fde509674eac5541a4b3199f050d3"
+    },
+    {
+      "path": "figures/09-hls.svg",
+      "bytes": 4875,
+      "sha256": "ba16706ebc3259054cd5af29275b35d0071ecdc3db85950fdd059ed361cb67ea"
+    },
+    {
+      "path": "figures/10-dash.svg",
+      "bytes": 4749,
+      "sha256": "7a84a81f2e9ccf66c604545b355d328041328614eef2ade63b747614c4bc9c0a"
+    },
+    {
+      "path": "figures/11-clappr.svg",
+      "bytes": 4743,
+      "sha256": "1c3767d3126fee7322a86f8b1b36e92261ca77f47c1f328de961c70227812053"
+    },
+    {
+      "path": "figures/12-portal.svg",
+      "bytes": 4583,
+      "sha256": "c7e77e79e8b339618d5616537a328dfd9d198781facadd7d2c3003a0a92cb0f3"
+    },
+    {
+      "path": "figures/13-access.svg",
+      "bytes": 4897,
+      "sha256": "978a08ed0e221c7376f7bf05ea8342b284ebd556c457fbab6b977e3582a69919"
+    },
+    {
+      "path": "figures/13-upload.svg",
+      "bytes": 4617,
+      "sha256": "a91341e99e08595883486068bd276b923562fb6456a6c5a2e6e9f91d120e300e"
+    },
+    {
+      "path": "figures/14-live.svg",
+      "bytes": 4574,
+      "sha256": "93c581d676b64d6987d61ac6d2aa6558f547b5500128a9967486c81fa73311a0"
+    },
+    {
+      "path": "figures/15-lifecycle.svg",
+      "bytes": 4745,
+      "sha256": "09f73022e8c072c84572771743f035df42079c6ca6931bcf8a3ac9bbab099ec2"
+    },
+    {
+      "path": "figures/16-security.svg",
+      "bytes": 4065,
+      "sha256": "496f0e5e9fc81a891e2127699e0aa1780b0cde83074022219c08eef04181b13b"
+    },
+    {
+      "path": "figures/17-diagnostics.svg",
+      "bytes": 4568,
+      "sha256": "ca988e7f9fa73fab3cc7a3fd5354a6025fc19eed8c5efd84fb3568190672770b"
+    },
+    {
+      "path": "figures/17-metrics.svg",
+      "bytes": 4189,
+      "sha256": "4a97a862767fce34ea21169687e54cb3de746f7414e012d8db83d46cf891aaef"
+    },
+    {
+      "path": "figures/18-improve.svg",
+      "bytes": 5039,
+      "sha256": "30d3f14c30817e09ea7acd974406ffff3f4ca7741a25a69c07e9d4164c999569"
+    },
+    {
+      "path": "index.html",
+      "bytes": 218899,
+      "sha256": "9c6dfdd5c45697bb0ae2fcf8a2380b4005c9d23413c631b083d814404ed7ffb4"
+    },
+    {
+      "path": "learning-map.md",
+      "bytes": 5089,
+      "sha256": "951d27d6cde2656ca955e0a424c49f81fd8833e427a3336899e7ffe06db34584"
+    },
+    {
+      "path": "pack.json",
+      "bytes": 85041,
+      "sha256": "a4aaf148e4c228a1fec06147c4bf8d855d8bea9f958b0c9b25231c881bfbdec2"
+    },
+    {
+      "path": "previews/layer-map.png",
+      "bytes": 156619,
+      "sha256": "dea309f54f3dda1d8d763925e5249dbcba49dfb015c94810108d39699595a20d"
+    },
+    {
+      "path": "production-brief.md",
+      "bytes": 929,
+      "sha256": "d27ab228c40dad07b894a172d479edef6bdc4f9e7017a0938139a73a9c029aaf"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 20018,
+      "sha256": "cc2ccb3fc8f31deb847de5fae73d0357bed7065d9a1a01c94a87c7e3eddd86ad"
+    },
+    {
+      "path": "sources.md",
+      "bytes": 14404,
+      "sha256": "1d3d0a46364708584e446c8eaa2a52cb0b56cdccb2159f19d4992c971259a620"
+    },
+    {
+      "path": "topics/01-layer-map.html",
+      "bytes": 21450,
+      "sha256": "1b2f74b313000637e3d7b11ae0b49da29188ad140602007fd956281981e9fd09"
+    },
+    {
+      "path": "topics/02-browser-pipeline.html",
+      "bytes": 18296,
+      "sha256": "e8a63b98ea1b7b185ae1966cd7de400b5d3f414fbab38f5e05acb188047f5252"
+    },
+    {
+      "path": "topics/03-adaptive-streaming.html",
+      "bytes": 18442,
+      "sha256": "6ec0452fe808c1bb65e9cf7ffa12fe111796e9f3038ac9f490eb51068acebc7f"
+    },
+    {
+      "path": "topics/04-videojs.html",
+      "bytes": 18334,
+      "sha256": "fd773472a8dabc3d0aeac2897f75040317ce9af6f5af7c5065cf0fe604cace11"
+    },
+    {
+      "path": "topics/05-reactplayer.html",
+      "bytes": 18015,
+      "sha256": "6679dce80e7ad56db8298dfe68fc16959b3092eb06c7aafaff1776372e128c53"
+    },
+    {
+      "path": "topics/06-react-youtube.html",
+      "bytes": 17583,
+      "sha256": "10aac43acbf2170795e8aecf3e07a9f85dd13fab199778c7d5dfe10d8728fd6f"
+    },
+    {
+      "path": "topics/07-mux-player.html",
+      "bytes": 17953,
+      "sha256": "d63ec94942586984accf2b921adf6e449c444f3be61c3bb7c62253b787c7dffd"
+    },
+    {
+      "path": "topics/08-vidstack.html",
+      "bytes": 17505,
+      "sha256": "43857c55fdfdb3bbdac60e21af9048d28651c3a64738680b5bf295f16005240e"
+    },
+    {
+      "path": "topics/09-hlsjs.html",
+      "bytes": 18464,
+      "sha256": "ecded940eee582717535b2616feb6da2bb6de350ad9608b7845f4ca03ef2e393"
+    },
+    {
+      "path": "topics/10-dashjs.html",
+      "bytes": 19011,
+      "sha256": "f4b09a524f68b95a5817e62010945d293536dd62bc01f7ed57361aed5567fe8c"
+    },
+    {
+      "path": "topics/11-clappr.html",
+      "bytes": 18094,
+      "sha256": "c0632da698b7bce61cfe293e81f256c94e033d604914899369d29d600c889473"
+    },
+    {
+      "path": "topics/12-case-portal.html",
+      "bytes": 18301,
+      "sha256": "696f3cc96195ba65d3c4154a0792d9bdb20e954b5be6a2dda103c90555a572d5"
+    },
+    {
+      "path": "topics/13-case-protected.html",
+      "bytes": 26231,
+      "sha256": "d79b6e1e348c9d0d808bb476ac4d7b27c01cfe8c36926c68a34e2db98ddca4fb"
+    },
+    {
+      "path": "topics/14-case-live.html",
+      "bytes": 17573,
+      "sha256": "f131fb10e4953c2f0d8250d84d25c1965081a8de0b00f0a7097f5ae02c491b00"
+    },
+    {
+      "path": "topics/15-lifecycle-accessibility.html",
+      "bytes": 18631,
+      "sha256": "efb2c7421f50b555bbc1ad4e858fec9d04067a5c9821be73afc4371db1474070"
+    },
+    {
+      "path": "topics/16-security-delivery.html",
+      "bytes": 18067,
+      "sha256": "53c74f2557fe030edb01a59a644521293680b861765339383f29a6c8f3a32baa"
+    },
+    {
+      "path": "topics/17-qoe-diagnostics.html",
+      "bytes": 25199,
+      "sha256": "9756d5412b25fb772e3836ee1dccf41a7f94c9e0240c02a52247e381ece44392"
+    },
+    {
+      "path": "topics/18-selection-migration.html",
+      "bytes": 22038,
+      "sha256": "4691bc78e77e512dddac6bc1a35559bcf4af65467135f4ee28f988a47be616db"
+    }
+  ]
+}

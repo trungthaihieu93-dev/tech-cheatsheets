@@ -1,0 +1,626 @@
+[
+  {
+    "id": "S01",
+    "title": "Kubernetes cluster architecture",
+    "url": "https://kubernetes.io/docs/concepts/architecture/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "API server, etcd, scheduler, controllers, kubelet and runtime responsibilities"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S02",
+    "title": "Kubernetes controllers",
+    "url": "https://kubernetes.io/docs/concepts/architecture/controller/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Controllers compare desired and observed state and act through APIs"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S03",
+    "title": "Workloads",
+    "url": "https://kubernetes.io/docs/concepts/workloads/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Deployment, StatefulSet, DaemonSet, Job and CronJob use cases"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view1",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S04",
+    "title": "Deployments",
+    "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "ReplicaSet ownership, rolling updates, surge and unavailable settings"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view1",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S05",
+    "title": "Service",
+    "url": "https://kubernetes.io/docs/concepts/services-networking/service/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Service selection, stable access and EndpointSlices"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view2",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S06",
+    "title": "Persistent volumes",
+    "url": "https://kubernetes.io/docs/concepts/storage/persistent-volumes/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "PVC, PV, provisioning and reclaim lifecycle"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view3",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S07",
+    "title": "Resource management",
+    "url": "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Requests, limits, scheduling, CPU throttling and memory enforcement"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view4",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S08",
+    "title": "Horizontal Pod Autoscaling",
+    "url": "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Metric ratio algorithm, CPU utilization relative to requests, metric pipeline"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view5",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S09",
+    "title": "Disruptions",
+    "url": "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "PDB limits eviction; involuntary failure and rollout limitations"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view6",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S10",
+    "title": "Liveness, readiness and startup probes",
+    "url": "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Probe actions and startup protection"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view7",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S11",
+    "title": "RBAC good practices",
+    "url": "https://kubernetes.io/docs/concepts/security/rbac-good-practices/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Least privilege and weak namespace boundaries"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view8",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S12",
+    "title": "Network policies",
+    "url": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "L4 policy, enforcement dependency, default allowance, DNS egress"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view9",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S13",
+    "title": "Topology spread constraints",
+    "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Zone and host distribution, strict scheduling constraints"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn1view10",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S14",
+    "title": "What is Amazon EKS?",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Managed Kubernetes and AWS integration"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S15",
+    "title": "EKS Auto Mode",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/automode.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Managed compute, networking, load balancing and block storage"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view1",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S16",
+    "title": "EKS compute options",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-compute.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Auto Mode, managed nodes, self-managed nodes, Fargate, Hybrid Nodes"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view2",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S17",
+    "title": "EKS Pod Identity",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Service account role associations, agent, SDK support and Linux EC2 scope"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view3",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S18",
+    "title": "EKS access entries",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "IAM principal access with EKS access policies or Kubernetes groups"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view4",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S19",
+    "title": "VPC and subnet considerations",
+    "url": "https://docs.aws.amazon.com/eks/latest/best-practices/subnets.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Cluster subnets, private endpoint access, upgrade IP headroom"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view5",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S20",
+    "title": "AWS Load Balancer Controller",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Ingress to ALB and Service LoadBalancer to NLB integration"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view6",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S21",
+    "title": "EBS CSI integration",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "EBS support limits and different Auto Mode provisioner"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view7",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S22",
+    "title": "Cluster upgrade best practices",
+    "url": "https://docs.aws.amazon.com/eks/latest/best-practices/cluster-upgrades.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Compatibility, removed APIs, node upgrades and add-on coordination"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view8",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S23",
+    "title": "Amazon EKS pricing",
+    "url": "https://aws.amazon.com/eks/pricing/",
+    "publisher": "AWS",
+    "kind": "pricing",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Standard and extended support charges and separate compute costs"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view9",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S24",
+    "title": "Booking.com search ranking on Amazon EKS",
+    "url": "https://aws.amazon.com/solutions/case-studies/booking-eks-case-study/",
+    "publisher": "AWS / Booking.com",
+    "kind": "customer case study",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Dedicated ranking cluster, phased migration and reported latency"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view10",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S25",
+    "title": "Crossuite migration to EKS",
+    "url": "https://aws.amazon.com/solutions/case-studies/crossuite-eks-case-study/",
+    "publisher": "AWS / Crossuite",
+    "kind": "customer case study",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "HPA, Karpenter, ALB, RDS PostgreSQL, CloudWatch and reported outcomes"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn2view11",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S26",
+    "title": "Karpenter best practices",
+    "url": "https://docs.aws.amazon.com/eks/latest/best-practices/karpenter.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Pending workload capacity, diversification and interruption handling"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn4view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S27",
+    "title": "Kubernetes observability",
+    "url": "https://kubernetes.io/docs/concepts/cluster-administration/observability/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Metrics, logs, traces and resource Metrics API distinction"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn4view1",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S28",
+    "title": "EKS control plane logs",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Optional API, audit, authenticator, scheduler and controller logging"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn4view2",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S29",
+    "title": "EFS CSI integration",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Shared filesystem integration and Fargate static provisioning constraint"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn4view3",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S30",
+    "title": "AWS Fargate for EKS",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/fargate.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "No DaemonSets, privileged containers or GPUs; private subnets and IP targets"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view2",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S31",
+    "title": "Update an EKS cluster",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Control plane and component upgrade sequencing"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view3",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S32",
+    "title": "IAM roles for service accounts",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "OIDC service account tokens and STS temporary credentials"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view4",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S33",
+    "title": "Kubernetes multi-tenancy",
+    "url": "https://kubernetes.io/docs/concepts/security/multi-tenancy/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Control and data plane isolation; shared kernels and dedicated clusters"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view5",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S34",
+    "title": "Amazon VPC CNI",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/managing-vpc-cni.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "VPC private addresses per Pod and Auto Mode networking ownership"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn5view6",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S35",
+    "title": "ConfigMaps",
+    "url": "https://kubernetes.io/docs/concepts/configuration/configmap/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Non-confidential runtime configuration"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn6view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S36",
+    "title": "Kubernetes Secret good practices",
+    "url": "https://kubernetes.io/docs/concepts/security/secrets-good-practices/",
+    "publisher": "Kubernetes",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Base64 is encoding, least privilege and encryption considerations"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn6view1",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S37",
+    "title": "EKS reliability",
+    "url": "https://docs.aws.amazon.com/eks/latest/best-practices/reliability.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Control plane across three AZs; shared data plane responsibility"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn6view2",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S38",
+    "title": "EKS version rollback",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/rollback-cluster.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Current documented seven-day, one-minor-version rollback window and limitations"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn7view3",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  },
+  {
+    "id": "S39",
+    "title": "Amazon EBS volumes",
+    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html",
+    "publisher": "AWS",
+    "kind": "documentation",
+    "accessed": "2026-10-10",
+    "version": "Living documentation; target-cluster compatibility must be checked",
+    "published": "Not stated in retrieved page",
+    "supports": [
+      "Volumes and attached instances must be in the same Availability Zone"
+    ],
+    "relevance": "Read the linked primary source for implementation details and current constraints.",
+    "retrieval_ref": "turn9view0",
+    "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+  }
+]

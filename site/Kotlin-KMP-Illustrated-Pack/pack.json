@@ -1,0 +1,1330 @@
+{
+  "title": "Kotlin & KMP — Illustrated Field Guide",
+  "domain": "Kotlin and Kotlin Multiplatform",
+  "depth": "best-practices",
+  "language": "en",
+  "researched_at": "2026-10-09",
+  "scope": "Level 2 · fundamentals and best practices for a software engineer. Twelve topic sheets cover language contracts, collections, models, functions, coroutines, flows, Android/iOS compilation, platform seams, UI sharing, Swift interop, memory, and validation. Official rolling documentation checked on 9 October 2026; current Swift export is Alpha. Code is illustrative and reasoned through, not compiled or executed on Android/iOS. This is a focused mobile introduction, not a complete Kotlin course or ecosystem comparison.",
+  "design_reference": {
+    "document_id": "deep_learning_architectures_cheatsheet_2026_v1",
+    "files_consulted": [
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Metadata.json",
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Analysis.html",
+      "assets/style-reference.png",
+      "references/art-direction.md"
+    ],
+    "adaptations": [
+      "Original Kotlin/KMP teaching content; exact notebook palette, ink and title hierarchy.",
+      "Twelve numbered topic cards grouped into four learning stages; pink identifies caution callouts.",
+      "Editable SVG mechanisms with distinct compilation, dependency, and lifetime arrows.",
+      "Legible sans-serif technical text and responsive figure scrolling; no reference branding.",
+      "Five study groups on the overview are independent of the four learning stages. Direct SVG arrowhead polygons improve portability."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Null safety",
+      "url": "https://kotlinlang.org/docs/null-safety.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Nullable types, smart casts, safe calls and Elvis operator"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S02",
+      "title": "Collections overview",
+      "url": "https://kotlinlang.org/docs/collections-overview.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Read-only versus mutable interfaces; val and mutable collections"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S03",
+      "title": "Data classes",
+      "url": "https://kotlinlang.org/docs/data-classes.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Generated value operations and shallow copying"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S04",
+      "title": "Sealed classes and interfaces",
+      "url": "https://kotlinlang.org/docs/sealed-classes.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Closed hierarchies and exhaustive when expressions"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S05",
+      "title": "Higher-order functions and lambdas",
+      "url": "https://kotlinlang.org/docs/lambdas.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Function types, lambdas and passing behavior"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S06",
+      "title": "Extensions",
+      "url": "https://kotlinlang.org/docs/extensions.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Extension resolution and absence of real class modification"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S07",
+      "title": "Collection transformation operations",
+      "url": "https://kotlinlang.org/docs/collection-transformations.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Transforming collection values"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S08",
+      "title": "Coroutines basics",
+      "url": "https://kotlinlang.org/docs/coroutines-basics.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Suspension, dispatchers, scopes and task hierarchy"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S09",
+      "title": "coroutineScope API",
+      "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Scoped child tasks, waiting and failure propagation"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S10",
+      "title": "CancellationException API",
+      "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellation-exception/",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Cancellation is a normal coroutine control signal"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S11",
+      "title": "ensureActive API",
+      "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Cooperative checks in non-suspending work"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S12",
+      "title": "Flows",
+      "url": "https://kotlinlang.org/docs/coroutines-flow.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Cold flow execution and collection"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S13",
+      "title": "StateFlow API",
+      "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Hot state, latest value, equality conflation and atomic update"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S14",
+      "title": "Multiplatform project structure",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-discover-project.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Common and platform sources compile together for a target"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S15",
+      "title": "Source set hierarchy",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-hierarchy.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Intermediate iOS sources and target hierarchy"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S16",
+      "title": "Expected and actual declarations",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-expect-actual.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Platform implementations and interface-based alternatives"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S17",
+      "title": "Compose Multiplatform",
+      "url": "https://kotlinlang.org/compose-multiplatform/",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Optional shared UI and gradual adoption"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S18",
+      "title": "Swift/Objective-C interoperability",
+      "url": "https://kotlinlang.org/docs/native-objc-interop.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Framework export, exception mapping and conversion overhead"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S19",
+      "title": "Swift export",
+      "url": "https://kotlinlang.org/docs/native-swift-export.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Alpha status; async and AsyncSequence; limitations and direct integration"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project.",
+      "published": "2026-08-28",
+      "uncertainties": "Alpha feature; public surface and integration constraints can change."
+    },
+    {
+      "id": "S20",
+      "title": "Kotlin/Native memory management",
+      "url": "https://kotlinlang.org/docs/native-memory-manager.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Shared heap, tracing garbage collection and profiling"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S21",
+      "title": "Integration with Swift/Objective-C ARC",
+      "url": "https://kotlinlang.org/docs/native-arc-integration.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Mixed cycles, reclamation timing and completion thread caveats"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S22",
+      "title": "Test your multiplatform app",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-run-tests.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Common tests across targets and platform-specific validation"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S23",
+      "title": "kotlinx-coroutines-test",
+      "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Virtual-time coroutine testing; runTest limitations"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S24",
+      "title": "KMP compatibility guide",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-compatibility-guide.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Toolchain compatibility and Android plugin migration"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S25",
+      "title": "Swift package export setup",
+      "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-spm-export.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "XCFramework binary distribution through SwiftPM"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S26",
+      "title": "Kotlin/Native overview",
+      "url": "https://kotlinlang.org/docs/native-overview.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Native compilation and runtime overview"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S27",
+      "title": "Calling Java from Kotlin",
+      "url": "https://kotlinlang.org/docs/java-interop.html",
+      "publisher": "JetBrains / Kotlin project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Platform types and nullability at a Java boundary"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S28",
+      "title": "d8 Android dex compiler",
+      "url": "https://developer.android.com/tools/d8",
+      "publisher": "Google / Android Developers",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "Java bytecode to DEX compilation in Android builds"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    },
+    {
+      "id": "S29",
+      "title": "Android runtime and Dalvik",
+      "url": "https://source.android.com/docs/core/runtime",
+      "publisher": "Android Open Source Project",
+      "kind": "official documentation",
+      "accessed": "2026-10-09",
+      "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+      "supports": [
+        "ART executes DEX code on Android"
+      ],
+      "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+    }
+  ],
+  "topics": [
+    {
+      "id": "01-nullability",
+      "stage": "fundamentals",
+      "title": "Nullability: make absence explicit",
+      "objective": "Read nullable types and decide what absence means at an API boundary.",
+      "prerequisites": [
+        "basic programming"
+      ],
+      "takeaway": "Treat missing data as a modeled case, not a surprise hidden behind !!.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Read nullable types and decide what absence means at an API boundary.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "String and String? are different contracts. A safe call returns null if its receiver is null; Elvis chooses a fallback. A stable null check can enable a smart cast. Java platform types weaken the compiler’s knowledge, so normalize external data before trusting it.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S27"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "fun displayName(raw: String?): String {\n    val name = raw?.trim()?.takeIf { it.isNotEmpty() }\n        ?: return \"Guest\"\n    return name.uppercase()\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "A guest label fits a display name; it is a poor fallback for an authentication token. Choose return, explicit failure, or fallback from domain semantics. Overusing !! moves the failure back to runtime. Nullable and invalid are separate conditions.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S27"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "At a boundary, test null, blank, valid, and malformed values. Keep UI-friendly fallbacks away from security decisions. This is a proposed validation strategy.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S22"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/01-nullability.svg",
+          "title": "Branch before dereferencing",
+          "alt": "Nullable input splits into fallback and non-null handling.",
+          "caption": "The branches simplify the semantics of safe access; absence is handled before ordinary string operations.",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does name?.length always produce Int?",
+        "answer": "Yes: the safe call can produce null even though String.length is non-null."
+      }
+    },
+    {
+      "id": "02-ownership",
+      "stage": "fundamentals",
+      "title": "val, collections, and ownership",
+      "objective": "Separate reference stability, a read-only API, and immutable data.",
+      "prerequisites": [
+        "01-nullability"
+      ],
+      "takeaway": "val fixes a binding; immutability is a property of the reachable object graph.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Separate reference stability, a read-only API, and immutable data.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "val prevents assigning another value to the variable. A MutableList referenced by val still permits add and remove. List offers a read-only interface; it does not guarantee that another alias cannot change the backing collection.",
+          "evidence": "verified",
+          "source_ids": [
+            "S02"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "val buffer = mutableListOf(\"Kotlin\")\nval readView: List<String> = buffer\nbuffer.add(\"KMP\")\n// readView now observes both values\nval snapshot = buffer.toList()\n// independent list structure; element references are still shared",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Keep mutation inside the owner and expose snapshots or read-only state. A shallow snapshot is enough for immutable strings, but not for mutable nested objects. Passing a read-only view between concurrent tasks does not establish synchronization.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S20"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Test whether a consumer can observe an owner’s later mutation. If snapshots allocate too much, measure first, then consider a persistent immutable representation or a narrower API. These choices trade allocation against ownership clarity.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S20"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/02-ownership.svg",
+          "title": "Reference versus object",
+          "alt": "A fixed val reference points to a list that still accepts mutations.",
+          "caption": "The diagram shows binding rules, not a thread-safety guarantee.",
+          "source_ids": [
+            "S02"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is val items: List<Item> deeply immutable?",
+        "answer": "No. The list may have mutable aliases, and Item may itself be mutable."
+      }
+    },
+    {
+      "id": "03-models",
+      "stage": "fundamentals",
+      "title": "Data classes and sealed state models",
+      "objective": "Model payloads and outcomes without inconsistent boolean combinations.",
+      "prerequisites": [
+        "02-ownership"
+      ],
+      "takeaway": "Use data classes for payloads and sealed variants for a closed set of outcomes.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Model payloads and outcomes without inconsistent boolean combinations.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "A data class generates operations such as equals, hashCode and copy from primary-constructor properties. copy is shallow. A sealed hierarchy lets a Kotlin when expression cover the known variants exhaustively; multiplatform expect/actual sealed hierarchies add restrictions.",
+          "evidence": "verified",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "data class Quote(val id: String, val amountMinor: Long)\nsealed interface LoadState {\n    data object Loading : LoadState\n    data class Ready(val quote: Quote) : LoadState\n    data class Failed(val reason: String) : LoadState\n}\nfun label(s: LoadState): String = when (s) {\n    LoadState.Loading -> \"Loading\"\n    is LoadState.Ready -> s.quote.id\n    is LoadState.Failed -> s.reason\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "For this single-request example, variants avoid combinations such as loading=true with error=true. A refreshable screen may legitimately need both existing content and refresh status; model that requirement explicitly. Do not assume a Kotlin data class exports as a Swift struct.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S04",
+            "S18",
+            "S19"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Test each transition and keep payloads immutable by convention. Put properties that define identity in the primary constructor, because body properties are excluded from generated equality.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S22"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/03-models.svg",
+          "title": "Closed variants and exhaustive rendering",
+          "alt": "Loading, Ready and Failed are alternative variants consumed by when.",
+          "caption": "This is a single-request state model. Refreshing previously loaded content requires a richer model.",
+          "source_ids": [
+            "S03",
+            "S04"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does copy() clone a nested MutableList?",
+        "answer": "No. Both instances reference that list unless you explicitly replace it."
+      }
+    },
+    {
+      "id": "04-functions",
+      "stage": "fundamentals",
+      "title": "Functions, lambdas, and readable transformations",
+      "objective": "Use behavior as a value while keeping business intent visible.",
+      "prerequisites": [
+        "03-models"
+      ],
+      "takeaway": "Short code earns its keep only when the next reader can see the rule.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Use behavior as a value while keeping business intent visible.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "A function type such as (Quote) -> Boolean can be passed as a parameter. map transforms elements; extension functions add callable syntax without changing the original class. Extensions are resolved from the declared receiver type, unlike virtual member dispatch.",
+          "evidence": "verified",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "fun eligibleIds(\n    quotes: List<Quote>,\n    allowed: (Quote) -> Boolean\n): List<String> = quotes.filter(allowed).map { it.id }\n\nval ids = eligibleIds(quotes) { it.amountMinor > 0 }\n// quotes and Quote are caller-provided in this sketch",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S07"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Use a lambda for a small local decision; use a named function for a reusable eligibility rule. Long nested lambdas hide control flow. An extension cannot override a real member or gain access to private internals just because it looks like a method.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "The illustrated List pipeline creates intermediate collections. For a hot path, compare it with a loop or lazy sequence using representative input sizes. Do not assume laziness improves a small collection. This is a measurement proposal.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S07"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/04-functions.svg",
+          "title": "Filter then map",
+          "alt": "A mixed list becomes an eligible subset and then a list of identifiers.",
+          "caption": "Arrows describe value transformations. The List example evaluates eagerly.",
+          "source_ids": [
+            "S05",
+            "S07"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does an extension replace class inheritance?",
+        "answer": "No. It adds statically resolved syntax, not a new virtual member or state."
+      }
+    },
+    {
+      "id": "05-coroutines",
+      "stage": "fundamentals",
+      "title": "Coroutines: suspension with owned lifetimes",
+      "objective": "Distinguish suspension, thread choice, concurrency, and cancellation.",
+      "prerequisites": [
+        "04-functions"
+      ],
+      "takeaway": "Every long-lived task needs an owner, a cancellation path, and cleanup.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Distinguish suspension, thread choice, concurrency, and cancellation.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "suspend allows a function to suspend and resume. It does not automatically start a coroutine or move work off the current thread. Dispatchers determine execution. coroutineScope waits for children; failure in a child cancels its siblings and rethrows to the caller.",
+          "evidence": "verified",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "import kotlinx.coroutines.*\n\n// Independent requests; APIs are supplied by the caller.\nsuspend fun load(profile: suspend () -> String,\n                 offers: suspend () -> List<String>) = coroutineScope {\n    val p = async { profile() }\n    val o = async { offers() }\n    p.await() to o.await()\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Use sibling tasks when either failure invalidates the combined result. Consider supervision when failures are independent and handled. Blocking I/O or CPU work still needs an appropriate dispatcher. A detached application-global task can outlive the screen that requested it.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Preserve CancellationException when catching broadly. Long CPU loops should check cancellation with ensureActive or another cooperative point. Use finally for owned resource cleanup and test cancellation before completion; do not silently turn cancellation into success.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S10",
+            "S11",
+            "S23"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/05-coroutines.svg",
+          "title": "Task ownership tree",
+          "alt": "A caller owns a coroutineScope with two async child requests.",
+          "caption": "Arrows show lifetime ownership. This ordinary coroutineScope fails the combined operation if a child fails.",
+          "source_ids": [
+            "S09"
+          ]
+        },
+        {
+          "path": "figures/05-suspension.svg",
+          "title": "Suspension timeline",
+          "alt": "A suspended task frees its thread for another task, then later resumes.",
+          "caption": "A conceptual single-thread timeline. Real dispatchers may resume on another thread.",
+          "source_ids": [
+            "S08"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does suspend fun guarantee background execution?",
+        "answer": "No. Thread choice comes from the coroutine context and explicit context switches."
+      }
+    },
+    {
+      "id": "06-flows",
+      "stage": "applications",
+      "title": "Flow and StateFlow: work versus state",
+      "objective": "Choose the stream semantics that match a screen’s information needs.",
+      "prerequisites": [
+        "05-coroutines"
+      ],
+      "takeaway": "StateFlow describes what is true now; it does not preserve every event.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Choose the stream semantics that match a screen’s information needs.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "A flow built with flow { } is cold: its body runs when collected. StateFlow is hot, always has a current value, replays the latest state, and suppresses equal updates. Slow subscribers can miss intermediate values. StateFlow does not complete normally.",
+          "evidence": "verified",
+          "source_ids": [
+            "S12",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "import kotlinx.coroutines.flow.*\n\nclass Counter {\n    private val mutable = MutableStateFlow(0)\n    val state: StateFlow<Int> = mutable.asStateFlow()\n    fun increment() = mutable.update { it + 1 }\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S13"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Use StateFlow for a renderable snapshot, not a payment audit trail. Choose explicit replay, buffering, and durability for events; a SharedFlow alone does not promise durable exactly-once delivery. Mutating a nested object in place may conceal a state change from equality-based observers.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S12",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Tie collection to the consumer’s lifecycle. In the chosen Swift export route, verify the adapter’s cancellation behavior and stop collection on dismissal. Test late subscription and equal updates rather than requiring every intermediate render.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S13",
+            "S18",
+            "S19",
+            "S23"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/06-flow.svg",
+          "title": "Cold work and hot state",
+          "alt": "A cold flow starts work per collection; StateFlow supplies the current value to a new collector.",
+          "caption": "These are representative flow types. The Flow interface also has hot implementations.",
+          "source_ids": [
+            "S12",
+            "S13"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Will a slow StateFlow subscriber receive every counter value?",
+        "answer": "No. It may skip intermediate updates and receives the latest available state."
+      }
+    },
+    {
+      "id": "07-compilation",
+      "stage": "applications",
+      "title": "KMP: source sets become platform binaries",
+      "objective": "Locate code correctly and trace its Android and iOS compilation paths.",
+      "prerequisites": [
+        "05-coroutines"
+      ],
+      "takeaway": "commonMain is shared source compiled per target, not a runtime shared between phones.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Locate code correctly and trace its Android and iOS compilation paths.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "A target chooses a compilation platform. Source sets group code and dependencies. Android builds compile common and Android Kotlin through Kotlin/JVM; iOS builds compile common and iOS code with Kotlin/Native. A mobile shared module therefore produces different platform artifacts.",
+          "evidence": "verified",
+          "source_ids": [
+            "S14",
+            "S26"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "shared/src/commonMain/kotlin/Quote.kt\nshared/src/androidMain/kotlin/AndroidTokenStore.kt\nshared/src/iosMain/kotlin/IosTokenStore.kt\nshared/src/commonTest/kotlin/QuoteTest.kt\n\n// Apple Silicon simulator and iOS device are distinct targets:\n// iosSimulatorArm64() and iosArm64()",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Keep domain rules in commonMain. Android-only APIs belong in Android sources; Foundation APIs belong in Apple-compatible sources. iosMain can share implementations across device and simulator targets. A source set is not itself a deployable application.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Build both platform artifacts early. Use the current compatibility guide for Kotlin, Gradle, AGP, and Xcode; migrate Android KMP library configuration using Google’s plugin guidance instead of copying stale androidTarget snippets. Dependency support must match every intended target.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S24",
+            "S15"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/07-compilation.svg",
+          "title": "Compile once per target",
+          "alt": "Common source branches into Android bytecode and DEX for ART, and native iOS machine code in an Apple framework.",
+          "caption": "Compilation arrows. The diagram omits intermediate compiler and linker stages, plus packaging and signing details.",
+          "source_ids": [
+            "S14",
+            "S26",
+            "S28",
+            "S29"
+          ]
+        },
+        {
+          "path": "figures/07-source-sets.svg",
+          "title": "Source visibility hierarchy",
+          "alt": "Android and iOS source sets depend on commonMain; device and simulator sources depend on iosMain.",
+          "caption": "Arrows mean dependsOn / access to parent declarations. They are deliberately reversed relative to the compilation-flow figure.",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can commonMain import java.io.File when the module also targets iOS?",
+        "answer": "No. The JDK API is unavailable to the native compilation; use a common contract or multiplatform API."
+      }
+    },
+    {
+      "id": "08-ports",
+      "stage": "applications",
+      "title": "Platform capabilities: contracts and adapters",
+      "objective": "Share policy while supplying OS-specific behavior through a small seam.",
+      "prerequisites": [
+        "07-compilation"
+      ],
+      "takeaway": "Name the capability in common code; choose its concrete implementation at composition.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Share policy while supplying OS-specific behavior through a small seam.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "expect declares a common contract and actual supplies target implementations. Ordinary common interfaces plus injected platform implementations are another option. They are especially useful when you need multiple instances, fakes, or a platform-supplied service.",
+          "evidence": "verified",
+          "source_ids": [
+            "S16"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "// commonMain: ordinary interface, no expect needed\ninterface TokenStore {\n    suspend fun read(): String?\n}\nclass QuoteService(private val tokens: TokenStore) {\n    suspend fun hasSession(): Boolean = tokens.read() != null\n}\n// The app supplies AndroidTokenStore or IosTokenStore.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Use expect/actual for a small fixed platform primitive; prefer injection for a capability whose lifetime or implementation can vary. For token storage, choose OS-backed secure storage according to app requirements. Hiding plaintext preferences behind an interface does not make them secure. This is architectural synthesis, not a storage implementation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Create a fake TokenStore for common tests and run adapter integration tests on each platform. Verify failure, missing token, lifecycle, and cancellation. Keep Activity, UIViewController, and framework objects out of domain signatures.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S22"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/08-ports.svg",
+          "title": "Dependency inversion across platforms",
+          "alt": "QuoteService calls a common TokenStore interface; Android and iOS adapters implement it.",
+          "caption": "Solid arrow: dependency. Dashed arrows: implementation. Platform composition creates and injects the adapter.",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Must every shared interface use expect/actual?",
+        "answer": "No. An ordinary common interface can be implemented by platform code and injected."
+      }
+    },
+    {
+      "id": "09-ui-boundary",
+      "stage": "best-practices",
+      "title": "Choose the UI sharing boundary deliberately",
+      "objective": "Choose between shared logic with platform UI and additional shared Compose UI.",
+      "prerequisites": [
+        "08-ports",
+        "06-flows"
+      ],
+      "takeaway": "Share the behavior that benefits the team; validate the experience on each OS.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Choose between shared logic with platform UI and additional shared Compose UI.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "KMP supplies cross-platform code sharing. Compose Multiplatform adds declarative shared UI and can coexist with existing platform UI. The shared logic / platform UI approach can use SwiftUI or UIKit on iOS and Android UI independently.",
+          "evidence": "verified",
+          "source_ids": [
+            "S17",
+            "S14"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "For a quote feature, share eligibility, parsing, and repository policy first. Keep an existing SwiftUI quote screen and Android screen. Alternatively, share that screen with Compose while retaining OS-specific camera, permissions, and app-shell integration. This is a proposed scope, not a guaranteed effort reduction.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S16"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Platform UI fits independent platform roadmaps and established teams. Shared UI fits substantial design overlap and coordinated releases. Compare accessibility, navigation, text input, and device integration with a realistic feature. Shared Compose UI does not mean every widget is a UIKit widget or that iOS engineering disappears.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Pilot one screen with loading, error, background/foreground, keyboard, and accessibility paths. Measure the duplicate changes avoided against adapter and release costs before extending UI sharing.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S22"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/09-ui.svg",
+          "title": "Two valid sharing choices",
+          "alt": "Platform UI or shared Compose UI both use a shared Kotlin feature layer.",
+          "caption": "Conceptual architectural alternatives. The diagram does not prescribe a rendering implementation or equalize platform behavior.",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does adopting KMP force a UI rewrite?",
+        "answer": "No. Shared logic can serve existing platform UIs, and shared UI can be introduced incrementally."
+      }
+    },
+    {
+      "id": "10-swift-interop",
+      "stage": "best-practices",
+      "title": "Swift interop: exported APIs need design",
+      "objective": "Choose an Apple export route and test its error, async, and cancellation behavior.",
+      "prerequisites": [
+        "05-coroutines",
+        "06-flows",
+        "08-ports"
+      ],
+      "takeaway": "An API that is pleasant in Kotlin may need a narrower Swift-facing facade.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Choose an Apple export route and test its error, async, and cancellation behavior.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "Objective-C framework export exposes Kotlin APIs through Objective-C-compatible declarations. Its suspend APIs appear as completion handlers and can be callable as Swift async with documented limitations. Current Swift export instead generates Swift modules, supports suspend as async and Flow as AsyncSequence, but is Alpha and presently requires direct Xcode integration.",
+          "evidence": "verified",
+          "source_ids": [
+            "S18",
+            "S19"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "Export a small quote facade: loadQuote(id), a renderable state, and explicit close/cancel behavior if it owns work. Inspect the generated Swift surface. Test success, domain failure, early cancellation, and repeated subscribe/unsubscribe using the actual chosen route. The Kotlin declaration alone is not the contract test.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S18",
+            "S19",
+            "S22"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "For Objective-C export, @Throws controls which expected exceptions become Swift errors; unexpected exceptions crossing the boundary can terminate the app. Keep common business failures explicit. Do not assume a Swift task’s cancellation cancels Kotlin work just because a call uses await. Verify the export route or wrapper.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S18",
+            "S10"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Current Swift export uses Dispatchers.Default by default for exported suspending work. UI delivery still needs the appropriate UI context. Hide internals, inspect generic/type mappings, and keep a Swift consumer regression test before compiler upgrades. Alpha features can change.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S24"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/10-interop.svg",
+          "title": "Two export mechanisms",
+          "alt": "An Objective-C framework and Alpha Swift export expose different Swift API surfaces.",
+          "caption": "As verified on 2026-10-09. Callback/async and flow behavior are export-route dependent. Test cancellation propagation rather than inferring it.",
+          "source_ids": [
+            "S18",
+            "S19"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does a Kotlin suspend declaration prove end-to-end Swift cancellation?",
+        "answer": "No. Cancellation propagation belongs to the generated or wrapped boundary and must be tested."
+      }
+    },
+    {
+      "id": "11-memory",
+      "stage": "best-practices",
+      "title": "Native memory, callbacks, and performance",
+      "objective": "Recognize ownership leaks and avoid treating interoperability as zero-cost.",
+      "prerequisites": [
+        "10-swift-interop",
+        "02-ownership"
+      ],
+      "takeaway": "Compiled native code still has a runtime, allocation costs, and ownership obligations.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Recognize ownership leaks and avoid treating interoperability as zero-cost.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "Kotlin/Native uses a shared heap and tracing GC. Swift/Objective-C objects use ARC. Mixed strong-reference cycles can prevent reclamation; interop object release can wait for GC. Thread-accessible objects are not automatically safe for unsynchronized mutation.",
+          "evidence": "verified",
+          "source_ids": [
+            "S20",
+            "S21"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "A Kotlin repository retains a Swift callback; the callback strongly captures a Swift screen owner that retains the repository. On dismissal, the feature stops its subscription and releases the callback. A weak Swift capture may also break the cycle. The right break point follows the ownership contract.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Use explicit close/detach semantics for owned listeners and resources. GC and ARC timing do not provide deterministic business cleanup. Avoid per-element cross-language calls in a hot path. Objective-C export can add string and collection conversion overhead; batching can help when it reduces conversions. Measure its memory and latency costs.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S18",
+            "S21"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Repeat open/close flows while profiling retained objects, allocation, and UI stalls on release builds. Inspect native GC diagnostics and Xcode Instruments. Do not tune collector options or apply old freezing recipes before identifying a real bottleneck. No benchmark result is claimed here.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S20",
+            "S21"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/11-memory.svg",
+          "title": "Mixed retention graph",
+          "alt": "Kotlin and Swift objects strongly reference one another; explicit detach or weak capture breaks ownership.",
+          "caption": "The sketch simplifies a mixed retain cycle. Pure Kotlin unreachable cycles can be collected; a graph involving ARC needs different care.",
+          "source_ids": [
+            "S20",
+            "S21"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does Kotlin GC automatically reclaim a mixed ARC/Kotlin cycle?",
+        "answer": "No. Break the strong-reference cycle through the ownership design."
+      }
+    },
+    {
+      "id": "12-validation",
+      "stage": "further-improvements",
+      "title": "Validate on both targets, then expand",
+      "objective": "Build a small adoption loop with portable tests, boundary tests, and release metrics.",
+      "prerequisites": [
+        "11-memory",
+        "09-ui-boundary"
+      ],
+      "takeaway": "Optimize the amount of trustworthy sharing, not the percentage of shared lines.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "body": "Build a small adoption loop with portable tests, boundary tests, and release metrics.",
+          "evidence": "synthesis",
+          "source_ids": [],
+          "format": "prose"
+        },
+        {
+          "heading": "Mental model",
+          "body": "commonTest uses portable assertions, but tests execute through target-specific runners. Run shared tests on JVM and an iOS simulator. Platform tests cover adapters and OS behavior. runTest supports virtual-time coroutine tests; its usual single-thread scheduler does not prove safety under true parallel execution.",
+          "evidence": "verified",
+          "source_ids": [
+            "S22",
+            "S23"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "import kotlin.test.*\n\nclass DisplayNameTest {\n    @Test fun blankMeansGuest() {\n        assertEquals(\"Guest\", displayName(\"  \"))\n    }\n}\n// Put this in commonTest and run it on each intended target.\n// displayName is defined on sheet 01.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22",
+            "S01"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision + pitfall",
+          "body": "Adopt one self-contained rule or repository before expanding shared UI. Add a Swift consumer test for the exported framework. A successful JVM unit run cannot prove iOS linking, framework mappings, device permissions, or cancellation through Swift. Apple builds and signing need the Apple toolchain.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22",
+            "S26",
+            "S18"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Next improvement",
+          "body": "Baseline clean and incremental build time, release artifact size, startup, screen latency, and crash rates. Pin a compatible toolchain and review upgrades together. Objective-C-export frameworks can be packaged as an XCFramework for SwiftPM distribution; do not assume Alpha Swift export supports that same route. Compare benefits against both platforms’ maintenance costs. These are proposed measures, not measured improvements.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S24",
+            "S25",
+            "S19"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/12-validation.svg",
+          "title": "Adopt through evidence",
+          "alt": "Common tests run on two targets, followed by boundary and platform tests and release metrics.",
+          "caption": "A proposed workflow. Testing raises confidence but does not establish identical platform behavior.",
+          "source_ids": [
+            "S22",
+            "S23",
+            "S24"
+          ]
+        }
+      ],
+      "check": {
+        "question": "If common tests pass only on JVM, has the iOS integration passed?",
+        "answer": "No. Run Native-target tests plus framework and Swift consumer checks."
+      }
+    }
+  ]
+}

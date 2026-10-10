@@ -1,0 +1,6 @@
+// Illustrative; playbackId comes from your backend/media catalog.
+import MuxPlayer from "@mux/mux-player-react";
+export function TrainingVideo({ playbackId }) {
+  return <MuxPlayer playbackId={playbackId}
+    metadata={{ video_id: "training-01", video_title: "Introduction" }} />;
+}

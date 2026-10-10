@@ -1,0 +1,8 @@
+// Illustrative; onReady is the safe place to access the player.
+import YouTube from "react-youtube";
+export function Intro({ videoId }) {
+  return <YouTube videoId={videoId}
+    opts={{ width: "100%", playerVars: { playsinline: 1 } }}
+    onReady={(event) => event.target.pauseVideo()}
+    onError={(event) => console.error("youtube", event.data)} />;
+}

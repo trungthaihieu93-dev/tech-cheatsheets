@@ -1,0 +1,3504 @@
+{
+  "title": "Java & Spring \u2014 Illustrated Engineering Atlas",
+  "domain": "Java fundamentals and Spring Framework / major Spring portfolio projects",
+  "depth": "best-practices",
+  "language": "en",
+  "researched_at": "2026-10-09",
+  "scope": "Depth 2: fundamentals and best practices for a working software engineer. 32 topics cover Java contracts and runtime, Framework core, Boot, web/data/security, messaging/integration/batch, Cloud, testing/observability and optional Modulith/AI/native/specialist capabilities. This is a broad mechanism atlas, not exhaustive documentation of every Spring API or cloud subproject. Java examples use non-preview constructs from modern Java (records require 16+; virtual threads 21+). Research anchors Java SE 25 and live Spring documentation retrieved 2026-10-09. The retrieved Boot system-requirements page reports Boot 4.1.1, Framework 7.0.9+, Java 17\u201326. Use the matching BOM and supported project generations; do not combine displayed individual project versions arbitrarily. Code snippets are illustrative and were not compiled as a complete application. Choices and improvements marked synthesis are reasoned recommendations, not measured performance results.",
+  "design_reference": {
+    "document_id": "deep_learning_architectures_cheatsheet_2026_v1",
+    "files_consulted": [
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Metadata.json",
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Analysis.html",
+      "assets/style-reference.png",
+      "references/art-direction.md"
+    ],
+    "adaptations": [
+      "Original Java/Spring content and editable semantic SVGs; no source-example branding.",
+      "Off-white paper, blue headings, yellow highlights, purple underline, exact five-family pastel palette.",
+      "Five curriculum bands in cover cards; four learning stages remain separately labeled.",
+      "Wide mechanism diagrams for readable code and relationships; notebook pages remain responsive."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Spring portfolio and Attic",
+      "url": "https://spring.io/projects/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Portfolio roles",
+        "Current projects and historical Attic entries"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S02",
+      "title": "Spring Boot system requirements",
+      "url": "https://docs.spring.io/spring-boot/system-requirements.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Spring Boot 4.1.1",
+      "supports": [
+        "Boot 4.1.1 requires Java 17+ and Framework 7.0.9+",
+        "Supported Java range and build tools"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S03",
+      "title": "JLS: types, values, variables",
+      "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "specification",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Primitive/reference distinction",
+        "Generics and final references"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S04",
+      "title": "JLS: classes and records",
+      "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "specification",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Inheritance and interfaces",
+        "Record components and final fields"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S05",
+      "title": "Object equality and hashing",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "equals/hashCode contract"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S06",
+      "title": "Collections package",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/package-summary.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Collection roles and implementations"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S07",
+      "title": "HashMap API",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "HashMap behavior and ordering limits"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S08",
+      "title": "Stream API",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Laziness",
+        "Terminal operations",
+        "Non-interference"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S09",
+      "title": "AutoCloseable",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Resource closure with try-with-resources"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S10",
+      "title": "BigDecimal",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Decimal arithmetic",
+        "Rounding",
+        "Scale-sensitive equality"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S11",
+      "title": "Concurrency utilities",
+      "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Executors and concurrency building blocks"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S12",
+      "title": "JLS: threads and locks",
+      "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "specification",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Happens-before",
+        "Visibility versus compound atomicity"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S13",
+      "title": "Virtual threads",
+      "url": "https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "I/O concurrency",
+        "Do not pool virtual threads",
+        "Limit scarce resources"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S14",
+      "title": "HotSpot technology overview",
+      "url": "https://docs.oracle.com/en/java/javase/25/vm/java-virtual-machine-technology-overview.html",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "Interpreter and adaptive compilation",
+        "Garbage collection"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S15",
+      "title": "Flight Recorder guide",
+      "url": "https://docs.oracle.com/en/java/javase/25/jfapi/flight-recorder-api-programmers-guide.pdf",
+      "publisher": "Oracle / OpenJDK",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Java SE 25",
+      "supports": [
+        "JFR events and recordings for runtime diagnosis"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S16",
+      "title": "Dependency injection",
+      "url": "https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Constructor injection",
+        "Dependency resolution"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S17",
+      "title": "Bean scopes",
+      "url": "https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Singleton per container and bean",
+        "Prototype lifecycle limits"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S18",
+      "title": "Bean lifecycle",
+      "url": "https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Initialization and destruction callbacks",
+        "Lifecycle management"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S19",
+      "title": "Spring AOP proxies",
+      "url": "https://docs.spring.io/spring-framework/reference/core/aop/proxying.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Proxy interception",
+        "Self-invocation bypass",
+        "Subclass limitations"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S20",
+      "title": "Bean and Configuration",
+      "url": "https://docs.spring.io/spring-framework/reference/core/beans/java/basic-concepts.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Java bean definitions",
+        "Configuration classes"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S21",
+      "title": "Boot auto-configuration",
+      "url": "https://docs.spring.io/spring-boot/reference/using/auto-configuration.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Conditional configuration",
+        "User beans can replace defaults"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S22",
+      "title": "Externalized configuration",
+      "url": "https://docs.spring.io/spring-boot/reference/features/external-config.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Property source precedence",
+        "ConfigurationProperties binding"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S23",
+      "title": "DispatcherServlet",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Front controller delegates MVC request processing"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S24",
+      "title": "MVC validation",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-validation.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Request and method validation"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S25",
+      "title": "HTTP error responses",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-ann-rest-exceptions.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "ProblemDetail",
+        "Central exception handling"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S26",
+      "title": "WebFlux overview",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webflux/new-framework.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Non-blocking execution",
+        "Backpressure",
+        "MVC applicability"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S27",
+      "title": "Spring Data query methods",
+      "url": "https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Derived queries and repository method contracts"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S28",
+      "title": "Spring Data JPA fetch plans",
+      "url": "https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "EntityGraph",
+        "Scrolling",
+        "JPA query customization"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S29",
+      "title": "Why Spring Data JDBC",
+      "url": "https://docs.spring.io/spring-data/relational/reference/jdbc/why.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "JDBC aggregate mapping without JPA persistence context"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S30",
+      "title": "Declarative transactions",
+      "url": "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Proxy entry required",
+        "Rollback defaults",
+        "Global rollback customization"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S31",
+      "title": "JPA transaction boundaries",
+      "url": "https://docs.spring.io/spring-data/jpa/reference/jpa/transactions.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Service facade boundaries",
+        "Read-only is an optimization hint"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S32",
+      "title": "Security servlet architecture",
+      "url": "https://docs.spring.io/spring-security/reference/servlet/architecture.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "FilterChainProxy",
+        "SecurityFilterChain",
+        "Authentication and authorization"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S33",
+      "title": "JWT resource server",
+      "url": "https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "JWT verification",
+        "Issuer validation",
+        "Claim-to-authority conversion"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S34",
+      "title": "CSRF protection",
+      "url": "https://docs.spring.io/spring-security/reference/features/exploits/csrf.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Browser ambient credentials",
+        "CSRF threats and tokens"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S35",
+      "title": "Spring Session",
+      "url": "https://docs.spring.io/spring-session/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Session abstraction",
+        "Shared session implementations"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S36",
+      "title": "Cache abstraction",
+      "url": "https://docs.spring.io/spring-framework/reference/integration/cache.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "CacheManager delegates to backing cache"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S37",
+      "title": "Cache annotations",
+      "url": "https://docs.spring.io/spring-framework/reference/integration/cache/annotations.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Cacheable and eviction",
+        "Key design and proxy behavior"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S38",
+      "title": "Kafka exactly-once semantics",
+      "url": "https://docs.spring.io/spring-kafka/reference/kafka/exactly-once.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Kafka transactional read/process/write boundary"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S39",
+      "title": "AMQP asynchronous consumer",
+      "url": "https://docs.spring.io/spring-amqp/reference/amqp/receiving-messages/async-consumer.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Listener containers and acknowledgement modes"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S40",
+      "title": "Integration overview",
+      "url": "https://docs.spring.io/spring-integration/reference/overview.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Messages",
+        "Channels",
+        "Routers",
+        "Adapters"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S41",
+      "title": "Batch chunks",
+      "url": "https://docs.spring.io/spring-batch/reference/step/chunk-oriented-processing.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Reader/processor/writer",
+        "Commit intervals"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S42",
+      "title": "Batch domain model",
+      "url": "https://docs.spring.io/spring-batch/reference/domain.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "JobInstance",
+        "JobExecution",
+        "StepExecution",
+        "Restart metadata"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S43",
+      "title": "Spring Cloud roles and compatibility",
+      "url": "https://spring.io/projects/spring-cloud/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Cloud project roles",
+        "Compatible release train BOMs"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S44",
+      "title": "REST clients",
+      "url": "https://docs.spring.io/spring-framework/reference/integration/rest-clients.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "RestClient",
+        "WebClient",
+        "HTTP service proxies",
+        "RestTemplate deprecated in Framework 7"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S45",
+      "title": "OpenFeign status",
+      "url": "https://docs.spring.io/spring-cloud-openfeign/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Feature-complete status",
+        "Maintainer recommendation to HTTP service clients"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S46",
+      "title": "GraphQL request execution",
+      "url": "https://docs.spring.io/spring-graphql/reference/request-execution.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Schema execution",
+        "DataLoader per-request batching"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S47",
+      "title": "Spring gRPC",
+      "url": "https://docs.spring.io/spring-grpc/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Spring-friendly gRPC integrations"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S48",
+      "title": "Boot testing",
+      "url": "https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Test slices",
+        "SpringBootTest",
+        "Different test scopes"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S49",
+      "title": "Boot observability",
+      "url": "https://docs.spring.io/spring-boot/reference/actuator/observability.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Micrometer Observation",
+        "Metrics/tracing",
+        "Cardinality"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S50",
+      "title": "Actuator endpoints",
+      "url": "https://docs.spring.io/spring-boot/reference/actuator/endpoints.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Endpoint exposure and security",
+        "Liveness/readiness"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S51",
+      "title": "Framework resilience",
+      "url": "https://docs.spring.io/spring-framework/reference/core/resilience.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Framework 7 retry/concurrency limit",
+        "EnableResilientMethods"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S52",
+      "title": "Cloud Circuit Breaker",
+      "url": "https://docs.spring.io/spring-cloud-circuitbreaker/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Circuit breaker abstraction"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S53",
+      "title": "Scheduling and async",
+      "url": "https://docs.spring.io/spring-framework/reference/integration/scheduling.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Executor/scheduler distinction",
+        "Async proxy invocation"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S54",
+      "title": "Modulith fundamentals",
+      "url": "https://docs.spring.io/spring-modulith/reference/fundamentals.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Module boundaries",
+        "Named interfaces",
+        "Dependency verification"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S55",
+      "title": "Spring AI introduction",
+      "url": "https://docs.spring.io/spring-ai/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Model abstractions",
+        "Embeddings and vector stores"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S56",
+      "title": "Spring AI tools",
+      "url": "https://docs.spring.io/spring-ai/reference/api/tools.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Tool callbacks",
+        "Model requests tools; application executes"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S57",
+      "title": "Spring AI RAG",
+      "url": "https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Retrieval and augmentation components"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S58",
+      "title": "Native image constraints",
+      "url": "https://docs.spring.io/spring-boot/reference/packaging/native-image/introducing-graalvm-native-images.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Closed-world assumption",
+        "AOT processing",
+        "Runtime bean graph constraints"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S59",
+      "title": "Spring Pulsar",
+      "url": "https://docs.spring.io/spring-pulsar/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Spring template/listener abstractions for Pulsar"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S60",
+      "title": "Spring Web Services",
+      "url": "https://docs.spring.io/spring-ws/docs/current/reference/html/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Contract-first SOAP",
+        "XML schema and message endpoints"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S61",
+      "title": "Spring LDAP",
+      "url": "https://docs.spring.io/spring-ldap/reference/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "LDAP integration"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S62",
+      "title": "Spring HATEOAS",
+      "url": "https://docs.spring.io/spring-hateoas/docs/current/reference/html/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Documentation retrieved 2026-10-09",
+      "supports": [
+        "Representation models",
+        "Links and affordances"
+      ],
+      "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+      "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+    },
+    {
+      "id": "S63",
+      "title": "Framework module overview",
+      "url": "https://docs.spring.io/spring-framework/reference/overview.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "Core, data, messaging and web module roles"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S64",
+      "title": "Spring Data family",
+      "url": "https://spring.io/projects/spring-data/",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "Store-specific module roles; main, community and archived modules"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S65",
+      "title": "Binding, conversion and validation",
+      "url": "https://docs.spring.io/spring-framework/reference/core/validation.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "DataBinder, Validator, conversion and formatting"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S66",
+      "title": "Spring Expression Language",
+      "url": "https://docs.spring.io/spring-framework/reference/core/expressions.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "SpEL expression evaluation"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S67",
+      "title": "Framework WebSockets",
+      "url": "https://docs.spring.io/spring-framework/reference/web/websocket.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "Full-duplex web communication"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S68",
+      "title": "Framework JMS",
+      "url": "https://docs.spring.io/spring-framework/reference/integration/jms.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "JMS template and listener integration"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S69",
+      "title": "MVC configuration",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "MVC configuration customization"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    },
+    {
+      "id": "S70",
+      "title": "MVC special beans",
+      "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet/special-bean-types.html",
+      "publisher": "Spring project maintainers",
+      "kind": "documentation",
+      "accessed": "2026-10-09",
+      "version": "Live documentation retrieved 2026-10-09",
+      "supports": [
+        "Mapping, adapters, conversion, exception resolution and localization roles"
+      ],
+      "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+    }
+  ],
+  "topics": [
+    {
+      "id": "01-ecosystem",
+      "stage": "fundamentals",
+      "title": "Java, Framework, Boot: find the layers",
+      "prerequisites": [],
+      "takeaway": "Know the owner of a behavior before debugging its annotations.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Learn which layer owns which concern. Java supplies the language and runtime. Framework supplies the container and application infrastructure. Boot assembles and configures applications. Portfolio projects add specialized capabilities.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S02"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "For a quote API, start with Java, Boot, MVC, Data and Security. Add Batch for overnight reconciliation; add messaging when asynchronous delivery is required. A portfolio is a toolbox, not a dependency shopping list.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S43"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose a compatible Boot generation first; let its dependency management align libraries. This reduces manual coordination but means an upgrade can change several components together.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S43"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "\u201cAll Spring\u201d is too broad for exhaustive API coverage. This atlas teaches major mechanisms and maps specialist projects; it does not document every method or cloud provider integration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S43"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Compare your actual dependency tree with the compatible project generations. Remove unused starters and track a reproducible runtime/build baseline.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S43"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/01-ecosystem.svg",
+          "title": "Which layer owns the behavior?",
+          "alt": "Java / JVM: language + runtime; Spring Framework: container + infrastructure; Spring Boot: assembly + configuration; Portfolio projects: Data / Security / Cloud. Connections: Spring Boot to Spring Framework (builds on); Spring Framework to Java / JVM (runs on); Portfolio projects to Spring Boot (integrates)",
+          "caption": "Layer arrows mean builds on or integrates with; they are not the path of an HTTP request.",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S43"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does Boot replace Framework?",
+        "answer": "No. Boot builds on Framework and automates application setup."
+      }
+    },
+    {
+      "id": "02-types",
+      "stage": "fundamentals",
+      "title": "Types, objects, records and domain invariants",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "A type should make the wrong state harder to represent.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Separate primitive values from object references. An interface states a contract; a class implements behavior. Records express data aggregates with final component fields; they do not make referenced collections deeply immutable.",
+          "evidence": "verified",
+          "source_ids": [
+            "S03",
+            "S04"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 illustrative, not executed",
+          "body": "record QuoteId(String value) {}\nrecord Quote(QuoteId id, java.util.List<String> covers) {\n  Quote { covers = java.util.List.copyOf(covers); }\n}\n// The defensive copy prevents external list mutation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use composition for replaceable pricing behavior and small value types for identifiers. This clarifies invariants at the cost of more explicit conversions.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A final reference can point to a mutable object. Value equality also needs a compatible hashCode; identity equality with == answers a different question.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Move invalid-state checks into construction boundaries. Test equality, null handling and defensive copies where the business invariant depends on them.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/02-types.svg",
+          "title": "Why can a final reference still change?",
+          "alt": "Reference A: points to a list; Reference B: points to same list; Mutable list: shared object. Connections: Reference A to Mutable list (alias); Reference B to Mutable list (alias)",
+          "caption": "Reference identity and object state are different; defensive copies break unwanted sharing.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is a record containing ArrayList deeply immutable?",
+        "answer": "No. Its field reference is final, but the referenced list can remain mutable."
+      }
+    },
+    {
+      "id": "03-collections",
+      "stage": "fundamentals",
+      "title": "Collections, generics and equality",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Collection contracts are part of your domain contract.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Select the collection by its contract: List preserves a sequence, Set models uniqueness, Map associates keys and values. Hash-based containers rely on equality and hashing; HashMap does not promise iteration order.",
+          "evidence": "verified",
+          "source_ids": [
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A broker list preserves display order; a Set tracks unique coverage codes; a Map indexes quotes by stable QuoteId. Use a sorted map when sorted traversal is part of the requirement.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S05"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Prefer interface-typed variables and explicit generic parameters. Choose ArrayList for ordinary indexed sequences; choose a deque for queue/stack operations instead of treating one structure as universal.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S05"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Changing fields used by a key\u2019s equality/hash after insertion can make lookup fail. Concurrent access needs a suitable concurrency strategy, not merely a different collection name.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S05"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Write down ordering, duplicate and mutation requirements before selection. Measure realistic access patterns before swapping structures for supposed performance gains.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S05"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/03-collections.svg",
+          "title": "Which collection matches the invariant?",
+          "alt": "Requirement: What must stay true?; List: sequence + duplicates; Set: unique membership; Map: key \u2192 value. Connections: Requirement to List (ordered sequence); Requirement to Set (uniqueness); Requirement to Map (lookup by key)",
+          "caption": "These are contracts, not performance rankings. Implementation and workload determine cost.",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S05"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why are mutable map keys dangerous?",
+        "answer": "Their hash/equality behavior may change after storage, so later lookup searches the wrong location."
+      }
+    },
+    {
+      "id": "04-streams",
+      "stage": "fundamentals",
+      "title": "Lambdas, streams and honest parallelism",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Readable transformation beats decorative functional syntax.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "A lambda implements a functional interface. A Stream describes a computation over a source: intermediate transformations are lazy, and a terminal operation consumes the pipeline. A stream is not a reusable collection.",
+          "evidence": "verified",
+          "source_ids": [
+            "S08",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 illustrative, not executed",
+          "body": "var ids = quotes.stream()\n    .filter(q -> q.premium().signum() > 0)\n    .map(Quote::id)\n    .toList();\n// Schematic: Quote exposes premium() and id().",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S11"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use streams for clear transformations and loops for stateful control flow or early branching. Parallel execution adds coordination overhead and is useful only with appropriate work and isolation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Side effects inside map/filter make ordering and parallel behavior difficult to reason about. A parallel stream is not a safe way to issue unbounded database calls.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Start sequential. Benchmark representative inputs and examine thread usage before adopting parallelism; isolate blocking I/O with an explicit bounded execution policy.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S11"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/04-streams.svg",
+          "title": "When does a stream actually execute?",
+          "alt": "Source: quotes; filter \u2192 map: lazy transformations; toList(): terminal traversal; Result list: materialized values. Connections: Source to filter \u2192 map (elements); filter \u2192 map to toList() (evaluated on demand); toList() to Result list (collect)",
+          "caption": "This is a sequential pipeline. Parallel execution requires separate assumptions about side effects and workload.",
+          "source_ids": [
+            "S08",
+            "S11"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why does filter alone produce no result?",
+        "answer": "It is intermediate and lazy; a terminal operation such as toList triggers traversal."
+      }
+    },
+    {
+      "id": "05-resources-money",
+      "stage": "fundamentals",
+      "title": "Resource ownership and decimal money",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Memory, resources and money each need their own ownership rules.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Garbage collection does not replace deterministic resource closure. AutoCloseable integrates with try-with-resources. BigDecimal models decimal arithmetic, with explicit precision/rounding decisions and scale-sensitive equals.",
+          "evidence": "verified",
+          "source_ids": [
+            "S09",
+            "S10"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 illustrative, not executed",
+          "body": "var premium = new java.math.BigDecimal(\"1250000.00\");\nvar tax = premium.multiply(new java.math.BigDecimal(\"0.10\"));\n// Pair amounts with a currency and an explicit rounding policy.\ntry (var reader = java.nio.file.Files.newBufferedReader(path)) {\n  return reader.readLine();\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S09",
+            "S10"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use decimal values or an explicitly specified minor-unit model for premiums. State currency, scale and rounding at business boundaries; neither approach chooses the policy for you.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S09",
+            "S10"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "BigDecimal constructed from a binary double can inherit representation artifacts. Leaking file/database resources can exhaust capacity even when heap usage appears healthy.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S09",
+            "S10"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Define resource ownership and close scope. Exercise rounding edges and failure paths; compare 1.0 and 1.00 with the intended numeric or representation semantics.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S09",
+            "S10"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/05-resources-money.svg",
+          "title": "What must be explicit at a boundary?",
+          "alt": "Owner scope: opens resource; Use resource: success or exception; close(): scope exits; Money policy: currency + rounding. Connections: Owner scope to Use resource (try-with-resources); Use resource to close() (always on exit)",
+          "caption": "Top: deterministic resource lifetime. Bottom: decimal policy is a separate domain decision.",
+          "source_ids": [
+            "S09",
+            "S10"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does BigDecimal.equals ignore scale?",
+        "answer": "No. compareTo can test numeric equality; equals also distinguishes scale."
+      }
+    },
+    {
+      "id": "06-concurrency",
+      "stage": "fundamentals",
+      "title": "Concurrency, visibility and virtual threads",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Cheap waiting is not unlimited throughput.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Concurrency coordinates overlapping tasks. Visibility and atomicity are different: volatile can publish writes, but does not make read-modify-write increments atomic. Virtual threads make blocking I/O concurrency cheaper; they do not create CPU or database capacity.",
+          "evidence": "verified",
+          "source_ids": [
+            "S11",
+            "S12"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Two workers read count=0 and both write 1: one increment is lost. AtomicInteger or a lock can protect this invariant. For quote calls, a semaphore can bound access to a scarce insurer connection.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use virtual threads for many blocking I/O tasks when dependencies fit. Bound downstream concurrency; use workload-appropriate executors for CPU work and decide timeout/cancellation ownership.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A shared mutable singleton remains shared under virtual threads. Avoid pooling virtual threads. Pinning guidance is JDK-dependent; older synchronized pinning advice should not be repeated universally for newer JDKs.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Load-test with slow dependencies. Record pool wait, in-flight calls, CPU and tail latency; stop increasing concurrency when the constrained resource saturates.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/06-concurrency.svg",
+          "title": "Where should concurrency be limited?",
+          "alt": "Many tasks: virtual threads; Semaphore: bounded admission; DB / insurer: scarce capacity; Waiting tasks: do not consume slots. Connections: Many tasks to Semaphore (request slot); Semaphore to DB / insurer (admitted work); Semaphore to Waiting tasks (no slot available)",
+          "caption": "Limit the scarce downstream resource. The figure illustrates admission control, not virtual-thread scheduling internals.",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does volatile count++ become atomic?",
+        "answer": "No. Reading, adding and writing remain a compound operation."
+      }
+    },
+    {
+      "id": "07-jvm",
+      "stage": "fundamentals",
+      "title": "JVM, JIT, garbage collection and diagnosis",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Observe the bottleneck before tuning the JVM.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "HotSpot starts with interpretation and adaptively compiles hot code. Garbage collection manages object memory. Flight Recorder captures runtime events for diagnosis; request latency can include CPU, allocation, locks and external waiting.",
+          "evidence": "verified",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A quote endpoint\u2019s latency rises while CPU stays modest. A recording and dependency timings may reveal contention or connection waits rather than expensive Java computation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose a runtime and collector against workload and deployment limits. Compare warm steady-state behavior and startup separately; a microbenchmark rarely predicts full service latency.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Treating every pause as a GC problem can hide a slow database. Increasing heap can reduce some collection pressure while increasing footprint and changing pause behavior.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Form a hypothesis, capture JFR plus service metrics, change one factor, then repeat representative load. Keep the measurement environment and warm-up conditions explicit.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/07-jvm.svg",
+          "title": "How do execution and evidence connect?",
+          "alt": "Bytecode: loaded methods; Interpreter: execute + profile; JIT compilation: hot methods; Heap / GC: allocation + reclamation; JFR recording: runtime evidence. Connections: Bytecode to Interpreter (execute); Interpreter to JIT compilation (hot code); Interpreter to JFR recording (events); Heap / GC to JFR recording (events)",
+          "caption": "Simplified HotSpot view. JFR includes additional event categories; GC and compilation may run concurrently.",
+          "source_ids": [
+            "S14",
+            "S15"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can low CPU coexist with high latency?",
+        "answer": "Yes. A request may be waiting for a lock, I/O or a scarce connection."
+      }
+    },
+    {
+      "id": "08-ioc",
+      "stage": "fundamentals",
+      "title": "IoC, constructor injection and bean definitions",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "The container should assemble your design, not become your design.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Inversion of control means the container constructs and connects collaborators. Dependency injection exposes what an object needs. Component scanning and @Bean methods are two ways to register bean definitions.",
+          "evidence": "verified",
+          "source_ids": [
+            "S16",
+            "S20"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 illustrative, not executed",
+          "body": "class QuoteService {\n  private final PricingPort pricing;\n  QuoteService(PricingPort pricing) { this.pricing = pricing; }\n}\n// Register QuoteService and a PricingPort implementation as beans.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S20"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use constructor injection for required collaborators. Use @Bean for third-party objects or explicit assembly; use qualifiers when multiple candidates represent meaningful alternatives.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S20"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Field injection hides required dependencies and complicates plain construction. Circular dependencies often signal tangled responsibilities; adding lazy references can conceal the design problem.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S20"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Construct business services directly in unit tests. Inspect candidate ambiguity and configuration boundaries before widening component scans.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S20"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/08-ioc.svg",
+          "title": "Who creates and connects collaborators?",
+          "alt": "ApplicationContext: bean definitions; Pricing adapter: implements PricingPort; QuoteService: requires PricingPort. Connections: ApplicationContext to Pricing adapter (construct); ApplicationContext to QuoteService (construct); Pricing adapter to QuoteService (inject reference)",
+          "caption": "Arrows distinguish construction from injecting an existing collaborator. Business calls are omitted.",
+          "source_ids": [
+            "S16",
+            "S20"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why inject an interface?",
+        "answer": "It names a replaceable contract; the container supplies the selected implementation."
+      }
+    },
+    {
+      "id": "09-bean-lifecycle",
+      "stage": "fundamentals",
+      "title": "Scopes, lifecycle and thread-safe singleton design",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Scope controls lifetime; it does not grant thread safety.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "A singleton is one instance per bean definition per container. Request scope follows a web request. The container manages initialization/destruction for managed beans, with important exceptions such as prototype destruction.",
+          "evidence": "verified",
+          "source_ids": [
+            "S17",
+            "S18"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "QuoteService may safely be a singleton when it stores only stable collaborators. A mutable currentTenant field would mix simultaneous requests; carry tenant context through an explicit request-level mechanism instead.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S18"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Keep shared service state immutable or deliberately synchronized. Choose scope by ownership and lifetime; request-scoped dependencies in singletons need appropriate proxies or lookup.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S18"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "@PostConstruct runs during initialization, before normal proxy-mediated use. Depending on transactional advice there is unsafe. Prototype cleanup is not automatically managed like singleton destruction.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S18"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Move external startup work into a suitable lifecycle stage. Test concurrent requests and shutdown; name who owns cleanup for prototype or manually created objects.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S18"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/09-bean-lifecycle.svg",
+          "title": "When is a bean ready for advised calls?",
+          "alt": "Create bean: inject dependencies; Initialize target: lifecycle callbacks; Expose bean: possibly proxied; Destroy managed bean: shutdown callbacks. Connections: Create bean to Initialize target (populate); Initialize target to Expose bean (post-process); Expose bean to Destroy managed bean (container closes)",
+          "caption": "Typical simplified lifecycle. Prototype destruction and manually created objects require separate ownership.",
+          "source_ids": [
+            "S17",
+            "S18"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does singleton mean one instance across a cluster?",
+        "answer": "No. Each application container has its own singleton instances."
+      }
+    },
+    {
+      "id": "10-proxies",
+      "stage": "fundamentals",
+      "title": "AOP proxies: why annotations sometimes vanish",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "An annotation is metadata; the invocation path makes it operational.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring AOP commonly intercepts calls through a proxy before reaching the target. JDK interface proxies and subclass proxies have different constraints. A target calling itself does not re-enter its Spring AOP proxy.",
+          "evidence": "verified",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A controller invokes quoteService.issue(): transaction advice runs. Inside the target, this.audit() bypasses proxy interception, even if audit has an advice-triggering annotation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S30"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Place independently advised operations on separate collaborators or use an explicit programmatic boundary. This adds a visible interface but avoids magical assumptions about annotation placement.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Subclass proxies cannot advise final/private methods as overridable methods. Calling a manually constructed object also bypasses container advice. AspectJ weaving is a different mechanism.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Test behavior through the managed bean and deliberately exercise self-invocation. Inspect actual proxy type and advice ordering when multiple concerns wrap one method.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/10-proxies.svg",
+          "title": "Which call crosses the proxy boundary?",
+          "alt": "Caller: managed reference; Proxy: transaction / other advice; Target issue(): business operation; Target audit(): self-invocation. Connections: Caller to Proxy (external call); Proxy to Target issue() (intercepted); Target issue() to Target audit() (this.audit() bypasses proxy)",
+          "caption": "Default Spring AOP proxy mode. A self-call does not return to the proxy; weaving can behave differently.",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        },
+        {
+          "path": "figures/10-proxy-fix.svg",
+          "title": "How can an advised audit boundary become explicit?",
+          "alt": "QuoteService: issues policy; AuditService proxy: independent advice; Audit target: audit operation. Connections: QuoteService to AuditService proxy (injected collaborator); AuditService proxy to Audit target (proxy interception)",
+          "caption": "Proposed refactoring: call another managed collaborator. Select transaction propagation intentionally; separate beans alone do not select it.",
+          "source_ids": [
+            "S19",
+            "S30"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Will this.audit() start a proxy-driven new transaction?",
+        "answer": "Not in default proxy mode. The call stays within the target."
+      }
+    },
+    {
+      "id": "11-boot",
+      "stage": "fundamentals",
+      "title": "Spring Boot: conditional assembly, not sorcery",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Auto-configuration is conditional code you can inspect.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Boot auto-configuration uses available classes, properties and existing beans to configure infrastructure. User definitions can cause defaults to back off. Starters assemble related dependencies; dependency management aligns versions.",
+          "evidence": "verified",
+          "source_ids": [
+            "S21",
+            "S02"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Add a database driver and the relevant starter, supply connection properties, and Boot can create infrastructure beans. Define your own DataSource and the matching default may no longer apply.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S02",
+            "S20"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Keep Boot-managed versions aligned unless an override has a documented reason. Select a supported runtime and build tool for your chosen generation.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S02",
+            "S20"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A starter can activate unexpected configuration. Mixing individual Spring versions may produce linkage errors. A bean declared too broadly can accidentally replace a useful default.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S02",
+            "S20"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Use the condition evaluation report to understand why configuration matched or failed. Record custom overrides and test upgrades against startup and representative paths.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S02",
+            "S20"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/11-boot.svg",
+          "title": "Why was an infrastructure bean created?",
+          "alt": "Classpath: libraries present?; Properties: feature enabled?; Existing beans: user replacement?; Conditions evaluated: create or back off. Connections: Classpath to Conditions evaluated (class conditions); Properties to Conditions evaluated (property conditions); Existing beans to Conditions evaluated (bean conditions)",
+          "caption": "Conditions vary by auto-configuration. This figure shows the main inputs, not every condition type.",
+          "source_ids": [
+            "S21",
+            "S02",
+            "S20"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does adding a starter guarantee a working database?",
+        "answer": "No. Driver, credentials, reachable infrastructure and matching configuration still matter."
+      }
+    },
+    {
+      "id": "12-config",
+      "stage": "applications",
+      "title": "Configuration, profiles and secret boundaries",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Debug the effective configuration, not just the file you edited.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Boot combines ordered property sources into an Environment and binds structured configuration. Later/higher-precedence sources can override earlier values. Profiles select configurations; they are not a security boundary.",
+          "evidence": "verified",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "For pricing.timeout, define a default and an environment-specific override. Bind settings into a typed ConfigurationProperties object and validate required values instead of scattering string lookups.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Treat operational settings as external inputs and make startup fail clearly on invalid required configuration. This improves repeatability but demands disciplined deployment configuration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "An unexpected environment variable can override a checked-in value. Logging a full configuration dump can reveal secrets; a prod profile does not protect management endpoints.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Document the effective source and precedence for critical settings. Review secrets access separately and test startup with missing, malformed and overridden values.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/12-config.svg",
+          "title": "Which configuration value actually wins?",
+          "alt": "application.yml: baseline; Environment: deployment overrides; CLI / other sources: ordered inputs; Effective value: bind + validate. Connections: application.yml to Effective value (property sources); Environment to Effective value (property sources); CLI / other sources to Effective value (property sources)",
+          "caption": "The complete precedence order is documented in Boot. This diagram illustrates merging, not the whole ranked list.",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why might changing application.yml have no effect?",
+        "answer": "A higher-precedence source can supply the same property."
+      }
+    },
+    {
+      "id": "13-mvc",
+      "stage": "applications",
+      "title": "MVC request flow, DTO validation and errors",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Validate syntax at transport boundaries and invariants in the domain.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "DispatcherServlet delegates request mapping and invocation to MVC components. Validation checks request constraints. Error handling can produce ProblemDetail responses rather than leaking internal exception representations.",
+          "evidence": "verified",
+          "source_ids": [
+            "S23",
+            "S24"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "POST /quotes accepts a validated request DTO. The service enforces business eligibility; the repository persists. A validation failure returns a stable client error, while an internal failure gets a traceable sanitized response.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S24",
+            "S25"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Keep controllers focused on transport and services on use-case policy. DTOs decouple API shapes from persistence; the additional mapping is an intentional boundary cost.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S24",
+            "S25"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Bean Validation cannot prove business eligibility or authorization. Returning persistence entities can expose fields and trigger unexpected serialization-time loads.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S24",
+            "S25"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Exercise malformed input, missing access and failure responses with HTTP tests. Keep stable problem types and correlate internal diagnostics without returning stack traces.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S24",
+            "S25"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/13-mvc.svg",
+          "title": "Where do request responsibilities belong?",
+          "alt": "DispatcherServlet: route request; Controller + DTO: validate / translate; Service: business rules; Repository: persistence; Exception handling: ProblemDetail. Connections: DispatcherServlet to Controller + DTO (invoke handler); Controller + DTO to Service (use case); Service to Repository (data access); Controller + DTO to Exception handling (invalid input); Service to Exception handling (failure)",
+          "caption": "Request-side responsibilities; responses return through MVC. Authentication filters normally run before this view.",
+          "source_ids": [
+            "S23",
+            "S24",
+            "S25"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can @Valid prove an agent owns a policy?",
+        "answer": "No. Ownership is an authorization/domain rule, not just a field constraint."
+      }
+    },
+    {
+      "id": "14-reactive",
+      "stage": "applications",
+      "title": "MVC, WebFlux and virtual threads: choose by constraints",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Choose an execution model for your dependencies, not your fashion sense.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "MVC supports an imperative request model; WebFlux uses non-blocking composition and reactive backpressure. Mono represents zero-or-one values and Flux a sequence. Virtual threads provide a separate way to scale blocking waits.",
+          "evidence": "verified",
+          "source_ids": [
+            "S26",
+            "S13"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A JPA quote API fits MVC naturally. A streaming aggregator with non-blocking downstream clients may fit WebFlux. Wrapping a blocking JPA call in Mono does not make its I/O non-blocking.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26",
+            "S13",
+            "S44"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose based on dependency APIs, concurrency pattern and team expertise. MVC with virtual threads can retain readable blocking code; WebFlux adds composition and scheduling discipline.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26",
+            "S13",
+            "S44"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Blocking an event loop can stall unrelated requests. A reactive return type alone does not identify the server stack, and virtual threads do not remove database limits.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26",
+            "S13",
+            "S44"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Prototype the same realistic workload with bounded dependencies. Compare memory, tail latency and failure handling; adopt complexity only for a measured benefit.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26",
+            "S13",
+            "S44"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/14-reactive.svg",
+          "title": "Which I/O contract fits the execution model?",
+          "alt": "MVC: request execution; Blocking driver: JDBC / JPA; Virtual threads: cheap blocking waits; WebFlux: event-loop processing; Non-blocking driver: async I/O + demand. Connections: MVC to Blocking driver (imperative I/O); Virtual threads to Blocking driver (still bounded); WebFlux to Non-blocking driver (reactive pipeline)",
+          "caption": "Two valid styles; virtual-thread configuration is separate from choosing MVC. No universal performance ranking is implied.",
+          "source_ids": [
+            "S26",
+            "S13",
+            "S44"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does Mono.just(blockingCall()) defer that call?",
+        "answer": "No. The argument is evaluated immediately before Mono.just receives it."
+      }
+    },
+    {
+      "id": "15-data",
+      "stage": "applications",
+      "title": "Spring Data: repositories, aggregates and fetch plans",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Repository convenience does not cancel database physics.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring Data builds repository abstractions around store-specific behavior. JPA has persistence-context and relationship semantics; Data JDBC uses a simpler aggregate model. Derived queries reduce boilerplate without replacing query design.",
+          "evidence": "verified",
+          "source_ids": [
+            "S27",
+            "S28"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A broker dashboard pages quotes by tenant and status. Use a response projection and a deliberate fetch plan instead of traversing every policy relationship during JSON serialization.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S29"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose JPA when its entity model helps; choose JDBC-style access when explicit aggregate operations fit. R2DBC is a non-blocking access model, not reactive JPA.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S29"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A compact repository method can still produce expensive SQL. N+1 access and loading oversized graphs should be diagnosed through executed queries and row counts, not annotation counts.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S29"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Capture SQL and query plans for representative tenant sizes. Validate pagination and fetch plans together; compare query count and end-to-end latency after changes.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S29"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/15-data.svg",
+          "title": "Where does repository abstraction stop?",
+          "alt": "Repository contract: query + aggregate intent; JPA model: context + relationships; JDBC model: explicit aggregates; Actual database: SQL + indexes + rows. Connections: Repository contract to JPA model (implementation); Repository contract to JDBC model (implementation); JPA model to Actual database (queries); JDBC model to Actual database (queries)",
+          "caption": "JPA and JDBC are alternatives shown together for comparison. They do not share a persistence context.",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S29"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is R2DBC just JPA returning Mono?",
+        "answer": "No. It is a different non-blocking relational access model."
+      }
+    },
+    {
+      "id": "16-transactions",
+      "stage": "applications",
+      "title": "Transactions, rollback and propagation boundaries",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "A local transaction is a precise boundary, not a universal undo button.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "@Transactional defines an advised transaction boundary. Default rollback typically covers unchecked exceptions and Error; checked-exception behavior can be customized, including global defaults. Read-only is generally a hint, not a universal write prohibition.",
+          "evidence": "verified",
+          "source_ids": [
+            "S30",
+            "S31"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "An issuePolicy service method updates the quote and inserts the policy in one database transaction. An email call is not rolled back just because the database transaction fails.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30",
+            "S31",
+            "S19"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Keep boundaries around coherent database use cases and avoid long remote waits while holding connections. Choose explicit rollback policy and account for propagation and pool capacity.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30",
+            "S31",
+            "S19"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Self-invocation can bypass advice. Catching and swallowing a failure can prevent expected rollback. REQUIRES_NEW can require an additional connection and therefore worsen pool pressure.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30",
+            "S31",
+            "S19"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Verify rollback through the proxied bean with real persistence. Exercise checked exceptions, concurrent conflicts and external side-effect failure separately.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30",
+            "S31",
+            "S19"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/16-transactions.svg",
+          "title": "What does the transaction actually protect?",
+          "alt": "Transaction proxy: begin / participate; Database updates: quote + policy; Commit or rollback: configured rules; External email: outside DB atomicity. Connections: Transaction proxy to Database updates (invoke service); Database updates to Commit or rollback (method outcome); Database updates to External email (side effect risk)",
+          "caption": "One database transaction. Reactive transaction context, distributed coordination and propagation need separate treatment.",
+          "source_ids": [
+            "S30",
+            "S31",
+            "S19"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Will a database rollback unsend an email?",
+        "answer": "No. External effects need separate coordination such as durable events and idempotent handling."
+      }
+    },
+    {
+      "id": "17-security",
+      "stage": "applications",
+      "title": "Security filters, JWT and domain authorization",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Authentication names the caller; authorization constrains the action.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "SecurityFilterChain applies authentication and authorization to matching servlet requests. A resource server verifies bearer tokens and derives authorities; accepting a decoded token is not equivalent to verifying it.",
+          "evidence": "verified",
+          "source_ids": [
+            "S32",
+            "S33"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "With Keycloak as issuer, validate the JWT signature, issuer and applicable claims. Convert claims deliberately, then check that the authenticated agent may access the requested tenant\u2019s policy.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S32",
+            "S33"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Keep identity-provider responsibilities separate from application resource rules. Token authorities can express permissions, but row/tenant ownership still belongs in enforceable application logic.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S32",
+            "S33"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A valid token can target another tenant\u2019s resource. Incorrect matcher order can leave a route under the wrong filter chain. Configure audience requirements rather than assuming they are always enforced automatically.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S32",
+            "S33"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Test anonymous, expired, wrong-issuer, wrong-audience and cross-tenant requests. Inspect granted authorities and deny access consistently at the relevant resource boundary.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S32",
+            "S33"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/17-security.svg",
+          "title": "Where does identity become resource access?",
+          "alt": "HTTP request: bearer token; SecurityFilterChain: verify + authenticate; Authorities: mapped claims; Resource decision: permission + tenant. Connections: HTTP request to SecurityFilterChain (matched chain); SecurityFilterChain to Authorities (authenticated identity); Authorities to Resource decision (authorize use case)",
+          "caption": "Servlet resource-server example. Token verification and per-resource authorization are separate decisions.",
+          "source_ids": [
+            "S32",
+            "S33"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does a valid JWT authorize every policy ID?",
+        "answer": "No. The application must enforce permission and ownership for that resource."
+      }
+    },
+    {
+      "id": "18-sessions",
+      "stage": "applications",
+      "title": "Sessions, browser credentials and CSRF",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Understand how credentials travel before disabling protections.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring Session externalizes session handling through shared implementations. CSRF is about a browser automatically attaching credentials to a forged request; it is not solved by calling the API \u201cREST.\u201d",
+          "evidence": "verified",
+          "source_ids": [
+            "S34",
+            "S35"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A browser broker portal uses a session cookie and CSRF token on state-changing requests. Two app replicas can access shared session state instead of relying solely on one process\u2019s memory.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S34",
+            "S35"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose session or bearer-token flows from client and threat requirements. Shared sessions improve replica mobility but introduce storage availability, expiration and serialization concerns.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S34",
+            "S35"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Stateless does not automatically mean CSRF-safe if browser credentials are still sent automatically. CORS policy is not a replacement for CSRF protection.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S34",
+            "S35"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Exercise expiration, logout, replica changes and state-changing cross-origin requests. Confirm credential behavior and token checks for the actual browser flow.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S34",
+            "S35"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/18-sessions.svg",
+          "title": "How do sessions survive replica changes?",
+          "alt": "Browser: cookie + CSRF token; App replica A: session integration; App replica B: session integration; Shared session store: expiry + state. Connections: Browser to App replica A (request); Browser to App replica B (next request); App replica A to Shared session store (load / save); App replica B to Shared session store (load / save)",
+          "caption": "A shared session store is an option, not mandatory for every app. CSRF still depends on credential transport.",
+          "source_ids": [
+            "S34",
+            "S35"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why can a cookie API need CSRF protection?",
+        "answer": "Because a browser can automatically attach the cookie to a forged request."
+      }
+    },
+    {
+      "id": "19-cache",
+      "stage": "applications",
+      "title": "Caching: keys, freshness and invalidation",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Every cache needs an owner, a key contract and a freshness promise.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring\u2019s cache abstraction delegates storage to a backing implementation. @Cacheable can reuse results; eviction and updates define freshness behavior. An annotation alone does not define TTL or make a distributed cache consistent.",
+          "evidence": "verified",
+          "source_ids": [
+            "S36",
+            "S37"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "For a policy summary, use a key containing tenant and policy ID. Evict or update affected summaries after successful policy changes under an explicitly chosen consistency policy.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S36",
+            "S37"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Cache expensive, repeatedly read data with an acceptable staleness budget. Choose local versus shared storage by consistency, footprint and latency requirements.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S36",
+            "S37"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Missing tenant identity in a key can reuse another tenant\u2019s data. Default proxy-based caching also has self-invocation limits. Cache invalidation and database commit ordering need care.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S36",
+            "S37"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Measure hit ratio, stale reads and miss cost. Exercise concurrent misses and updates; bound entry size and TTL using the provider\u2019s configuration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S36",
+            "S37"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/19-cache.svg",
+          "title": "What happens on a cache hit and miss?",
+          "alt": "Read request: tenant + policy ID; Cache lookup: complete key; Return cached value: hit; Database load: miss; Populate cache: provider policy. Connections: Read request to Cache lookup (lookup); Cache lookup to Return cached value (hit); Cache lookup to Database load (miss); Database load to Populate cache (loaded result)",
+          "caption": "Cache-aside conceptual flow. TTL, stampede control and update consistency are provider/application choices.",
+          "source_ids": [
+            "S36",
+            "S37"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does @Cacheable itself choose a TTL?",
+        "answer": "No. Expiration is generally a backing-cache/provider concern."
+      }
+    },
+    {
+      "id": "20-messaging",
+      "stage": "applications",
+      "title": "Kafka, AMQP and Pulsar: delivery boundaries",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Assume retries can repeat business work unless your boundary proves otherwise.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring messaging integrations connect templates and listeners to broker-specific behavior. Kafka transactions can cover a read/process/write Kafka sequence; this does not universally make external database or HTTP side effects exactly once.",
+          "evidence": "verified",
+          "source_ids": [
+            "S38",
+            "S39"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A PolicyIssued event may be redelivered. A consumer records a stable event ID and performs its database change atomically where feasible, avoiding a second business effect on retry.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S38",
+            "S39",
+            "S59"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use messaging to decouple timing and absorb work under explicit delivery rules. Choose the broker by ordering, routing, retention and operational requirements rather than a universal winner.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S38",
+            "S39",
+            "S59"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Acknowledging before durable processing can lose work; acknowledging afterward can allow redelivery. \u201cExactly once\u201d must name the protected boundary, and poison-message retries need a finite outcome.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S38",
+            "S39",
+            "S59"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Test a crash after the effect but before acknowledgement. Track lag, retries and dead-letter handling; verify deduplication with the actual transaction and broker configuration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S38",
+            "S39",
+            "S59"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/20-messaging.svg",
+          "title": "Where can a duplicate become a second effect?",
+          "alt": "Broker event: event ID = E42; Consumer: process + deduplicate; Business store: effect + event marker; Acknowledge / commit: after chosen boundary. Connections: Broker event to Consumer (delivery / redelivery); Consumer to Business store (durable effect); Consumer to Acknowledge / commit (processing outcome)",
+          "caption": "Application-level idempotency sketch; broker protocols and acknowledgement semantics differ.",
+          "source_ids": [
+            "S38",
+            "S39",
+            "S59"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does Kafka EOS make an HTTP payment exactly once?",
+        "answer": "No. The external payment needs its own idempotency and coordination contract."
+      }
+    },
+    {
+      "id": "21-integration",
+      "stage": "applications",
+      "title": "Spring Integration: adapters, channels and routing",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "A diagrammed integration flow still needs a capacity model.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring Integration models messages passing through channels and endpoints. Adapters connect external systems; transformers change representation; routers select destinations. Channel type affects threading and delivery behavior.",
+          "evidence": "verified",
+          "source_ids": [
+            "S40",
+            "S53"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "An inbound insurer file adapter emits messages. A transformer normalizes records; a router sends valid records to underwriting and malformed ones to a review destination.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S40",
+            "S53"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use integration flows when multiple protocols and routing rules need explicit composition. Prefer a direct service call for a simple local interaction; each extra channel adds behavior to understand.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S40",
+            "S53"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Assuming every channel is asynchronous misreads the execution model. A slow endpoint can block a synchronous flow; unbounded asynchronous handoff can merely move overload into memory.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S40",
+            "S53"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Choose and document channel capacity and error handling. Simulate slow consumers and malformed messages; inspect queue depth, rejection behavior and recovery ownership.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S40",
+            "S53"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/21-integration.svg",
+          "title": "How does one input become two processing paths?",
+          "alt": "Inbound adapter: file / external source; Transformer: normalize message; Router: evaluate record; Underwriting channel: accepted records; Review channel: malformed records. Connections: Inbound adapter to Transformer (message channel); Transformer to Router (normalized message); Router to Underwriting channel (valid); Router to Review channel (invalid)",
+          "caption": "Enterprise integration pattern example; channels can be synchronous or asynchronous.",
+          "source_ids": [
+            "S40",
+            "S53"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is every Spring Integration channel async?",
+        "answer": "No. Channel implementation determines handoff and threading behavior."
+      }
+    },
+    {
+      "id": "22-batch",
+      "stage": "applications",
+      "title": "Spring Batch: chunk commits and safe restarts",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Restartability is a data contract, not a checkbox.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "A Job contains Steps; chunk-oriented processing reads items, optionally processes them, and writes a chunk at a commit interval. Job/Step execution metadata distinguishes logical instances, attempts and restart state.",
+          "evidence": "verified",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "An overnight reconciliation job handles rows in chunks. If a later chunk fails, previously committed chunks remain; restart behavior depends on metadata and the components\u2019 restart contracts.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S41",
+            "S42"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose chunk size against transaction duration, memory and write cost. Use stable job parameters and restartable input ordering; external side effects still need deliberate idempotency.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A restarted job is not equivalent to replaying every row from zero. Changing input between attempts or losing execution metadata can break assumptions and duplicate effects.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Fail a run deliberately halfway through. Verify which chunks commit and which rows resume; measure processing rate, skip/retry counts and resource contention.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/22-batch.svg",
+          "title": "What survives a batch failure?",
+          "alt": "ItemReader: read records; ItemProcessor: transform / filter; ItemWriter: write chunk; Chunk commit: durable boundary; JobRepository: execution metadata. Connections: ItemReader to ItemProcessor (items); ItemProcessor to ItemWriter (chunk items); ItemWriter to Chunk commit (commit interval); Chunk commit to JobRepository (record progress)",
+          "caption": "Conceptual chunk and metadata responsibilities; transaction participation depends on actual repository/resource configuration.",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        },
+        {
+          "path": "figures/22-batch-restart.svg",
+          "title": "Which work remains after a failed chunk?",
+          "alt": "Chunks 1\u20137: committed work; Chunk 8: failed / rolled back; Restart: resume per contract; Execution metadata: saved progress. Connections: Chunks 1\u20137 to Chunk 8 (later processing); Chunk 8 to Restart (new execution); Execution metadata to Restart (restart state)",
+          "caption": "Conceptual restart boundary. Stable input, restartable components and durable metadata are required; external effects need idempotency.",
+          "source_ids": [
+            "S41",
+            "S42"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does failure in chunk 8 undo chunks 1\u20137?",
+        "answer": "Normally no. Each completed chunk already committed within its own transaction boundary."
+      }
+    },
+    {
+      "id": "23-cloud",
+      "stage": "applications",
+      "title": "Spring Cloud: select distributed capabilities",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Distribute deliberately; pay the network bill consciously.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Cloud projects supply distributed patterns: Config, Gateway, discovery, LoadBalancer, Circuit Breaker, Stream, Function and Task. Release trains coordinate compatible dependencies with a BOM.",
+          "evidence": "verified",
+          "source_ids": [
+            "S43",
+            "S44"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A gateway routes broker requests; a service calls an insurer using an HTTP client. On Kubernetes, evaluate whether platform discovery/configuration already supplies the needed capability before adding another layer.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S43",
+            "S44",
+            "S45"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use RestClient for blocking calls, WebClient for reactive composition, or HTTP Service Clients for declarative interfaces. OpenFeign remains feature-complete; maintainers recommend HTTP Service Clients for new evolution.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S43",
+            "S44",
+            "S45"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Cloud abstractions do not remove network failures or distributed consistency problems. The old docs/current Cloud URL can expose an old train; match documentation to the actual version.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S43",
+            "S44",
+            "S45"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Map each component to one operational need. Verify Boot/Cloud compatibility and timeout behavior, then remove duplicate discovery, routing or configuration responsibilities.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S43",
+            "S44",
+            "S45"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/23-cloud.svg",
+          "title": "Which distributed responsibility needs a component?",
+          "alt": "Client: broker portal; Gateway: routing policies; Application service: domain use case; Insurer service: HTTP contract; Configuration source: operational settings. Connections: Client to Gateway (request); Gateway to Application service (route); Application service to Insurer service (bounded client call); Configuration source to Application service (configuration)",
+          "caption": "Illustrative deployment, not a mandatory Cloud stack. Compatibility is governed by the selected release train.",
+          "source_ids": [
+            "S43",
+            "S44",
+            "S45"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Should every Kubernetes service add Eureka?",
+        "answer": "No. First determine whether native discovery already meets the requirement."
+      }
+    },
+    {
+      "id": "24-api-contracts",
+      "stage": "applications",
+      "title": "REST, GraphQL, gRPC and hypermedia",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Transport changes the contract shape; business rules still need enforcement.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "API styles expose different contracts. REST centers resources and HTTP semantics; GraphQL executes a schema-selected field graph; gRPC defines RPC services/messages. Spring HATEOAS helps express links and affordances in representations.",
+          "evidence": "verified",
+          "source_ids": [
+            "S46",
+            "S47"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A broker dashboard asks GraphQL for policies and owners. Request-scoped DataLoader batching can collect owner IDs, reducing repeated lookups without turning the API into one unrestricted database query.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S46",
+            "S47",
+            "S62"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Choose REST for familiar interoperable resource APIs, GraphQL for client-shaped graphs, and gRPC for typed RPC requirements. Consider client support, evolution, authorization and observability alongside payload size.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S46",
+            "S47",
+            "S62"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "GraphQL can hide N+1 fetching and expensive query shapes. Changing transport does not supply per-field/resource permissions. Hypermedia links should reflect permitted actions rather than grant authority themselves.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S46",
+            "S47",
+            "S62"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Measure query cost and downstream calls. Enforce workload limits and compatible contract evolution; keep authentication, authorization and deadline behavior explicit for each transport.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S46",
+            "S47",
+            "S62"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/24-api-contracts.svg",
+          "title": "How does GraphQL avoid repeated owner loads?",
+          "alt": "GraphQL selection: policies + owners; Field resolvers: owner keys; DataLoader: batch within request; Backing service: bounded lookup. Connections: GraphQL selection to Field resolvers (execute fields); Field resolvers to DataLoader (collect loads); DataLoader to Backing service (batch lookup)",
+          "caption": "One GraphQL mechanism. REST and gRPC are contract alternatives, not stages of this flow.",
+          "source_ids": [
+            "S46",
+            "S47",
+            "S62"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does DataLoader guarantee one query for the entire request?",
+        "answer": "No. It batches compatible loads; actual queries depend on keys, resolvers and backing implementation."
+      }
+    },
+    {
+      "id": "25-testing",
+      "stage": "best-practices",
+      "title": "Tests that catch wiring, persistence and HTTP failures",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Test the boundary where the defect can actually occur.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Boot supports focused test slices and full-context tests. A slice loads a constrained subset; a full application test exercises broader wiring. Different scopes answer different questions.",
+          "evidence": "verified",
+          "source_ids": [
+            "S48",
+            "S25"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Test pricing rules with ordinary objects; validate controller errors with an MVC slice; exercise repository mappings against a representative database; reserve full application tests for critical integration flows.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S48",
+            "S25"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Pick the cheapest test that can detect the targeted failure. Real infrastructure tests cost time but can expose SQL, serialization and configuration problems that mocks cannot.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S48",
+            "S25"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A mocked repository cannot establish real transaction rollback. Test-managed transactions can also conceal commit-time behavior; choose the test boundary to match the production failure.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S48",
+            "S25"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Build a few high-value scenarios: authorization denial, conflict/rollback, malformed requests and startup misconfiguration. Track failure relevance rather than chasing coverage percentage alone.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S48",
+            "S25"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/25-testing.svg",
+          "title": "Which test can prove the behavior?",
+          "alt": "Unit test: rule correctness; Slice test: selected framework boundary; Integration test: real infrastructure; Critical HTTP flow: application behavior. Connections: Unit test to Critical HTTP flow (rule confidence); Slice test to Critical HTTP flow (binding confidence); Integration test to Critical HTTP flow (persistence confidence)",
+          "caption": "These are complementary test scopes, not a required execution chain. Full-context does not automatically mean real external services.",
+          "source_ids": [
+            "S48",
+            "S25"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can an MVC slice validate real database rollback?",
+        "answer": "Not by itself. It typically excludes the persistence infrastructure required to prove it."
+      }
+    },
+    {
+      "id": "26-observability",
+      "stage": "best-practices",
+      "title": "Actuator, observations, metrics and traces",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "A dashboard earns its place by answering a failure question.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Actuator exposes operational endpoints under explicit exposure/security settings. Micrometer Observation can support metrics and tracing. Low-cardinality dimensions suit metric aggregation; high-cardinality identifiers can explode metric series.",
+          "evidence": "verified",
+          "source_ids": [
+            "S49",
+            "S50"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Observe quote latency by route template and outcome. Correlate a slow request through a trace; inspect database wait and JVM events instead of placing every policy ID in a metric label.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S49",
+            "S50",
+            "S15"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Design signals around an operational question: errors, latency, saturation and dependency behavior. Expose only required management capabilities and restrict sensitive endpoints.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S49",
+            "S50",
+            "S15"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Health is not one universal status. Putting shared external outages into liveness can trigger needless restarts; readiness dependencies should reflect whether this instance can serve useful traffic.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S49",
+            "S50",
+            "S15"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Simulate slow insurer calls and database outages. Confirm traces propagate and alerts identify the constrained boundary; measure signal cardinality and retention costs.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S49",
+            "S50",
+            "S15"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/26-observability.svg",
+          "title": "Which signal answers which question?",
+          "alt": "HTTP operation: named observation; Metrics: bounded dimensions; Trace spans: request causality; Actuator endpoints: health + operational access; Runtime recording: CPU / locks / allocation. Connections: HTTP operation to Metrics (aggregate); HTTP operation to Trace spans (correlate)",
+          "caption": "Metrics aggregate, traces connect work, runtime recordings explain JVM behavior. Endpoint exposure is a separate security decision.",
+          "source_ids": [
+            "S49",
+            "S50",
+            "S15"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Should policyId be a metric label?",
+        "answer": "Usually no. Its high cardinality can create excessive time series; use logs/traces appropriately."
+      }
+    },
+    {
+      "id": "27-resilience",
+      "stage": "best-practices",
+      "title": "Timeouts, retries, bulkheads and scheduled work",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Resilience protects a budget; it does not promise eventual success.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Framework 7 has core retry and concurrency-limit facilities with explicit enabling. Circuit breakers address repeated dependency failure. Executors run tasks; schedulers decide when to trigger them. @Async commonly relies on proxy invocation.",
+          "evidence": "verified",
+          "source_ids": [
+            "S51",
+            "S52"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "An insurer times out after receiving a quote request. Retry only under an idempotency contract; otherwise a successful but lost response can lead to duplicate work.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S51",
+            "S52",
+            "S53"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Set an overall deadline, per-attempt budgets and bounded concurrency. Retry selected transient failures with backoff/jitter; a fallback must preserve honest business semantics.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S51",
+            "S52",
+            "S53"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Retries amplify overload. The new Framework retry API and older Spring Retry have different packages/settings. Scheduled work can run on every replica unless coordination is explicitly designed.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S51",
+            "S52",
+            "S53"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Inject latency, partial failure and response loss. Measure total attempts and deadline breaches; verify limits protect dependencies and that failed work has an observable final outcome.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S51",
+            "S52",
+            "S53"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/27-resilience.svg",
+          "title": "When does retry improve reliability?",
+          "alt": "Overall deadline: finite budget; Concurrency limit: protect dependency; Dependency call: per-attempt timeout; Retry decision: transient + safe?; Final outcome: success or explicit failure. Connections: Overall deadline to Concurrency limit (admit); Concurrency limit to Dependency call (attempt); Dependency call to Retry decision (failure); Retry decision to Concurrency limit (bounded retry); Dependency call to Final outcome (success / exhausted)",
+          "caption": "Policy sketch, not annotation execution order. Retry and transaction nesting must be chosen deliberately.",
+          "source_ids": [
+            "S51",
+            "S52",
+            "S53"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is retrying every failure always safer?",
+        "answer": "No. Permanent failures waste capacity, and non-idempotent operations may repeat side effects."
+      }
+    },
+    {
+      "id": "28-modulith",
+      "stage": "further-improvements",
+      "title": "Modulith: enforce domain boundaries before distribution",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Make boundaries real before making them remote.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring Modulith derives application modules from a Boot application structure and supports boundary verification. Modules expose APIs/named interfaces while keeping implementation details internal.",
+          "evidence": "verified",
+          "source_ids": [
+            "S54"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Separate quotes, policies and billing into modules. Quotes calls the published policy API or emits a domain event; it should not reach directly into billing\u2019s internal persistence package.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S54"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use a modular monolith when one deployment can satisfy operational needs. This preserves local interactions while clarifying boundaries, but independent scaling/deployment may later justify extraction.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S54"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Package names alone cannot prevent coupling if public internals are widely imported. Replacing calls with events changes consistency and failure semantics; it is not automatically an improvement.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S54"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Run module dependency verification and focused module tests. Track coupling and change ownership before extracting a service; choose extraction based on an actual deployment constraint.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S54"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/28-modulith.svg",
+          "title": "What is a legitimate module dependency?",
+          "alt": "Quotes module: internal rules; Policies API: published boundary; Policies internals: private implementation; Billing module: separate responsibility. Connections: Quotes module to Policies API (allowed dependency); Policies API to Policies internals (implementation); Policies API to Billing module (explicit collaboration)",
+          "caption": "Logical domain boundaries inside one process. The figure does not imply separate services or databases.",
+          "source_ids": [
+            "S54"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does Modulith require microservices?",
+        "answer": "No. It is designed to structure modules within a Spring Boot application."
+      }
+    },
+    {
+      "id": "29-ai",
+      "stage": "further-improvements",
+      "title": "Spring AI: retrieval and tools with controlled authority",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "The model can suggest an action; the application must authorize it.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Spring AI offers model, embedding, vector-store and tool abstractions. RAG retrieves context for generation; tools let the model request application capabilities. The application executes those capabilities and owns the resulting authority.",
+          "evidence": "verified",
+          "source_ids": [
+            "S55",
+            "S56"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "An assistant retrieves permitted policy wording and drafts an explanation. A requested issuePolicy tool must still validate the agent, tenant, eligibility and required approval in ordinary application code.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S55",
+            "S56",
+            "S57"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Use the framework to integrate models, not to outsource business authorization. Retrieval improves grounding under suitable data and chunking, but cannot guarantee factual correctness.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S55",
+            "S56",
+            "S57"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Retrieved text and model output can be untrusted. A tool exposed to a model may have real side effects; prompt wording alone cannot enforce access rules or prevent repeated operations.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S55",
+            "S56",
+            "S57"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Build a small evaluation set covering wrong-tenant retrieval, unsupported answers and unsafe tool requests. Trace sources and measure correctness, latency and cost before broadening capabilities.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S55",
+            "S56",
+            "S57"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/29-ai.svg",
+          "title": "Who owns authority when the model calls a tool?",
+          "alt": "User question: authenticated caller; Authorized retrieval: tenant-scoped context; Model: answer / tool request; Application tool gate: validate + authorize; Business service: controlled action. Connections: User question to Authorized retrieval (retrieve); Authorized retrieval to Model (augment prompt); Model to Application tool gate (requested tool); Application tool gate to Business service (only if allowed)",
+          "caption": "Proposed guarded design grounded in Spring AI mechanisms; application authorization is not supplied by retrieval itself.",
+          "source_ids": [
+            "S55",
+            "S56",
+            "S57"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does retrieved context make every answer true?",
+        "answer": "No. Retrieval can be incomplete or wrong, and generation can still misinterpret it."
+      }
+    },
+    {
+      "id": "30-native",
+      "stage": "further-improvements",
+      "title": "AOT and native images: optimize the deployment case",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Optimize the lifecycle that dominates your real cost.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "Native images compile under a closed-world assumption. Spring AOT analyzes application assembly ahead of runtime and generates supporting assets. Dynamic bean-graph changes and reflection/resource access can require different handling.",
+          "evidence": "verified",
+          "source_ids": [
+            "S58",
+            "S14"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "A rarely invoked quote utility may benefit from reduced startup overhead. A long-running service may favor JVM JIT behavior; measure both against the actual deployment workload.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S58",
+            "S14"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Evaluate native deployment when startup and footprint constrain the product. Accept build complexity and compatibility work only when the measured operational benefit matters.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S58",
+            "S14"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "A successful JVM run does not prove native compatibility. Runtime configuration that changes which beans exist can conflict with build-time assembly assumptions.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S58",
+            "S14"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Test the native artifact itself, including serialization, resources and integrations. Compare cold start, steady-state throughput, memory and build time under equivalent conditions.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S58",
+            "S14"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/30-native.svg",
+          "title": "What moves from runtime into the build?",
+          "alt": "Application + config: build inputs; Spring AOT: analyze + generate assets; Native build: closed-world analysis; Native executable: runtime behavior; Artifact tests: real integrations. Connections: Application + config to Spring AOT (analyze); Spring AOT to Native build (generated support); Native build to Native executable (execute); Native executable to Artifact tests (verify)",
+          "caption": "Simplified native-image pipeline; ahead-of-time processing and compilation are distinct steps.",
+          "source_ids": [
+            "S58",
+            "S14"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can native mode freely rebuild its bean graph from runtime properties?",
+        "answer": "No. AOT/closed-world constraints limit runtime changes to application assembly."
+      }
+    },
+    {
+      "id": "31-specialists",
+      "stage": "applications",
+      "title": "Specialist Spring projects: choose the protocol",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Use the smallest set of projects that honors your actual contracts.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "The portfolio includes specialist tools: Web Services for contract-first SOAP, LDAP for directory access, HATEOAS for links, REST Docs for tested documentation, Shell for CLIs and Web Flow for controlled navigation.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S60"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Use SOAP integration for an insurer\u2019s fixed XML contract; LDAP when identity data lives in a directory. Use REST Docs to connect documented API examples to tests rather than maintaining unrelated examples manually.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S60",
+            "S61",
+            "S62"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Match the external contract first, then select the adapter/framework. Specialized projects reduce plumbing but add protocol and lifecycle knowledge; they are not mandatory for every Boot application.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S60",
+            "S61",
+            "S62"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "An older tutorial may reference an Attic project as if it were a current default. Attic status requires checking migration/replacement guidance; it is not a blanket statement about every existing deployment.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S60",
+            "S61",
+            "S62"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Inventory specialty protocols and historical dependencies. Read each selected project\u2019s current support and migration notes before adoption or replacement.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S60",
+            "S61",
+            "S62"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/31-specialists.svg",
+          "title": "Which specialist fits the requirement?",
+          "alt": "External requirement: protocol or workflow; SOAP contract: Spring Web Services; Directory access: Spring LDAP; Resource links: Spring HATEOAS. Connections: External requirement to SOAP contract (XML schema); External requirement to Directory access (directory contract); External requirement to Resource links (hypermedia contract)",
+          "caption": "These are alternatives for distinct needs. REST Docs, Shell and Web Flow add other focused capabilities.",
+          "source_ids": [
+            "S01",
+            "S60",
+            "S61",
+            "S62"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Should a REST-only service add Spring Web Services?",
+        "answer": "Usually no. Its purpose is SOAP/XML-oriented service integration."
+      }
+    },
+    {
+      "id": "32-improvement-loop",
+      "stage": "further-improvements",
+      "title": "A production learning loop and migration compass",
+      "prerequisites": [
+        "01-ecosystem"
+      ],
+      "takeaway": "Learn the mechanism, state the constraint, measure the change.",
+      "sections": [
+        {
+          "heading": "Goal & mental model",
+          "body": "A compatible runtime and framework baseline makes behavior reproducible. Verification spans business rules, framework wiring and operating signals. Portfolio status and compatibility documentation should guide version-sensitive choices.",
+          "evidence": "verified",
+          "source_ids": [
+            "S02",
+            "S43"
+          ]
+        },
+        {
+          "heading": "Worked example \u00b7 design exercise",
+          "body": "Baseline a quote service, add one change such as a fetch plan or concurrency limit, and repeat representative load and failure scenarios. Keep the result only when it improves the target without breaking invariants.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S43",
+            "S48",
+            "S49",
+            "S01"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision",
+          "body": "Start with one well-observed modular service. Add distributed components, caching, reactive execution or native compilation when a specific constraint justifies the complexity.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S43",
+            "S48",
+            "S49",
+            "S01"
+          ]
+        },
+        {
+          "heading": "Pitfall & diagnosis",
+          "body": "Installing every project is not ecosystem mastery. A change that lowers average latency while worsening failure recovery or tenant isolation may be a regression.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S43",
+            "S48",
+            "S49",
+            "S01"
+          ]
+        },
+        {
+          "heading": "Improve & validate",
+          "body": "Study in order: Java contracts \u2192 container/proxies \u2192 HTTP/data/security \u2192 failure handling \u2192 optional capabilities. Record expected benefit, measurement and rollback criteria for every production change.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S43",
+            "S48",
+            "S49",
+            "S01"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/32-improvement-loop.svg",
+          "title": "How does a better service become a proven service?",
+          "alt": "Baseline: known behavior; Hypothesis: one named constraint; One change: mechanism + cost; Measure + fail-test: correctness + operability; Decision: keep / revise / revert. Connections: Baseline to Hypothesis (observe); Hypothesis to One change (propose); One change to Measure + fail-test (validate); Measure + fail-test to Decision (assess); Decision to Baseline (new baseline)",
+          "caption": "This is an engineering synthesis, not a claim of measured performance gains for the example service.",
+          "source_ids": [
+            "S02",
+            "S43",
+            "S48",
+            "S49",
+            "S01"
+          ]
+        }
+      ],
+      "check": {
+        "question": "When should a new abstraction be adopted?",
+        "answer": "When its mechanism addresses a named constraint and evidence shows its benefit outweighs its cost."
+      }
+    }
+  ]
+}

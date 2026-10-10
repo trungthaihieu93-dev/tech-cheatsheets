@@ -1,0 +1,209 @@
+{
+  "files": [
+    {
+      "path": "figures/01-hermes-pipeline-01.svg",
+      "bytes": 2736,
+      "sha256": "d0a2e2e78f0f9e47e99df03dcd2aeca18aeadb745657d31037c29d838ea2c150"
+    },
+    {
+      "path": "figures/02-fabric-trees-01.svg",
+      "bytes": 2715,
+      "sha256": "e9741632415492adff7d597e9f0ec13d812fdc0868b83092a097be2fdaf2afca"
+    },
+    {
+      "path": "figures/02-fabric-trees-02.svg",
+      "bytes": 2291,
+      "sha256": "73951410a9d1e52b53cd1bab594f3cba396b7dd1bc4360b7517359757e55597a"
+    },
+    {
+      "path": "figures/03-module-interface-map-01.svg",
+      "bytes": 2751,
+      "sha256": "f97f5aaa0c894da449eb4785640dbe4715283fad33be93726cf18d1f4a8bfe61"
+    },
+    {
+      "path": "figures/04-platform-ownership-01.svg",
+      "bytes": 3068,
+      "sha256": "d010a9c114d87fb502f238e0ca544179d835a8f0e16524f04c46ba34faf62040"
+    },
+    {
+      "path": "figures/05-hermes-jsi-01.svg",
+      "bytes": 2299,
+      "sha256": "53057f9ede7a4bbf2019c0bc1af5d17f6d95497401aee8a10033d6ae5b3f37a6"
+    },
+    {
+      "path": "figures/06-fabric-native-view-01.svg",
+      "bytes": 2640,
+      "sha256": "52e258894141d4bfe9a703ec529407e3bc200a16647dbeb09ee7b5a8882df799"
+    },
+    {
+      "path": "figures/07-turbo-codegen-01.svg",
+      "bytes": 2296,
+      "sha256": "f3ae223699fd7430101e3ea4fbc76f0f9ca63b4b70055be8cdc3e731bc79eb07"
+    },
+    {
+      "path": "figures/08-expo-dsl-01.svg",
+      "bytes": 2280,
+      "sha256": "9bd95a390cfbf77d5fc7d63685dfc24e1573831917f2457f5aee6737c1c329d6"
+    },
+    {
+      "path": "figures/08-expo-dsl-02.svg",
+      "bytes": 2552,
+      "sha256": "8f3bf145bd14750e1d926ae00a8f5beb88709d9c887f143aa8233db2d249342c"
+    },
+    {
+      "path": "figures/09-hermes-memory-01.svg",
+      "bytes": 2721,
+      "sha256": "59d3d5bf1767fa3bf29d7fae8a196e11acae0d0dd1b8b19441d10d71dfad1198"
+    },
+    {
+      "path": "figures/10-fabric-scheduling-01.svg",
+      "bytes": 2297,
+      "sha256": "7a061c205b39becb7a934e7b6f7e5bdc8b7ccce7603e8413f3b7fadb34d51530"
+    },
+    {
+      "path": "figures/10-fabric-scheduling-02.svg",
+      "bytes": 2440,
+      "sha256": "669bf212be6f0241c0628d8c2c34c937d92a541901ec7360b14d721a6fcb628b"
+    },
+    {
+      "path": "figures/11-module-queues-01.svg",
+      "bytes": 2912,
+      "sha256": "336cfb60ba71e3095623c5d13e0e023a91a8344d7716c2a1c2d652c51c88451b"
+    },
+    {
+      "path": "figures/12-platform-lifecycle-01.svg",
+      "bytes": 2442,
+      "sha256": "128d760ac1a0e70bf05d63c3c7330f74816fa15b81061a192294a517ee3a2498"
+    },
+    {
+      "path": "figures/12-platform-lifecycle-02.svg",
+      "bytes": 2305,
+      "sha256": "ff81acd7bf0b0471914a8b00ac163c2b285b22200756f08b5053e694b19c1f1f"
+    },
+    {
+      "path": "figures/13-hermes-diagnosis-01.svg",
+      "bytes": 2724,
+      "sha256": "31a5507cc789859c9778ee75f5dbe93a01fa61d84a6ad1db1b0ad471bf9eae08"
+    },
+    {
+      "path": "figures/14-fabric-diagnosis-01.svg",
+      "bytes": 2673,
+      "sha256": "2e5d025035d7f7e260c8474140a002b15b1a9d6931c9f0d324b84e1146895bed"
+    },
+    {
+      "path": "figures/15-module-design-choice-01.svg",
+      "bytes": 2291,
+      "sha256": "13af6e5842df7a69d68ff2e2ff483fa271f7356e616a5ac51a7ca4729ab2faa5"
+    },
+    {
+      "path": "figures/16-release-contract-01.svg",
+      "bytes": 2734,
+      "sha256": "a49130b9575e3144c8d3413be1bb7eee087c9554ca8dae023801688079d92773"
+    },
+    {
+      "path": "index.html",
+      "bytes": 131005,
+      "sha256": "88aa2e7a58071db27f912a5b0e8e0a930d2a485c27d3a192d480c3fe636e08a1"
+    },
+    {
+      "path": "learning-map.md",
+      "bytes": 4639,
+      "sha256": "36971c4816c1c382a94c889efa44832afa272dba8c6fee285620415086d3d098"
+    },
+    {
+      "path": "pack.json",
+      "bytes": 57171,
+      "sha256": "6e3d7ec86a9931d16f8cbbdaead80cbe7316e37579cc052d811eec89c0ec131d"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 9927,
+      "sha256": "d2a676dac9cd41ec417b4d9d107e45a00ac1d009d49f241fba2e5e7d748da798"
+    },
+    {
+      "path": "sources.md",
+      "bytes": 7714,
+      "sha256": "80ba2c4d9be2227542d3df7ee7a1437425f2fec11776bde806f30fe9b8bdc1f3"
+    },
+    {
+      "path": "topics/01-hermes-pipeline.html",
+      "bytes": 13220,
+      "sha256": "3f62913c4aae0c27fe317a14b7514213b6b54bc8661ad0155b7cd13e624efa82"
+    },
+    {
+      "path": "topics/02-fabric-trees.html",
+      "bytes": 15954,
+      "sha256": "0bc184b74f1b41c9466ee21c763360352f64dd995f08687aff47b6f971a7cea7"
+    },
+    {
+      "path": "topics/03-module-interface-map.html",
+      "bytes": 14132,
+      "sha256": "2bd2ed5ff63016ad607fc4678f12eeb3a11e7327e6783c65b60a108688804a21"
+    },
+    {
+      "path": "topics/04-platform-ownership.html",
+      "bytes": 14091,
+      "sha256": "20cc4a112da263a3784a248a674c39d10e6a02f5a2ca6fe78f5d3d90902c9bed"
+    },
+    {
+      "path": "topics/05-hermes-jsi.html",
+      "bytes": 12584,
+      "sha256": "0419cd1108746b994a4427bf3d70ecd7514ab99ec5ed2cd39c3fd10acc1d2596"
+    },
+    {
+      "path": "topics/06-fabric-native-view.html",
+      "bytes": 12903,
+      "sha256": "79167545e62686232a0395180742addc85971a72e1faaf40770b78a9ccb6cc8a"
+    },
+    {
+      "path": "topics/07-turbo-codegen.html",
+      "bytes": 11698,
+      "sha256": "6dfdef1d9d025be0a225761086fc618c7850857a0137822823ad205989f78538"
+    },
+    {
+      "path": "topics/08-expo-dsl.html",
+      "bytes": 15853,
+      "sha256": "babec01288d29dcbf8b008e00eab62f0d207cd4cf8abb186eabfecb04c198b73"
+    },
+    {
+      "path": "topics/09-hermes-memory.html",
+      "bytes": 13202,
+      "sha256": "7edf4f2300564ed8e0d9a1f745645e9d21b4937b9df59a62c1505cdf22d5febc"
+    },
+    {
+      "path": "topics/10-fabric-scheduling.html",
+      "bytes": 16218,
+      "sha256": "3a4ef089e3e49b051d381cf3a9df5a3407a957ecd3c101212abbac4432b71982"
+    },
+    {
+      "path": "topics/11-module-queues.html",
+      "bytes": 14221,
+      "sha256": "aad665679a17c57f1c5441a47f5a6fe0d2070aa5e4a22b607de8d0e8a33affff"
+    },
+    {
+      "path": "topics/12-platform-lifecycle.html",
+      "bytes": 16450,
+      "sha256": "aa98219562f68c10c4c40985fcdff8c127b8fb6cb76a6b2f45a0b4af2f61b92d"
+    },
+    {
+      "path": "topics/13-hermes-diagnosis.html",
+      "bytes": 12095,
+      "sha256": "2af6b0badb493da6f8a2f8a7ed4fecd422bdac1d495a34fa2a1892d71c5409db"
+    },
+    {
+      "path": "topics/14-fabric-diagnosis.html",
+      "bytes": 12441,
+      "sha256": "c36f748445777e3dc1be47eee1625d15850684badc0c60da7308c40701978a52"
+    },
+    {
+      "path": "topics/15-module-design-choice.html",
+      "bytes": 13521,
+      "sha256": "88db17449420776b947e25daddded0fe1751fbebb6628868d467cd7a7deb1cbf"
+    },
+    {
+      "path": "topics/16-release-contract.html",
+      "bytes": 12079,
+      "sha256": "8753f0a40d7a6932c45750c0fb6eb14bcd88e6dedce56892d9478bc22e1e02b1"
+    }
+  ]
+}

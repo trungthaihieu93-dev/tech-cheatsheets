@@ -1,0 +1,812 @@
+{
+  "title": "React Native + Expo: across the JS/native boundary",
+  "domain": "React Native and Expo JS/native interoperability on Android and iOS",
+  "depth": "best-practices",
+  "language": "en",
+  "researched_at": "2026-10-08",
+  "scope": "For software engineers. New Architecture, Hermes, Fabric, TurboModules and Expo Modules; Android/iOS call paths, threading, lifecycle, development builds and update compatibility. Conceptual API examples; no pinned SDK version or benchmark claims. Legacy bridge is historical context.",
+  "design_reference": {
+    "document_id": "deep_learning_architectures_cheatsheet_2026_v1",
+    "files_consulted": [
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Metadata.json",
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Analysis.html",
+      "assets/style-reference.png"
+    ],
+    "adaptations": [
+      "Original 10-topic, four-stage curriculum; pastel notebook palette and numbered overview cards; precise editable interface diagrams; no example branding."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "About the New Architecture",
+      "url": "https://reactnative.dev/architecture/landing-page",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "JSI replaces the serialized bridge; enabling it alone does not promise speed."
+      ],
+      "relevance": "Read the diagrams and API boundaries for jsi replaces the serialized bridge; enabling it alone does not promise speed."
+    },
+    {
+      "id": "S02",
+      "title": "Threading Model",
+      "url": "https://reactnative.dev/architecture/threading-model",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "JS and UI thread responsibilities; render can run in more than one scheduling scenario."
+      ],
+      "relevance": "Read the diagrams and API boundaries for js and ui thread responsibilities; render can run in more than one scheduling scenario."
+    },
+    {
+      "id": "S03",
+      "title": "Render, Commit, and Mount",
+      "url": "https://reactnative.dev/architecture/render-pipeline",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Fabric render, commit, layout and host view mount phases."
+      ],
+      "relevance": "Read the diagrams and API boundaries for fabric render, commit, layout and host view mount phases."
+    },
+    {
+      "id": "S04",
+      "title": "Fabric",
+      "url": "https://reactnative.dev/architecture/fabric-renderer",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Cross-platform C++ renderer and host platform interoperability."
+      ],
+      "relevance": "Read the diagrams and API boundaries for cross-platform c++ renderer and host platform interoperability."
+    },
+    {
+      "id": "S05",
+      "title": "Native Modules: Introduction",
+      "url": "https://reactnative.dev/docs/turbo-native-modules-introduction",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Typed TS or Flow spec and platform-specific Codegen interfaces."
+      ],
+      "relevance": "Read the diagrams and API boundaries for typed ts or flow spec and platform-specific codegen interfaces."
+    },
+    {
+      "id": "S06",
+      "title": "Expo Modules API: Overview",
+      "url": "https://docs.expo.dev/modules/overview/",
+      "publisher": "Expo",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Expo Modules API uses Swift and Kotlin and supports the New Architecture."
+      ],
+      "relevance": "Read the diagrams and API boundaries for expo modules api uses swift and kotlin and supports the new architecture."
+    },
+    {
+      "id": "S07",
+      "title": "Expo Modules API: Reference",
+      "url": "https://docs.expo.dev/modules/module-api/",
+      "publisher": "Expo",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "JSI abstraction; Function, AsyncFunction, queues, views, events and lifecycle."
+      ],
+      "relevance": "Read the diagrams and API boundaries for jsi abstraction; function, asyncfunction, queues, views, events and lifecycle."
+    },
+    {
+      "id": "S08",
+      "title": "Add custom native code",
+      "url": "https://docs.expo.dev/workflow/customizing/",
+      "publisher": "Expo",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Expo Go limits, development builds, CNG and config plugins."
+      ],
+      "relevance": "Read the diagrams and API boundaries for expo go limits, development builds, cng and config plugins."
+    },
+    {
+      "id": "S09",
+      "title": "Runtime versions and updates",
+      "url": "https://docs.expo.dev/eas-update/runtime-versions/",
+      "publisher": "Expo",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "OTA JS update compatibility with the compiled native runtime."
+      ],
+      "relevance": "Read the diagrams and API boundaries for ota js update compatibility with the compiled native runtime."
+    },
+    {
+      "id": "S10",
+      "title": "Using Hermes",
+      "url": "https://reactnative.dev/docs/hermes",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Bundled Hermes is the default JS engine and release builds matter for measurement."
+      ],
+      "relevance": "Read the diagrams and API boundaries for bundled hermes is the default js engine and release builds matter for measurement."
+    },
+    {
+      "id": "S11",
+      "title": "Emitting Events in Native Modules",
+      "url": "https://reactnative.dev/docs/the-new-architecture/native-modules-custom-events",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "Native-to-JS events in TurboModules."
+      ],
+      "relevance": "Read the diagrams and API boundaries for native-to-js events in turbomodules."
+    },
+    {
+      "id": "S12",
+      "title": "Performance Overview",
+      "url": "https://reactnative.dev/docs/performance",
+      "publisher": "React Native",
+      "kind": "official documentation",
+      "accessed": "2026-10-08",
+      "version": "current documentation as accessed",
+      "supports": [
+        "JS and UI frame rates and practical performance diagnosis."
+      ],
+      "relevance": "Read the diagrams and API boundaries for js and ui frame rates and practical performance diagnosis."
+    }
+  ],
+  "topics": [
+    {
+      "id": "01-three-layers",
+      "stage": "fundamentals",
+      "title": "One app, three layers",
+      "prerequisites": [],
+      "takeaway": "React Native is a JS application coordinated with a C++ renderer and platform code; Expo supplies a higher-level module and build workflow.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Your TS/React logic executes in a JS engine, usually Hermes. React Native hosts it inside an Android or iOS app. C++ infrastructure and platform-specific code connect the JS runtime to native APIs and views. Expo is a toolkit and module layer on this architecture, not an additional rendering engine.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S06",
+            "S10"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "A camera screen has React state and JSX in JS, a native camera view on Android/iOS, and an Expo or third-party module that exposes camera methods and events to JS. Permission prompts and camera capture live in platform code.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "First look for a maintained native library. Write a small module only for the unsupported platform capability. Audit where data is copied and what thread owns it.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "Do not call every native interaction “the bridge.” Trace a single button press through JS, module or renderer, and platform API; identify what returns synchronously and what returns later.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S07"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/01-three-layers.svg",
+          "title": "One app, three layers — mechanism",
+          "alt": "Conceptual layers. The module path is distinct from rendering; all arrows are interface relationships, not guaranteed threads. Nodes: React + TS, Hermes, JSI / RN C++, Android / iOS, Expo Modules.",
+          "caption": "Conceptual layers. The module path is distinct from rendering; all arrows are interface relationships, not guaranteed threads.",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S06",
+            "S10"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Where does Hermes run, and does Expo add another JS runtime?",
+        "answer": "Hermes runs the application JavaScript. Expo modules expose native capabilities into that same React Native app; Expo is not a second application JS runtime."
+      }
+    },
+    {
+      "id": "02-jsi-versus-bridge",
+      "stage": "fundamentals",
+      "title": "What JSI changed",
+      "prerequisites": [
+        "01-three-layers"
+      ],
+      "takeaway": "JSI allows direct runtime bindings and native object references, but synchronous calls still consume caller time.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "The legacy bridge queued serialized messages between JS and native. In the New Architecture, JSI lets JS interact with C++ host objects through an engine-independent interface. Native module frameworks build typed or declarative APIs above it.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "A synchronous getCachedValue() may return a small cached scalar. A synchronous readHugeFile() would block the JS caller until I/O finishes; put I/O in an asynchronous function. This is an illustrative design example.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Keep synchronous APIs bounded and predictable. Pass identifiers or handles for large native assets where a library supports them; measure conversion and end-to-end latency rather than guessing from call count.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "“Zero-copy everywhere” is false: JSI permits native references but APIs can still convert or copy values. Profile the real path and check ownership and lifetime of referenced native data.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S07"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/02-jsi-versus-bridge.svg",
+          "title": "What JSI changed — mechanism",
+          "alt": "Two conceptual interop paths; the lower path removes mandatory bridge serialization, not every copy or scheduling cost. Nodes: Legacy JS, Serialized queue, Native, New JS, C++ host object, Native.",
+          "caption": "Two conceptual interop paths; the lower path removes mandatory bridge serialization, not every copy or scheduling cost.",
+          "source_ids": [
+            "S01",
+            "S07"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does “no old bridge” mean there is no boundary cost?",
+        "answer": "No. JSI avoids mandatory JSON-style message serialization, yet conversion, allocation, locks, scheduling and native work can still cost time."
+      }
+    },
+    {
+      "id": "03-fabric-path",
+      "stage": "fundamentals",
+      "title": "Fabric: from JSX to pixels",
+      "prerequisites": [
+        "01-three-layers"
+      ],
+      "takeaway": "Render creates a C++ shadow tree, commit computes layout, and mount changes host views on the UI thread.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Fabric is the React Native renderer. It builds an immutable C++ shadow tree for host components, calculates layout, diffs the next tree, and mounts host views. Render and commit may be scheduled in several ways; the UI thread owns host view manipulation.",
+          "evidence": "verified",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "Changing a card title creates affected React elements and shadow nodes, then commits layout and applies a host view update. The native control is not rebuilt from scratch for every React render.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Use normal declarative props for view state. A native view is justified when a platform SDK owns a complex surface, such as a map or camera preview. Keep events and props small and well typed.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "Do not equate React render with immediate on-screen paint. Draw the render → commit → mount phases and inspect a slow frame for JS work, layout, or UI-thread mount cost.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S12"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/03-fabric-path.svg",
+          "title": "Fabric: from JSX to pixels — mechanism",
+          "alt": "The common rendering path. Scheduling can differ; the final host-view mutation belongs on the UI thread. Nodes: JSX + state, Shadow tree, Commit + Yoga, Mount, Host views.",
+          "caption": "The common rendering path. Scheduling can differ; the final host-view mutation belongs on the UI thread.",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04"
+          ]
+        }
+      ],
+      "check": {
+        "question": "What thread can actually change an Android View or iOS UIView?",
+        "answer": "The UI/main thread performs the host view mutation during mount."
+      }
+    },
+    {
+      "id": "04-turbomodule-contract",
+      "stage": "applications",
+      "title": "TurboModule: typed service API",
+      "prerequisites": [
+        "02-jsi-versus-bridge"
+      ],
+      "takeaway": "A typed JS specification and Codegen tie a native service contract to Android and iOS implementations.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "A TurboModule exposes functions and events. A TypeScript or Flow spec describes types, Codegen emits platform glue, and native Android/iOS implementations fulfill that contract. Fabric components handle native views separately.",
+          "evidence": "verified",
+          "source_ids": [
+            "S05",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "Define getBatteryLevel(): Promise<number> in a typed module spec, implement the platform query separately in Kotlin and Swift/Objective-C++, and handle rejection or missing capability in JS. This is pseudocode for contract shape, not copy-paste setup.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Choose TurboModule when you need RN Codegen contracts or lower-level C++ integration. Keep the exported surface small and versioned; errors and nullability belong in the API design.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S06"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "Generated types do not make platform behavior identical. Test permission denial, lifecycle and device-specific availability on both platforms.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S11"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/04-turbomodule-contract.svg",
+          "title": "TurboModule: typed service API — mechanism",
+          "alt": "A nonvisual native service contract. Language details and generated glue vary by module implementation. Nodes: TS/Flow spec, Codegen, Android, iOS.",
+          "caption": "A nonvisual native service contract. Language details and generated glue vary by module implementation.",
+          "source_ids": [
+            "S05",
+            "S11"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Is a TurboModule the path for custom native visual components?",
+        "answer": "Use a native component/Fabric view for visual surfaces; a TurboModule exposes nonvisual native functions and events."
+      }
+    },
+    {
+      "id": "05-expo-module-contract",
+      "stage": "applications",
+      "title": "Expo Modules: one API, two platforms",
+      "prerequisites": [
+        "02-jsi-versus-bridge"
+      ],
+      "takeaway": "Expo’s Swift/Kotlin DSL exposes Function, AsyncFunction, events and views over React Native’s low-level primitives.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Expo Modules API abstracts JSI and related RN primitives. A module definition names the JS-visible surface. Function executes synchronously on the JS runtime thread; AsyncFunction returns a Promise and by default dispatches native work away from that thread.",
+          "evidence": "verified",
+          "source_ids": [
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "A biometric SDK wrapper could expose isAvailable as a small cached query and authenticateAsync as an asynchronous operation. Swift and Kotlin implement the same JS-facing intent while each platform handles its own permission and result behavior.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Prefer the Expo DSL for a Swift/Kotlin integration when its API fits. Use a TurboModule when the module needs direct C++ access or RN Codegen contracts. Profile before attributing bottlenecks to either framework.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S06"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "AsyncFunction does not mean “runs on the UI thread.” Explicitly choose the main queue for UI work; view-bound async methods have their own main-thread behavior. Define failure and cancellation semantics.",
+          "evidence": "verified",
+          "source_ids": [
+            "S07"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/05-expo-module-contract.svg",
+          "title": "Expo Modules: one API, two platforms — mechanism",
+          "alt": "The same JS interface leads to separately implemented platform behavior; Expo is an abstraction over the RN boundary. Nodes: JS/TS wrapper, Expo Modules API, Swift module, Kotlin module.",
+          "caption": "The same JS interface leads to separately implemented platform behavior; Expo is an abstraction over the RN boundary.",
+          "source_ids": [
+            "S06",
+            "S07"
+          ]
+        }
+      ],
+      "check": {
+        "question": "When should an Expo module use AsyncFunction instead of Function?",
+        "answer": "For I/O, long work, or work that must be dispatched to another queue; a synchronous Function runs on the JS caller thread."
+      }
+    },
+    {
+      "id": "06-thread-ownership",
+      "stage": "best-practices",
+      "title": "Threads: keep the caller responsive",
+      "prerequisites": [
+        "03-fabric-path",
+        "05-expo-module-contract"
+      ],
+      "takeaway": "Decide on a queue from the work itself: short sync work on JS, platform UI mutations on main, slow work away from both.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "The JS thread runs application logic and usually render work; the UI thread alone manipulates host views. React Native may schedule some rendering on the UI thread. Expo Function runs on JS; AsyncFunction can dispatch to a native queue, with .runOnQueue(.main) when UI access is required.",
+          "evidence": "verified",
+          "source_ids": [
+            "S02",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "For a document picker: start platform UI on main, perform file reading away from main, resolve the Promise with a URI and metadata, then update React state on JS. Avoid sending the whole file through a JS value when a URI suffices.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Bound synchronous work, use async for I/O, and isolate native state touched from multiple queues. Keep main-thread sections short and check cancellation when an activity or view goes away.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S12"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "A Promise can still hide blocking native work if its implementation uses the main queue for CPU-heavy processing. Trace queue hops with profiling and measure both JS and UI frames in a release build.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S12"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/06-thread-ownership.svg",
+          "title": "Threads: keep the caller responsive — mechanism",
+          "alt": "Queue ownership for an illustrative operation; the exact dispatch path depends on the module API and implementation. Nodes: JS thread, Worker / native queue, UI/main thread, Promise / event.",
+          "caption": "Queue ownership for an illustrative operation; the exact dispatch path depends on the module API and implementation.",
+          "source_ids": [
+            "S02",
+            "S07",
+            "S12"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why can a native synchronous method cause a dropped JS frame?",
+        "answer": "It executes on the JS caller thread and prevents JS work from progressing until it returns."
+      }
+    },
+    {
+      "id": "07-events-and-lifecycle",
+      "stage": "best-practices",
+      "title": "Native events need a lifecycle",
+      "prerequisites": [
+        "04-turbomodule-contract",
+        "05-expo-module-contract"
+      ],
+      "takeaway": "Events are a subscription with cleanup and throughput policy, not an unlimited stream of JS callbacks.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Native modules can emit events to JS; Expo Modules provide Events, OnStartObserving and OnStopObserving. The native producer may keep working after a screen disappears unless listener and lifecycle cleanup are explicit.",
+          "evidence": "verified",
+          "source_ids": [
+            "S07",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "A location feed begins when the first listener subscribes, emits compact coordinates at a useful cadence, and stops on the final unsubscribe. When the app backgrounds, decide whether collection should pause based on product requirements and platform rules.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Coalesce high-frequency telemetry, send bounded payloads, and define ordering, missing-event and resubscription behavior. Use native processing when each sample need not reach JS.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S11"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "Sending every sensor sample to React state can overwhelm rendering. Measure event rate and JS frame drops; reduce frequency or aggregate natively when the UI only needs a summary.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S12"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/07-events-and-lifecycle.svg",
+          "title": "Native events need a lifecycle — mechanism",
+          "alt": "Event lifecycle and data flow. Aggregation and event ordering must be designed for the particular producer. Nodes: Native producer, Subscription, Event payload, JS listener, Cleanup.",
+          "caption": "Event lifecycle and data flow. Aggregation and event ordering must be designed for the particular producer.",
+          "source_ids": [
+            "S07",
+            "S11"
+          ]
+        }
+      ],
+      "check": {
+        "question": "What should happen when the final JS listener is removed?",
+        "answer": "Stop the native observation or release resources if no other owner needs them."
+      }
+    },
+    {
+      "id": "08-builds-and-ota",
+      "stage": "best-practices",
+      "title": "The native binary is an API contract",
+      "prerequisites": [
+        "05-expo-module-contract"
+      ],
+      "takeaway": "A JS update can only use native APIs already compiled into a compatible binary.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Expo Go contains a fixed native library set. A development build includes your chosen native packages. CNG generates Android and iOS projects from config; config plugins describe persistent changes to native project files. A runtimeVersion links OTA updates to compatible binaries.",
+          "evidence": "verified",
+          "source_ids": [
+            "S08",
+            "S09"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "Adding a native payment SDK changes the binary. Install it, configure its plugin, create and test new Android/iOS development and production builds, then publish JS updates only to the matching runtime.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S09"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Treat every native dependency/config change as a release compatibility event. Use a runtimeVersion policy and test a preview build with the same native runtime before rollout.",
+          "evidence": "verified",
+          "source_ids": [
+            "S09"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "Editing generated AndroidManifest.xml or Info.plist directly in a CNG workflow can be lost on prebuild. Encode changes in config plugins and check generated projects on both platforms.",
+          "evidence": "verified",
+          "source_ids": [
+            "S08"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/08-builds-and-ota.svg",
+          "title": "The native binary is an API contract — mechanism",
+          "alt": "Build-time native surface and update-time JS surface. An OTA update cannot add a new compiled native module. Nodes: App config, Prebuild / compile, Installed binary, OTA update, runtimeVersion.",
+          "caption": "Build-time native surface and update-time JS surface. An OTA update cannot add a new compiled native module.",
+          "source_ids": [
+            "S08",
+            "S09"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why does adding a native package require a new app build?",
+        "answer": "Its native implementation is absent from binaries already installed; an OTA JS update cannot compile that code into them."
+      }
+    },
+    {
+      "id": "09-profile-the-boundary",
+      "stage": "further-improvements",
+      "title": "Measure before moving work native",
+      "prerequisites": [
+        "06-thread-ownership",
+        "07-events-and-lifecycle"
+      ],
+      "takeaway": "Measure JS frames, UI frames, payload size and native work before deciding which boundary to change.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "A slow screen may be caused by JS computation, too many renders, layout, UI-thread work, image decoding or native callback volume. JSI reduces one class of overhead but is not a universal performance fix. Hermes behavior and profiling should be judged in release builds.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S10",
+            "S12"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "If a camera overlay stutters, record JS and UI frame behavior, event frequency and payload size. Try lower event cadence or native aggregation first; compare the same device and scenario after each change.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S12"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Set a target interaction and trace a real flow. Change one bottleneck at a time; record median and tail latency, dropped frames and memory on representative Android and iOS devices. These are proposed measurements, not claimed results.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S12"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "A microbenchmark for module calls can miss image conversion, native SDK work and React rerender cost. Validate the user-visible result and watch for regressions in startup, battery or memory.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S10",
+            "S12"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/09-profile-the-boundary.svg",
+          "title": "Measure before moving work native — mechanism",
+          "alt": "A measurement loop, not a claim that native code is inherently faster for a particular workload. Nodes: Symptom, Trace, Hypothesis, Change, Re-measure.",
+          "caption": "A measurement loop, not a claim that native code is inherently faster for a particular workload.",
+          "source_ids": [
+            "S01",
+            "S10",
+            "S12"
+          ]
+        }
+      ],
+      "check": {
+        "question": "What evidence would support moving a per-frame calculation to native?",
+        "answer": "A release-build trace showing repeated boundary or JS work hurting the target frame budget, plus an improved end-to-end measurement after a prototype."
+      }
+    },
+    {
+      "id": "10-platform-contract",
+      "stage": "further-improvements",
+      "title": "One JS API, honest platform behavior",
+      "prerequisites": [
+        "05-expo-module-contract",
+        "08-builds-and-ota"
+      ],
+      "takeaway": "Share the public contract, then test platform-specific permission, lifecycle, threading and error behavior independently.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "An API can present the same JS method name on both platforms while Android Activity lifecycle and iOS app lifecycle hooks differ. A good abstraction states common behavior and surfaces capability differences explicitly.",
+          "evidence": "verified",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "heading": "Worked example",
+          "body": "For a secure-document scan wrapper, define a discriminated result for success, user cancellation, denied permission and unsupported capability. Implement dismissal/cleanup separately for Android and iOS, then test each path on devices.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "heading": "Engineering choice",
+          "body": "Keep the TS facade stable; make platform-specific native tests and contract tests for returned shapes. Version the binary and JS API together when native behavior changes.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S09"
+          ]
+        },
+        {
+          "heading": "Pitfall and next step",
+          "body": "A simulator success can hide hardware permission and lifecycle problems. Add device checks for background/foreground, rotation or activity recreation where relevant, and app termination.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S08"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/10-platform-contract.svg",
+          "title": "One JS API, honest platform behavior — mechanism",
+          "alt": "The public API can be shared; platform lifecycle and capability checks remain separate. Nodes: JS contract, Android path, iOS path, Shared tests, Device checks.",
+          "caption": "The public API can be shared; platform lifecycle and capability checks remain separate.",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S09"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does the same method name guarantee identical Android and iOS semantics?",
+        "answer": "No. Native capabilities and lifecycles differ; the wrapper should document differences and normalize only what can be normalized honestly."
+      }
+    }
+  ]
+}

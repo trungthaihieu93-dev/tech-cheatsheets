@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick reference</title>
+<style>:root{color-scheme:light;--paper:#FFFEF7;--ink:#18202a;--blue:#1E3A8A;--line:#bfd0dc;--yellow:#FEF08A;--purple:#7C3AED}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e2d6;color:var(--ink);font:17px/1.65 "Trebuchet MS",Arial,sans-serif}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{background:#FEF9C3}
+.notebook{max-width:1040px;margin:28px auto;padding:48px 52px 48px 66px;background:var(--paper);border:1px solid #dacfbf;border-radius:6px 24px 24px 6px;box-shadow:0 10px 35px #30240f18;position:relative}
+.notebook:before{content:"";position:absolute;left:15px;top:26px;bottom:26px;width:13px;background:radial-gradient(ellipse,#000000 0 28%,transparent 34%) 0 0/13px 42px repeat-y;border-right:1px solid #dbd2c6}
+header{margin-bottom:34px;border-bottom:3px dashed var(--blue);padding-bottom:26px}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;color:var(--blue)}
+h1,h2,h3{line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,54px);color:var(--blue);margin:14px 0 22px;font-weight:900;letter-spacing:-.035em}
+h1 span{background:linear-gradient(transparent 56%,var(--yellow) 56% 93%,transparent 93%)}
+h2{font-size:29px;margin:8px 0 12px;font-weight:900}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta,.prerequisites{font-size:14px;color:#485265}
+.depth{display:inline-block;background:#FEF9C3;border:2px solid var(--ink);padding:3px 13px;border-radius:8px 13px 7px 12px;font-weight:bold;color:var(--ink)}
+.toc{padding:20px 24px;background:#DBEAFE;border:2px solid #3B82F6;border-radius:15px 21px 14px 17px;margin:22px 0}
+.toc ol{padding-left:23px;margin:12px 0}
+.toc li{margin:7px 0}
+.stage-label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.topic{padding:27px 29px;margin:32px 0;border:2px solid var(--ink);border-radius:17px 25px 16px 22px;background:#FFFEF7;break-inside:auto}
+.topic.fundamentals{--tint:#DBEAFE;--accent:#3B82F6}
+.topic.applications{--tint:#FEF9C3;--accent:#EAB308}
+.topic.best-practices{--tint:#DCFCE7;--accent:#22C55E}
+.topic.further-improvements{--tint:#F3E8FF;--accent:#A855F7}
+.topic-head{background:var(--tint);padding:18px 21px;margin:-27px -29px 25px;border-radius:14px 22px 0 0;border-bottom:2px solid var(--accent)}
+.topic-head h2{padding-bottom:9px;border-bottom:3px solid var(--accent)}
+figure{margin:23px 0;padding:16px;border:2px solid var(--line);border-radius:13px 18px 12px 17px;background:#fffefb;break-inside:avoid}
+figure img{display:block;max-width:100%;width:auto;max-height:730px;margin:auto;height:auto}
+.figure-title{font-size:15px;font-weight:bold;margin:0 0 12px;color:var(--blue)}
+figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#465063}
+.evidence{font-size:11px;letter-spacing:.02em;padding:2px 6px;border-radius:5px;background:#edf2f8;color:#43536e}
+.synthesis{background:#FEF9C3;color:#6d4d13}.open-question{background:#FFE4E6;color:#7a3751}
+.citations{font-size:13px;display:inline}
+.takeaway{padding:15px 19px;background:var(--tint);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;margin:23px 0}
+details{border:1px solid #d4cab9;border-radius:10px;padding:13px 17px;background:#FFFEF7}
+summary{font-weight:bold;cursor:pointer}
+.answer{margin-top:10px}
+pre{background:#eff3f8;padding:18px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}
+.source-list{font-size:14px;padding-left:23px}
+.source-list li{margin:15px 0;overflow-wrap:anywhere;break-inside:avoid}
+.source-list p{margin:5px 0}
+footer{border-top:3px dotted var(--blue);padding-top:18px;margin-top:34px;font-size:13px}
+@media(max-width:650px){body{font-size:16px;background:var(--paper)}.notebook{margin:0;border:0;box-shadow:none;padding:30px 16px 30px 35px;border-radius:0}.notebook:before{left:9px;width:9px;background-size:9px 34px}.topic{padding:19px 17px}.topic-head{margin:-19px -17px 18px;padding:15px 17px}h2{font-size:25px}figure{padding:10px}}
+@media print{body{background:white;font-size:11pt}.notebook{max-width:none;margin:0;padding:0;border:0;box-shadow:none}.notebook:before{display:none}h1{font-size:30pt}h2{font-size:20pt}h3{font-size:13pt}.topic{break-before:page;border-width:1px;margin:0 0 20px}figure{break-inside:avoid}details{display:block}details .answer{display:block}a{color:var(--ink)}.toc{break-inside:avoid}.evidence,figcaption,.source-list{font-size:9pt}}
+
+h1{border-bottom:4px double #7C3AED;padding-bottom:18px}
+.overview{display:grid;gap:16px;margin:28px 0 40px}
+.overview-card{display:grid;grid-template-columns:64px 1fr 110px;align-items:center;gap:16px;border:2px solid var(--card-border);border-radius:15px 22px 14px 19px;background:var(--card-bg);padding:18px}
+.overview-badge{width:58px;height:58px;border:2px solid #18202A;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:24px;background:var(--badge)}
+.overview-card h3{margin:0 0 8px;font-size:22px}.overview-card p{margin:0;font-size:15px}.overview-card svg{width:110px;height:82px}
+.figure-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+figure img{max-height:none;width:100%;max-width:900px}.figure-tools{font-size:13px;margin-top:10px}.figure-hint{font-size:13px;color:#465063}
+.quick-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;margin:18px 0}.quick-table th,.quick-table td{padding:10px;border:1px solid #c8c5bb;text-align:left;vertical-align:top}.quick-table th{background:#DBEAFE;color:#1E3A8A}
+@media(max-width:650px){.overview-card{grid-template-columns:45px 1fr;gap:11px;padding:13px}.overview-badge{width:40px;height:40px;font-size:20px}.overview-card svg{display:none}.overview-card h3{font-size:20px}.figure-scroll img{width:720px;max-width:none;height:auto}.figure-hint{display:block}figure{margin-left:0;margin-right:0}.quick-table{font-size:13px}.topic-head .prerequisites{word-break:break-word}}
+@media(min-width:651px){.figure-hint{display:none}}
+</style>
+</head>
+<body>
+<main class="notebook">
+<nav><a href="index.html">← Atlas</a></nav><header><h1><span>Quick reference</span></h1><p>Decision tables supplement the illustrated lessons. Follow topic citations for evidence and limits.</p></header><h2>Kubernetes concept → AWS integration</h2><div style="overflow-x:auto"><table class="quick-table"><thead><tr><th>Concept</th><th>Typical EKS integration</th><th>Decision boundary</th></tr></thead><tbody><tr><td>Control plane</td><td>Amazon EKS</td><td>AWS operates the plane; you operate application contracts.</td></tr><tr><td>Pod networking</td><td>VPC CNI / Auto Mode networking</td><td>IP space, policy enforcement and compatible compute matter.</td></tr><tr><td>Ingress / LoadBalancer Service</td><td>ALB / NLB integration</td><td>Choose traffic protocol and target/configuration mode.</td></tr><tr><td>Node capacity</td><td>Managed nodes / Karpenter / Auto Mode</td><td>Replica scaling and node provisioning remain different loops.</td></tr><tr><td>Workload identity</td><td>Pod Identity / IRSA</td><td>Human access and end-user authorization are separate.</td></tr><tr><td>Persistent storage</td><td>EBS / EFS CSI integration</td><td>Zone, mount semantics and compute support differ.</td></tr><tr><td>External durable state</td><td>Managed database / object store</td><td>Kubernetes orchestration does not replace recovery planning.</td></tr><tr><td>Cluster access</td><td>EKS access entries + RBAC</td><td>Grant the minimum required API operations.</td></tr></tbody></table></div><h2>Compute fit</h2><div style="overflow-x:auto"><table class="quick-table"><thead><tr><th>Option</th><th>Useful when</th><th>Watch for</th></tr></thead><tbody><tr><td>Managed node groups</td><td>You want EC2 integration with managed lifecycle tooling.</td><td>Your release, add-on and disruption responsibilities.</td></tr><tr><td>Auto Mode</td><td>Supported managed defaults fit and reduce operations.</td><td>Mode-specific network/storage contracts and node constraints.</td></tr><tr><td>Fargate</td><td>Compatible per-Pod compute fits.</td><td>No DaemonSets, privileged containers, GPU or EBS mounts.</td></tr><tr><td>Self-managed / Hybrid</td><td>Specialized or non-AWS compute is required.</td><td>More compatibility, networking and operations work.</td></tr></tbody></table></div><h2>Glossary</h2><div style="overflow-x:auto"><table class="quick-table"><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Pod</td><td>One or more containers scheduled together, with shared Pod networking.</td></tr><tr><td>Node</td><td>Compute instance or supported execution surface running Pods.</td></tr><tr><td>Deployment / ReplicaSet</td><td>Release lifecycle / desired replica-count ownership.</td></tr><tr><td>Namespace</td><td>Scope for many Kubernetes API resource names and policies.</td></tr><tr><td>Service / EndpointSlice</td><td>Stable backend abstraction / endpoint descriptions.</td></tr><tr><td>Ingress / controller</td><td>Desired HTTP routing / implementation that realizes it.</td></tr><tr><td>CNI / CSI / CRI</td><td>Networking / storage / container-runtime integration interfaces.</td></tr><tr><td>PVC / PV / StorageClass</td><td>Storage request / allocated volume / provisioning policy.</td></tr><tr><td>HPA / PDB</td><td>Replica scaling / eligible voluntary eviction budget.</td></tr><tr><td>Request / limit</td><td>Scheduling input / runtime resource ceiling.</td></tr><tr><td>IAM / RBAC</td><td>AWS API permissions / Kubernetes API permissions.</td></tr><tr><td>RPO / RTO</td><td>Tolerable recovery data loss / tolerable recovery time.</td></tr></tbody></table></div><p><a href="index.html#source-S16">Compute evidence</a> · <a href="index.html#source-S21">Storage evidence</a> · <a href="index.html#source-S17">Identity evidence</a> · <a href="index.html#source-S05">Networking evidence</a></p>
+</main>
+</body>
+</html>

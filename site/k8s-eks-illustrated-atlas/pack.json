@@ -1,0 +1,1833 @@
+{
+  "title": "Kubernetes + AWS EKS Illustrated Atlas",
+  "domain": "Kubernetes fundamentals and production EKS practices",
+  "depth": "best-practices",
+  "language": "en",
+  "researched_at": "2026-10-10",
+  "scope": "Depth 2: fundamentals, applications, production decisions and further improvements for a software practitioner. Fourteen topics, twenty-two editable SVG illustrations, two published customer cases and one hypothetical insurance API scenario. Stable API examples; no claim to exhaustive ecosystem or cluster-version coverage. No AWS deployment or measured performance result.",
+  "design_reference": {
+    "document_id": "deep_learning_architectures_cheatsheet_2026_v1",
+    "files_consulted": [
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Metadata.json",
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Analysis.html",
+      "assets/style-reference.png",
+      "references/art-direction.md"
+    ],
+    "adaptations": [
+      "Four labeled learning stages with the original five-family palette; pink marks failure and recovery boundaries.",
+      "Original numbered badge/card/mechanism-sketch overview; no copied example text or branding.",
+      "Exact editable SVG diagrams replace raster art to preserve ownership, topology and verified labels.",
+      "Landscape mechanism diagrams are zoomable on narrow screens; lessons remain responsive."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Kubernetes cluster architecture",
+      "url": "https://kubernetes.io/docs/concepts/architecture/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "API server, etcd, scheduler, controllers, kubelet and runtime responsibilities"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S02",
+      "title": "Kubernetes controllers",
+      "url": "https://kubernetes.io/docs/concepts/architecture/controller/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Controllers compare desired and observed state and act through APIs"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S03",
+      "title": "Workloads",
+      "url": "https://kubernetes.io/docs/concepts/workloads/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Deployment, StatefulSet, DaemonSet, Job and CronJob use cases"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view1",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S04",
+      "title": "Deployments",
+      "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "ReplicaSet ownership, rolling updates, surge and unavailable settings"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view1",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S05",
+      "title": "Service",
+      "url": "https://kubernetes.io/docs/concepts/services-networking/service/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Service selection, stable access and EndpointSlices"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view2",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S06",
+      "title": "Persistent volumes",
+      "url": "https://kubernetes.io/docs/concepts/storage/persistent-volumes/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "PVC, PV, provisioning and reclaim lifecycle"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view3",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S07",
+      "title": "Resource management",
+      "url": "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Requests, limits, scheduling, CPU throttling and memory enforcement"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view4",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S08",
+      "title": "Horizontal Pod Autoscaling",
+      "url": "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Metric ratio algorithm, CPU utilization relative to requests, metric pipeline"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view5",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S09",
+      "title": "Disruptions",
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "PDB limits eviction; involuntary failure and rollout limitations"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view6",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S10",
+      "title": "Liveness, readiness and startup probes",
+      "url": "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Probe actions and startup protection"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view7",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S11",
+      "title": "RBAC good practices",
+      "url": "https://kubernetes.io/docs/concepts/security/rbac-good-practices/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Least privilege and weak namespace boundaries"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view8",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S12",
+      "title": "Network policies",
+      "url": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "L4 policy, enforcement dependency, default allowance, DNS egress"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view9",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S13",
+      "title": "Topology spread constraints",
+      "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Zone and host distribution, strict scheduling constraints"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn1view10",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S14",
+      "title": "What is Amazon EKS?",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Managed Kubernetes and AWS integration"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S15",
+      "title": "EKS Auto Mode",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/automode.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Managed compute, networking, load balancing and block storage"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view1",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S16",
+      "title": "EKS compute options",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/eks-compute.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Auto Mode, managed nodes, self-managed nodes, Fargate, Hybrid Nodes"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view2",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S17",
+      "title": "EKS Pod Identity",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Service account role associations, agent, SDK support and Linux EC2 scope"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view3",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S18",
+      "title": "EKS access entries",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "IAM principal access with EKS access policies or Kubernetes groups"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view4",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S19",
+      "title": "VPC and subnet considerations",
+      "url": "https://docs.aws.amazon.com/eks/latest/best-practices/subnets.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Cluster subnets, private endpoint access, upgrade IP headroom"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view5",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S20",
+      "title": "AWS Load Balancer Controller",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Ingress to ALB and Service LoadBalancer to NLB integration"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view6",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S21",
+      "title": "EBS CSI integration",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "EBS support limits and different Auto Mode provisioner"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view7",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S22",
+      "title": "Cluster upgrade best practices",
+      "url": "https://docs.aws.amazon.com/eks/latest/best-practices/cluster-upgrades.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Compatibility, removed APIs, node upgrades and add-on coordination"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view8",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S23",
+      "title": "Amazon EKS pricing",
+      "url": "https://aws.amazon.com/eks/pricing/",
+      "publisher": "AWS",
+      "kind": "pricing",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Standard and extended support charges and separate compute costs"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view9",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S24",
+      "title": "Booking.com search ranking on Amazon EKS",
+      "url": "https://aws.amazon.com/solutions/case-studies/booking-eks-case-study/",
+      "publisher": "AWS / Booking.com",
+      "kind": "customer case study",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Dedicated ranking cluster, phased migration and reported latency"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view10",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S25",
+      "title": "Crossuite migration to EKS",
+      "url": "https://aws.amazon.com/solutions/case-studies/crossuite-eks-case-study/",
+      "publisher": "AWS / Crossuite",
+      "kind": "customer case study",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "HPA, Karpenter, ALB, RDS PostgreSQL, CloudWatch and reported outcomes"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn2view11",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S26",
+      "title": "Karpenter best practices",
+      "url": "https://docs.aws.amazon.com/eks/latest/best-practices/karpenter.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Pending workload capacity, diversification and interruption handling"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn4view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S27",
+      "title": "Kubernetes observability",
+      "url": "https://kubernetes.io/docs/concepts/cluster-administration/observability/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Metrics, logs, traces and resource Metrics API distinction"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn4view1",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S28",
+      "title": "EKS control plane logs",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Optional API, audit, authenticator, scheduler and controller logging"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn4view2",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S29",
+      "title": "EFS CSI integration",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Shared filesystem integration and Fargate static provisioning constraint"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn4view3",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S30",
+      "title": "AWS Fargate for EKS",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/fargate.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "No DaemonSets, privileged containers or GPUs; private subnets and IP targets"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view2",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S31",
+      "title": "Update an EKS cluster",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Control plane and component upgrade sequencing"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view3",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S32",
+      "title": "IAM roles for service accounts",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "OIDC service account tokens and STS temporary credentials"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view4",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S33",
+      "title": "Kubernetes multi-tenancy",
+      "url": "https://kubernetes.io/docs/concepts/security/multi-tenancy/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Control and data plane isolation; shared kernels and dedicated clusters"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view5",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S34",
+      "title": "Amazon VPC CNI",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/managing-vpc-cni.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "VPC private addresses per Pod and Auto Mode networking ownership"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn5view6",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S35",
+      "title": "ConfigMaps",
+      "url": "https://kubernetes.io/docs/concepts/configuration/configmap/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Non-confidential runtime configuration"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn6view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S36",
+      "title": "Kubernetes Secret good practices",
+      "url": "https://kubernetes.io/docs/concepts/security/secrets-good-practices/",
+      "publisher": "Kubernetes",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Base64 is encoding, least privilege and encryption considerations"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn6view1",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S37",
+      "title": "EKS reliability",
+      "url": "https://docs.aws.amazon.com/eks/latest/best-practices/reliability.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Control plane across three AZs; shared data plane responsibility"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn6view2",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S38",
+      "title": "EKS version rollback",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/rollback-cluster.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Current documented seven-day, one-minor-version rollback window and limitations"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn7view3",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    },
+    {
+      "id": "S39",
+      "title": "Amazon EBS volumes",
+      "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html",
+      "publisher": "AWS",
+      "kind": "documentation",
+      "accessed": "2026-10-10",
+      "version": "Living documentation; target-cluster compatibility must be checked",
+      "published": "Not stated in retrieved page",
+      "supports": [
+        "Volumes and attached instances must be in the same Availability Zone"
+      ],
+      "relevance": "Read the linked primary source for implementation details and current constraints.",
+      "retrieval_ref": "turn9view0",
+      "uncertainties": "Illustrations simplify implementation details. Customer outcomes are vendor-published, not independently reproduced."
+    }
+  ],
+  "topics": [
+    {
+      "id": "01-control-loops",
+      "stage": "fundamentals",
+      "title": "Kubernetes: APIs, control loops and execution",
+      "prerequisites": [],
+      "takeaway": "Kubernetes continually tries to converge on your declared state; convergence and business correctness are different promises.",
+      "sections": [
+        {
+          "heading": "Learning objective and mental model",
+          "body": "Trace a declared workload to running containers. The API server exposes and validates the cluster API; etcd holds cluster state. Controllers reconcile objects, the scheduler places unassigned Pods, and node kubelets coordinate with the container runtime. CNI and CSI integrations supply networking and storage interfaces.",
+          "source_ids": [
+            "S01"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Mechanism",
+          "body": "A controller observes resources, compares actual state with the desired specification and requests changes. Different controllers handle separate responsibilities. Reconciliation is repeated, rather than a one-time deployment script.",
+          "source_ids": [
+            "S02"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "Suppose a quote API should have three replicas and one Pod disappears. Its ReplicaSet creates another Pod. Scheduling, image retrieval, startup and readiness still need to succeed. The application must preserve durable state outside that replaceable process.",
+          "source_ids": [
+            "S04",
+            "S02"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision, pitfall and improvement",
+          "body": "For an illustrative service, declare the desired count through a Deployment rather than manually creating replacement Pods. Keep spare placement capacity and test recovery delay. A controller cannot repair invalid credentials, an unavailable database or insufficient subnet addresses merely by trying again. This inference follows from the separate scheduling and execution responsibilities; it is not a recovery-time guarantee.",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/01-architecture.svg",
+          "title": "01 / The control plane coordinates",
+          "caption": "Simplified coordination view. API access also carries status updates; networking and storage plugins are omitted from the arrows.",
+          "source_ids": [
+            "S01"
+          ],
+          "alt": "The API server stores state in etcd. Controllers and scheduler use the API. Worker kubelet instructs the container runtime to run application containers."
+        },
+        {
+          "path": "figures/01-reconcile.svg",
+          "title": "Desired state is a promise to keep",
+          "caption": "Illustrative replica-loss sequence. ReplicaSet maintains the count; readiness and application correctness are separate.",
+          "source_ids": [
+            "S02",
+            "S04"
+          ],
+          "alt": "A three-replica Deployment loses one Pod, observes only two and creates a replacement that must be scheduled and started."
+        }
+      ],
+      "check": {
+        "question": "Does deleting a Pod necessarily lose customer records?",
+        "answer": "Only if the records depended on that Pod’s ephemeral state. Replica replacement restores process capacity; durable data and recovery are separate concerns."
+      }
+    },
+    {
+      "id": "02-objects",
+      "stage": "fundamentals",
+      "title": "Workloads, configuration and ownership",
+      "prerequisites": [
+        "01-control-loops"
+      ],
+      "takeaway": "Choose the workload controller for the lifecycle you need, then separate configuration from the image.",
+      "sections": [
+        {
+          "heading": "Learning objective and mental model",
+          "body": "Choose between Deployment for interchangeable replicas, StatefulSet for stable Pod identities and storage association, DaemonSet for node-local facilities, and Job or CronJob for tasks that complete. A StatefulSet does not implement database replication or application consistency for you.",
+          "source_ids": [
+            "S03"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Configuration mechanism",
+          "body": "A ConfigMap stores non-confidential settings and can supply environment variables or mounted files. A Secret represents sensitive values. Base64 encoding does not make a secret confidential; control API access, storage protection and exposure through logs or manifests.",
+          "source_ids": [
+            "S35",
+            "S36"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "Use a Deployment for HTTP quote servers, a Job for an export and a DaemonSet for a node log agent on compatible EC2 compute. If running a database inside Kubernetes, choose an operator and storage recovery plan deliberately; stable identities alone do not satisfy the data contract.",
+          "source_ids": [
+            "S03"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and common pitfall",
+          "body": "Use labels and selectors consistently so the right controller and Service identify the intended Pods. Updating a Deployment template creates a new ReplicaSet revision; editing a generated Pod is a short-lived change that its owner may replace. Treat runtime configuration changes as releases and verify the application reload behavior.",
+          "source_ids": [
+            "S04",
+            "S35"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Build a small inventory mapping every workload to its owner, dependencies, configuration source and restart behavior. This makes lifecycle ownership reviewable before a rollout or recovery exercise.",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/02-workloads.svg",
+          "title": "02 / Choose the owner of the Pods",
+          "caption": "A workload choice map, not a guarantee that a StatefulSet replicates data. Database consistency remains the database or operator’s responsibility.",
+          "source_ids": [
+            "S03",
+            "S35",
+            "S36"
+          ],
+          "alt": "Four workload rows map Deployment to quote API, StatefulSet to stateful identities, DaemonSet to node collectors and Jobs to exports."
+        }
+      ],
+      "check": {
+        "question": "Does StatefulSet mean “highly available database”?",
+        "answer": "No. It provides workload identity and ordering/storage association primitives; database replication, consistency, failover and backup must still be designed."
+      }
+    },
+    {
+      "id": "03-networking",
+      "stage": "fundamentals",
+      "title": "Networking: DNS, Services, routing and VPC IPs",
+      "prerequisites": [
+        "01-control-loops",
+        "02-objects"
+      ],
+      "takeaway": "Separate the configuration path from the request path, and treat IP space as a capacity constraint.",
+      "sections": [
+        {
+          "heading": "Learning objective and mental model",
+          "body": "A Service selects backend Pods and offers stable access while Pod endpoints change. EndpointSlices describe the backend endpoints. Cluster DNS provides service discovery. The forwarding implementation may use kube-proxy or another dataplane; a Service object is not itself a running proxy process.",
+          "source_ids": [
+            "S05"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "AWS integration",
+          "body": "On standard EKS, the AWS Load Balancer Controller can create an ALB for Ingress and an NLB for a LoadBalancer Service. The diagram uses ALB IP targets, where request traffic reaches Pod IPs. Instance targets take a different path through node ports. Auto Mode has managed load-balancing integration with its own configuration contract.",
+          "source_ids": [
+            "S20",
+            "S30",
+            "S15"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "VPC mechanics",
+          "body": "The Amazon VPC CNI assigns VPC addresses to Pods on AWS infrastructure. Plan workload and cluster subnet capacity, including temporary upgrade and scale-out needs. A private API endpoint requires an administration path from the VPC or a connected network; it does not automatically provide internet egress for workloads.",
+          "source_ids": [
+            "S34",
+            "S19"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example, decision and pitfall",
+          "body": "For the illustrative quote API, expose only the application route through an ALB and keep worker nodes in private subnets. Check DNS, ready endpoints, ALB target health, security groups, enforced policy and outbound dependencies independently. An empty Service selector or IP shortage can break traffic even while EC2 instances appear healthy.",
+          "source_ids": [
+            "S05",
+            "S19",
+            "S20"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Track available subnet addresses and target-registration delay alongside CPU and memory. Test the complete request path rather than treating “Ingress exists” as proof of reachability.",
+          "source_ids": [
+            "S19",
+            "S20"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/03-service.svg",
+          "title": "03 / Internal service discovery",
+          "caption": "DNS resolution precedes the illustrated request. Service forwarding depends on the cluster dataplane implementation; EndpointSlices describe the backing endpoints.",
+          "source_ids": [
+            "S05"
+          ],
+          "alt": "Cluster DNS resolves a Service name, and the client sends to a stable Service address which forwards to one of two ready endpoints."
+        },
+        {
+          "path": "figures/03-alb.svg",
+          "title": "ALB control path ≠ request path",
+          "caption": "Logical routing example with IP targets. In instance-target mode traffic instead reaches a node’s NodePort. Auto Mode manages its load balancing integration separately.",
+          "source_ids": [
+            "S20",
+            "S30",
+            "S15"
+          ],
+          "alt": "A dashed control path leads from routing objects through the AWS controller to ALB configuration. A solid request path runs client to ALB to Pod IP."
+        }
+      ],
+      "check": {
+        "question": "Does a client HTTP request pass through the Kubernetes API server?",
+        "answer": "Normally no. The API configures desired routing; application requests travel through the selected network and load-balancer dataplane."
+      }
+    },
+    {
+      "id": "04-eks-model",
+      "stage": "fundamentals",
+      "title": "EKS responsibility boundaries and compute choices",
+      "prerequisites": [
+        "01-control-loops"
+      ],
+      "takeaway": "Select how much infrastructure AWS operates, without giving away application ownership.",
+      "sections": [
+        {
+          "heading": "Learning objective and mental model",
+          "body": "EKS supplies a managed Kubernetes control plane. AWS documents control-plane operation across three Availability Zones. Workload replicas, dependency resilience and application recovery still require design; a highly available API server does not make a single application replica highly available.",
+          "source_ids": [
+            "S14",
+            "S37"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Compute decision",
+          "body": "Managed node groups simplify EC2 node provisioning and lifecycle operations. Self-managed nodes give more control and more maintenance. Auto Mode extends managed operation into compute autoscaling, networking, load balancing and block storage. Hybrid Nodes cover supported non-AWS compute environments. These are ownership choices, not application availability guarantees.",
+          "source_ids": [
+            "S16",
+            "S15"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Fargate boundary",
+          "body": "Fargate provides per-Pod compute without managing EC2 worker instances. EKS Fargate does not support DaemonSets, privileged containers or GPUs; it uses private subnets and IP load-balancer targets. EBS cannot be mounted to Fargate Pods. EFS support has separate provisioning constraints.",
+          "source_ids": [
+            "S30",
+            "S21",
+            "S29"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example and trade-off",
+          "body": "For a typical API with custom node agents, a managed node group may be easier to integrate than Fargate. Auto Mode is a candidate when supported defaults fit and reducing node operations matters. This is a conditional judgment: validate storage classes, IAM, agent support and disruption behavior before choosing.",
+          "source_ids": [
+            "S15",
+            "S16",
+            "S30"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall and further improvement",
+          "body": "“Managed” is not a universal promise of zero maintenance. Write a responsibility matrix for node releases, add-ons, identity, backups, alerts and workload compatibility. Review it whenever compute mode changes.",
+          "source_ids": [
+            "S15",
+            "S37"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/04-ownership.svg",
+          "title": "04 / Managed does not mean ownerless",
+          "caption": "Responsibility summary, not a full service contract. Self-managed and Hybrid Nodes are additional options. EKS control plane reliability and application reliability are different layers.",
+          "source_ids": [
+            "S14",
+            "S15",
+            "S16",
+            "S37"
+          ],
+          "alt": "A responsibility matrix compares standard EKS, managed node groups, Auto Mode and Fargate across AWS and team responsibilities."
+        }
+      ],
+      "check": {
+        "question": "Will Auto Mode make an application with one replica resilient to every node replacement?",
+        "answer": "No. It manages infrastructure lifecycle; your workload still needs suitable replication, disruption tolerance and resilient dependencies."
+      }
+    },
+    {
+      "id": "05-identities",
+      "stage": "applications",
+      "title": "IAM, Kubernetes RBAC and workload identity",
+      "prerequisites": [
+        "04-eks-model",
+        "02-objects"
+      ],
+      "takeaway": "Keep engineer-to-cluster, Pod-to-AWS and user-to-product authorization separate.",
+      "sections": [
+        {
+          "heading": "Learning objective and mechanism",
+          "body": "An EKS access entry associates an IAM principal with cluster access. Permissions can use EKS access policies or Kubernetes groups connected to RBAC. Kubernetes RBAC controls cluster API operations; it does not authorize an end user to read a particular business record.",
+          "source_ids": [
+            "S18",
+            "S11"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Pod-to-AWS path",
+          "body": "EKS Pod Identity maps a namespace and ServiceAccount to an IAM role. A supported AWS SDK uses temporary credentials through the default provider chain and the Pod Identity agent path. Auto Mode supplies the relevant integration. The documented Pod Identity worker scope is Linux EC2; do not assume it works on Fargate.",
+          "source_ids": [
+            "S17"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Alternative and limits",
+          "body": "IRSA uses a projected ServiceAccount OIDC token and AWS STS to obtain temporary role credentials. It remains a relevant option when its supported environment fits. Containers sharing a node are not a strong independent security boundary, and unrestricted instance metadata can expose the node role.",
+          "source_ids": [
+            "S32",
+            "S17"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "Give a document worker a dedicated ServiceAccount and an IAM role scoped to the required document prefix and actions. Give a deployer only the Kubernetes operations needed for its namespace. Separately enforce tenant and policy access in the application. This is a proposed design; exact IAM conditions depend on the data model.",
+          "source_ids": [
+            "S17",
+            "S18",
+            "S11"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision, pitfall and improvement",
+          "body": "Avoid attaching all workload permissions to the node role or handing every deployer cluster-admin. Inspect actual credential resolution, test both permitted and denied actions, and restrict instance metadata as appropriate. Verify SDK support and identity-agent access before debugging an S3 denial as a networking problem.",
+          "source_ids": [
+            "S17",
+            "S11"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/05-identity.svg",
+          "title": "05 / Three identity boundaries",
+          "caption": "The first two lanes summarize documented platform mechanisms. The end-user lane is an illustrative application boundary, independent of cluster administration.",
+          "source_ids": [
+            "S17",
+            "S18",
+            "S32",
+            "S11"
+          ],
+          "alt": "Separate paths show engineer to Kubernetes API, Pod to AWS service APIs and product user to business records."
+        }
+      ],
+      "check": {
+        "question": "Can a Pod Identity association grant kubectl permission to a human?",
+        "answer": "No. Pod Identity controls workload access to AWS APIs; human cluster access uses a separate authentication and authorization path."
+      }
+    },
+    {
+      "id": "06-data",
+      "stage": "applications",
+      "title": "Storage, state and recovery",
+      "prerequisites": [
+        "02-objects",
+        "04-eks-model"
+      ],
+      "takeaway": "Persistence, replication and backup solve different failure cases.",
+      "sections": [
+        {
+          "heading": "Learning objective and mechanism",
+          "body": "A PVC asks for storage; a PV represents allocated storage; a StorageClass describes provisioning policy. A CSI integration connects Kubernetes to the storage system. Pods mount claims. Reclaim policy controls what happens when a claim is released; Pod replacement is a different event from deleting a claim.",
+          "source_ids": [
+            "S06"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "EKS choices",
+          "body": "Use EBS integration for supported block-volume workloads and EFS integration when shared filesystem semantics fit. EBS is zonal; align scheduling with volume topology. Auto Mode uses the ebs.csi.eks.amazonaws.com provisioner, distinct from the standard EBS CSI provisioner. Fargate cannot mount EBS and supports EFS static rather than dynamic provisioning.",
+          "source_ids": [
+            "S21",
+            "S29",
+            "S39"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example and decision",
+          "body": "In the insurance scenario, keep transaction state in a managed PostgreSQL service and documents in object storage rather than inside disposable API containers. This proposed boundary reduces the database-operator scope of the EKS platform team, but database networking, credentials, migrations, recovery and cost remain explicit responsibilities.",
+          "source_ids": [
+            "S25",
+            "S06"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Common pitfall",
+          "body": "A persistent volume is not proof that a database can survive losing a zone. Likewise, copying Kubernetes manifests does not restore transaction data. Define which system owns database backups, document versions and workload configuration, then restore them together in a compatible sequence.",
+          "source_ids": [
+            "S06",
+            "S21"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Specify an acceptable recovery point (RPO: tolerated data loss) and recovery time (RTO: tolerated outage). Rehearse an isolated restore and validate business records, not just that a Pod becomes Running. These are proposed acceptance criteria, not measured outcomes.",
+          "source_ids": [
+            "S06",
+            "S22"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/06-storage.svg",
+          "title": "06 / Ask for storage, then mount it",
+          "caption": "Dynamic provisioning is shown conceptually. Binding may be delayed until scheduling. Fargate has different storage support; persistent storage is not a backup.",
+          "source_ids": [
+            "S06",
+            "S21",
+            "S29"
+          ],
+          "alt": "A Pod references a PVC, which requests a StorageClass and CSI driver to provision a volume. The resulting PV binds to the PVC and is mounted."
+        },
+        {
+          "path": "figures/06-zones.svg",
+          "title": "A disk can pin a Pod to a zone",
+          "caption": "Simplified single-volume failure example. EBS attachment topology is not cross-zone database replication. EFS is a shared filesystem option with different semantics.",
+          "source_ids": [
+            "S39",
+            "S29",
+            "S13"
+          ],
+          "alt": "An EBS volume in AZ A cannot simply attach to a replacement Pod in AZ B. Data recovery must be planned separately."
+        }
+      ],
+      "check": {
+        "question": "Is a Pod rescheduled to another AZ enough to recover an EBS-backed database?",
+        "answer": "Not by itself. The volume’s zone, data replication or restore strategy, database consistency and available capacity must all be considered."
+      }
+    },
+    {
+      "id": "07-insurtech",
+      "stage": "applications",
+      "title": "Worked case: a multi-tenant insurance API on EKS",
+      "prerequisites": [
+        "03-networking",
+        "05-identities",
+        "06-data"
+      ],
+      "takeaway": "Keep the API stateless, bound downstream concurrency and make asynchronous work safe to retry.",
+      "sections": [
+        {
+          "heading": "Objective and assumptions",
+          "body": "This is an illustrative design exercise, not a claim about Tony’s deployed infrastructure. Assume HTTP quote and underwriting APIs, tenant-scoped records, uploaded documents and asynchronous tasks. Demand varies by business hours; the team wants bounded operations and observable recovery.",
+          "source_ids": [
+            "S25",
+            "S19"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Request and task flow",
+          "body": "Clients reach an ALB. Quote and underwriting services run as replicated Deployments in private workload subnets. The API checks product authorization and tenant scope before reading PostgreSQL or issuing document access. Longer tasks use a durable queue and workers with scoped AWS identity.",
+          "source_ids": [
+            "S05",
+            "S17",
+            "S25"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Engineering decision and trade-off",
+          "body": "Separate latency-sensitive API capacity from retryable worker capacity. Keep an appropriate reliable baseline for serving traffic; consider interruption-tolerant compute only for tasks that can safely replay. This inference rests on different failure tolerance, not on a universal claim that workers should use Spot.",
+          "source_ids": [
+            "S26",
+            "S09"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Failure case",
+          "body": "Suppose demand increases and HPA adds replicas while the database connection budget stays fixed. More Pods can amplify pool pressure and timeouts. For this exercise, bound pool sizes and task concurrency, apply backpressure and choose scaling signals that reflect useful throughput. Kubernetes cannot infer the database’s safe concurrency from replica count.",
+          "source_ids": [
+            "S08",
+            "S07"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Validate and improve",
+          "body": "Measure completed quotes, error rate, tail latency, oldest task age and database saturation before and during a load test. Require idempotency for retried document or underwriting tasks. A useful next improvement is a failure drill with one unavailable dependency, evaluating whether the API fails quickly and recovers cleanly.",
+          "source_ids": [
+            "S27",
+            "S09"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/07-insurance.svg",
+          "title": "07 / Insurance API: a worked EKS design",
+          "caption": "Reasoned design example, not a description of a deployed customer platform. Arrows denote selected dependencies; the queue box represents asynchronous dispatch from the API to workers.",
+          "source_ids": [
+            "S05",
+            "S17",
+            "S19",
+            "S25"
+          ],
+          "alt": "Clients reach an ALB and quote or underwriting API Pods in private subnets. APIs use managed PostgreSQL, S3 and a durable queue for worker tasks."
+        }
+      ],
+      "check": {
+        "question": "Why might adding API replicas increase timeouts?",
+        "answer": "Each replica can add downstream connections and concurrent work. If the database or another dependency is saturated, extra callers increase contention rather than useful capacity."
+      }
+    },
+    {
+      "id": "08-customer-cases",
+      "stage": "applications",
+      "title": "Published cases: healthcare SaaS and ML search ranking",
+      "prerequisites": [
+        "04-eks-model",
+        "03-networking",
+        "06-data"
+      ],
+      "takeaway": "Transfer the decision pattern; do not copy the published performance number as your own forecast.",
+      "sections": [
+        {
+          "heading": "Crossuite: reported architecture and result",
+          "body": "AWS’s Crossuite case describes a healthcare application moving from manually managed Kubernetes to EKS. Its architecture uses ALB, HPA for services, Karpenter for EC2 capacity, RDS PostgreSQL and CloudWatch. The report places the production switch in May 2024 and reports 30% lower overall costs and 99.9% uptime. A headline benefits panel displays a different uptime figure; this atlas uses the narrative’s 99.9% and treats it as a customer report, not an independently verified SLA.",
+          "source_ids": [
+            "S25"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Crossuite: engineering lesson",
+          "body": "Inference: replica scaling and node provisioning solve different bottlenecks, and external database dependencies must survive the migration. Reuse the two-layer capacity pattern only after measuring startup delay and dependency limits. The reported savings lack a controlled comparison for your workload.",
+          "source_ids": [
+            "S25"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Booking.com: reported architecture and result",
+          "body": "AWS’s Booking.com case describes a dedicated EKS environment for search ranking and model-serving flexibility. Migration proceeded through inference separation, ranking API and model movement, then hybrid serving. The company benchmarked instance types and the report states approximately 40 ms latency for 99.9% of requests. The same article places some other model workloads on SageMaker; it does not claim every ML workload runs on EKS.",
+          "source_ids": [
+            "S24"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Booking.com: engineering lesson",
+          "body": "Inference: test the riskiest interface before moving the whole serving system. A phased migration and workload-specific instance tests make the outcome reviewable. The published latency is not an EKS service guarantee, nor evidence that another model or dataset reaches the same result.",
+          "source_ids": [
+            "S24"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision, pitfall and next improvement",
+          "body": "For your own migration, define a baseline, representative peak load, acceptable regression and a reversible traffic cutover. Record the old and new compute/network/storage conditions. Avoid attributing revenue growth or every cost change solely to Kubernetes; the case descriptions report a broader modernization.",
+          "source_ids": [
+            "S25",
+            "S24"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/08-crossuite.svg",
+          "title": "08 / Crossuite: elasticity across two layers",
+          "caption": "Published architecture elements, simplified for teaching; not the complete topology.",
+          "source_ids": [
+            "S25"
+          ],
+          "alt": "ALB routes to EKS Pods; HPA scales replicas, Karpenter capacity. RDS stores data; CloudWatch observes."
+        },
+        {
+          "path": "figures/08-booking.svg",
+          "title": "Booking.com: de-risk the migration",
+          "caption": "Published migration phases and result; not a transferable latency guarantee.",
+          "source_ids": [
+            "S24"
+          ],
+          "alt": "Inference moved first, then ranking API and models, then hybrid serving. Dedicated EKS capacity was benchmarked."
+        }
+      ],
+      "check": {
+        "question": "Which result can be safely copied from these cases?",
+        "answer": "The architecture and evaluation patterns are useful hypotheses. Their cost and latency figures require your own measurement under your workload and operating conditions."
+      }
+    },
+    {
+      "id": "09-release-reliability",
+      "stage": "best-practices",
+      "title": "Probes, rollouts, disruption and availability",
+      "prerequisites": [
+        "02-objects",
+        "03-networking",
+        "04-eks-model"
+      ],
+      "takeaway": "Readiness controls participation; liveness restarts; placement and rollout controls govern other failure paths.",
+      "sections": [
+        {
+          "heading": "Learning objective and probe mechanism",
+          "body": "A startup probe protects slow initialization before normal liveness and readiness checks. Readiness failure removes normal ready participation in Service endpoints; it does not itself restart the container. Liveness failure eventually restarts a container according to its restart policy. These checks answer different questions.",
+          "source_ids": [
+            "S10"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Rollout and eviction mechanics",
+          "body": "Deployment rolling updates use maxSurge and maxUnavailable. PDBs constrain eligible voluntary evictions, including compliant node drains. PDBs do not prevent node or zone failures, direct Pod deletion, or constrain Deployment rollout logic. Topology spread can distribute replicas across zones or hosts; strict placement rules can also leave Pods Pending.",
+          "source_ids": [
+            "S04",
+            "S09",
+            "S13"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked baseline",
+          "body": "For an illustrative quote API, start with three replicas, one surge Pod and zero unavailable Pods during a rollout. Use a PDB requiring two available replicas and spread placement across eligible zones and hosts. These are exercise settings, not a claim that three replicas meet every SLA. Reserve surge capacity and test the load remaining replicas can handle.",
+          "source_ids": [
+            "S04",
+            "S09",
+            "S13"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall and shutdown decision",
+          "body": "Do not make every transient database failure kill a healthy process. Design local liveness and useful-service readiness deliberately. During termination, the application must stop accepting new work and finish or release existing work within its grace period; align this with load-balancer draining. This is application design guidance, not a promise of immediate endpoint convergence.",
+          "source_ids": [
+            "S10",
+            "S20"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Use the bundled workload example as a review specimen. Tune startup budget, readiness conditions, request duration and drain behavior using a load test. Verify failed releases and replica loss at the user-facing endpoint. A rollout remaining available says little about a backwards-incompatible database migration.",
+          "source_ids": [
+            "S10",
+            "S04"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/09-probes.svg",
+          "title": "09 / Three probes, three different decisions",
+          "caption": "Probe actions summarize Kubernetes behavior. The database-outage response is a design recommendation; readiness must reflect whether a Pod can provide useful service.",
+          "source_ids": [
+            "S10"
+          ],
+          "alt": "Startup protects initialization, readiness controls normal Service endpoint participation, and liveness restarts unhealthy containers. Database failure should not automatically trigger liveness failure."
+        },
+        {
+          "path": "figures/09-availability.svg",
+          "title": "Availability needs several independent controls",
+          "caption": "Placement, eviction and application rollout are different controls. A PDB does not constrain the Deployment rollout controller or prevent involuntary loss.",
+          "source_ids": [
+            "S09",
+            "S13",
+            "S04"
+          ],
+          "alt": "Three application replicas occupy different zones. Separate cards distinguish topology spread, voluntary eviction budgets and rolling update settings."
+        }
+      ],
+      "check": {
+        "question": "Can a PDB guarantee that a Deployment rollout never takes down too many Pods?",
+        "answer": "No. Deployment rollout availability is controlled by its rollout strategy. PDB governs eligible eviction paths and does not prevent involuntary failures."
+      }
+    },
+    {
+      "id": "10-scaling",
+      "stage": "best-practices",
+      "title": "Capacity: requests, HPA and node provisioning",
+      "prerequisites": [
+        "04-eks-model",
+        "09-release-reliability"
+      ],
+      "takeaway": "Measure the bottleneck, then scale the layer that can relieve it.",
+      "sections": [
+        {
+          "heading": "Learning objective and mechanism",
+          "body": "The scheduler uses resource requests for placement. CPU limits can cause throttling; memory limits can lead to OOM termination. Requests are not exclusive allocation of the specified RAM or CPU. HPA CPU utilization is relative to CPU requests, not the whole node’s CPU capacity.",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Two scaling loops",
+          "body": "HPA adjusts workload replica count. A node provisioner such as Karpenter evaluates unschedulable workload requirements and creates suitable capacity. Auto Mode supplies managed compute autoscaling. Placement may still be blocked by topology, taints, IP space, volume constraints or unavailable cloud capacity.",
+          "source_ids": [
+            "S26",
+            "S15",
+            "S19"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked arithmetic",
+          "body": "Simplifying the HPA algorithm to usable metrics and unconstrained bounds, three replicas at 90% utilization against a 60% target imply ceil(3 × 90/60) = 5 replicas. A container using 100m CPU against a 250m request reports 40% utilization. Real decisions include missing metrics, readiness, tolerance and stabilization.",
+          "source_ids": [
+            "S08"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and common pitfall",
+          "body": "For a queue worker, CPU may not reflect an aging backlog; for a Node.js API, downstream waits can dominate latency. Compare useful throughput, queue age and resource saturation before choosing a metric. Avoid two controllers fighting over the same replica field or blindly increasing resources to hide a leak. These are conditional design judgments to validate under load.",
+          "source_ids": [
+            "S08",
+            "S07"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Interruption and improvement",
+          "body": "For supported retryable workloads, diversify Spot capacity and configure interruption handling. A replacement node is not guaranteed to become ready before interruption. Measure image pull, model warmup, scheduling and ready-to-serve delays; choose baseline capacity and scale-down stabilization using those observations.",
+          "source_ids": [
+            "S26",
+            "S08"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/10-loops.svg",
+          "title": "10 / Replicas and nodes are separate loops",
+          "caption": "Basic HPA ratio example assumes usable metrics and unconstrained bounds. The node capacity path is logical, not a latency guarantee.",
+          "source_ids": [
+            "S08",
+            "S26",
+            "S15"
+          ],
+          "alt": "Metrics lead HPA to request more replicas. Unschedulable Pods lead a node provisioner to create capacity, enabling scheduling."
+        },
+        {
+          "path": "figures/10-resources.svg",
+          "title": "Requests are placement inputs; limits are ceilings",
+          "caption": "Illustrative single-container arithmetic. Sidecars, defaults and admission policies can affect actual Pod requests and HPA accounting.",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "alt": "Resource requests inform scheduler placement, limits affect enforcement, and HPA CPU utilization divides actual CPU usage by the request."
+        }
+      ],
+      "check": {
+        "question": "HPA requests five replicas but only three run. What do you inspect next?",
+        "answer": "Read the Pending Pod events and node/IP/storage capacity. HPA requests replicas; it does not itself supply EC2 nodes or remove incompatible placement constraints."
+      }
+    },
+    {
+      "id": "11-security",
+      "stage": "best-practices",
+      "title": "Tenancy, least privilege and network policy",
+      "prerequisites": [
+        "05-identities",
+        "03-networking"
+      ],
+      "takeaway": "A namespace is an organizational boundary; build the actual trust boundary explicitly.",
+      "sections": [
+        {
+          "heading": "Learning objective and isolation model",
+          "body": "Multi-tenancy requires both control-plane and data-plane isolation. Namespaces scope many API resources but do not create independent kernels. Dedicated nodes reduce co-location but can still share cluster services; stronger isolation may justify sandboxed execution or separate clusters, with extra cost and operations.",
+          "source_ids": [
+            "S33",
+            "S11"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Network-policy mechanism",
+          "body": "Without applicable NetworkPolicies, Pod ingress and egress are allowed by default. Policies require a supporting enforcement implementation and primarily express L4 rules. Default-deny egress also blocks DNS unless allowed. IAM, security groups, NetworkPolicy and business authorization cover different scopes.",
+          "source_ids": [
+            "S12"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "In the insurance exercise, use tenant-scoped application queries even if each team has its own namespace. Restrict deployers and service accounts to their required API operations. Add explicit dependency flows before applying default-deny. On a Pod Identity workload, include the identity-agent credential path; on private AWS access, verify required service endpoints.",
+          "source_ids": [
+            "S11",
+            "S17",
+            "S12"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and pitfall",
+          "body": "A tenant allowed to run arbitrary untrusted code changes the threat model. Namespace-only separation is too weak for that assumption; evaluate sandbox or dedicated-cluster designs. A toleration only permits scheduling onto a tainted node and does not, by itself, force exclusive placement. Enforce the intended placement and admission constraints.",
+          "source_ids": [
+            "S33"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Write a permission matrix and a network dependency map, then test denied access as well as allowed access. Verify the real policy implementation on your chosen EKS compute mode. Treat base64 values and read access to Secret objects as sensitive, and keep plaintext secret manifests out of the delivered examples.",
+          "source_ids": [
+            "S36",
+            "S12",
+            "S11"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/11-tenancy.svg",
+          "title": "11 / Isolation is a stack, not a namespace label",
+          "caption": "Platform controls summarize Kubernetes guidance. Tenant-scoped business authorization is a reasoned requirement for the worked SaaS scenario.",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S33"
+          ],
+          "alt": "Business data, Kubernetes API, Pod networking and compute each need their own isolation control. A namespace alone does not provide all four."
+        }
+      ],
+      "check": {
+        "question": "Does “one namespace per customer” enforce customer record isolation?",
+        "answer": "No. The application must enforce record access; Kubernetes namespaces scope API resources and need additional control, network and compute protections."
+      }
+    },
+    {
+      "id": "12-observability",
+      "stage": "best-practices",
+      "title": "Observe and diagnose the right layer",
+      "prerequisites": [
+        "03-networking",
+        "09-release-reliability",
+        "10-scaling"
+      ],
+      "takeaway": "Start from user-visible failure, then follow evidence down the request path.",
+      "sections": [
+        {
+          "heading": "Learning objective and signals",
+          "body": "Metrics reveal trends and saturation, logs describe local events and traces connect request steps. The resource Metrics API used by HPA and kubectl top is a separate capability from a full monitoring pipeline. Collecting CPU usage does not provide historical logs or distributed traces.",
+          "source_ids": [
+            "S27"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "EKS control-plane view",
+          "body": "EKS can export API, audit, authenticator, scheduler and controller-manager logs to CloudWatch. Export is disabled by default and each type is enabled separately. Audit records help investigate who changed cluster resources; retention and ingestion costs require planning.",
+          "source_ids": [
+            "S28"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked incident",
+          "body": "Imagine the quote API becomes slow after adding replicas. Start with latency and error rate, then inspect traces for database waits, connection counts and per-Pod concurrency. Compare CPU throttling, restarts and queue delay. This hypothetical incident tests whether the database bottleneck diagnosis fits; it is not a claim that every latency spike has that cause.",
+          "source_ids": [
+            "S27",
+            "S07"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Diagnostic commands: review-only examples",
+          "body": "kubectl -n insurance get pods -o wide\nkubectl -n insurance describe pod POD_NAME\nkubectl -n insurance logs POD_NAME --previous\nkubectl -n insurance get events --sort-by=.metadata.creationTimestamp\nkubectl -n insurance get endpointslices -l kubernetes.io/service-name=quotes\nkubectl -n insurance top pods\n\nReplace POD_NAME. Previous logs require a prior container instance; top requires a working Metrics API provider.",
+          "source_ids": [
+            "S27",
+            "S05"
+          ],
+          "evidence": "synthesis",
+          "format": "code"
+        },
+        {
+          "heading": "Decision, pitfall and further improvement",
+          "body": "Choose retention and labels around an actual troubleshooting question. Avoid putting raw tokens or unbounded tenant identifiers into telemetry. Alert on sustained user-facing errors and latency, then include placement, IP capacity and dependencies as diagnostic context. Proposed objective: find a failed release’s cause from retained evidence without needing to reproduce it.",
+          "source_ids": [
+            "S27",
+            "S28"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/12-diagnosis.svg",
+          "title": "12 / From a symptom to the next useful check",
+          "caption": "Reasoned troubleshooting flow based on component responsibilities and observability primitives. A symptom can have more than one root cause.",
+          "source_ids": [
+            "S27",
+            "S07",
+            "S05",
+            "S19"
+          ],
+          "alt": "Four diagnostic branches map Pending, CrashLoopBackOff, errors and latency to checks and possible causes."
+        },
+        {
+          "path": "figures/12-signals.svg",
+          "title": "Signals serve different consumers",
+          "caption": "Logical pipelines; collection components depend on compute mode. EKS does not expose every managed control-plane metric endpoint as a self-managed cluster would.",
+          "source_ids": [
+            "S27",
+            "S28"
+          ],
+          "alt": "One pipeline collects app and node telemetry for dashboards. A separate resource Metrics API provides CPU and memory for HPA and kubectl top."
+        }
+      ],
+      "check": {
+        "question": "If kubectl top works, are application traces and audit logs automatically available?",
+        "answer": "No. Resource metrics, application telemetry and control-plane logging are different pipelines that require their own configuration and retention."
+      }
+    },
+    {
+      "id": "13-lifecycle",
+      "stage": "further-improvements",
+      "title": "Upgrades, recovery paths and the full bill",
+      "prerequisites": [
+        "04-eks-model",
+        "09-release-reliability",
+        "12-observability"
+      ],
+      "takeaway": "Budget compatibility work and recovery before the support calendar makes the decision for you.",
+      "sections": [
+        {
+          "heading": "Learning objective and upgrade mechanism",
+          "body": "Inventory removed APIs, admission webhooks, CRDs, nodes and add-ons. Rehearse in a representative non-production environment. Follow the EKS procedure for the control plane and compatible components. Standard add-on updates are not automatically completed merely because the control plane was upgraded; Auto Mode changes some operational responsibilities.",
+          "source_ids": [
+            "S22",
+            "S31",
+            "S15"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Current recovery boundary",
+          "body": "The retrieved EKS documentation describes a conditional version rollback: initiate within seven days of an in-place upgrade, return only to the previous minor version and satisfy eligibility and compatibility checks. It preserves data and does not roll back all add-ons or non-Auto-Mode compute for you. Check current supported versions and the detailed prerequisites before relying on it. After that window, a new cluster and migration may be needed.",
+          "source_ids": [
+            "S38",
+            "S31"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Worked cost calculation",
+          "body": "Published EKS cluster-support charges are $0.10 per cluster-hour for standard support and $0.60 for extended support. For an illustrative 730-hour month: $73 or $438 for this charge alone. EC2 or Fargate compute, Auto Mode charges where applicable, networking, storage, telemetry and optional features are additional. These are not an estimate for a complete production environment.",
+          "source_ids": [
+            "S23"
+          ],
+          "evidence": "verified",
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and pitfall",
+          "body": "Use a tested in-place upgrade when its compatibility and recovery constraints fit. Evaluate blue/green clusters when traffic migration and duplicated infrastructure are worth the additional cost. Neither approach automatically reverses a destructive database migration. Keep application and data rollback plans separate from control-plane recovery.",
+          "source_ids": [
+            "S22",
+            "S38"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Maintain an upgrade calendar and a cost allocation map. Track useful cost per completed business transaction alongside reliability metrics. Evaluate NAT, data transfer and telemetry retention rather than assuming worker instance price is the entire bill. Revisit region and account-specific pricing before a purchase decision.",
+          "source_ids": [
+            "S23",
+            "S22"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/13-upgrades.svg",
+          "title": "13 / Upgrade with compatibility checkpoints",
+          "caption": "A high-level workflow, not an executable runbook. Some add-ons need preparation before the control-plane step. Rollback has eligibility and compatibility limits and does not revert data or all add-ons.",
+          "source_ids": [
+            "S22",
+            "S31",
+            "S38"
+          ],
+          "alt": "Inventory and rehearse, prepare compatibility, upgrade control plane, roll nodes and add-ons, validate behavior, then choose a documented recovery path if needed."
+        },
+        {
+          "path": "figures/13-cost.svg",
+          "title": "Budget the whole platform",
+          "caption": "Published standard cluster-support rates retrieved on 2026-10-10. Region, partition, features, support tiers and resource usage can change the bill. No compute-price estimate is asserted.",
+          "source_ids": [
+            "S23"
+          ],
+          "alt": "Five cost rows cover cluster support, compute, networking, storage and operations. Standard support is 73 dollars for a 730-hour illustrative month, extended support 438 dollars."
+        }
+      ],
+      "check": {
+        "question": "Does reverting a cluster version revert a changed database schema?",
+        "answer": "No. Version rollback changes eligible control-plane components, not application data migrations. Database compatibility and recovery need an independent plan."
+      }
+    },
+    {
+      "id": "14-practice",
+      "stage": "further-improvements",
+      "title": "A practical learning path and improvement experiments",
+      "prerequisites": [
+        "13-lifecycle",
+        "11-security",
+        "10-scaling"
+      ],
+      "takeaway": "Make every improvement a hypothesis with a measured success condition.",
+      "sections": [
+        {
+          "heading": "Learning objective and mental model",
+          "body": "Treat the platform as a set of contracts: desired state, traffic delivery, permissions, persistence, capacity and recovery. Improve one weak contract at a time. This is a synthesis of the preceding mechanisms; the right next experiment depends on your workload and operating responsibility.",
+          "source_ids": [
+            "S02",
+            "S09",
+            "S22"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Lab 1: local fundamentals",
+          "body": "In a disposable test environment, deploy a small HTTP service, a Service and the supplied manifest specimen after replacing the image and implementing its endpoints. Inspect ownership and labels, replace one Pod and observe how the controller restores the count. Record time until useful traffic resumes. Do not run the specimen unchanged against production.",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S05"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Lab 2: capacity and failures",
+          "body": "Increase load gradually, compare resource requests with measured demand, then inspect the HPA metric and node provisioning path. Introduce one dependency failure and one failed rollout in the test environment. A good experiment specifies demand, duration, acceptable latency/error behavior and what evidence would reject the hypothesis.",
+          "source_ids": [
+            "S08",
+            "S26",
+            "S10"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Lab 3: EKS integration",
+          "body": "Choose managed nodes or Auto Mode according to the stated responsibility matrix. Verify private administration access, identity resolution, routing, storage compatibility and subnet headroom. Test an allowed and denied AWS action. Costs accrue for an EKS environment; plan resource cleanup as part of the exercise.",
+          "source_ids": [
+            "S19",
+            "S17",
+            "S15",
+            "S23"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Lab 4: recovery and next topics",
+          "body": "Restore data and workload configuration into an isolated compatible environment; validate records and measure RPO/RTO against your chosen objectives. Then study workload-specific topics: operators for data services, progressive delivery, policy admission, multi-cluster recovery or queue-based scaling. Add those only when the baseline measurements expose a real need.",
+          "source_ids": [
+            "S06",
+            "S22",
+            "S27"
+          ],
+          "evidence": "synthesis",
+          "format": "prose"
+        },
+        {
+          "heading": "Evidence limits",
+          "body": "Examples were structurally reviewed and parsed where supplied as YAML; they were not deployed to an AWS account or live cluster. No load-test, recovery-time or savings result was measured. Official sources were retrieved on 2026-10-10; living docs, region support, feature constraints and pricing need rechecking before implementation.",
+          "source_ids": [],
+          "evidence": "open-question",
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/14-labs.svg",
+          "title": "14 / Improve a baseline with evidence",
+          "caption": "Proposed learning exercises for a disposable environment. Measurement targets are defined by you; no production experiment or measured result is claimed.",
+          "source_ids": [
+            "S09",
+            "S08",
+            "S22"
+          ],
+          "alt": "A baseline is tested with replica loss, traffic growth and isolated recovery drills, each tied to observable success criteria."
+        }
+      ],
+      "check": {
+        "question": "What would make the proposed HPA improvement fail its evaluation?",
+        "answer": "If more replicas do not improve useful throughput or meet latency/error objectives, or if startup lag and dependency saturation negate the expected benefit, the experiment rejects or narrows the hypothesis."
+      }
+    }
+  ]
+}

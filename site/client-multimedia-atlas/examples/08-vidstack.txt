@@ -1,0 +1,7 @@
+// Conceptual Vidstack 1.x shape; not a current install recipe.
+<MediaPlayer src={ownedHlsUrl}>
+  <MediaProvider />
+  <YourControls />
+</MediaPlayer>
+// Inventory the real 1.x imports and layouts in your existing project.
+// Use the v10 migration guide for a new integration.

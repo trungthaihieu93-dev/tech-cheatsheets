@@ -1,0 +1,8 @@
+// Illustrative; package export shape follows the selected build.
+import dashjs from "dashjs";
+export function mountDash(video, manifestUrl) {
+  const player = dashjs.MediaPlayer().create();
+  player.initialize(video, manifestUrl, false);
+  return () => player.reset();
+}
+// Add error listeners and protection data for your deployment.

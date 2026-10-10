@@ -1,0 +1,8 @@
+// Illustrative: use the verified entry point for your installed build.
+const player = new Clappr.Player({
+  parent: document.querySelector("#player"),
+  source: ownedMp4Url
+});
+// On unmount/source-owner replacement:
+player.destroy();
+// HLS playback requires the matching supported playback integration.

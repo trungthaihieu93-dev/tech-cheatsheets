@@ -1,0 +1,381 @@
+[
+  {
+    "id": "S01",
+    "title": "Null safety",
+    "url": "https://kotlinlang.org/docs/null-safety.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Nullable types, smart casts, safe calls and Elvis operator"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S02",
+    "title": "Collections overview",
+    "url": "https://kotlinlang.org/docs/collections-overview.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Read-only versus mutable interfaces; val and mutable collections"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S03",
+    "title": "Data classes",
+    "url": "https://kotlinlang.org/docs/data-classes.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Generated value operations and shallow copying"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S04",
+    "title": "Sealed classes and interfaces",
+    "url": "https://kotlinlang.org/docs/sealed-classes.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Closed hierarchies and exhaustive when expressions"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S05",
+    "title": "Higher-order functions and lambdas",
+    "url": "https://kotlinlang.org/docs/lambdas.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Function types, lambdas and passing behavior"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S06",
+    "title": "Extensions",
+    "url": "https://kotlinlang.org/docs/extensions.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Extension resolution and absence of real class modification"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S07",
+    "title": "Collection transformation operations",
+    "url": "https://kotlinlang.org/docs/collection-transformations.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Transforming collection values"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S08",
+    "title": "Coroutines basics",
+    "url": "https://kotlinlang.org/docs/coroutines-basics.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Suspension, dispatchers, scopes and task hierarchy"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S09",
+    "title": "coroutineScope API",
+    "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Scoped child tasks, waiting and failure propagation"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S10",
+    "title": "CancellationException API",
+    "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellation-exception/",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Cancellation is a normal coroutine control signal"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S11",
+    "title": "ensureActive API",
+    "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Cooperative checks in non-suspending work"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S12",
+    "title": "Flows",
+    "url": "https://kotlinlang.org/docs/coroutines-flow.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Cold flow execution and collection"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S13",
+    "title": "StateFlow API",
+    "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Hot state, latest value, equality conflation and atomic update"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S14",
+    "title": "Multiplatform project structure",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-discover-project.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Common and platform sources compile together for a target"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S15",
+    "title": "Source set hierarchy",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-hierarchy.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Intermediate iOS sources and target hierarchy"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S16",
+    "title": "Expected and actual declarations",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-expect-actual.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Platform implementations and interface-based alternatives"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S17",
+    "title": "Compose Multiplatform",
+    "url": "https://kotlinlang.org/compose-multiplatform/",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Optional shared UI and gradual adoption"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S18",
+    "title": "Swift/Objective-C interoperability",
+    "url": "https://kotlinlang.org/docs/native-objc-interop.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Framework export, exception mapping and conversion overhead"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S19",
+    "title": "Swift export",
+    "url": "https://kotlinlang.org/docs/native-swift-export.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Alpha status; async and AsyncSequence; limitations and direct integration"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project.",
+    "published": "2026-08-28",
+    "uncertainties": "Alpha feature; public surface and integration constraints can change."
+  },
+  {
+    "id": "S20",
+    "title": "Kotlin/Native memory management",
+    "url": "https://kotlinlang.org/docs/native-memory-manager.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Shared heap, tracing garbage collection and profiling"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S21",
+    "title": "Integration with Swift/Objective-C ARC",
+    "url": "https://kotlinlang.org/docs/native-arc-integration.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Mixed cycles, reclamation timing and completion thread caveats"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S22",
+    "title": "Test your multiplatform app",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-run-tests.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Common tests across targets and platform-specific validation"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S23",
+    "title": "kotlinx-coroutines-test",
+    "url": "https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Virtual-time coroutine testing; runTest limitations"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S24",
+    "title": "KMP compatibility guide",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-compatibility-guide.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Toolchain compatibility and Android plugin migration"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S25",
+    "title": "Swift package export setup",
+    "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-spm-export.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "XCFramework binary distribution through SwiftPM"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S26",
+    "title": "Kotlin/Native overview",
+    "url": "https://kotlinlang.org/docs/native-overview.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Native compilation and runtime overview"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S27",
+    "title": "Calling Java from Kotlin",
+    "url": "https://kotlinlang.org/docs/java-interop.html",
+    "publisher": "JetBrains / Kotlin project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Platform types and nullability at a Java boundary"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S28",
+    "title": "d8 Android dex compiler",
+    "url": "https://developer.android.com/tools/d8",
+    "publisher": "Google / Android Developers",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "Java bytecode to DEX compilation in Android builds"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  },
+  {
+    "id": "S29",
+    "title": "Android runtime and Dalvik",
+    "url": "https://source.android.com/docs/core/runtime",
+    "publisher": "Android Open Source Project",
+    "kind": "official documentation",
+    "accessed": "2026-10-09",
+    "version": "Rolling documentation as accessed; use project-specific toolchain compatibility",
+    "supports": [
+      "ART executes DEX code on Android"
+    ],
+    "relevance": "Study the mechanism described above, then verify it against the versions used in your project."
+  }
+]

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hls.js: HLS engine, not a complete branded player</title>
+<style>:root{color-scheme:light;--paper:#FFFEF7;--ink:#18202a;--blue:#1E3A8A;--line:#bfd0dc;--yellow:#FEF08A;--purple:#7C3AED}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e2d6;color:var(--ink);font:17px/1.65 "Trebuchet MS",Arial,sans-serif}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{background:#FEF9C3}
+.notebook{max-width:1040px;margin:28px auto;padding:48px 52px 48px 66px;background:var(--paper);border:1px solid #dacfbf;border-radius:6px 24px 24px 6px;box-shadow:0 10px 35px #30240f18;position:relative}
+.notebook:before{content:"";position:absolute;left:15px;top:26px;bottom:26px;width:13px;background:radial-gradient(ellipse,#000000 0 28%,transparent 34%) 0 0/13px 42px repeat-y;border-right:1px solid #dbd2c6}
+header{margin-bottom:34px;border-bottom:3px dashed var(--blue);padding-bottom:26px}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;color:var(--blue)}
+h1,h2,h3{line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,54px);color:var(--blue);margin:14px 0 22px;font-weight:900;letter-spacing:-.035em}
+h1 span{background:linear-gradient(transparent 56%,var(--yellow) 56% 93%,transparent 93%)}
+h2{font-size:29px;margin:8px 0 12px;font-weight:900}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta,.prerequisites{font-size:14px;color:#485265}
+.depth{display:inline-block;background:#FEF9C3;border:2px solid var(--ink);padding:3px 13px;border-radius:8px 13px 7px 12px;font-weight:bold;color:var(--ink)}
+.toc{padding:20px 24px;background:#DBEAFE;border:2px solid #3B82F6;border-radius:15px 21px 14px 17px;margin:22px 0}
+.toc ol{padding-left:23px;margin:12px 0}
+.toc li{margin:7px 0}
+.stage-label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.topic{padding:27px 29px;margin:32px 0;border:2px solid var(--ink);border-radius:17px 25px 16px 22px;background:#FFFEF7;break-inside:auto}
+.topic.fundamentals{--tint:#DBEAFE;--accent:#3B82F6}
+.topic.applications{--tint:#FEF9C3;--accent:#EAB308}
+.topic.best-practices{--tint:#DCFCE7;--accent:#22C55E}
+.topic.further-improvements{--tint:#F3E8FF;--accent:#A855F7}
+.topic-head{background:var(--tint);padding:18px 21px;margin:-27px -29px 25px;border-radius:14px 22px 0 0;border-bottom:2px solid var(--accent)}
+.topic-head h2{padding-bottom:9px;border-bottom:3px solid var(--accent)}
+figure{margin:23px 0;padding:16px;border:2px solid var(--line);border-radius:13px 18px 12px 17px;background:#fffefb;break-inside:avoid}
+figure img{display:block;max-width:100%;width:auto;max-height:730px;margin:auto;height:auto}
+.figure-title{font-size:15px;font-weight:bold;margin:0 0 12px;color:var(--blue)}
+figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#465063}
+.evidence{font-size:11px;letter-spacing:.02em;padding:2px 6px;border-radius:5px;background:#edf2f8;color:#43536e}
+.synthesis{background:#FEF9C3;color:#6d4d13}.open-question{background:#FFE4E6;color:#7a3751}
+.citations{font-size:13px;display:inline}
+.takeaway{padding:15px 19px;background:var(--tint);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;margin:23px 0}
+details{border:1px solid #d4cab9;border-radius:10px;padding:13px 17px;background:#FFFEF7}
+summary{font-weight:bold;cursor:pointer}
+.answer{margin-top:10px}
+pre{background:#eff3f8;padding:18px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}
+.source-list{font-size:14px;padding-left:23px}
+.source-list li{margin:15px 0;overflow-wrap:anywhere;break-inside:avoid}
+.source-list p{margin:5px 0}
+footer{border-top:3px dotted var(--blue);padding-top:18px;margin-top:34px;font-size:13px}
+@media(max-width:650px){body{font-size:16px;background:var(--paper)}.notebook{margin:0;border:0;box-shadow:none;padding:30px 16px 30px 35px;border-radius:0}.notebook:before{left:9px;width:9px;background-size:9px 34px}.topic{padding:19px 17px}.topic-head{margin:-19px -17px 18px;padding:15px 17px}h2{font-size:25px}figure{padding:10px}}
+@media print{body{background:white;font-size:11pt}.notebook{max-width:none;margin:0;padding:0;border:0;box-shadow:none}.notebook:before{display:none}h1{font-size:30pt}h2{font-size:20pt}h3{font-size:13pt}.topic{break-before:page;border-width:1px;margin:0 0 20px}figure{break-inside:avoid}details{display:block}details .answer{display:block}a{color:var(--ink)}.toc{break-inside:avoid}.evidence,figcaption,.source-list{font-size:9pt}}
+
+h1 .title-domain{display:block;background:none;color:#1E3A8A}
+h1 .title-focus{display:inline;color:#000000;background:linear-gradient(transparent 48%,#FEF08A 48% 96%,transparent 96%)}
+h1 .title-atlas{display:block;background:none;color:#000000;border-bottom:5px double #7C3AED;width:fit-content;padding-bottom:8px;margin-top:8px}
+.overview{margin:32px 0}.overview-card{display:grid;grid-template-columns:56px 1fr 110px;gap:15px;align-items:center;padding:16px;margin:15px 0;background:var(--tint);border:2px solid var(--accent);border-radius:16px 21px 14px 18px}
+.overview-card h3{margin:0 0 6px;font-size:20px}.overview-card p{margin:0;font-size:15px;line-height:1.55}
+.badge{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:var(--badge);border:2px solid #18202A;font-weight:900;font-size:23px}
+.overview-card.blue{--tint:#DBEAFE;--accent:#3B82F6;--badge:#A8D8FF}.overview-card.yellow{--tint:#FEF9C3;--accent:#EAB308;--badge:#FEF08A}.overview-card.mint{--tint:#DCFCE7;--accent:#22C55E;--badge:#BBF7D0}.overview-card.purple{--tint:#F3E8FF;--accent:#A855F7;--badge:#E9D5FF}
+.matrix{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}.matrix th{background:#DBEAFE;text-align:left;color:#1E3A8A}.matrix th,.matrix td{padding:12px;border:1px solid #b7c4cd;vertical-align:top}.matrix tr:nth-child(even){background:#FEF9C355}
+.table-scroll{overflow-x:auto;border-radius:12px;margin:22px 0}.matrix td:first-child{font-weight:bold;min-width:108px}.note{padding:15px 18px;background:#FFE4E6;border-left:5px solid #EC4899;border-radius:8px;line-height:1.6}
+.diagram-hint{font-size:13px;color:#485265;margin-top:12px}
+@media(max-width:650px){.overview-card{grid-template-columns:44px 1fr;gap:10px;padding:12px}.overview-card svg{display:none}.badge{width:40px;height:40px;font-size:19px}.matrix{min-width:700px}figure{overflow-x:auto}figure img{min-width:600px;max-width:none;width:100%;max-height:none}figcaption{min-width:0}h1{font-size:32px}.title-atlas{font-size:29px}}
+
+pre{white-space:pre;overflow-x:auto;overflow-wrap:normal}h1 .title-focus{background:#FEF08A}.objective{font-size:16px;font-weight:400}
+</style>
+</head>
+<body>
+<main class="notebook">
+<nav><a href="../index.html#09-hlsjs">← Back to atlas</a></nav><article id="09-hlsjs" class="topic applications"><div class="topic-head"><div class="stage-label">Part 9 · Applications</div><h2>hls.js: HLS engine, not a complete branded player</h2><p class="objective"><strong>Learn to:</strong> initialize one HLS engine with fallback, failure reporting and cleanup.</p><p class="prerequisites">Prerequisites: 03-adaptive-streaming</p></div><figure><p class="figure-title">HLS scheduling pipeline</p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjAiIGhlaWdodD0iNjkyIiB2aWV3Qm94PSIwIDAgNzIwIDY5MiIgcm9sZT0iaW1nIj48dGl0bGU+aGxzLmpzIG93bnMgdGhlIEhMUyBzY2hlZHVsaW5nIHBpcGVsaW5lPC90aXRsZT48ZGVmcz48bWFya2VyIGlkPSJhcnJvdyIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTSAwIDAgTCAxMCA1IEwgMCAxMCB6IiBmaWxsPSIjMTgyMDJBIi8+PC9tYXJrZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3MjAiIGhlaWdodD0iNjkyIiByeD0iMTgiIGZpbGw9IiNGRkZFRjciLz48dGV4dCB4PSIyNiIgeT0iMzciIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFFM0E4QSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5obHMuanMgb3ducyB0aGUgSExTIHNjaGVkdWxpbmcgcGlwZWxpbmU8L3RleHQ+PHBhdGggZD0iTTI2IDQ5IFEyODAgNDYgNjk0IDQ5IiBzdHJva2U9IiM3QzNBRUQiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjI4IiB5PSI3NSIgd2lkdGg9IjM4NSIgaGVpZ2h0PSIxMTIiIHJ4PSIxMyIgZmlsbD0iI0RCRUFGRSIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjQyIiB5PSIxMDQiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5QbGF5bGlzdCBhbmQgc2VnbWVudCBsb2FkaW5nPC90ZXh0Pjx0ZXh0IHg9IjQyIiB5PSIxMjkiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5EaXNjb3ZlciB2YXJpYW50czsgcmVxdWVzdCBtZWRpYTwvdGV4dD48dGV4dCB4PSI0MzUiIHk9IjEwNSIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMUUzQThBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPjAxPC90ZXh0Pjx0ZXh0IHg9IjQ3OCIgeT0iMTAzIiBmb250LWZhbWlseT0iVHJlYnVjaGV0IE1TLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxODIwMkEiIHRleHQtYW5jaG9yPSJzdGFydCI+QUJSIHNlbGVjdHMgdmFyaWFudHM8L3RleHQ+PHRleHQgeD0iNDc4IiB5PSIxMjYiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij53aGlsZSBzY2hlZHVsaW5nPC90ZXh0Pjx0ZXh0IHg9IjQ3OCIgeT0iMTQ5IiBmb250LWZhbWlseT0iVHJlYnVjaGV0IE1TLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxODIwMkEiIHRleHQtYW5jaG9yPSJzdGFydCI+Y29udGludWVzLjwvdGV4dD48cGF0aCBkPSJNMjIwIDE4NyBMMjIwIDIyMSIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuNCIgZmlsbD0ibm9uZSIgbWFya2VyLWVuZD0idXJsKCNhcnJvdykiLz48cmVjdCB4PSIyOCIgeT0iMjI1IiB3aWR0aD0iMzg1IiBoZWlnaHQ9IjExMiIgcng9IjEzIiBmaWxsPSIjRkVGOUMzIiBzdHJva2U9IiMxODIwMkEiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHRleHQgeD0iNDIiIHk9IjI1NCIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPkRlbXV4IC8gdHJhbnNtdXggYXMgbmVlZGVkPC90ZXh0Pjx0ZXh0IHg9IjQyIiB5PSIyNzkiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5QcmVwYXJlIHN1cHBvcnRlZCBlbmNvZGVkIHRyYWNrczwvdGV4dD48dGV4dCB4PSI0MzUiIHk9IjI1NSIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMUUzQThBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPjAyPC90ZXh0Pjx0ZXh0IHg9IjQ3OCIgeT0iMjUzIiBmb250LWZhbWlseT0iVHJlYnVjaGV0IE1TLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxODIwMkEiIHRleHQtYW5jaG9yPSJzdGFydCI+VHJhbnNtdXhpbmcgY2hhbmdlczwvdGV4dD48dGV4dCB4PSI0NzgiIHk9IjI3NiIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPnBhY2thZ2luZywgbm90IHRoZSB2aWRlbzwvdGV4dD48dGV4dCB4PSI0NzgiIHk9IjI5OSIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPmNvZGVjLjwvdGV4dD48cGF0aCBkPSJNMjIwIDMzNyBMMjIwIDM3MSIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuNCIgZmlsbD0ibm9uZSIgbWFya2VyLWVuZD0idXJsKCNhcnJvdykiLz48cmVjdCB4PSIyOCIgeT0iMzc1IiB3aWR0aD0iMzg1IiBoZWlnaHQ9IjExMiIgcng9IjEzIiBmaWxsPSIjRENGQ0U3IiBzdHJva2U9IiMxODIwMkEiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHRleHQgeD0iNDIiIHk9IjQwNCIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPkJ1ZmZlciBjb250cm9sICsgTVNFPC90ZXh0Pjx0ZXh0IHg9IjQyIiB5PSI0MjkiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5BcHBlbmQgbWVkaWEgYW5kIG1hbmFnZSByYW5nZXM8L3RleHQ+PHRleHQgeD0iNDM1IiB5PSI0MDUiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFFM0E4QSIgdGV4dC1hbmNob3I9InN0YXJ0Ij4wMzwvdGV4dD48dGV4dCB4PSI0NzgiIHk9IjQwMyIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPk9ubHkgb25lIGFjdGl2ZSBlbmdpbmU8L3RleHQ+PHRleHQgeD0iNDc4IiB5PSI0MjYiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5wZXIgZWxlbWVudC48L3RleHQ+PHBhdGggZD0iTTIyMCA0ODcgTDIyMCA1MjEiIHN0cm9rZT0iIzE4MjAyQSIgc3Ryb2tlLXdpZHRoPSIyLjQiIGZpbGw9Im5vbmUiIG1hcmtlci1lbmQ9InVybCgjYXJyb3cpIi8+PHJlY3QgeD0iMjgiIHk9IjUyNSIgd2lkdGg9IjM4NSIgaGVpZ2h0PSIxMTIiIHJ4PSIxMyIgZmlsbD0iI0YzRThGRiIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjQyIiB5PSI1NTQiIGZvbnQtZmFtaWx5PSJUcmVidWNoZXQgTVMsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE4MjAyQSIgdGV4dC1hbmNob3I9InN0YXJ0Ij5IVE1MIHZpZGVvIGVsZW1lbnQ8L3RleHQ+PHRleHQgeD0iNDIiIHk9IjU3OSIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPkRlY29kZTsgcmVuZGVyOyBlbWl0IG1lZGlhIGV2ZW50czwvdGV4dD48dGV4dCB4PSI0MzUiIHk9IjU1NSIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMUUzQThBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPjA0PC90ZXh0Pjx0ZXh0IHg9IjQ3OCIgeT0iNTUzIiBmb250LWZhbWlseT0iVHJlYnVjaGV0IE1TLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxODIwMkEiIHRleHQtYW5jaG9yPSJzdGFydCI+VXNlIG5hdGl2ZSBjb250cm9scyBvcjwvdGV4dD48dGV4dCB4PSI0NzgiIHk9IjU3NiIgZm9udC1mYW1pbHk9IlRyZWJ1Y2hldCBNUyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIiB0ZXh0LWFuY2hvcj0ic3RhcnQiPmFkZCB5b3VyIG93biBVSS48L3RleHQ+PC9zdmc+" alt="Conceptual controller flow. Actual loading and buffering are asynchronous; ABR influences requests across the pipeline."><figcaption>Conceptual controller flow. Actual loading and buffering are asynchronous; ABR influences requests across the pipeline. <span class="citations"><a href="#source-S21">[S21]</a> <a href="#source-S22">[S22]</a> <a href="#source-S23">[S23]</a></span></figcaption><p class="diagram-hint">On a narrow screen, swipe the diagram horizontally to keep its labels readable.</p></figure><h3>Architecture <span class="evidence verified">verified</span></h3><p>hls.js loads HLS and uses browser media capabilities for playback. Its controllers handle loading, stream processing and buffering. Transmuxing reorganizes encoded data for the playback path; it does not transcode an unsupported codec into a supported one.</p><span class="citations"><a href="#source-S21">[S21]</a> <a href="#source-S22">[S22]</a></span><h3>Minimal mounting pattern <span class="evidence synthesis">synthesis</span></h3><pre>// Illustrative JS module; src must be a real HLS manifest URL.
+import Hls from &quot;hls.js&quot;;
+export function mountHls(video, src, onFailure) {
+  if (video.canPlayType(&quot;application/vnd.apple.mpegurl&quot;)) {
+    const onError = () =&gt; onFailure(video.error);
+    video.addEventListener(&quot;error&quot;, onError);
+    video.src = src;
+    return () =&gt; {
+      video.removeEventListener(&quot;error&quot;, onError);
+      video.pause(); video.removeAttribute(&quot;src&quot;); video.load();
+    };
+  }
+  if (!Hls.isSupported()) {
+    onFailure(new Error(&quot;HLS is unsupported&quot;)); return () =&gt; {};
+  }
+  const hls = new Hls();
+  hls.on(Hls.Events.ERROR, (_, detail) =&gt; {
+    if (detail.fatal) onFailure(detail);
+  });
+  hls.attachMedia(video); hls.loadSource(src);
+  return () =&gt; hls.destroy();
+}</pre><span class="citations"><a href="#source-S21">[S21]</a> <a href="#source-S23">[S23]</a></span><h3>Decision and trade-off <span class="evidence synthesis">synthesis</span></h3><p>Choose this engine when you need direct HLS diagnostics and can supply the UI. Native-first is the sample’s policy, not a universal rule: choosing MSE can expose additional engine control at the cost of another code path. Test the target browser/codec combination.</p><span class="citations"><a href="#source-S21">[S21]</a> <a href="#source-S23">[S23]</a></span><h3>Pitfall → improvement <span class="evidence synthesis">synthesis</span></h3><p>CORS must work for all HLS resources, not just the playlist. A fatal error needs a bounded, classified recovery policy; endless retries hide expired authorization. Add metrics and cleanup before advanced ABR tuning.</p><span class="citations"><a href="#source-S21">[S21]</a> <a href="#source-S23">[S23]</a></span><div class="takeaway"><strong>Keep this:</strong> Own initialization, fallback, cleanup and error reporting when using a low-level engine.</div><details><summary>Check yourself: Can transmuxing repair a codec unsupported by the browser?</summary><p class="answer">No. Packaging can change while the encoded video codec stays the same; the browser must still be able to decode it.</p></details></article><section><h2>Sources &amp; further reading</h2><ol class="source-list"><li id="source-S21"><strong>[S21]</strong> <a href="https://github.com/video-dev/hls.js">HLS.js README</a><p class="meta">HLS.js maintainers · official documentation · accessed 2026-10-10 · current docs</p><p>Supports: MSE-based HLS, native fallback, browser codec constraints and CORS on all HLS resources.</p><p>Read this page to inspect the API and assumptions behind the cited explanation.</p></li><li id="source-S22"><strong>[S22]</strong> <a href="https://github.com/video-dev/hls.js/blob/master/docs/design.md">HLS.js design</a><p class="meta">HLS.js maintainers · official documentation · accessed 2026-10-10 · current docs</p><p>Supports: Loading, stream control, demux/transmux and buffer architecture.</p><p>Read this page to inspect the API and assumptions behind the cited explanation.</p></li><li id="source-S23"><strong>[S23]</strong> <a href="https://hlsjs.video-dev.org/api-docs/hls.js.hls">Hls class API</a><p class="meta">HLS.js maintainers · official documentation · accessed 2026-10-10 · current docs</p><p>Supports: One media element per Hls instance, destroy, level caps, buffer and bandwidth introspection.</p><p>Read this page to inspect the API and assumptions behind the cited explanation.</p></li></ol></section>
+</main>
+</body>
+</html>

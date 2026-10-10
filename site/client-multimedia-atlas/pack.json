@@ -1,0 +1,1880 @@
+{
+  "title": "Client Multimedia Libraries — Illustrated Atlas",
+  "domain": "Browser video players, provider wrappers and streaming engines",
+  "depth": "libs-frameworks-stacks",
+  "language": "en",
+  "researched_at": "2026-10-10",
+  "scope": "Depth 3 · All eight pictured libraries · 18 illustrated topics · 3 worked reference architectures. Covers browser-side playback with React-oriented examples and framework-neutral engines. Current primary documentation was reviewed on 10 October 2026; v10 example targets @videojs/react 10.0.1. Other snippets describe documented interfaces and need a project lockfile/device test. Worked cases are proposed designs, not published customer outcomes. Popularity/download counts in the screenshot are intentionally not used as evidence. Code was not executed against live media; no performance measurements are claimed. Clappr component repositories are historical and point to its monorepo.",
+  "design_reference": {
+    "document_id": "deep_learning_architectures_cheatsheet_2026_v1",
+    "files_consulted": [
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Metadata.json",
+      "references/cheatsheet-generation/Deep-Learning-Cheatsheet-Analysis.html",
+      "assets/style-reference.png",
+      "references/art-direction.md"
+    ],
+    "adaptations": [
+      "Original eight-library curriculum across four learning stages; 18 topics, not the reference chapter count.",
+      "Exact notebook palette, spiral cues, highlighter titles, numbered overview badge/card/sketch groups.",
+      "Editable mechanism SVGs; two-lane comparisons and split case-study figures keep labels readable.",
+      "On narrow screens diagrams scroll horizontally at readable width; prose reflows.",
+      "No source-image branding or decorative raster copies."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Media Source API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "JavaScript appends encoded media through MediaSource and SourceBuffer; MSE does not replace the browser decoder."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S02",
+      "title": "Audio and video delivery",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Progressive files, streaming formats, browser playback and media delivery responsibilities."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S03",
+      "title": "The HTML video element",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Native controls, tracks, media events, preload, playsinline and source support."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S04",
+      "title": "Autoplay guide",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Autoplay policies and handling rejected play requests."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S05",
+      "title": "Video.js architecture",
+      "url": "https://videojs.org/docs/framework/react/guides/architecture",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "v10",
+      "published": "",
+      "supports": [
+        "v10 separates state, UI, media components and extensions."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S06",
+      "title": "React installation guide",
+      "url": "https://videojs.org/docs/guides/installation/react",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "10.0.1",
+      "published": "",
+      "supports": [
+        "Current preset API and installation of @videojs/react@10.0.1."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S07",
+      "title": "Video.js media sources",
+      "url": "https://videojs.org/docs/framework/react/guides/media-sources",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "v10",
+      "published": "",
+      "supports": [
+        "Engine adapters, source options and explicit media types for signed URLs."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S08",
+      "title": "Migrate from Video.js 8",
+      "url": "https://videojs.org/docs/framework/react/guides/migrate-from-video-js-8",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "v8 → v10",
+      "published": "",
+      "supports": [
+        "v8 API and plugin migration boundaries."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S09",
+      "title": "Video.js HTTP Streaming",
+      "url": "https://github.com/videojs/http-streaming",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "v8/VHS",
+      "published": "",
+      "supports": [
+        "VHS provides HLS/DASH streaming for the v8 ecosystem."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S10",
+      "title": "Video.js releases",
+      "url": "https://github.com/videojs/video.js/releases",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "10.0.1",
+      "published": "",
+      "supports": [
+        "v10.0.1 release family and concurrent v8 maintenance releases."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S11",
+      "title": "ReactPlayer README",
+      "url": "https://github.com/cookpete/react-player",
+      "publisher": "ReactPlayer maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "v3",
+      "published": "",
+      "supports": [
+        "v3 provider routing, src, native-like API, HLS/DASH/Mux/YouTube/Vimeo/Wistia support and migration warning."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S12",
+      "title": "React YouTube README",
+      "url": "https://github.com/tjallingt/react-youtube",
+      "publisher": "React YouTube maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Thin wrapper, videoId, opts, onReady and event bindings."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S13",
+      "title": "YouTube IFrame Player API",
+      "url": "https://developers.google.com/youtube/iframe_api_reference",
+      "publisher": "Google / YouTube",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Iframe readiness, state events, seek and playback APIs, origin and minimum player dimensions."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S14",
+      "title": "Mux Player for web",
+      "url": "https://www.mux.com/docs/guides/mux-player-web",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Mux-hosted playback, React integration and on-demand/live player UI."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S15",
+      "title": "Mux Player React API",
+      "url": "https://www.mux.com/docs/guides/player-api-reference/react",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "React playbackId, metadata, tokens and player props."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S16",
+      "title": "Core functionality of Mux Player",
+      "url": "https://www.mux.com/docs/guides/player-core-functionality",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "HLS.js/native HLS playback, Mux Data integration and quality-selector platform constraints."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S17",
+      "title": "Secured video playback",
+      "url": "https://www.mux.com/docs/guides/secure-video-playback",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Server-generated playback JWTs, token audience and expiration requirements."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S18",
+      "title": "Vidstack introduction",
+      "url": "https://vidstack.io/docs/player/",
+      "publisher": "Vidstack maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "1.x",
+      "published": "",
+      "supports": [
+        "Vidstack 1.x is security-only until January 2028; team directs migration to Video.js 10."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S19",
+      "title": "Vidstack architecture",
+      "url": "https://vidstack.io/docs/player/getting-started/architecture/",
+      "publisher": "Vidstack maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "1.x",
+      "published": "",
+      "supports": [
+        "Source selection, provider loaders, requests, state and provider change lifecycle."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S20",
+      "title": "Migrate from Vidstack",
+      "url": "https://videojs.org/docs/framework/react/guides/migrate-from-vidstack",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "1.x → v10",
+      "published": "",
+      "supports": [
+        "Mapping provider/state/UI concepts from Vidstack to Video.js 10."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S21",
+      "title": "HLS.js README",
+      "url": "https://github.com/video-dev/hls.js",
+      "publisher": "HLS.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "MSE-based HLS, native fallback, browser codec constraints and CORS on all HLS resources."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S22",
+      "title": "HLS.js design",
+      "url": "https://github.com/video-dev/hls.js/blob/master/docs/design.md",
+      "publisher": "HLS.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "Loading, stream control, demux/transmux and buffer architecture."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S23",
+      "title": "Hls class API",
+      "url": "https://hlsjs.video-dev.org/api-docs/hls.js.hls",
+      "publisher": "HLS.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "One media element per Hls instance, destroy, level caps, buffer and bandwidth introspection."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S24",
+      "title": "dash.js Quickstart",
+      "url": "https://dashif.org/dash.js/pages/quickstart/",
+      "publisher": "DASH Industry Forum",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "MediaPlayer creation, initialization and basic MPD playback."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S25",
+      "title": "dash.js architecture",
+      "url": "https://dashif.org/dash.js/pages/developers/architecture/",
+      "publisher": "DASH Industry Forum",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "core/dash/streaming layers, per-period/per-track processing and dependency direction."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S26",
+      "title": "dash.js ABR settings",
+      "url": "https://dashif.org/dash.js/pages/usage/abr/settings.html",
+      "publisher": "DASH Industry Forum",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "Default throughput and BOLA rules and configurable ABR behavior."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S27",
+      "title": "dash.js DRM",
+      "url": "https://dashif.org/dash.js/pages/usage/drm.html",
+      "publisher": "DASH Industry Forum",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "Protection data, EME key systems and license-server configuration."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S28",
+      "title": "dash.js low latency",
+      "url": "https://dashif.org/dash.js/pages/usage/low-latency.html",
+      "publisher": "DASH Industry Forum",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "current docs",
+      "published": "",
+      "supports": [
+        "CMAF chunks, latency targets, catchup and low-latency playback trade-offs."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S29",
+      "title": "Clappr project",
+      "url": "https://github.com/clappr/clappr",
+      "publisher": "Clappr maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Extensible plugin-oriented HTML5 player and monorepo organization."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S30",
+      "title": "Clappr core architecture",
+      "url": "https://github.com/clappr/clappr-core",
+      "publisher": "Clappr maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "historical component repo; moved to monorepo",
+      "published": "",
+      "supports": [
+        "Core player components and extensible playback/plugin configuration."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S31",
+      "title": "Clappr HLS playback",
+      "url": "https://github.com/clappr/hlsjs-playback",
+      "publisher": "Clappr maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "historical component repo; moved to monorepo",
+      "published": "",
+      "supports": [
+        "HLS playback is backed by hls.js; plugin and configuration concepts."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S32",
+      "title": "Encrypted Media Extensions API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Browser/CDM interface for protected playback; EME is not a complete content protection service."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S33",
+      "title": "Cross-Origin Resource Sharing",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Server response headers determine cross-origin access; credentialed requests cannot use wildcard origins."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S34",
+      "title": "React useEffect",
+      "url": "https://react.dev/reference/react/useEffect",
+      "publisher": "React team",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Effect setup/cleanup and Strict Mode extra development setup/cleanup cycle."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S35",
+      "title": "Mux Data metric definitions",
+      "url": "https://www.mux.com/docs/guides/understand-metric-definitions",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Startup time, rebuffering, errors and experience metrics."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S36",
+      "title": "Video.js v10 beta architecture announcement",
+      "url": "https://videojs.org/blog/videojs-v10-beta-hello-world-again",
+      "publisher": "Video.js maintainers",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "March beta announcement; later updates",
+      "published": "2026-03-10",
+      "supports": [
+        "Ground-up rewrite involving Vidstack, Plyr and Media Chrome; published bundle comparisons depend on configuration."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S37",
+      "title": "Direct video uploads",
+      "url": "https://www.mux.com/docs/guides/upload-files-directly",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Backend-created upload URLs and asynchronous media readiness."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S38",
+      "title": "Listen for webhooks",
+      "url": "https://www.mux.com/docs/core/listen-for-webhooks",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Asset lifecycle notifications, duplicate events and webhook integration."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S39",
+      "title": "Start live streaming",
+      "url": "https://www.mux.com/docs/guides/start-live-streaming",
+      "publisher": "Mux",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Live ingest, playback IDs and latency modes."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S40",
+      "title": "Making media accessible",
+      "url": "https://www.w3.org/WAI/media/av/",
+      "publisher": "W3C WAI",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Captions, descriptions, transcripts and accessible player planning."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    },
+    {
+      "id": "S41",
+      "title": "WebRTC API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API",
+      "publisher": "MDN",
+      "kind": "official documentation",
+      "accessed": "2026-10-10",
+      "version": "",
+      "published": "",
+      "supports": [
+        "Real-time peer media and communication; different infrastructure from segmented HTTP delivery."
+      ],
+      "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+    }
+  ],
+  "topics": [
+    {
+      "id": "01-layer-map",
+      "stage": "fundamentals",
+      "title": "Name the layer before choosing the library",
+      "prerequisites": [],
+      "takeaway": "Player UI, provider integration, streaming engine and video infrastructure are separate decisions.",
+      "sections": [
+        {
+          "heading": "Objective and mental model",
+          "body": "Learn who owns each responsibility. A player UI presents controls; a provider wrapper adapts another platform; an engine schedules encoded media; the browser decodes it. Hosting, transcoding and CDN delivery sit outside the client library.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Eight libraries, three roles",
+          "body": "Video.js, Vidstack and Clappr are player frameworks. ReactPlayer is a multi-provider React façade; React YouTube is a focused iframe wrapper. Mux Player is a Mux-focused complete player. hls.js and dash.js are streaming engines; native video controls or another UI can sit above them. This classification is an engineering synthesis of the projects’ interfaces.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S05",
+            "S11",
+            "S12",
+            "S14",
+            "S19",
+            "S21",
+            "S24",
+            "S29"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Example and decision",
+          "body": "For a public YouTube lesson, start from provider integration. For your own HLS course, choose a UI plus HLS engine and a delivery backend. For a short MP4 product demo, native video may satisfy the requirement before adding a dependency. Framework fit alone does not settle the choice.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Do not mount hls.js and dash.js on the same video element. Assign one active playback owner and destroy it on source changes. Write a capability checklist—owned files, provider URLs, captions, DRM, live, telemetry—before comparing packages.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S24"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/01-layers.svg",
+          "title": "Responsibility map",
+          "alt": "Simplified architectural paths. External provider iframes retain ownership of their playback implementation; the parent app uses the provider API.",
+          "caption": "Simplified architectural paths. External provider iframes retain ownership of their playback implementation; the parent app uses the provider API.",
+          "source_ids": [
+            "S01",
+            "S13"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does a player package create an adaptive rendition ladder?",
+        "answer": "No. Encoding and packaging create the renditions. A client player or engine chooses and plays what the backend supplies."
+      },
+      "objective": "separate player UI, provider wrappers, streaming engines and media infrastructure."
+    },
+    {
+      "id": "02-browser-pipeline",
+      "stage": "fundamentals",
+      "title": "A video URL is only the beginning",
+      "prerequisites": [
+        "01-layer-map"
+      ],
+      "takeaway": "A successful fetch does not prove that the browser can decode the media.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "A container organizes encoded tracks. A codec defines the encoding; a delivery protocol describes how media is retrieved. HLS and DASH do not magically make unsupported codecs work. MSE lets JavaScript append encoded media; decoding and rendering still happen in the browser.",
+          "evidence": "verified",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked example",
+          "body": "A browser may download a 200 OK MP4 yet show a media error because its codec/profile is unsupported. Debug in this order: valid source and media type; bytes and response headers; codec/container compatibility; buffered ranges and timeline; only then the controls.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "Use a progressive MP4 for a modest clip when simplicity wins. Adaptive segmented media earns its complexity for variable networks, longer sessions and live workflows. Test actual devices rather than assuming identical behavior across Chromium and Safari.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S02"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Treat preload as a hint, not a bandwidth guarantee. Put a poster and stable aspect ratio around the player; load richer engines only where the use case needs them. Validate the media independently from the framework wrapper.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S06"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/02-pipeline.svg",
+          "title": "Browser pipeline",
+          "alt": "This figure separates delivery, buffering, decoding and presentation. Text tracks follow their own loading/rendering path, simplified into the last panel.",
+          "caption": "This figure separates delivery, buffering, decoding and presentation. Text tracks follow their own loading/rendering path, simplified into the last panel.",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can hls.js add support for every video codec?",
+        "answer": "No. Its pipeline must still produce media that the browser’s MediaSource and decoder support."
+      },
+      "objective": "trace a fetched media resource through buffering, decoding and presentation."
+    },
+    {
+      "id": "03-adaptive-streaming",
+      "stage": "fundamentals",
+      "title": "HLS, DASH, ABR and the buffer budget",
+      "prerequisites": [
+        "02-browser-pipeline"
+      ],
+      "takeaway": "ABR trades quality against the risk of draining the playback buffer.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "HLS exposes playlists; DASH exposes an MPD with periods, adaptation sets and representations. The client obtains manifests and segments, estimates conditions, and decides the next rendition. A rendition is an encoded quality option, not a CSS size.",
+          "evidence": "verified",
+          "source_ids": [
+            "S21",
+            "S25"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked budget",
+          "body": "Toy calculation: a two-second segment encoded at 1 Mbps contains roughly 2 Mbit. At steady 2 Mbps throughput it takes roughly one second to transfer, excluding overhead. At 0.5 Mbps it takes roughly four seconds; repeated transfers can drain the buffer. Real segments vary in size and requests have latency.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and pitfall",
+          "body": "Let automatic adaptation be the baseline. A forced high resolution can stall; a giant buffer can waste transfer when users leave. DASH’s documented default combines throughput and BOLA rules; this is an implementation choice, not the definition of ABR.",
+          "evidence": "verified",
+          "source_ids": [
+            "S26"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Further improvement",
+          "body": "Measure startup, stalls and quality for representative networks. Tune one constraint at a time: initial quality, buffer, player-size cap or live latency target. A low-latency flag cannot repair an origin that never produces promptly available chunks.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S23",
+            "S28",
+            "S35"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/03-abr.svg",
+          "title": "Manifest and transfer budget",
+          "alt": "The two formats express different manifest structures but both expose encoded alternatives. The arithmetic is a hypothetical constant-throughput example.",
+          "caption": "The two formats express different manifest structures but both expose encoded alternatives. The arithmetic is a hypothetical constant-throughput example.",
+          "source_ids": [
+            "S21",
+            "S25",
+            "S26"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why can a lower rendition improve viewing?",
+        "answer": "It can download faster than playback consumes the buffered duration, reducing stall risk at the cost of visual detail."
+      },
+      "objective": "reason about manifest choices, bitrate and buffer consumption."
+    },
+    {
+      "id": "04-videojs",
+      "stage": "applications",
+      "title": "Video.js: mature ecosystem, new v10 model",
+      "prerequisites": [
+        "03-adaptive-streaming"
+      ],
+      "takeaway": "Treat v8 → v10 as an integration migration, not a package-version bump.",
+      "sections": [
+        {
+          "heading": "Architecture and version scope",
+          "body": "The current React installation guide pins @videojs/react@10.0.1. v10 separates state, UI, media and extensions. v8’s VHS ecosystem supplies HLS/DASH behind its older player/tech API. Both release families appear in the release feed; this atlas teaches the boundary rather than promising plugin parity.",
+          "evidence": "verified",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S09",
+            "S10"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Minimal v10 MP4 example",
+          "body": "// Documentation-aligned illustrative React snippet; not runtime-tested.\nimport \"@videojs/react/video/skin.css\";\nimport { VideoPlayer, VideoSkin, Video } from \"@videojs/react/video\";\nexport function Clip({ src }) {\n  return <VideoPlayer><VideoSkin>\n    <Video src={src} playsInline />\n  </VideoSkin></VideoPlayer>;\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S06"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "Consider v10 for a new composable UI. For an existing v8 product with ad, DRM or custom component plugins, first map every integration to the migration guide. Keep a working baseline while validating each replacement. Import the appropriate streaming adapter for HLS/DASH; a plain Video example does not establish adaptive support.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Avoid copying beta-era APIs into current code. Explicitly set media type for extensionless signed URLs. Keep source configuration distinct from engine configuration. Test captions, events and disposal during migration, not just whether the first frame appears.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/04-videojs.svg",
+          "title": "v8 versus v10 structure",
+          "alt": "Conceptual comparison based on current v10 architecture and v8 VHS/migration documentation. Adapters vary by source; the figure does not promise equivalent plugin support.",
+          "caption": "Conceptual comparison based on current v10 architecture and v8 VHS/migration documentation. Adapters vary by source; the figure does not promise equivalent plugin support.",
+          "source_ids": [
+            "S05",
+            "S08",
+            "S09"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why is v8 plugin compatibility a separate check?",
+        "answer": "v10 changes the player architecture and API contracts. A plugin that depends on v8 components or initialization cannot be assumed to work unchanged."
+      },
+      "objective": "distinguish v8 integration contracts from the v10 player architecture."
+    },
+    {
+      "id": "05-reactplayer",
+      "stage": "applications",
+      "title": "ReactPlayer: one façade, several providers",
+      "prerequisites": [
+        "01-layer-map"
+      ],
+      "takeaway": "Normalize integration, but preserve provider-specific capabilities and failures.",
+      "sections": [
+        {
+          "heading": "Architecture",
+          "body": "ReactPlayer parses a source and selects markup or a provider SDK. Current documentation lists native files, HLS via hls.js, DASH via dash.js, Mux, YouTube, Vimeo and Wistia. v3 is not backward compatible with v2; some older providers are not updated. The repository description’s longer historical provider list is not a v3 support guarantee.",
+          "evidence": "verified",
+          "source_ids": [
+            "S11"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Minimal v3 example",
+          "body": "// Illustrative v3 snippet; verify the chosen provider in your release.\nimport ReactPlayer from \"react-player\";\nexport function Lesson({ src }) {\n  return <ReactPlayer src={src} controls playsInline\n    width=\"100%\" height=\"100%\"\n    onError={(error) => console.error(\"playback\", error)} />;\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Case and decision",
+          "body": "A React lesson catalog with approved YouTube/Vimeo URLs and owned files benefits from a common rendering entry point. Keep a capability map for captions, seeking and rate changes. If the catalog is exclusively YouTube, the focused wrapper may reduce abstraction; if you need advanced owned-stream diagnostics, a dedicated engine is easier to inspect.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Avoid assuming Facebook or SoundCloud from the screenshot work in v3. Record the supported provider subset in product validation, defer full player loading with a preview where appropriate, and surface provider-specific blocked-content errors.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/05-reactplayer.svg",
+          "title": "Provider routing",
+          "alt": "Source routing selects an owned-media path or external-provider path. The wrapper supplies a common entry point, not a uniform media backend.",
+          "caption": "Source routing selects an owned-media path or external-provider path. The wrapper supplies a common entry point, not a uniform media backend.",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does canPlay(url) prove the video will start?",
+        "answer": "No. Source recognition cannot guarantee authorization, availability, browser codecs or provider policy compatibility."
+      },
+      "objective": "choose a provider path without assuming uniform provider capabilities."
+    },
+    {
+      "id": "06-react-youtube",
+      "stage": "applications",
+      "title": "React YouTube: keep the iframe contract small",
+      "prerequisites": [
+        "05-reactplayer"
+      ],
+      "takeaway": "Use the provider API after readiness; do not treat the iframe as your own video DOM.",
+      "sections": [
+        {
+          "heading": "Architecture and example",
+          "body": "react-youtube is a thin React layer over the YouTube IFrame Player API. videoId identifies the content; opts carries player options; onReady supplies the API target. Use a properly sized player and the correct origin when configuring the underlying API.",
+          "evidence": "verified",
+          "source_ids": [
+            "S12",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Focused lesson embed",
+          "body": "// Illustrative; onReady is the safe place to access the player.\nimport YouTube from \"react-youtube\";\nexport function Intro({ videoId }) {\n  return <YouTube videoId={videoId}\n    opts={{ width: \"100%\", playerVars: { playsinline: 1 } }}\n    onReady={(event) => event.target.pauseVideo()}\n    onError={(event) => console.error(\"youtube\", event.data)} />;\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S12",
+            "S13"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision and boundary",
+          "body": "For an onboarding page that only embeds approved YouTube videos, a focused wrapper keeps the provider model visible. The trade-off is dependence on provider availability, controls and policies. A parent app cannot freely inspect the iframe DOM or impose its own DRM.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S12",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Do not build course completion from a single client onEnd callback. Treat it as a UI hint, combine progress signals with your application policy, and provide a failure state for unavailable or blocked embeds. For sensitive media, use a delivery model whose access you control.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S13"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/06-youtube.svg",
+          "title": "Iframe control boundary",
+          "alt": "The app controls the YouTube player through asynchronous API calls and events. Inner playback and media delivery remain provider-owned.",
+          "caption": "The app controls the YouTube player through asynchronous API calls and events. Inner playback and media delivery remain provider-owned.",
+          "source_ids": [
+            "S12",
+            "S13"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can the app style arbitrary controls inside the iframe?",
+        "answer": "No. Use the documented provider options and API. The embedded player has its own origin and UI ownership."
+      },
+      "objective": "respect YouTube readiness, events and iframe ownership."
+    },
+    {
+      "id": "07-mux-player",
+      "stage": "applications",
+      "title": "Mux Player: optimized for the Mux path",
+      "prerequisites": [
+        "03-adaptive-streaming"
+      ],
+      "takeaway": "Mux Player reduces integration work when delivery and analytics already use Mux.",
+      "sections": [
+        {
+          "heading": "Architecture",
+          "body": "Mux Player supplies a complete UI for Mux assets, including VOD and live. It integrates with Mux Data and uses HLS.js or native HLS. The reviewed documentation does not support the screenshot’s broad native-HLS/DASH claim; DASH engine support is a different selection question.",
+          "evidence": "verified",
+          "source_ids": [
+            "S14",
+            "S16"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Minimal React player",
+          "body": "// Illustrative; playbackId comes from your backend/media catalog.\nimport MuxPlayer from \"@mux/mux-player-react\";\nexport function TrainingVideo({ playbackId }) {\n  return <MuxPlayer playbackId={playbackId}\n    metadata={{ video_id: \"training-01\", video_title: \"Introduction\" }} />;\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S15"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "An enterprise academy with a small video team can use Mux Player plus managed processing, delivery and QoE tooling. That buys integration speed while binding the design to vendor identifiers, commercial service costs and export/migration considerations. The UI package and the hosting service have different cost models.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S16"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "For protected content, get signed playback authorization from a trusted backend. Never embed signing keys in React. Native HLS may expose different quality-selection behavior from MSE; validate Safari rather than assuming every control is identical.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S17"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/07-mux.svg",
+          "title": "Mux-integrated path",
+          "alt": "Logical integration, not a literal request sequence. Player telemetry and media requests travel to separate service endpoints.",
+          "caption": "Logical integration, not a literal request sequence. Player telemetry and media requests travel to separate service endpoints.",
+          "source_ids": [
+            "S14",
+            "S16",
+            "S17"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does installing Mux Player itself provide a video hosting account?",
+        "answer": "No. The client package plays media; asset creation, hosting and service billing remain separate."
+      },
+      "objective": "identify what Mux Player supplies and what the backend still owns."
+    },
+    {
+      "id": "08-vidstack",
+      "stage": "applications",
+      "title": "Vidstack: a useful architecture with a maintenance boundary",
+      "prerequisites": [
+        "04-videojs"
+      ],
+      "takeaway": "Study Vidstack’s separation of state and providers, but include its maintenance status in adoption decisions.",
+      "sections": [
+        {
+          "heading": "Current status",
+          "body": "Vidstack’s own introduction says Player 1.x receives priority security fixes until January 2028 and no other development. Its team now works with the other player teams on Video.js 10. Existing integrations can follow the official React or web-component migration guides.",
+          "evidence": "verified",
+          "source_ids": [
+            "S18"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Architecture",
+          "body": "Source selection normalizes inputs and asks loaders whether they can play a source. The selected loader renders the media element and initializes its provider. UI requests and provider events meet through shared state. Replacing a provider includes destroying the old instance; this is a lifecycle boundary, not just a prop update.",
+          "evidence": "verified",
+          "source_ids": [
+            "S19"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Integration shape, intentionally conceptual",
+          "body": "// Conceptual Vidstack 1.x shape; not a current install recipe.\n<MediaPlayer src={ownedHlsUrl}>\n  <MediaProvider />\n  <YourControls />\n</MediaPlayer>\n// Inventory the real 1.x imports and layouts in your existing project.\n// Use the v10 migration guide for a new integration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S19",
+            "S20"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision, pitfall and improvement",
+          "body": "For an existing product, isolate its provider/state adapter and plan a measured migration. For a new product, evaluate the current successor before choosing a security-only library. Avoid mechanically replacing component names: verify caption appearance, keyboard behavior, source swaps, live state and errors.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S18",
+            "S20"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/08-vidstack.svg",
+          "title": "Architecture and migration path",
+          "alt": "Left: Vidstack responsibility model. Right: proposed engineering workflow using the official migration guidance, not an automatic compatibility guarantee.",
+          "caption": "Left: Vidstack responsibility model. Right: proposed engineering workflow using the official migration guidance, not an automatic compatibility guarantee.",
+          "source_ids": [
+            "S18",
+            "S19",
+            "S20"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does security-only mean the library instantly stops working?",
+        "answer": "No. It describes the maintenance commitment. The practical concern is future fixes, feature evolution and the cost of keeping the integration viable."
+      },
+      "objective": "understand Vidstack providers and plan around its maintenance boundary."
+    },
+    {
+      "id": "09-hlsjs",
+      "stage": "applications",
+      "title": "hls.js: HLS engine, not a complete branded player",
+      "prerequisites": [
+        "03-adaptive-streaming"
+      ],
+      "takeaway": "Own initialization, fallback, cleanup and error reporting when using a low-level engine.",
+      "sections": [
+        {
+          "heading": "Architecture",
+          "body": "hls.js loads HLS and uses browser media capabilities for playback. Its controllers handle loading, stream processing and buffering. Transmuxing reorganizes encoded data for the playback path; it does not transcode an unsupported codec into a supported one.",
+          "evidence": "verified",
+          "source_ids": [
+            "S21",
+            "S22"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Minimal mounting pattern",
+          "body": "// Illustrative JS module; src must be a real HLS manifest URL.\nimport Hls from \"hls.js\";\nexport function mountHls(video, src, onFailure) {\n  if (video.canPlayType(\"application/vnd.apple.mpegurl\")) {\n    const onError = () => onFailure(video.error);\n    video.addEventListener(\"error\", onError);\n    video.src = src;\n    return () => {\n      video.removeEventListener(\"error\", onError);\n      video.pause(); video.removeAttribute(\"src\"); video.load();\n    };\n  }\n  if (!Hls.isSupported()) {\n    onFailure(new Error(\"HLS is unsupported\")); return () => {};\n  }\n  const hls = new Hls();\n  hls.on(Hls.Events.ERROR, (_, detail) => {\n    if (detail.fatal) onFailure(detail);\n  });\n  hls.attachMedia(video); hls.loadSource(src);\n  return () => hls.destroy();\n}",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S23"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "Choose this engine when you need direct HLS diagnostics and can supply the UI. Native-first is the sample’s policy, not a universal rule: choosing MSE can expose additional engine control at the cost of another code path. Test the target browser/codec combination.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S23"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "CORS must work for all HLS resources, not just the playlist. A fatal error needs a bounded, classified recovery policy; endless retries hide expired authorization. Add metrics and cleanup before advanced ABR tuning.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S23"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/09-hls.svg",
+          "title": "HLS scheduling pipeline",
+          "alt": "Conceptual controller flow. Actual loading and buffering are asynchronous; ABR influences requests across the pipeline.",
+          "caption": "Conceptual controller flow. Actual loading and buffering are asynchronous; ABR influences requests across the pipeline.",
+          "source_ids": [
+            "S21",
+            "S22",
+            "S23"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can transmuxing repair a codec unsupported by the browser?",
+        "answer": "No. Packaging can change while the encoded video codec stays the same; the browser must still be able to decode it."
+      },
+      "objective": "initialize one HLS engine with fallback, failure reporting and cleanup."
+    },
+    {
+      "id": "10-dashjs",
+      "stage": "applications",
+      "title": "dash.js: reference MPEG-DASH implementation",
+      "prerequisites": [
+        "03-adaptive-streaming"
+      ],
+      "takeaway": "MPD, browser capabilities, packaging and license setup must agree.",
+      "sections": [
+        {
+          "heading": "Architecture",
+          "body": "dash.js splits infrastructure into core, MPD semantics into dash, and the playback engine/public API into streaming. Its streaming layer includes ABR, HTTP loading and protection handling. Periods and media types become stream and track-processing objects.",
+          "evidence": "verified",
+          "source_ids": [
+            "S25"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Minimal mounting pattern",
+          "body": "// Illustrative; package export shape follows the selected build.\nimport dashjs from \"dashjs\";\nexport function mountDash(video, manifestUrl) {\n  const player = dashjs.MediaPlayer().create();\n  player.initialize(video, manifestUrl, false);\n  return () => player.reset();\n}\n// Add error listeners and protection data for your deployment.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S24"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "Use it when MPEG-DASH is the primary delivery contract and its diagnostics or ABR controls fit the product. Default ABR uses throughput and buffer-based logic. Low latency and DRM add deployment requirements; they are not guaranteed by the presence of an MPD extension.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S26",
+            "S27",
+            "S28"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "DASH playback is not a guarantee of universal mobile-browser DRM support. Maintain a device/key-system matrix and an HLS fallback when the product requires it. Test period transitions, captions, seek, license expiration and live catchup with your encoded media.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S28",
+            "S32"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/10-dash.svg",
+          "title": "DASH engine layers",
+          "alt": "Dependency and responsibility summary. core services support the pipeline but do not contain media logic.",
+          "caption": "Dependency and responsibility summary. core services support the pipeline but do not contain media logic.",
+          "source_ids": [
+            "S25"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does setting a license-server URL turn an unencrypted MPD into DRM?",
+        "answer": "No. The media must be appropriately encrypted/packaged and its keys, signaling, browser key system and license service must match."
+      },
+      "objective": "relate the DASH manifest model to playback, ABR and protected media."
+    },
+    {
+      "id": "11-clappr",
+      "stage": "applications",
+      "title": "Clappr: an extensible player for plugin-based products",
+      "prerequisites": [
+        "09-hlsjs"
+      ],
+      "takeaway": "Extensibility is useful only when plugin versions and lifecycle ownership remain clear.",
+      "sections": [
+        {
+          "heading": "Architecture and evidence scope",
+          "body": "Clappr describes an extensible, plugin-oriented HTML5 player. Its component repositories document core and HLS playback backed by hls.js, but explicitly say they moved into the Clappr monorepo. Those pages explain the architecture; they are not proof that every historical installation command matches the current release.",
+          "evidence": "verified",
+          "source_ids": [
+            "S29",
+            "S30",
+            "S31"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Conservative MP4 example",
+          "body": "// Illustrative: use the verified entry point for your installed build.\nconst player = new Clappr.Player({\n  parent: document.querySelector(\"#player\"),\n  source: ownedMp4Url\n});\n// On unmount/source-owner replacement:\nplayer.destroy();\n// HLS playback requires the matching supported playback integration.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Case and decision",
+          "body": "A legacy streaming site with established overlays and playback plugins may benefit from retaining Clappr while fixing its integration seams. For a new React UI, compare the cost of its imperative bridge with a framework-native player. The strongest reason to keep it is a working plugin contract, not a popularity estimate.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S29",
+            "S30"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Do not mix examples from separate old repositories without verifying the current monorepo package contracts. Pin compatible plugins, exercise teardown repeatedly, and validate overlays with keyboard and captions. For HLS errors, inspect the underlying engine rather than only the player UI.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S30",
+            "S31"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/11-clappr.svg",
+          "title": "Plugin responsibility model",
+          "alt": "Conceptual composition, not a strict temporal chain: controls and plugins operate around the active playback. Current packaging must be checked in the monorepo.",
+          "caption": "Conceptual composition, not a strict temporal chain: controls and plugins operate around the active playback. Current packaging must be checked in the monorepo.",
+          "source_ids": [
+            "S29",
+            "S30",
+            "S31"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Should a new overlay plugin also create its own media engine?",
+        "answer": "Usually no. It should use the player’s active playback contract; a second owner can create conflicting downloads, events and teardown."
+      },
+      "objective": "assign Clappr plugin responsibilities without creating competing playback owners."
+    },
+    {
+      "id": "12-case-portal",
+      "stage": "applications",
+      "title": "Worked case: mixed-provider learning portal",
+      "prerequisites": [
+        "05-reactplayer",
+        "06-react-youtube"
+      ],
+      "takeaway": "A shared catalog model is more durable than pretending every provider has the same features.",
+      "sections": [
+        {
+          "heading": "Scenario and proposed stack",
+          "body": "Worked design, not a published customer result. A React portal mixes public YouTube/Vimeo lessons and owned HLS media. Use a NestJS catalog API with PostgreSQL records; ReactPlayer v3 handles the verified provider subset, while a dedicated owned-media player remains an option for richer diagnostics.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S13"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Catalog shape",
+          "body": "// Proposed application model, not a library API.\ntype LessonMedia = {\n  id: string;\n  provider: \"youtube\" | \"vimeo\" | \"owned-hls\";\n  source: string;\n  status: \"processing\" | \"ready\" | \"failed\";\n  capabilities: { seek: boolean; captions: boolean; rate: boolean };\n};",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Flow and decision",
+          "body": "Render lesson metadata and a poster first. After loading the browser-side adapter, wait for readiness before restoring permitted progress. Save debounced progress hints through the application API, with provider details retained for diagnosis. Prefer a focused YouTube wrapper when only that provider is required; the multi-provider façade pays off when sources really vary.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S34"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Failure → improvement",
+          "body": "A provider can recognize the URL while content is unavailable. Offer an explicit retry/error panel and let the user navigate away. Keep catalog state separate from player loading state. Measure per-provider start success; do not infer secure attendance from a client completion event.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S13"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/12-portal.svg",
+          "title": "Mixed-provider reference architecture",
+          "alt": "Proposed application architecture. The backend model and progress policy are original design choices; player support must match the installed release.",
+          "caption": "Proposed application architecture. The backend model and progress policy are original design choices; player support must match the installed release.",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S13",
+            "S34"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why store capabilities instead of only a URL?",
+        "answer": "Because seeking, captions and rate control differ by source/provider. The UI needs that contract before offering controls it cannot fulfill."
+      },
+      "objective": "design a catalog and player contract for mixed lesson sources."
+    },
+    {
+      "id": "13-case-protected",
+      "stage": "applications",
+      "title": "Worked case: protected enterprise training",
+      "prerequisites": [
+        "07-mux-player",
+        "12-case-portal"
+      ],
+      "takeaway": "Own tenant authorization on the backend; deliver media through a constrained playback capability.",
+      "sections": [
+        {
+          "heading": "Scenario and stack",
+          "body": "Proposed design: employees watch private training in a multi-tenant SaaS. React + Mux Player handles playback; NestJS checks session, tenant and enrollment; PostgreSQL stores asset state and entitlements. Managed media processing reduces operational work. An AWS pipeline is an alternative, but would require its own encoding, CDN access and telemetry design.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S14",
+            "S17",
+            "S37"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Upload and ready flow",
+          "body": "The backend requests a direct upload URL. Upload completion leads to processing; an asset-ready event updates the catalog. Verify webhook authenticity, handle repeated events idempotently, and preserve processing/failed states. Keep media service credentials out of the browser.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S37",
+            "S38"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Playback flow and expiration",
+          "body": "The backend authorizes the requested asset before signing playback. The client receives only the necessary identifiers/tokens. Mux’s guidance says expiration must cover the viewing duration or later portions may become unplayable; a renewal policy must account for the client’s actual behavior.",
+          "evidence": "verified",
+          "source_ids": [
+            "S17"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Trade-off, failure and improvement",
+          "body": "Managed delivery reduces infrastructure ownership but adds vendor coupling and usage costs. A signed URL is not DRM and can be shared while valid. For stricter rights requirements, add a verified DRM/device matrix. Improve access-denied UX and audit server authorization decisions without logging usable bearer tokens.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S27",
+            "S32"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/13-upload.svg",
+          "title": "Asynchronous asset lifecycle",
+          "alt": "A proposed app state flow grounded in documented direct-upload and webhook behavior. A verified event is a backend input, not a browser assertion.",
+          "caption": "A proposed app state flow grounded in documented direct-upload and webhook behavior. A verified event is a backend input, not a browser assertion.",
+          "source_ids": [
+            "S37",
+            "S38"
+          ]
+        },
+        {
+          "path": "figures/13-access.svg",
+          "title": "Playback authorization boundary",
+          "alt": "Authorization happens before token generation. Tenant checks and database policies are application responsibilities; token validation occurs on the media delivery path.",
+          "caption": "Authorization happens before token generation. Tenant checks and database policies are application responsibilities; token validation occurs on the media delivery path.",
+          "source_ids": [
+            "S17",
+            "S32"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Can the frontend mint its own playback JWT safely?",
+        "answer": "No. It would need a signing secret or private key. A trusted backend must authorize the viewer and sign the constrained capability."
+      },
+      "objective": "separate asynchronous ingestion from tenant-authorized playback."
+    },
+    {
+      "id": "14-case-live",
+      "stage": "applications",
+      "title": "Worked case: live event with chat and replay",
+      "prerequisites": [
+        "09-hlsjs",
+        "10-dashjs"
+      ],
+      "takeaway": "Reducing player buffer alone cannot remove upstream live latency.",
+      "sections": [
+        {
+          "heading": "Scenario and choices",
+          "body": "Proposed design: a broadcast event has many viewers, chat and a replay. Ingest from an encoder into a managed live service or a verified packaging pipeline; distribute HLS/DASH through a CDN. Use hls.js/Mux Player for the matching HLS path, or dash.js for the matching DASH path. Chat travels over a separate WebSocket service.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S28",
+            "S39"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Latency mechanism",
+          "body": "Low-latency DASH uses promptly available CMAF chunks and playback/catchup controls. Live performance depends on packaging and delivery as well as player settings. A product latency target is a requirement to test, not a promise implied by a library name.",
+          "evidence": "verified",
+          "source_ids": [
+            "S28"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "For broadcast reach and replay, segmented HTTP delivery is a useful baseline. If the core interaction is a real-time conversation, evaluate WebRTC’s different media/session infrastructure. Separate chat timestamps from video time; viewers may be at different live offsets.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S28",
+            "S41"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Failure → improvement",
+          "body": "A player close to the live edge has less room for slow requests. Test network drops, encoder restarts, a paused viewer returning to live and DVR seeks. Add a clear Go Live control and record both live offset and stalls. Compare candidate latency settings on the same streams and devices.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S28",
+            "S39"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/14-live.svg",
+          "title": "Live latency budget",
+          "alt": "A conceptual end-to-end budget. No universal millisecond target is claimed; real values depend on capture, encoding, packaging, delivery and playback.",
+          "caption": "A conceptual end-to-end budget. No universal millisecond target is claimed; real values depend on capture, encoding, packaging, delivery and playback.",
+          "source_ids": [
+            "S28",
+            "S39",
+            "S41"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does faster chat delivery make the video lower latency?",
+        "answer": "No. The two channels have separate delivery paths. Fast chat can arrive before the scene a buffered viewer is seeing."
+      },
+      "objective": "budget live latency across capture, packaging, delivery and playback."
+    },
+    {
+      "id": "15-lifecycle-accessibility",
+      "stage": "best-practices",
+      "title": "Lifecycle, SSR, accessibility and user intent",
+      "prerequisites": [
+        "11-clappr",
+        "14-case-live"
+      ],
+      "takeaway": "A correct player survives remounts and remains operable without a mouse.",
+      "sections": [
+        {
+          "heading": "Lifecycle model",
+          "body": "In React, an effect can connect an external player and return its cleanup. Development Strict Mode runs an extra setup/cleanup cycle. A robust adapter is safe across that cycle, source replacement and route changes. Keep browser-only initialization out of server execution.",
+          "evidence": "verified",
+          "source_ids": [
+            "S34"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Example: bridge ownership",
+          "body": "// Illustrative: mountHls is the adapter from topic 09.\nuseEffect(() => {\n  const video = videoRef.current;\n  if (!video) return;\n  return mountHls(video, src, reportFailure);\n}, [src, reportFailure]);\n// Keep reportFailure stable. Do not add a second playback owner.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S34",
+            "S23"
+          ],
+          "format": "code"
+        },
+        {
+          "heading": "Playback and accessibility",
+          "body": "Autoplay can be blocked; handle a rejected play request and show a usable play control. Provide captions/transcripts and other alternatives appropriate to the content. Verify labels, visible keyboard focus, menus, fullscreen and screen-reader behavior. An attractive custom UI still needs an accessible interaction model.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S04",
+            "S40"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Trade-off and improvement",
+          "body": "Begin with native controls or a documented player UI; custom controls buy design freedom but increase maintenance. Test repeated mount/unmount, source changes, keyboard-only playback, caption toggles, zoom and reduced-motion behavior. Preserve a stable aspect ratio during loading.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S34",
+            "S40"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/15-lifecycle.svg",
+          "title": "Browser integration lifecycle",
+          "alt": "The server renders a shell; the browser owns playback initialization. Cleanup ends the old instance’s subscriptions and media work.",
+          "caption": "The server renders a shell; the browser owns playback initialization. Cleanup ends the old instance’s subscriptions and media work.",
+          "source_ids": [
+            "S23",
+            "S34"
+          ]
+        }
+      ],
+      "check": {
+        "question": "What does Strict Mode’s double setup reveal?",
+        "answer": "An adapter that creates extra engines or leaves listeners alive after cleanup. It is a prompt to fix lifetime ownership, not to disable the check."
+      },
+      "objective": "connect player lifetime with React cleanup and accessible controls."
+    },
+    {
+      "id": "16-security-delivery",
+      "stage": "best-practices",
+      "title": "Signed media, CORS, DRM and delivery boundaries",
+      "prerequisites": [
+        "13-case-protected"
+      ],
+      "takeaway": "Separate authorization, cross-origin access, encryption and device compatibility.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Application authorization decides entitlement. A signed delivery capability authorizes media requests. CORS controls browser access to cross-origin responses. EME provides a browser interface to content decryption modules; DRM additionally needs correct packaging, keys and a license service.",
+          "evidence": "verified",
+          "source_ids": [
+            "S17",
+            "S32",
+            "S33"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked failure",
+          "body": "The playlist returns 200 but its segments return 403 after token expiry: inspect delivery authorization, not UI rendering. Alternatively, requests may succeed at the server while browser CORS blocks access. Check redirects and every resource in the manifest graph, including encryption-key and caption requests where applicable.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S21",
+            "S33"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and trade-off",
+          "body": "Use HTTPS and a constrained authorization design for private assets. Credentialed CORS requires specific allowed origins rather than wildcard. DRM imposes licensing and device-test complexity; choose it from rights requirements, not to conceal a publicly downloadable URL in JavaScript.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S27",
+            "S32",
+            "S33"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Pitfall → improvement",
+          "body": "Do not send signing keys to the client or log playable bearer URLs in analytics. Token-bearing manifests/segments need a deliberate cache and validation policy. Validate access revocation/expiry, cross-tenant requests, key-system behavior and delivery headers with the actual CDN.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S17",
+            "S27",
+            "S33"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/16-security.svg",
+          "title": "Independent security boundaries",
+          "alt": "Each column answers a different question. The figure is a conceptual checklist rather than one linear transaction; DRM is optional and CORS is not authentication.",
+          "caption": "Each column answers a different question. The figure is a conceptual checklist rather than one linear transaction; DRM is optional and CORS is not authentication.",
+          "source_ids": [
+            "S17",
+            "S21",
+            "S27",
+            "S32",
+            "S33"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Does a restrictive CORS policy prevent someone using a non-browser HTTP client?",
+        "answer": "No. CORS is enforced by browsers. Entitlement must be checked on the authorized delivery path."
+      },
+      "objective": "distinguish entitlement, signed media, CORS and DRM."
+    },
+    {
+      "id": "17-qoe-diagnostics",
+      "stage": "best-practices",
+      "title": "QoE: measure what the viewer experiences",
+      "prerequisites": [
+        "15-lifecycle-accessibility",
+        "16-security-delivery"
+      ],
+      "takeaway": "Player success is first-frame success plus sustained viewing, not a green API response.",
+      "sections": [
+        {
+          "heading": "Mental model",
+          "body": "Quality of experience combines startup, stalls, errors and the delivered viewing quality. Mux Data documents those dimensions. An app must state metric definitions before comparing cohorts; a network status code alone does not describe the viewing experience.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S35"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Worked diagnostic",
+          "body": "A lesson starts on desktop but not mobile Safari. Compare media type/codec, native versus MSE path, autoplay rejection and license support. If the first frame appears then stalls, inspect segment timing, buffered duration and selected bitrate. Keep UI errors, engine errors and delivery errors distinct.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S16",
+            "S23",
+            "S27"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Proposed measurement contract",
+          "body": "Record asset ID, player/build version, browser/OS, delivery path, ready/play/playing/waiting/error milestones and coarse session correlation. Define attempted playback explicitly. Decide whether startup and user pauses belong in the rebuffer denominator. These are proposed app semantics, not copied vendor formulas.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S35"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Decision and improvement",
+          "body": "Use a managed QoE integration when its coverage and privacy controls fit; otherwise own a small event contract and browser probes. Sample noisy events and avoid bearer URLs or personal content in logs. Test one suspected layer at a time; retries should not reset every metric and make a failure look like a new success.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S16",
+            "S35"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/17-diagnostics.svg",
+          "title": "Failure ownership map",
+          "alt": "A proposed diagnosis sequence grounded in browser/engine contracts. Similar symptoms can have different root causes.",
+          "caption": "A proposed diagnosis sequence grounded in browser/engine contracts. Similar symptoms can have different root causes.",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S23",
+            "S27"
+          ]
+        },
+        {
+          "path": "figures/17-metrics.svg",
+          "title": "Metric definitions and cohorts",
+          "alt": "Original illustrative measurement contract. Mux/vendor metrics should be read using their own definitions, not assumed equal to these labels.",
+          "caption": "Original illustrative measurement contract. Mux/vendor metrics should be read using their own definitions, not assumed equal to these labels.",
+          "source_ids": [
+            "S35"
+          ]
+        }
+      ],
+      "check": {
+        "question": "Why report startup p95 by browser rather than only an overall average?",
+        "answer": "Averages can hide a device-specific problem. Cohort distributions show which users encounter long startup and help locate the responsible path."
+      },
+      "objective": "define viewing metrics and diagnose a symptom at its responsible layer."
+    },
+    {
+      "id": "18-selection-migration",
+      "stage": "further-improvements",
+      "title": "Choose, migrate and improve with evidence",
+      "prerequisites": [
+        "17-qoe-diagnostics",
+        "08-vidstack"
+      ],
+      "takeaway": "Optimize the complete viewing path under your constraints, then measure the change.",
+      "sections": [
+        {
+          "heading": "Documented engineering case",
+          "body": "Video.js’s March 2026 v10 announcement describes splitting state, UI and media, unbundling adaptive support and composing smaller engines. Its published size comparisons explicitly distinguish simple CMAF VOD from full live/ads/DRM cases. That is a useful architectural lesson; it is not a benchmark of your product.",
+          "evidence": "verified",
+          "source_ids": [
+            "S36"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Choose by constraint",
+          "body": "YouTube-only: evaluate React YouTube. Mixed supported React providers: ReactPlayer. Mux delivery: Mux Player. Direct HLS/DASH control: hls.js/dash.js plus UI. Existing plugin-heavy products: assess Video.js v8 or Clappr migration costs. Existing Vidstack: plan around security-only maintenance and inspect the successor.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S11",
+            "S12",
+            "S14",
+            "S18",
+            "S21",
+            "S24",
+            "S29"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Baseline → proposed improvement",
+          "body": "Example experiment: replace eagerly loaded players in a lesson list with posters and browser-side loading when requested. Expect less initial script/media work, but measure click-to-first-frame and layout stability as well as bytes. A smaller initial bundle that delays the first lesson is not automatically a win.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S03",
+            "S11",
+            "S36"
+          ],
+          "format": "prose"
+        },
+        {
+          "heading": "Migration validation",
+          "body": "Inventory source formats, DRM/ads integrations, captions, events, shortcuts, CSS and device coverage. Validate one source cohort at a time, preserve rollback, and compare actual output bundles including streaming engines. Code here is illustrative and was reviewed against docs; media playback and device performance were not executed or benchmarked.",
+          "evidence": "synthesis",
+          "source_ids": [
+            "S08",
+            "S20",
+            "S36"
+          ],
+          "format": "prose"
+        }
+      ],
+      "figures": [
+        {
+          "path": "figures/18-improve.svg",
+          "title": "Evidence-driven migration",
+          "alt": "An original rollout workflow based on documented migration boundaries. Any expected performance benefit remains a hypothesis until measured.",
+          "caption": "An original rollout workflow based on documented migration boundaries. Any expected performance benefit remains a hypothesis until measured.",
+          "source_ids": [
+            "S08",
+            "S20",
+            "S36"
+          ]
+        }
+      ],
+      "check": {
+        "question": "What makes a bundle-size comparison fair?",
+        "answer": "Matching source features, engine capabilities, build mode and compression method, plus testing the same media/device workflow. A plain MP4 player and a DRM/live player solve different problems."
+      },
+      "objective": "choose and migrate a player using controlled validation and rollback."
+    }
+  ],
+  "validation": {
+    "content": "Primary-source documentation review; 20 diagram topologies inspected.",
+    "layout": "Representative screen layouts rendered at 1100px and 390px with WeasyPrint; narrow CSS applied explicitly. Full browser automation was unavailable.",
+    "code": "Illustrative snippets; not live-media executed or benchmarked.",
+    "package": "Local navigation/assets and ZIP checksums verified by the builder and archive audit."
+  }
+}

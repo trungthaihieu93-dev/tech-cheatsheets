@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functions, lambdas, and readable transformations</title>
+<style>:root{color-scheme:light;--paper:#FFFEF7;--ink:#18202a;--blue:#1E3A8A;--line:#bfd0dc;--yellow:#FEF08A;--purple:#7C3AED}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e2d6;color:var(--ink);font:17px/1.65 "Trebuchet MS",Arial,sans-serif}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{background:#FEF9C3}
+.notebook{max-width:1040px;margin:28px auto;padding:48px 52px 48px 66px;background:var(--paper);border:1px solid #dacfbf;border-radius:6px 24px 24px 6px;box-shadow:0 10px 35px #30240f18;position:relative}
+.notebook:before{content:"";position:absolute;left:15px;top:26px;bottom:26px;width:13px;background:radial-gradient(ellipse,#000000 0 28%,transparent 34%) 0 0/13px 42px repeat-y;border-right:1px solid #dbd2c6}
+header{margin-bottom:34px;border-bottom:3px dashed var(--blue);padding-bottom:26px}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;color:var(--blue)}
+h1,h2,h3{line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,54px);color:var(--blue);margin:14px 0 22px;font-weight:900;letter-spacing:-.035em}
+h1 span{background:linear-gradient(transparent 56%,var(--yellow) 56% 93%,transparent 93%)}
+h2{font-size:29px;margin:8px 0 12px;font-weight:900}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta,.prerequisites{font-size:14px;color:#485265}
+.depth{display:inline-block;background:#FEF9C3;border:2px solid var(--ink);padding:3px 13px;border-radius:8px 13px 7px 12px;font-weight:bold;color:var(--ink)}
+.toc{padding:20px 24px;background:#DBEAFE;border:2px solid #3B82F6;border-radius:15px 21px 14px 17px;margin:22px 0}
+.toc ol{padding-left:23px;margin:12px 0}
+.toc li{margin:7px 0}
+.stage-label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.topic{padding:27px 29px;margin:32px 0;border:2px solid var(--ink);border-radius:17px 25px 16px 22px;background:#FFFEF7;break-inside:auto}
+.topic.fundamentals{--tint:#DBEAFE;--accent:#3B82F6}
+.topic.applications{--tint:#FEF9C3;--accent:#EAB308}
+.topic.best-practices{--tint:#DCFCE7;--accent:#22C55E}
+.topic.further-improvements{--tint:#F3E8FF;--accent:#A855F7}
+.topic-head{background:var(--tint);padding:18px 21px;margin:-27px -29px 25px;border-radius:14px 22px 0 0;border-bottom:2px solid var(--accent)}
+.topic-head h2{padding-bottom:9px;border-bottom:3px solid var(--accent)}
+figure{margin:23px 0;padding:16px;border:2px solid var(--line);border-radius:13px 18px 12px 17px;background:#fffefb;break-inside:avoid}
+figure img{display:block;max-width:100%;width:auto;max-height:730px;margin:auto;height:auto}
+.figure-title{font-size:15px;font-weight:bold;margin:0 0 12px;color:var(--blue)}
+figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#465063}
+.evidence{font-size:11px;letter-spacing:.02em;padding:2px 6px;border-radius:5px;background:#edf2f8;color:#43536e}
+.synthesis{background:#FEF9C3;color:#6d4d13}.open-question{background:#FFE4E6;color:#7a3751}
+.citations{font-size:13px;display:inline}
+.takeaway{padding:15px 19px;background:var(--tint);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;margin:23px 0}
+details{border:1px solid #d4cab9;border-radius:10px;padding:13px 17px;background:#FFFEF7}
+summary{font-weight:bold;cursor:pointer}
+.answer{margin-top:10px}
+pre{background:#eff3f8;padding:18px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}
+.source-list{font-size:14px;padding-left:23px}
+.source-list li{margin:15px 0;overflow-wrap:anywhere;break-inside:avoid}
+.source-list p{margin:5px 0}
+footer{border-top:3px dotted var(--blue);padding-top:18px;margin-top:34px;font-size:13px}
+@media(max-width:650px){body{font-size:16px;background:var(--paper)}.notebook{margin:0;border:0;box-shadow:none;padding:30px 16px 30px 35px;border-radius:0}.notebook:before{left:9px;width:9px;background-size:9px 34px}.topic{padding:19px 17px}.topic-head{margin:-19px -17px 18px;padding:15px 17px}h2{font-size:25px}figure{padding:10px}}
+@media print{body{background:white;font-size:11pt}.notebook{max-width:none;margin:0;padding:0;border:0;box-shadow:none}.notebook:before{display:none}h1{font-size:30pt}h2{font-size:20pt}h3{font-size:13pt}.topic{break-before:page;border-width:1px;margin:0 0 20px}figure{break-inside:avoid}details{display:block}details .answer{display:block}a{color:var(--ink)}.toc{break-inside:avoid}.evidence,figcaption,.source-list{font-size:9pt}}
+
+h1{border-bottom:6px double #7C3AED;padding-bottom:14px}
+.overview{border:0;padding:0;margin:0 0 22px;background:transparent}
+.overview img{width:100%;max-height:none}
+.map-card{display:flex;align-items:center;gap:16px;border:2px solid var(--cardline);background:var(--cardbg);border-radius:16px;padding:16px;margin:14px 0}
+.map-card .badge{flex:0 0 42px;border-radius:50%;background:var(--badge);border:2px solid var(--cardline);text-align:center;font-size:22px;font-weight:900;height:42px;line-height:38px}
+.map-card h3{margin:0 0 6px;font-size:19px}.map-card p{font-size:15px;margin:0;line-height:1.65}
+.map-card .sketch{flex:0 0 74px}.map-card .content{flex:1;min-width:0}
+.diagram-link{font-size:13px;margin-top:10px}
+.topic figure{overflow-x:auto}.topic figure img{width:100%;min-width:510px}
+.toc{background:transparent;border:0;padding:0}
+@media(max-width:650px){.map-card{gap:10px;padding:12px}.map-card .sketch{display:none}.topic figure img{min-width:510px}.overview img{min-width:0}}
+</style>
+</head>
+<body>
+<main class="notebook">
+<nav><a href="../index.html#04-functions">← Back to atlas</a></nav><article id="04-functions" class="topic fundamentals"><div class="topic-head"><div class="stage-label">Part 4 · Fundamentals</div><h2>Functions, lambdas, and readable transformations</h2><p class="prerequisites">Prerequisites: 03-models</p></div><figure><p class="figure-title">Filter then map</p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDYwIiByb2xlPSJpbWciPjx0aXRsZT4wNCAvIFRSQU5TRk9STSBWQUxVRVMsIEtFRVAgSU5URU5UPC90aXRsZT48ZGVzYz5BIGNvbGxlY3Rpb24gcGlwZWxpbmUgaXMgZWFnZXIgdW5sZXNzIG1hZGUgbGF6eS48L2Rlc2M+PGRlZnM+PG1hcmtlciBpZD0iYXJyb3ciIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wIDAgTDEwIDUgTDAgMTAiIGZpbGw9IiMxODIwMkEiLz48L21hcmtlcj48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0NjAiIGZpbGw9IiNGRkZFRjciLz48cGF0aCBkPSJNMjggMjggSDU2MCIgc3Ryb2tlPSIjRkVGMDhBIiBzdHJva2Utd2lkdGg9IjI2Ii8+PHRleHQgeD0iMzAiIHk9IjM2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzFFM0E4QSI+MDQgLyBUUkFOU0ZPUk0gVkFMVUVTLCBLRUVQIElOVEVOVDwvdGV4dD48dGV4dCB4PSIzMCIgeT0iNzAiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxODIwMkEiPkEgY29sbGVjdGlvbiBwaXBlbGluZSBpcyBlYWdlciB1bmxlc3MgbWFkZSBsYXp5LjwvdGV4dD48cmVjdCB4PSIxNTAiIHk9IjEwMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI2MCIgcng9IjE1IiBmaWxsPSIjREJFQUZFIiBzdHJva2U9IiMxODIwMkEiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHRleHQgeD0iMzAwLjAiIHk9IjEzNy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE4MjAyQSI+W2FjdGl2ZSwgaW5hY3RpdmUsIGFjdGl2ZV08L3RleHQ+PHBhdGggZD0iTTMwMCAxNjAgTDMwMCAyMDciIHN0cm9rZT0iIzE4MjAyQSIgc3Ryb2tlLXdpZHRoPSIyLjMiIGZpbGw9Im5vbmUiLz48cG9seWdvbiBwb2ludHM9IjMwMC4wLDIwNy4wIDI5NS41LDE5Ny4wIDMwNC41LDE5Ny4wIiBmaWxsPSIjMTgyMDJBIi8+PHRleHQgeD0iMzA2LjAiIHk9IjE3NC41IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIj5maWx0ZXI8L3RleHQ+PHJlY3QgeD0iMTUwIiB5PSIyMTMiIHdpZHRoPSIzMDAiIGhlaWdodD0iNjAiIHJ4PSIxNSIgZmlsbD0iI0RDRkNFNyIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjMwMC4wIiB5PSIyNTAuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPlthY3RpdmUsIGFjdGl2ZV08L3RleHQ+PHBhdGggZD0iTTMwMCAyNzMgTDMwMCAzMTkiIHN0cm9rZT0iIzE4MjAyQSIgc3Ryb2tlLXdpZHRoPSIyLjMiIGZpbGw9Im5vbmUiLz48cG9seWdvbiBwb2ludHM9IjMwMC4wLDMxOS4wIDI5NS41LDMwOS4wIDMwNC41LDMwOS4wIiBmaWxsPSIjMTgyMDJBIi8+PHRleHQgeD0iMzA2LjAiIHk9IjI4Ny4wIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMTgyMDJBIj5tYXA8L3RleHQ+PHJlY3QgeD0iMTUwIiB5PSIzMjUiIHdpZHRoPSIzMDAiIGhlaWdodD0iNjAiIHJ4PSIxNSIgZmlsbD0iI0YzRThGRiIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjMwMC4wIiB5PSIzNjIuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPltpZC0xLCBpZC0zXTwvdGV4dD48dGV4dCB4PSIzMCIgeT0iNDEyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjMUUzQThBIj5Vc2UgYSBuYW1lZCBmdW5jdGlvbiB3aGVuIGEgbGFtYmRhIGhpZGVzIGEgcnVsZS48L3RleHQ+PC9zdmc+" alt="A mixed list becomes an eligible subset and then a list of identifiers."><figcaption>Arrows describe value transformations. The List example evaluates eagerly. <span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S07">[S07]</a></span></figcaption><p class="diagram-link"><a href="../figures/04-functions.svg">Open editable SVG at full size</a></p></figure><h3>Purpose <span class="evidence synthesis">synthesis</span></h3><p>Use behavior as a value while keeping business intent visible.</p><span class="citations"></span><h3>Mental model <span class="evidence verified">verified</span></h3><p>A function type such as (Quote) -&gt; Boolean can be passed as a parameter. map transforms elements; extension functions add callable syntax without changing the original class. Extensions are resolved from the declared receiver type, unlike virtual member dispatch.</p><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S06">[S06]</a> <a href="#source-S07">[S07]</a></span><h3>Worked example <span class="evidence synthesis">synthesis</span></h3><pre>fun eligibleIds(
+    quotes: List&lt;Quote&gt;,
+    allowed: (Quote) -&gt; Boolean
+): List&lt;String&gt; = quotes.filter(allowed).map { it.id }
+
+val ids = eligibleIds(quotes) { it.amountMinor &gt; 0 }
+// quotes and Quote are caller-provided in this sketch</pre><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S07">[S07]</a></span><h3>Decision + pitfall <span class="evidence synthesis">synthesis</span></h3><p>Use a lambda for a small local decision; use a named function for a reusable eligibility rule. Long nested lambdas hide control flow. An extension cannot override a real member or gain access to private internals just because it looks like a method.</p><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S06">[S06]</a></span><h3>Next improvement <span class="evidence synthesis">synthesis</span></h3><p>The illustrated List pipeline creates intermediate collections. For a hot path, compare it with a loop or lazy sequence using representative input sizes. Do not assume laziness improves a small collection. This is a measurement proposal.</p><span class="citations"><a href="#source-S02">[S02]</a> <a href="#source-S07">[S07]</a></span><div class="takeaway"><strong>Keep this:</strong> Short code earns its keep only when the next reader can see the rule.</div><details><summary>Check yourself: Does an extension replace class inheritance?</summary><p class="answer">No. It adds statically resolved syntax, not a new virtual member or state.</p></details></article><section><h2>Sources &amp; further reading</h2><ol class="source-list"><li id="source-S02"><strong>[S02]</strong> <a href="https://kotlinlang.org/docs/collections-overview.html">Collections overview</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Read-only versus mutable interfaces; val and mutable collections</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li><li id="source-S05"><strong>[S05]</strong> <a href="https://kotlinlang.org/docs/lambdas.html">Higher-order functions and lambdas</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Function types, lambdas and passing behavior</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li><li id="source-S06"><strong>[S06]</strong> <a href="https://kotlinlang.org/docs/extensions.html">Extensions</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Extension resolution and absence of real class modification</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li><li id="source-S07"><strong>[S07]</strong> <a href="https://kotlinlang.org/docs/collection-transformations.html">Collection transformation operations</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Transforming collection values</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li></ol></section>
+</main>
+</body>
+</html>

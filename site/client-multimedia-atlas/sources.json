@@ -1,0 +1,576 @@
+[
+  {
+    "id": "S01",
+    "title": "Media Source API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "JavaScript appends encoded media through MediaSource and SourceBuffer; MSE does not replace the browser decoder."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S02",
+    "title": "Audio and video delivery",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Audio_and_video_delivery",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Progressive files, streaming formats, browser playback and media delivery responsibilities."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S03",
+    "title": "The HTML video element",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Native controls, tracks, media events, preload, playsinline and source support."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S04",
+    "title": "Autoplay guide",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Autoplay policies and handling rejected play requests."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S05",
+    "title": "Video.js architecture",
+    "url": "https://videojs.org/docs/framework/react/guides/architecture",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "v10",
+    "published": "",
+    "supports": [
+      "v10 separates state, UI, media components and extensions."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S06",
+    "title": "React installation guide",
+    "url": "https://videojs.org/docs/guides/installation/react",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "10.0.1",
+    "published": "",
+    "supports": [
+      "Current preset API and installation of @videojs/react@10.0.1."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S07",
+    "title": "Video.js media sources",
+    "url": "https://videojs.org/docs/framework/react/guides/media-sources",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "v10",
+    "published": "",
+    "supports": [
+      "Engine adapters, source options and explicit media types for signed URLs."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S08",
+    "title": "Migrate from Video.js 8",
+    "url": "https://videojs.org/docs/framework/react/guides/migrate-from-video-js-8",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "v8 → v10",
+    "published": "",
+    "supports": [
+      "v8 API and plugin migration boundaries."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S09",
+    "title": "Video.js HTTP Streaming",
+    "url": "https://github.com/videojs/http-streaming",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "v8/VHS",
+    "published": "",
+    "supports": [
+      "VHS provides HLS/DASH streaming for the v8 ecosystem."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S10",
+    "title": "Video.js releases",
+    "url": "https://github.com/videojs/video.js/releases",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "10.0.1",
+    "published": "",
+    "supports": [
+      "v10.0.1 release family and concurrent v8 maintenance releases."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S11",
+    "title": "ReactPlayer README",
+    "url": "https://github.com/cookpete/react-player",
+    "publisher": "ReactPlayer maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "v3",
+    "published": "",
+    "supports": [
+      "v3 provider routing, src, native-like API, HLS/DASH/Mux/YouTube/Vimeo/Wistia support and migration warning."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S12",
+    "title": "React YouTube README",
+    "url": "https://github.com/tjallingt/react-youtube",
+    "publisher": "React YouTube maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Thin wrapper, videoId, opts, onReady and event bindings."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S13",
+    "title": "YouTube IFrame Player API",
+    "url": "https://developers.google.com/youtube/iframe_api_reference",
+    "publisher": "Google / YouTube",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Iframe readiness, state events, seek and playback APIs, origin and minimum player dimensions."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S14",
+    "title": "Mux Player for web",
+    "url": "https://www.mux.com/docs/guides/mux-player-web",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Mux-hosted playback, React integration and on-demand/live player UI."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S15",
+    "title": "Mux Player React API",
+    "url": "https://www.mux.com/docs/guides/player-api-reference/react",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "React playbackId, metadata, tokens and player props."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S16",
+    "title": "Core functionality of Mux Player",
+    "url": "https://www.mux.com/docs/guides/player-core-functionality",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "HLS.js/native HLS playback, Mux Data integration and quality-selector platform constraints."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S17",
+    "title": "Secured video playback",
+    "url": "https://www.mux.com/docs/guides/secure-video-playback",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Server-generated playback JWTs, token audience and expiration requirements."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S18",
+    "title": "Vidstack introduction",
+    "url": "https://vidstack.io/docs/player/",
+    "publisher": "Vidstack maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "1.x",
+    "published": "",
+    "supports": [
+      "Vidstack 1.x is security-only until January 2028; team directs migration to Video.js 10."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S19",
+    "title": "Vidstack architecture",
+    "url": "https://vidstack.io/docs/player/getting-started/architecture/",
+    "publisher": "Vidstack maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "1.x",
+    "published": "",
+    "supports": [
+      "Source selection, provider loaders, requests, state and provider change lifecycle."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S20",
+    "title": "Migrate from Vidstack",
+    "url": "https://videojs.org/docs/framework/react/guides/migrate-from-vidstack",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "1.x → v10",
+    "published": "",
+    "supports": [
+      "Mapping provider/state/UI concepts from Vidstack to Video.js 10."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S21",
+    "title": "HLS.js README",
+    "url": "https://github.com/video-dev/hls.js",
+    "publisher": "HLS.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "MSE-based HLS, native fallback, browser codec constraints and CORS on all HLS resources."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S22",
+    "title": "HLS.js design",
+    "url": "https://github.com/video-dev/hls.js/blob/master/docs/design.md",
+    "publisher": "HLS.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "Loading, stream control, demux/transmux and buffer architecture."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S23",
+    "title": "Hls class API",
+    "url": "https://hlsjs.video-dev.org/api-docs/hls.js.hls",
+    "publisher": "HLS.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "One media element per Hls instance, destroy, level caps, buffer and bandwidth introspection."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S24",
+    "title": "dash.js Quickstart",
+    "url": "https://dashif.org/dash.js/pages/quickstart/",
+    "publisher": "DASH Industry Forum",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "MediaPlayer creation, initialization and basic MPD playback."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S25",
+    "title": "dash.js architecture",
+    "url": "https://dashif.org/dash.js/pages/developers/architecture/",
+    "publisher": "DASH Industry Forum",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "core/dash/streaming layers, per-period/per-track processing and dependency direction."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S26",
+    "title": "dash.js ABR settings",
+    "url": "https://dashif.org/dash.js/pages/usage/abr/settings.html",
+    "publisher": "DASH Industry Forum",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "Default throughput and BOLA rules and configurable ABR behavior."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S27",
+    "title": "dash.js DRM",
+    "url": "https://dashif.org/dash.js/pages/usage/drm.html",
+    "publisher": "DASH Industry Forum",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "Protection data, EME key systems and license-server configuration."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S28",
+    "title": "dash.js low latency",
+    "url": "https://dashif.org/dash.js/pages/usage/low-latency.html",
+    "publisher": "DASH Industry Forum",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "current docs",
+    "published": "",
+    "supports": [
+      "CMAF chunks, latency targets, catchup and low-latency playback trade-offs."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S29",
+    "title": "Clappr project",
+    "url": "https://github.com/clappr/clappr",
+    "publisher": "Clappr maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Extensible plugin-oriented HTML5 player and monorepo organization."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S30",
+    "title": "Clappr core architecture",
+    "url": "https://github.com/clappr/clappr-core",
+    "publisher": "Clappr maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "historical component repo; moved to monorepo",
+    "published": "",
+    "supports": [
+      "Core player components and extensible playback/plugin configuration."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S31",
+    "title": "Clappr HLS playback",
+    "url": "https://github.com/clappr/hlsjs-playback",
+    "publisher": "Clappr maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "historical component repo; moved to monorepo",
+    "published": "",
+    "supports": [
+      "HLS playback is backed by hls.js; plugin and configuration concepts."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S32",
+    "title": "Encrypted Media Extensions API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Browser/CDM interface for protected playback; EME is not a complete content protection service."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S33",
+    "title": "Cross-Origin Resource Sharing",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Server response headers determine cross-origin access; credentialed requests cannot use wildcard origins."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S34",
+    "title": "React useEffect",
+    "url": "https://react.dev/reference/react/useEffect",
+    "publisher": "React team",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Effect setup/cleanup and Strict Mode extra development setup/cleanup cycle."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S35",
+    "title": "Mux Data metric definitions",
+    "url": "https://www.mux.com/docs/guides/understand-metric-definitions",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Startup time, rebuffering, errors and experience metrics."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S36",
+    "title": "Video.js v10 beta architecture announcement",
+    "url": "https://videojs.org/blog/videojs-v10-beta-hello-world-again",
+    "publisher": "Video.js maintainers",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "March beta announcement; later updates",
+    "published": "2026-03-10",
+    "supports": [
+      "Ground-up rewrite involving Vidstack, Plyr and Media Chrome; published bundle comparisons depend on configuration."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S37",
+    "title": "Direct video uploads",
+    "url": "https://www.mux.com/docs/guides/upload-files-directly",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Backend-created upload URLs and asynchronous media readiness."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S38",
+    "title": "Listen for webhooks",
+    "url": "https://www.mux.com/docs/core/listen-for-webhooks",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Asset lifecycle notifications, duplicate events and webhook integration."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S39",
+    "title": "Start live streaming",
+    "url": "https://www.mux.com/docs/guides/start-live-streaming",
+    "publisher": "Mux",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Live ingest, playback IDs and latency modes."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S40",
+    "title": "Making media accessible",
+    "url": "https://www.w3.org/WAI/media/av/",
+    "publisher": "W3C WAI",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Captions, descriptions, transcripts and accessible player planning."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  },
+  {
+    "id": "S41",
+    "title": "WebRTC API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API",
+    "publisher": "MDN",
+    "kind": "official documentation",
+    "accessed": "2026-10-10",
+    "version": "",
+    "published": "",
+    "supports": [
+      "Real-time peer media and communication; different infrastructure from segmented HTTP delivery."
+    ],
+    "relevance": "Read this page to inspect the API and assumptions behind the cited explanation."
+  }
+]

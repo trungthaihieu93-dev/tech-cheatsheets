@@ -1,0 +1,158 @@
+[
+  {
+    "id": "S01",
+    "title": "About the New Architecture",
+    "url": "https://reactnative.dev/architecture/landing-page",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "JSI replaces the serialized bridge; enabling it alone does not promise speed."
+    ],
+    "relevance": "Read the diagrams and API boundaries for jsi replaces the serialized bridge; enabling it alone does not promise speed."
+  },
+  {
+    "id": "S02",
+    "title": "Threading Model",
+    "url": "https://reactnative.dev/architecture/threading-model",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "JS and UI thread responsibilities; render can run in more than one scheduling scenario."
+    ],
+    "relevance": "Read the diagrams and API boundaries for js and ui thread responsibilities; render can run in more than one scheduling scenario."
+  },
+  {
+    "id": "S03",
+    "title": "Render, Commit, and Mount",
+    "url": "https://reactnative.dev/architecture/render-pipeline",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Fabric render, commit, layout and host view mount phases."
+    ],
+    "relevance": "Read the diagrams and API boundaries for fabric render, commit, layout and host view mount phases."
+  },
+  {
+    "id": "S04",
+    "title": "Fabric",
+    "url": "https://reactnative.dev/architecture/fabric-renderer",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Cross-platform C++ renderer and host platform interoperability."
+    ],
+    "relevance": "Read the diagrams and API boundaries for cross-platform c++ renderer and host platform interoperability."
+  },
+  {
+    "id": "S05",
+    "title": "Native Modules: Introduction",
+    "url": "https://reactnative.dev/docs/turbo-native-modules-introduction",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Typed TS or Flow spec and platform-specific Codegen interfaces."
+    ],
+    "relevance": "Read the diagrams and API boundaries for typed ts or flow spec and platform-specific codegen interfaces."
+  },
+  {
+    "id": "S06",
+    "title": "Expo Modules API: Overview",
+    "url": "https://docs.expo.dev/modules/overview/",
+    "publisher": "Expo",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Expo Modules API uses Swift and Kotlin and supports the New Architecture."
+    ],
+    "relevance": "Read the diagrams and API boundaries for expo modules api uses swift and kotlin and supports the new architecture."
+  },
+  {
+    "id": "S07",
+    "title": "Expo Modules API: Reference",
+    "url": "https://docs.expo.dev/modules/module-api/",
+    "publisher": "Expo",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "JSI abstraction; Function, AsyncFunction, queues, views, events and lifecycle."
+    ],
+    "relevance": "Read the diagrams and API boundaries for jsi abstraction; function, asyncfunction, queues, views, events and lifecycle."
+  },
+  {
+    "id": "S08",
+    "title": "Add custom native code",
+    "url": "https://docs.expo.dev/workflow/customizing/",
+    "publisher": "Expo",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Expo Go limits, development builds, CNG and config plugins."
+    ],
+    "relevance": "Read the diagrams and API boundaries for expo go limits, development builds, cng and config plugins."
+  },
+  {
+    "id": "S09",
+    "title": "Runtime versions and updates",
+    "url": "https://docs.expo.dev/eas-update/runtime-versions/",
+    "publisher": "Expo",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "OTA JS update compatibility with the compiled native runtime."
+    ],
+    "relevance": "Read the diagrams and API boundaries for ota js update compatibility with the compiled native runtime."
+  },
+  {
+    "id": "S10",
+    "title": "Using Hermes",
+    "url": "https://reactnative.dev/docs/hermes",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Bundled Hermes is the default JS engine and release builds matter for measurement."
+    ],
+    "relevance": "Read the diagrams and API boundaries for bundled hermes is the default js engine and release builds matter for measurement."
+  },
+  {
+    "id": "S11",
+    "title": "Emitting Events in Native Modules",
+    "url": "https://reactnative.dev/docs/the-new-architecture/native-modules-custom-events",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "Native-to-JS events in TurboModules."
+    ],
+    "relevance": "Read the diagrams and API boundaries for native-to-js events in turbomodules."
+  },
+  {
+    "id": "S12",
+    "title": "Performance Overview",
+    "url": "https://reactnative.dev/docs/performance",
+    "publisher": "React Native",
+    "kind": "official documentation",
+    "accessed": "2026-10-08",
+    "version": "current documentation as accessed",
+    "supports": [
+      "JS and UI frame rates and practical performance diagnosis."
+    ],
+    "relevance": "Read the diagrams and API boundaries for js and ui frame rates and practical performance diagnosis."
+  }
+]

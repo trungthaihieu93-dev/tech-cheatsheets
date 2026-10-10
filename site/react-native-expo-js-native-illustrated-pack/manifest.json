@@ -1,0 +1,129 @@
+{
+  "files": [
+    {
+      "path": "figures/01-three-layers.svg",
+      "bytes": 2779,
+      "sha256": "1923a9a3703ec49b408dc182463d22425808d00c3353c448af9fe64166b22bc6"
+    },
+    {
+      "path": "figures/02-jsi-versus-bridge.svg",
+      "bytes": 2957,
+      "sha256": "1fb54cbe8f07fbb7d4be85ccea375075a491206a6e6d34d458c3c69a3921e37e"
+    },
+    {
+      "path": "figures/03-fabric-path.svg",
+      "bytes": 2712,
+      "sha256": "43bf4c523fcbbf2d931d4edf5f3c0451b9fbbe2ffef07c7ebe11c35ab637551b"
+    },
+    {
+      "path": "figures/04-turbomodule-contract.svg",
+      "bytes": 2317,
+      "sha256": "3e01b3b27460dcd7fa544d4d8f1315b3f354f9d2dee86508b1c691119188cacc"
+    },
+    {
+      "path": "figures/05-expo-module-contract.svg",
+      "bytes": 2361,
+      "sha256": "5f14486224ddaae311ee0cd2fc9b80826a7e0af919a8a341574d6764de6b6d32"
+    },
+    {
+      "path": "figures/06-thread-ownership.svg",
+      "bytes": 2536,
+      "sha256": "82fb919122a3ba31a36c69c2d415ab29f09ae6dad447924657c1e50d71e3a9ae"
+    },
+    {
+      "path": "figures/07-events-and-lifecycle.svg",
+      "bytes": 2762,
+      "sha256": "b0c07bbcf6398359b0847dbf3be7354b11f65ee06a9a1a0995a77ad384e81825"
+    },
+    {
+      "path": "figures/08-builds-and-ota.svg",
+      "bytes": 2768,
+      "sha256": "cdc19d32e618a289e758b67b04191948deb70a52dfcffe4fbe9d2455b196c01d"
+    },
+    {
+      "path": "figures/09-profile-the-boundary.svg",
+      "bytes": 2742,
+      "sha256": "023c239be6923fcf4dd72e133147b594397e498e7dcbf5e74e2aab55d1dbd694"
+    },
+    {
+      "path": "figures/10-platform-contract.svg",
+      "bytes": 2746,
+      "sha256": "77765765933f85ea8365c921697347d749b64442b6ee212203c4b4291ab96d83"
+    },
+    {
+      "path": "index.html",
+      "bytes": 76185,
+      "sha256": "c95520556a513d1ae87ee69aab49510e8bebe5799f7c20a9f06f77aa91b7b2f0"
+    },
+    {
+      "path": "learning-map.md",
+      "bytes": 3029,
+      "sha256": "f7f22497aa76d269b3bd17df66953e9e9a1daf33a57a1d669e071d8f3c0c3ea6"
+    },
+    {
+      "path": "pack.json",
+      "bytes": 35721,
+      "sha256": "63a7d1e899158abf7d22c673c24b303764ff05fd9a2f7005270f60c9ef45a7e1"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 6092,
+      "sha256": "b524390fafeb981455f49f11be0886a2f5c1b467662d83cd0abd2eea3303a686"
+    },
+    {
+      "path": "sources.md",
+      "bytes": 4775,
+      "sha256": "adf7546960b5f28647f47ba38b6a3c33eb41ff22e3ba776378b0b01b879f7a7b"
+    },
+    {
+      "path": "topics/01-three-layers.html",
+      "bytes": 13858,
+      "sha256": "0e55cf95f1e1d4f3f42240178417a5569a3858b82665c23b73b32ce5f3293713"
+    },
+    {
+      "path": "topics/02-jsi-versus-bridge.html",
+      "bytes": 12524,
+      "sha256": "4f4c363ff874d7a128e3daa7c90bf77b6bdc68949dcaa8175f169dd41c9f3d27"
+    },
+    {
+      "path": "topics/03-fabric-path.html",
+      "bytes": 13445,
+      "sha256": "2f867141cad1262516a8150954da754a874855a41188c9c18aa1300de0a6ee8f"
+    },
+    {
+      "path": "topics/04-turbomodule-contract.html",
+      "bytes": 11981,
+      "sha256": "c87b0fb4de0e514c51f57916915b67038e9f35f1fd8a23c07e3dfbc86f5e2918"
+    },
+    {
+      "path": "topics/05-expo-module-contract.html",
+      "bytes": 12248,
+      "sha256": "23d540e2fde74b6ac7290d1e1115785a6b891281d8e0f96183833361ee41d1e6"
+    },
+    {
+      "path": "topics/06-thread-ownership.html",
+      "bytes": 12544,
+      "sha256": "f092e707b0f37ad5b273edce36b88b0f8a308ae34d5f517ab87e258dc5385064"
+    },
+    {
+      "path": "topics/07-events-and-lifecycle.html",
+      "bytes": 12600,
+      "sha256": "7e21bc56a81b084738c022950f49e8d36e69642a70ab44737d85789364ee48cc"
+    },
+    {
+      "path": "topics/08-builds-and-ota.html",
+      "bytes": 12140,
+      "sha256": "c1c3000686acafd3357555c535b1a17b99e977254ec4959a612c14385bdd8e2e"
+    },
+    {
+      "path": "topics/09-profile-the-boundary.html",
+      "bytes": 13328,
+      "sha256": "2f5610264c336c24847217bd352bd22591923f744d7e7f549daa9b1a79f323c7"
+    },
+    {
+      "path": "topics/10-platform-contract.html",
+      "bytes": 12637,
+      "sha256": "01d3e5e76130e692557799d75074b3a56ecd8c2327bdcf9595af9bc4a1db1d68"
+    }
+  ]
+}

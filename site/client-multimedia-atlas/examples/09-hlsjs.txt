@@ -1,0 +1,22 @@
+// Illustrative JS module; src must be a real HLS manifest URL.
+import Hls from "hls.js";
+export function mountHls(video, src, onFailure) {
+  if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    const onError = () => onFailure(video.error);
+    video.addEventListener("error", onError);
+    video.src = src;
+    return () => {
+      video.removeEventListener("error", onError);
+      video.pause(); video.removeAttribute("src"); video.load();
+    };
+  }
+  if (!Hls.isSupported()) {
+    onFailure(new Error("HLS is unsupported")); return () => {};
+  }
+  const hls = new Hls();
+  hls.on(Hls.Events.ERROR, (_, detail) => {
+    if (detail.fatal) onFailure(detail);
+  });
+  hls.attachMedia(video); hls.loadSource(src);
+  return () => hls.destroy();
+}

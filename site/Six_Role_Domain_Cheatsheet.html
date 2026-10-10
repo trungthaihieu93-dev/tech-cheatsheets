@@ -1,0 +1,651 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Six-role domain cheat sheet - Tony</title><style>/*
+ * Apply one theme class to the document root, for example:
+ * <body class="theme-nord tech-mentor-document">
+ */
+.tech-mentor-document {
+  --tm-bg: #ffffff;
+  --tm-surface: #f6f8fa;
+  --tm-text: #1f2328;
+  --tm-muted: #59636e;
+  --tm-accent: #0969da;
+  --tm-border: #d0d7de;
+  --tm-code-bg: #eff2f5;
+  background: var(--tm-bg);
+  color: var(--tm-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.tech-mentor-document main {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 48px 36px 64px;
+}
+
+.tech-mentor-document h1,
+.tech-mentor-document h2,
+.tech-mentor-document h3 {
+  color: var(--tm-text);
+  line-height: 1.2;
+}
+
+.tech-mentor-document h2 {
+  border-bottom: 1px solid var(--tm-border);
+  margin-top: 2.5rem;
+  padding-bottom: 0.45rem;
+}
+
+.tech-mentor-document a {
+  color: var(--tm-accent);
+}
+
+.tech-mentor-document code,
+.tech-mentor-document pre {
+  background: var(--tm-code-bg);
+  border-radius: 8px;
+}
+
+.tech-mentor-document code {
+  padding: 0.12em 0.35em;
+}
+
+.tech-mentor-document pre {
+  border: 1px solid var(--tm-border);
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.tech-mentor-document blockquote,
+.tech-mentor-document .whiteboard-card {
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.tech-mentor-document .whiteboard-card {
+  box-shadow: 2px 3px 0 color-mix(in srgb, var(--tm-border) 60%, transparent);
+}
+
+.theme-github-clean {
+  --tm-bg: #ffffff;
+  --tm-surface: #f6f8fa;
+  --tm-text: #1f2328;
+  --tm-muted: #59636e;
+  --tm-accent: #0969da;
+  --tm-border: #d0d7de;
+  --tm-code-bg: #eff2f5;
+}
+
+.theme-notion-paper {
+  --tm-bg: #fbfbfa;
+  --tm-surface: #f2f1ed;
+  --tm-text: #37352f;
+  --tm-muted: #787774;
+  --tm-accent: #9b6b18;
+  --tm-border: #e3e2de;
+  --tm-code-bg: #efeee9;
+}
+
+.theme-nord {
+  --tm-bg: #2e3440;
+  --tm-surface: #3b4252;
+  --tm-text: #eceff4;
+  --tm-muted: #d8dee9;
+  --tm-accent: #88c0d0;
+  --tm-border: #4c566a;
+  --tm-code-bg: #242933;
+}
+
+.theme-dracula {
+  --tm-bg: #282a36;
+  --tm-surface: #343746;
+  --tm-text: #f8f8f2;
+  --tm-muted: #c7c7cf;
+  --tm-accent: #bd93f9;
+  --tm-border: #6272a4;
+  --tm-code-bg: #20212b;
+}
+
+.theme-solarized {
+  --tm-bg: #fdf6e3;
+  --tm-surface: #eee8d5;
+  --tm-text: #586e75;
+  --tm-muted: #657b83;
+  --tm-accent: #268bd2;
+  --tm-border: #d8cfb7;
+  --tm-code-bg: #f4ecd5;
+}
+
+@media print {
+  .tech-mentor-document main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .tech-mentor-document h2,
+  .tech-mentor-document h3,
+  .tech-mentor-document .whiteboard-card {
+    break-inside: avoid;
+  }
+
+  .tech-mentor-document pre {
+    white-space: pre-wrap;
+  }
+}
+
+
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}.shell{display:grid;grid-template-columns:245px minmax(0,1fr);max-width:1440px;margin:auto}nav{position:sticky;top:0;height:100vh;overflow:auto;padding:30px 20px;border-right:1px solid var(--tm-border)}nav strong{display:block;margin-bottom:16px}nav a{display:block;padding:7px 0;font-size:13px;text-decoration:none}main{width:100%;min-width:0}header{padding-bottom:24px;border-bottom:1px solid var(--tm-border)}header h1{font-size:38px;letter-spacing:-1px;margin:0 0 16px}section{padding-top:36px;scroll-margin-top:18px}.eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--tm-muted)}section h2{border:0!important;margin:8px 0 12px!important;font-size:28px}p.deck{color:var(--tm-muted);margin-bottom:24px}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5}th,td{padding:12px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--tm-border)}th{background:var(--tm-surface)}td:first-child{font-weight:600}figure{margin:24px 0}figure svg{display:block;width:100%;height:auto;background:#fbfbfa;border-radius:10px;padding:8px}figcaption{font-size:12px;color:var(--tm-muted);margin-top:8px}aside{background:var(--tm-surface);padding:16px 20px;border-left:3px solid var(--tm-accent);margin:20px 0}details{border-bottom:1px solid var(--tm-border);padding:12px 0}summary{cursor:pointer;font-weight:600}details p{margin:12px 0 0}pre{font-size:13px;line-height:1.6}.sources li{margin-bottom:14px}.sources span{display:block;font-size:11px;color:var(--tm-muted);overflow-wrap:anywhere}.table-wrap{overflow:auto}button{background:var(--tm-surface);border:1px solid var(--tm-border);padding:9px 14px;border-radius:6px;color:var(--tm-text);cursor:pointer}li{margin-bottom:8px}@media(max-width:850px){.shell{display:block}nav{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--tm-border);display:flex;gap:12px;flex-wrap:wrap;padding:20px}nav strong{width:100%;margin:0}nav a{font-size:12px}main{padding:30px 20px!important}header h1{font-size:31px}.table-wrap table{min-width:600px}}@media print{nav,header button{display:none}.shell{display:block}section{break-before:page;padding:0}header{break-after:page}details p{display:block}figure,table,aside,pre{break-inside:avoid}}
+</style></head><body class="theme-notion-paper tech-mentor-document"><div class="shell"><nav aria-label="Contents"><strong>Domain field notes</strong><a href="#map">01 · Six roles, one operating system</a><a href="#devops-infra">02 · DevOps / infrastructure map</a><a href="#devops-delivery">03 · DevOps / safe changes and incidents</a><a href="#social-economics">04 · Paid social / funnel and economics</a><a href="#social-operations">05 · Paid social / platforms and clients</a><a href="#data-model">06 · Data analyst / sources and models</a><a href="#data-practical">07 · Data analyst / integration and SQL</a><a href="#seo-controls">08 · Technical SEO specialist / indexability</a><a href="#seo-measure">09 · Technical SEO specialist / tools and performance</a><a href="#seo-assistant">10 · Technical SEO assistant / execution playbook</a><a href="#ap">11 · Accounts payable / payment controls</a><a href="#cross-role">12 · Cross-role diagnosis / follow the evidence</a><a href="#refresh">13 · Refresh plan / practise the handoffs</a><a href="#sources">14 · Sources / keep your knowledge current</a></nav><main><header><div class="eyebrow">PRACTICAL KNOWLEDGE REFRESH · OCTOBER 2026</div><h1>Six roles.<br>One connected business.</h1><p>DevOps, paid social, data analysis, technical SEO, SEO assistance and accounts payable. Workflows, metrics, traps and short exercises.</p><button id="answers" aria-pressed="false">Show all model answers</button></header><section id="map"><div class="eyebrow">01 / DOMAIN CHEAT SHEET</div><h2>Six roles, one operating system</h2><p class="deck">A practical refresh for Tony | Notion Paper | 05 October 2026</p>
+<p>Use this as a domain map, then work through the scenarios. The job post is brief: examples below are illustrative architectures and exercises, not claims about the employer. Refreshing vocabulary is useful; professional competence still comes from operating the workflow.</p>
+<figure>
+
+<svg role="img" aria-label="A fictional retailer connects acquisition, website operations, sales data and supplier payments." width="511" height="163.2" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 163" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="163.2"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-163)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 155,120.2 L 190,120.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="190 120.2, 186.6987 122.4586, 186.6987 117.9414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 155,51.8 L 172.5,51.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 172.5,51.8 L 172.5,120.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 172.5,120.2 L 190,120.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="190 120.2, 186.6987 122.4586, 186.6987 117.9414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 260,97.2 L 260,74.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="260 74.8, 262.2586 78.10134, 257.7414 78.10134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 430,97.2 L 430,74.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="430 74.8, 432.2586 78.10134, 427.7414 78.10134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="16.5" y="95.7" width="140.0" height="45.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="15" y="97.2" width="140" height="45.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="49.883500000000005" y="123.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,246) scale(1,-1)">Organic discovery</text>
+			<text x="67.1077" y="110.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,220) scale(1,-1)">SEO teams</text>
+			<rect x="16.5" y="27.299999999999997" width="140.0" height="46.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="15" y="28.799999999999997" width="140" height="46.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="53.9712" y="54.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,109) scale(1,-1)">Paid acquisition</text>
+			<text x="67.65520000000001" y="41.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,83) scale(1,-1)">Paid social</text>
+			<rect x="191.5" y="95.7" width="140.0" height="45.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="190" y="97.2" width="140" height="45.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="222.0873" y="123.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,246) scale(1,-1)">Website / checkout</text>
+			<text x="230.0408" y="110.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,220) scale(1,-1)">DevOps + product</text>
+			<rect x="191.5" y="27.299999999999997" width="140.0" height="46.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="190" y="28.799999999999997" width="140" height="46.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="223.3911" y="54.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,109) scale(1,-1)">Sales / POS events</text>
+			<text x="239.4651" y="41.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,83) scale(1,-1)">Data analyst</text>
+			<rect x="366.5" y="95.7" width="130.0" height="45.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="365" y="97.2" width="130" height="45.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="396.6834" y="123.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,246) scale(1,-1)">Supplier delivery</text>
+			<text x="411.83395" y="110.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,220) scale(1,-1)">Purchasing</text>
+			<rect x="366.5" y="27.299999999999997" width="130.0" height="46.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="365" y="28.799999999999997" width="130" height="46.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="391.0295" y="54.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,109) scale(1,-1)">Invoices / payments</text>
+			<text x="409.4505" y="41.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,83) scale(1,-1)">AP + finance</text>
+		</g>
+	</g>
+</svg>
+<figcaption>A fictional retailer connects acquisition, website operations, sales data and supplier payments.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Role / work mode</th><th>What success looks like</th><th>Know first</th></tr></thead><tbody><tr><td>DevOps / hybrid</td><td>Safe releases; dependable, observable infrastructure</td><td>IAM, networking, IaC, delivery, recovery</td></tr><tr><td>Paid social / remote, VN nights</td><td>Commercial outcomes and clear client decisions</td><td>Funnel, attribution, economics, experiments</td></tr><tr><td>Data analyst / hybrid</td><td>Trusted reporting that changes a decision</td><td>Grain, SQL, reconciliation, semantic models</td></tr><tr><td>Technical SEO specialist / remote</td><td>Important pages discoverable and usable</td><td>Crawl, render, index, canonical, performance</td></tr><tr><td>Technical SEO assistant / onsite</td><td>Accurate audits, updates and evidence</td><td>Crawler exports, CMS hygiene, issue verification</td></tr><tr><td>Accounts payable / remote</td><td>Correct, approved, timely supplier payments</td><td>Matching, controls, vendor ledger, reconciliation</td></tr></tbody></table></div>
+<h3>Suggested reading order for a software engineer</h3>
+<p>DevOps → data analyst → technical SEO → paid social → accounts payable. This order uses your engineering foundations first, then adds commercial measurement and finance operations. It is a suggested learning order, not a ranking of the jobs.</p>
+<aside>One shared question: Which system owns the truth? A server log, an ad conversion, a POS sale and a posted invoice represent different events. Always state the event, owner, time basis and unit before comparing numbers.</aside>
+</section><section id="devops-infra"><div class="eyebrow">02 / DOMAIN CHEAT SHEET</div><h2>DevOps / infrastructure map</h2><p class="deck">Own the service from network boundary to recovery.</p>
+<figure>
+
+<svg role="img" aria-label="Illustrative AWS design: public entry, private application/database, separate delivery and telemetry paths." width="511" height="148.79999999999998" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 148" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="148.79999999999998"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-148)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 110,108.4 L 140,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="140 108.4, 136.6987 110.6586, 136.6987 106.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 255,108.4 L 290,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="290 108.4, 286.6987 110.6586, 286.6987 106.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 345,86.4 L 345,65.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="345 65.6, 347.2586 68.90134, 342.7414 68.90134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 255,43.6 L 272.5,43.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 272.5,43.6 L 272.5,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 272.5,108.4 L 290,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="290 108.4, 286.6987 110.6586, 286.6987 106.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 400,108.4 L 412.5,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,108.4 L 412.5,83 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,83 L 425,83 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="425 83, 421.6987 85.25857, 421.6987 80.74143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 400,43.6 L 412.5,43.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,43.6 L 412.5,83 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,83 L 425,83 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="425 83, 421.6987 85.25857, 421.6987 80.74143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="6.5" y="84.89999999999999" width="105.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="86.39999999999999" width="105" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="36.4834" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Customers</text>
+			<text x="46.64125" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">HTTPS</text>
+			<rect x="141.5" y="84.89999999999999" width="115.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="140" y="86.39999999999999" width="115" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="176.4342" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Public ALB</text>
+			<text x="176.26065" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">TLS / routing</text>
+			<rect x="291.5" y="84.89999999999999" width="110.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="86.39999999999999" width="110" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="322.5033" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Private app</text>
+			<text x="322.82625" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">ECS / Fargate</text>
+			<rect x="291.5" y="20.099999999999998" width="110.0" height="44.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="21.599999999999998" width="110" height="44.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="321.5808" y="46.599999999999994" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,93) scale(1,-1)">Private RDS</text>
+			<text x="320.5012" y="33.599999999999994" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,67) scale(1,-1)">Data / backups</text>
+			<rect x="141.5" y="20.099999999999998" width="115.0" height="44.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="140" y="21.599999999999998" width="115" height="44.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="173.1132" y="46.599999999999994" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,93) scale(1,-1)">ECR registry</text>
+			<text x="176.15845" y="33.599999999999994" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,67) scale(1,-1)">Image digest</text>
+			<rect x="426.5" y="52.5" width="80.0" height="58.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="425" y="54.0" width="80" height="58.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="444.6763" y="86.0" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,172) scale(1,-1)">Telemetry</text>
+			<text x="441.81885" y="73.0" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,146) scale(1,-1)">Logs / metrics</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Illustrative AWS design: public entry, private application/database, separate delivery and telemetry paths.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Tool / concept</th><th>Mental model</th><th>What to explain</th></tr></thead><tbody><tr><td>AWS IAM</td><td>Who can do what to which resource</td><td>Roles, least privilege, temporary credentials</td></tr><tr><td>VPC + security groups</td><td>Reachability plus allowed traffic</td><td>Public/private subnets, routes, ALB-to-app-to-DB rules</td></tr><tr><td>ECS/Fargate + ECR</td><td>Run and distribute containers</td><td>Task health, resource limits, image digests</td></tr><tr><td>RDS + S3</td><td>Database and object storage</td><td>Backups, encryption, access, restore testing</td></tr><tr><td>Terraform + HCP Terraform</td><td>Declared infrastructure and controlled runs</td><td>Providers, modules, state, locks, plans, drift</td></tr><tr><td>CloudWatch / telemetry</td><td>Evidence of service behavior</td><td>Logs, metrics, traces; actionable alarms</td></tr></tbody></table></div>
+<p>Terraform Cloud was renamed HCP Terraform in 2024 [1]. An HCP workspace groups configuration, variables, state and runs; remote execution is its default mode [2]. Protect state because sensitive values can appear in it. A plan previews proposed changes; it is not proof that a release is safe.</p>
+<h3>Foundations before service names</h3>
+<ul><li>Linux processes, permissions, sockets and exit codes; DNS, HTTP, TLS and connection timeouts.</li><li>Availability versus durability; RTO = acceptable recovery time, RPO = acceptable data loss window. Set both with the business.</li><li>Containers share the host kernel. Docker packages the runtime; Terraform provisions infrastructure; GitHub Actions coordinates automation.</li></ul>
+<details><summary>Why start with ECS rather than EKS here?</summary><p>The post asks for Docker and AWS, but does not require Kubernetes. ECS/Fargate is one plausible lower-operations option. Choose Kubernetes only when its capabilities and team capacity justify the extra work.</p></details>
+</section><section id="devops-delivery"><div class="eyebrow">03 / DOMAIN CHEAT SHEET</div><h2>DevOps / safe changes and incidents</h2><p class="deck">A green pipeline is one signal; the user journey is the outcome.</p>
+<figure>
+
+<svg role="img" aria-label="Separate application delivery from infrastructure planning; verify both through service signals." width="511" height="143.04" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 143" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="143.04"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-143)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 130,101.64 L 170,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170 101.64, 166.6987 103.8986, 166.6987 99.38143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 130,101.64 L 150,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 150,101.64 L 150,38.28 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 150,38.28 L 170,38.28 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170 38.28, 166.6987 40.53857, 166.6987 36.02143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 315,101.64 L 365,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="365 101.64, 361.6987 103.8986, 361.6987 99.38143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 315,38.28 L 340,38.28 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 340,38.28 L 340,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 340,101.64 L 365,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="365 101.64, 361.6987 103.8986, 361.6987 99.38143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 435,80.64 L 435,59.28 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="435 59.28, 437.2586 62.58134, 432.7414 62.58134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="11.5" y="79.14" width="120.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="10" y="80.64" width="120" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="46.1503" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Pull request</text>
+			<text x="43.23455" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">Review + checks</text>
+			<rect x="171.5" y="79.14" width="145.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="170" y="80.64" width="145" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="202.92680000000001" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Application delivery</text>
+			<text x="209.1828" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">Build / scan / deploy</text>
+			<rect x="171.5" y="15.780000000000001" width="145.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="170" y="17.28" width="145" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="207.15390000000002" y="41.28" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,82) scale(1,-1)">Infrastructure run</text>
+			<text x="209.01125" y="28.28" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,56) scale(1,-1)">Plan / review / apply</text>
+			<rect x="366.5" y="79.14" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="365" y="80.64" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="396.9151" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Service verification</text>
+			<text x="404.3108" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">Smoke / telemetry</text>
+			<rect x="366.5" y="15.780000000000001" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="365" y="17.28" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="394.6232" y="41.28" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,82) scale(1,-1)">Mitigation / learning</text>
+			<text x="405.8146" y="28.28" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,56) scale(1,-1)">Rollback or repair</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Separate application delivery from infrastructure planning; verify both through service signals.</figcaption></figure>
+<p>Use GitHub Actions OIDC to assume an AWS role with short-lived credentials; constrain the role trust to the intended repository and environment [3]. For containers, multi-stage builds separate compilation dependencies from the runtime image [4]. Pin dependencies, scan artifacts and deploy an immutable image digest.</p>
+<div class="table-wrap"><table><thead><tr><th>Area</th><th>Refresh checklist</th></tr></thead><tbody><tr><td>Infrastructure</td><td>terraform fmt -check; init; validate; plan. Review replacement/deletion, access changes and state impact. Apply through the agreed workflow.</td></tr><tr><td>Delivery</td><td>Tests → image build → scan → registry → staged deployment → smoke test. Coordinate schema migrations; an old image may not understand a new schema.</td></tr><tr><td>Incident</td><td>State impact and scope; inspect recent changes; correlate logs/metrics/traces; mitigate; verify recovery; document a durable fix.</td></tr><tr><td>Metrics</td><td>Availability and p95/p99 latency; error rate; saturation; change failure rate; deployment lead time; recovery time. Define numerator and time window.</td></tr><tr><td>AI coding tools</td><td>Claude Code/Gemini can draft scripts, IaC and explanations. Review diffs, test commands, isolate execution and restrict permissions [5,6]. The post does not specify which Gemini interface.</td></tr></tbody></table></div>
+<h3>Bash example: a read-only health check</h3>
+<pre><code>#!/usr/bin/env bash
+set -euo pipefail
+url=&quot;${1:?Usage: check-health URL}&quot;
+curl --fail --silent --show-error \
+  --connect-timeout 3 --max-time 10 &quot;$url&quot;
+# Nonzero exit status fails the calling CI step.</code></pre>
+<details><summary>Latency doubled after deployment. What first?</summary><p>Compare affected endpoints, deployment timing, errors and saturation. Check database pools, downstream calls and resource limits. Roll back only if it is a compatible mitigation; verify the actual checkout or login journey, not just /health.</p></details>
+</section><section id="social-economics"><div class="eyebrow">04 / DOMAIN CHEAT SHEET</div><h2>Paid social / funnel and economics</h2><p class="deck">Buy useful outcomes, then explain what the measurement can and cannot prove.</p>
+<figure>
+
+<svg role="img" aria-label="Ad-driven and organic visitors share the site; browser and server signals feed platform reporting." width="511" height="152.4" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 152" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="152.4"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-152)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 130,109.56 L 170,109.56 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170 109.56, 166.6987 111.8186, 166.6987 107.3014" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 240,88.56 L 240,63.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="240 63.6, 242.2586 66.90134, 237.7414 66.90134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 310,109.56 L 355,109.56 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="355 109.56, 351.6987 111.8186, 351.6987 107.3014" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 310,42.6 L 355,42.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="355 42.6, 351.6987 44.85857, 351.6987 40.34143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 430,88.56 L 430,63.6 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="430 63.6, 432.2586 66.90134, 427.7414 66.90134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="6.5" y="87.06" width="125.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="88.56" width="125" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="40.599900000000005" y="112.56" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,225) scale(1,-1)">Paid / organic</text>
+			<text x="43.191" y="99.56" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,199) scale(1,-1)">Traffic sources</text>
+			<rect x="171.5" y="87.06" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="170" y="88.56" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="202.0873" y="112.56" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,225) scale(1,-1)">Website / checkout</text>
+			<text x="215.2968" y="99.56" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,199) scale(1,-1)">Business event</text>
+			<rect x="171.5" y="20.099999999999998" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="170" y="21.599999999999998" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="203.2312" y="45.599999999999994" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,91) scale(1,-1)">Browser collection</text>
+			<text x="221.16235" y="32.599999999999994" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,65) scale(1,-1)">Tags / Pixel</text>
+			<rect x="356.5" y="87.06" width="150.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="355" y="88.56" width="150" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="396.6424" y="112.56" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,225) scale(1,-1)">Server collection</text>
+			<text x="404.94275" y="99.56" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,199) scale(1,-1)">Conversion API</text>
+			<rect x="356.5" y="20.099999999999998" width="150.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="355" y="21.599999999999998" width="150" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="392.8335" y="45.599999999999994" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,91) scale(1,-1)">Platform reporting</text>
+			<text x="395.63525" y="32.599999999999994" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,65) scale(1,-1)">Credit / optimization</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Ad-driven and organic visitors share the site; browser and server signals feed platform reporting.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Formula / meaning</th><th>Interpretation trap</th></tr></thead><tbody><tr><td>CPM</td><td>Spend / impressions × 1,000</td><td>Cheap reach can be the wrong audience</td></tr><tr><td>CTR</td><td>Selected click type / impressions</td><td>Specify link clicks vs all clicks</td></tr><tr><td>CPC</td><td>Spend / selected click count</td><td>A click need not become a landing visit</td></tr><tr><td>CVR</td><td>Conversions / stated denominator</td><td>Use clicks or sessions consistently</td></tr><tr><td>CPA / CPL</td><td>Spend / purchases or leads</td><td>Attributed purchase differs from new customer</td></tr><tr><td>CAC</td><td>Defined acquisition cost / new customers</td><td>State included costs and customer cohort</td></tr><tr><td>ROAS</td><td>Attributed revenue / ad spend</td><td>Revenue return is not profit or causality</td></tr><tr><td>Frequency</td><td>Impressions / reached users</td><td>Interpret with creative performance and reach</td></tr><tr><td>Pacing</td><td>Spend-to-date / planned spend-to-date</td><td>Use elapsed plan, not full-month budget</td></tr></tbody></table></div>
+<h3>Illustrative calculation, no universal benchmarks</h3>
+<p>Spend $1,000; 100,000 impressions; 2,000 link clicks; 50 attributed orders; $4,000 attributed revenue. CPM = $10; link CTR = 2%; CPC = $0.50; click CVR = 2.5%; CPA = $20; ROAS = 4.0x. These orders need not all be new customers or caused by the ads.</p>
+<p>If pre-ad contribution margin is 25% of comparable revenue, simplified break-even ROAS = 1 / 0.25 = 4.0x. This assumes the margin includes variable costs and the revenue basis handles refunds consistently; fixed costs and incrementality can change the conclusion.</p>
+<aside>Attribution assigns credit. Incrementality asks what would happen without advertising. Platforms can both claim the same purchase; do not add their conversion totals. Agree on conversion definitions, attribution windows, currency, time zone and reporting lag.</aside>
+<details><summary>CTR rises, sales stay flat. What do you check?</summary><p>Landing visits, site speed, tracking, traffic intent, offer, device mix and checkout conversion. High engagement may be curiosity without purchase intent.</p></details>
+</section><section id="social-operations"><div class="eyebrow">05 / DOMAIN CHEAT SHEET</div><h2>Paid social / platforms and clients</h2><p class="deck">The job includes account management, not just campaign buttons.</p>
+<div class="table-wrap"><table><thead><tr><th>Platform</th><th>Working vocabulary</th><th>What to practise</th></tr></thead><tbody><tr><td>Meta Ads</td><td>Campaign → ad set → ad; objective, audience, placements, creative; Pixel and Conversions API</td><td>Map a conversion event; test creative hypotheses; inspect measurement before changing budget</td></tr><tr><td>LinkedIn Ads</td><td>Professional targeting, lead forms, Insight Tag, conversion tracking</td><td>Connect lead quality to CRM stages; evaluate qualified pipeline rather than form count</td></tr><tr><td>TikTok Ads</td><td>Video creative, Pixel, Events API, creative testing</td><td>Use native-format hypotheses; inspect retention and landing conversion; track conversions consistently</td></tr></tbody></table></div>
+<p>LinkedIn Insight Tag supports website conversion measurement and retargeting [7]. TikTok recommends Pixel plus Events API with deduplication for website conversions [8]. Meta documents Pixel setup [9]; its detailed CAPI documentation was access-limited during this refresh. Verify its current event-matching requirements before implementation.</p>
+<h3>Daily operating loop</h3>
+<ul><li>Before launch: approved objective, budget, target region, landing page, event test, naming/UTM convention and owner.</li><li>During delivery: pacing, failed ads, spend anomalies, conversion lag, creative performance and funnel breakage. Segment before concluding.</li><li>Experiments: state one hypothesis, primary outcome, allocation and minimum observation period. Avoid changing several variables together or declaring victory after a noisy day.</li><li>Weekly client conversation: objective → result versus target → evidence → uncertainty → decision → owner/date. Ask for approval at the client-agreed spending boundary.</li></ul>
+<aside>Example client summary: “Purchase CPA moved from $18 to $22 while landing-page CVR fell after the checkout update. We will validate checkout and tracking today; hold the current budget until that diagnosis is complete.” This separates observation from a hypothesis.</aside>
+<h3>Remote night shift in Vietnam</h3>
+<p>Clarify client time zones, daylight-saving changes, meeting overlap, escalation coverage and written handoff expectations. A good handoff names live campaigns, pacing risks, changes made, unresolved questions and the next owner. Do not infer a particular US shift from this post.</p>
+<details><summary>Cheap leads, poor sales. Who owns the diagnosis?</summary><p>Paid social and sales/CRM jointly: inspect lead validity, qualification rate, contact speed and close rate by source/cohort. Optimize toward a meaningful downstream outcome, not merely the lowest CPL.</p></details>
+</section><section id="data-model"><div class="eyebrow">06 / DOMAIN CHEAT SHEET</div><h2>Data analyst / sources and models</h2><p class="deck">Define what one row means before designing the dashboard.</p>
+<figure>
+
+<svg role="img" aria-label="Ingest source records, model sales at a consistent grain, and connect dimensions to analysis." width="511" height="148.79999999999998" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 148" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="148.79999999999998"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-148)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 115,103.8 L 140,103.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="140 103.8, 136.6987 106.0586, 136.6987 101.5414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 250,103.8 L 290,103.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="290 103.8, 286.6987 106.0586, 286.6987 101.5414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 345,60 L 345,82.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="345 82.8, 342.7414 79.49866, 347.2586 79.49866" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 400,103.8 L 412.5,103.8 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,103.8 L 412.5,77.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,77.4 L 425,77.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="425 77.4, 421.6987 79.65857, 421.6987 75.14143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 400,39 L 412.5,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,39 L 412.5,77.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 412.5,77.4 L 425,77.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="425 77.4, 421.6987 79.65857, 421.6987 75.14143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="6.5" y="81.3" width="110.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="82.8" width="110" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="27.474700000000006" y="106.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,213) scale(1,-1)">POS / ERP / APIs</text>
+			<text x="34.11055" y="93.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,187) scale(1,-1)">Source versions</text>
+			<rect x="141.5" y="81.3" width="110.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="140" y="82.8" width="110" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="168.4771" y="106.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,213) scale(1,-1)">Raw / staging</text>
+			<text x="169.00105" y="93.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,187) scale(1,-1)">Replay + checks</text>
+			<rect x="291.5" y="81.3" width="110.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="82.8" width="110" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="326.1769" y="106.8" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,213) scale(1,-1)">FactSales</text>
+			<text x="322.0853" y="93.8" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,187) scale(1,-1)">One sales line</text>
+			<rect x="291.5" y="16.5" width="110.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="18.0" width="110" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="322.3844" y="42.0" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,84) scale(1,-1)">Dimensions</text>
+			<text x="315.362" y="29.0" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,58) scale(1,-1)">Date / store / SKU</text>
+			<rect x="426.5" y="48.9" width="80.0" height="54.00000000000001" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="425" y="50.4" width="80" height="54.00000000000001" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="447.7759" y="80.4" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,160) scale(1,-1)">BI model</text>
+			<text x="449.07505" y="67.4" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,134) scale(1,-1)">Measures</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Ingest source records, model sales at a consistent grain, and connect dimensions to analysis.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Term / tool</th><th>Working definition</th></tr></thead><tbody><tr><td>POS / ERP</td><td>POS records store transactions; ERP integrates business operations such as inventory, purchasing and finance. Reconcile their scope and posting timing.</td></tr><tr><td>Fact / dimension</td><td>Facts store observations and measures; dimensions describe grouping/filtering entities. A star schema supports usable Power BI models [10].</td></tr><tr><td>Grain</td><td>Example: one posted sales line per source system, store, transaction and line ID. Returns are separate signed events.</td></tr><tr><td>ETL / ELT</td><td>Transform before loading / after loading. Keep source snapshots or change history where repeatability matters.</td></tr><tr><td>Power Query / DAX</td><td>Power Query prepares data; DAX expresses model calculations. Measures depend on report filter context [11].</td></tr><tr><td>Tableau</td><td>Dimensions/measures, relationships, live/extract data, calculated fields. LOD expressions set a calculation granularity [12].</td></tr></tbody></table></div>
+<h3>Retail KPI dictionary</h3>
+<ul><li>Net sales = gross sales - discounts - returns, on an agreed tax/shipping basis. AOV = comparable sales / eligible orders.</li><li>Gross margin = (net sales - cost of goods sold) / net sales. Distinguish revenue, gross profit and cash collected.</li><li>Inventory turnover = COGS / average inventory cost over the same period. Stockout rate needs a defined SKU/store/time denominator.</li><li>Refresh latency, missing/duplicate records and source-to-report reconciliation gaps belong on the reporting health view.</li></ul>
+<aside>For historical categories or store ownership, choose explicitly between reporting by today&#x27;s attributes and attributes at transaction time. A slowly changing dimension can preserve historical versions; it is not needed for every dimension.</aside>
+<details><summary>Why did a product join double revenue?</summary><p>The dimension key was not unique or the relationship multiplied fact rows. Check grain, key uniqueness and join cardinality; do not hide the issue with DISTINCT on the final report.</p></details>
+</section><section id="data-practical"><div class="eyebrow">07 / DOMAIN CHEAT SHEET</div><h2>Data analyst / integration and SQL</h2><p class="deck">A trustworthy metric survives retries, returns and late data.</p>
+<div class="table-wrap"><table><thead><tr><th>Integration concern</th><th>Practical response</th></tr></thead><tbody><tr><td>API extraction</td><td>Handle pagination, rate limits and bounded retries. Log source, batch ID, row count and watermark.</td></tr><tr><td>Late records</td><td>Use an overlap window plus idempotent upsert; advance the watermark after a successful load.</td></tr><tr><td>Deduplication</td><td>Use stable source/business keys and source version ordering. Arrival time is a fallback, not proof of business chronology.</td></tr><tr><td>Reconciliation</td><td>Compare counts and totals by source, store, date and currency. Check tax, refunds, voids and posting cutoffs.</td></tr><tr><td>Actionable insight</td><td>State the business question, comparison/cohort, likely explanation, proposed action and how success will be measured.</td></tr></tbody></table></div>
+<h3>PostgreSQL: latest version per sales line</h3>
+<pre><code>WITH latest AS (
+  SELECT *, ROW_NUMBER() OVER (
+    PARTITION BY source_system, store_id, txn_id, line_id
+    ORDER BY source_updated_at DESC, ingested_at DESC
+  ) AS rn
+  FROM raw_sales_lines
+)
+SELECT business_date, store_id, currency,
+       SUM(signed_net_amount) AS net_sales
+FROM latest
+WHERE rn = 1 AND status = &#x27;posted&#x27;
+GROUP BY business_date, store_id, currency;</code></pre>
+<p>Assumptions: complete row versions; signed_net_amount is already discount-adjusted and negative for returns; business_date comes from the agreed local trading calendar. Ties need a deterministic source version/sequence. Never sum currencies without an agreed FX conversion.</p>
+<h3>Power BI: measures at the agreed grain</h3>
+<pre><code>Net Sales = SUM(FactSales[SignedNetAmount])
+Sales Orders = CALCULATE(
+  DISTINCTCOUNT(FactSales[GlobalTransactionKey]),
+  FactSales[EventType] = &quot;SALE&quot;
+)
+Net Sales per Sales Order = DIVIDE([Net Sales], [Sales Orders])</code></pre>
+<p>GlobalTransactionKey must be unique across sources/stores. This ratio includes period returns in its numerator and excludes return-only transactions from the denominator; label it accordingly. It is not automatically cohort-adjusted AOV.</p>
+<details><summary>POS says 10m, ERP says 9.7m. Who is wrong?</summary><p>Neither is established as wrong. Compare transaction scope, returns, tax, cancellations, time zone and posting date. Trace the 0.3m gap to records before correcting a report.</p></details>
+</section><section id="seo-controls"><div class="eyebrow">08 / DOMAIN CHEAT SHEET</div><h2>Technical SEO specialist / indexability</h2><p class="deck">Discovery, rendering, indexing and ranking are separate gates.</p>
+<figure>
+
+<svg role="img" aria-label="Diagnose where the page stops progressing; crawling can discover more links and rendering can add content." width="511" height="156.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 156" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="156.0"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-156)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 115,108.4 L 150,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="150 108.4, 146.6987 110.6586, 146.6987 106.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 260,108.4 L 290,108.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="290 108.4, 286.6987 110.6586, 286.6987 106.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 345,86.4 L 345,63.44 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="345 63.44, 347.2586 66.74134, 342.7414 66.74134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 400,41.44 L 425,41.44 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="425 41.44, 421.6987 43.69857, 421.6987 39.18143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 260,41.44 L 290,41.44 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="290 41.44, 286.6987 43.69857, 286.6987 39.18143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="6.5" y="84.89999999999999" width="110.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="86.39999999999999" width="110" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="31.972400000000004" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Discover URLs</text>
+			<text x="35.209199999999996" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">Links / sitemap</text>
+			<rect x="151.5" y="84.89999999999999" width="110.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="150" y="86.39999999999999" width="110" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="174.97570000000002" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Crawl response</text>
+			<text x="180.81145" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">Status / access</text>
+			<rect x="291.5" y="84.89999999999999" width="110.0" height="43.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="86.39999999999999" width="110" height="43.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="320.2975" y="111.39999999999999" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,222) scale(1,-1)">Render page</text>
+			<text x="325.1294" y="98.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,196) scale(1,-1)">JS / content</text>
+			<rect x="291.5" y="17.939999999999998" width="110.0" height="44.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="290" y="19.439999999999998" width="110" height="44.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="315.1315" y="44.44" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,88) scale(1,-1)">Index selection</text>
+			<text x="309.8797" y="31.439999999999998" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,62) scale(1,-1)">Directives / canonical</text>
+			<rect x="426.5" y="17.939999999999998" width="80.0" height="44.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="425" y="19.439999999999998" width="80" height="44.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="440.687" y="44.44" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,88) scale(1,-1)">Rank / serve</text>
+			<text x="450.1591" y="31.439999999999998" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,62) scale(1,-1)">Query fit</text>
+			<rect x="6.5" y="17.939999999999998" width="255.0" height="44.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="19.439999999999998" width="255" height="44.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="103.349" y="44.44" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,88) scale(1,-1)">Control checks</text>
+			<text x="86.57204999999999" y="31.439999999999998" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,62) scale(1,-1)">robots / noindex / canonical</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Diagnose where the page stops progressing; crawling can discover more links and rendering can add content.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Control / concept</th><th>Purpose</th><th>Common mistake</th></tr></thead><tbody><tr><td>robots.txt</td><td>Controls crawler access to paths</td><td>Blocked crawling does not guarantee deindexing</td></tr><tr><td>noindex</td><td>Requests exclusion from the index</td><td>Google must fetch the rule; blocking the URL can hide it [13]</td></tr><tr><td>Canonical</td><td>Signals the preferred duplicate URL</td><td>A signal, not a forced selection; keep links/sitemap consistent [14]</td></tr><tr><td>301 / 308</td><td>Permanent move to a relevant replacement</td><td>Chains or mass redirects to an irrelevant homepage</td></tr><tr><td>XML sitemap</td><td>Helps discover important canonical URLs</td><td>Submitting it does not guarantee indexing</td></tr><tr><td>Structured data</td><td>Describes supported entities/features</td><td>Valid markup does not guarantee a rich result [15]</td></tr><tr><td>Internal links</td><td>Expose relationships and discovery paths</td><td>Orphan pages and inaccessible JS-only navigation</td></tr><tr><td>JavaScript SEO</td><td>Compare source HTML with rendered output</td><td>A working browser view alone does not prove indexability [16]</td></tr></tbody></table></div>
+<h3>Triage an important missing page</h3>
+<ul><li>Confirm its intended audience and whether it should be indexed. Check status/redirect, robots access, noindex and canonical.</li><li>Use GSC URL Inspection to compare the indexed state with a live test. Inspect rendered content, internal links and sitemap inclusion.</li><li>For large stores, review filters, parameter URLs and duplicate templates. Protect valuable category pages while controlling low-value combinations.</li></ul>
+<details><summary>Should a filtered URL canonicalize to the category?</summary><p>Only if it is duplicate or sufficiently similar and the category is the intended representative. A distinct, useful search landing page may deserve a self-canonical and internal links. There is no safe blanket rule.</p></details>
+</section><section id="seo-measure"><div class="eyebrow">09 / DOMAIN CHEAT SHEET</div><h2>Technical SEO specialist / tools and performance</h2><p class="deck">Fix the bottleneck that affects useful pages, then verify the result.</p>
+<div class="table-wrap"><table><thead><tr><th>Tool</th><th>Use it for</th><th>Limit</th></tr></thead><tbody><tr><td>GSC</td><td>Search clicks/impressions, query/page patterns, indexing and URL Inspection</td><td>Search measurement differs from site sessions</td></tr><tr><td>GA4</td><td>Event-based site/app behavior and key events [17]</td><td>Tracking and consent affect what is observed</td></tr><tr><td>GTM</td><td>Manage tags, triggers and variables; preview changes [18]</td><td>A deployment tool, not an analytics database</td></tr><tr><td>Screaming Frog</td><td>Status, canonicals, titles, links, directives; compare raw/rendered HTML [19]</td><td>A crawl snapshot is not Google&#x27;s index</td></tr><tr><td>Ahrefs / Semrush</td><td>Competitor, keyword and backlink research</td><td>Third-party estimates are not your first-party revenue</td></tr><tr><td>PageSpeed / CrUX / DevTools</td><td>Real-user experience and lab diagnosis</td><td>A lab score cannot stand in for field experience</td></tr></tbody></table></div>
+<h3>Core Web Vitals: good thresholds [20]</h3>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Target</th><th>Typical direction of work</th></tr></thead><tbody><tr><td>LCP / loading</td><td>≤ 2.5 seconds</td><td>Reduce server delay; optimize and prioritize the hero resource</td></tr><tr><td>INP / responsiveness</td><td>≤ 200 milliseconds</td><td>Reduce main-thread work; split long tasks; inspect interactions</td></tr><tr><td>CLS / stability</td><td>≤ 0.1</td><td>Reserve image/ad dimensions; control late content and fonts</td></tr></tbody></table></div>
+<p>Evaluate the 75th percentile, separately for mobile and desktop, and meet all three thresholds. Field data measures real experience; lab tools help reproduce causes. Improving these metrics supports user experience but does not promise a ranking position.</p>
+<h3>Prioritization and proof</h3>
+<p>Prioritize an accidental site-wide noindex or broken commercial template before polishing isolated metadata. Size impact by important URLs, traffic/revenue exposure and confidence; compare against effort and release risk. Give developers a reproducible ticket and verify the rendered page after deployment.</p>
+<aside>Useful monitoring: indexed intended URLs, accidental directives, 5xx rate, organic clicks and qualified key events by template. A higher total indexed-page count is not automatically a win.</aside>
+<details><summary>GSC clicks rose but GA4 sessions fell. Is tracking broken?</summary><p>Possibly, but first align dates, time zones, search/property scope and organic channel definitions. Clicks and sessions are different units; consent, redirects and event collection can also create a gap.</p></details>
+</section><section id="seo-assistant"><div class="eyebrow">10 / DOMAIN CHEAT SHEET</div><h2>Technical SEO assistant / execution playbook</h2><p class="deck">Turn an audit into accurate, reviewable work.</p>
+<figure>
+
+<svg role="img" aria-label="Capture evidence, make approved fixes, recheck them, and escalate ambiguous template behavior." width="511" height="145.2" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 145" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="145.2"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-145)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 130,101.64 L 175,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="175 101.64, 171.6987 103.8986, 171.6987 99.38143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 315,101.64 L 370,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="370 101.64, 366.6987 103.8986, 366.6987 99.38143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 370,101.64 L 342.5,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 342.5,101.64 L 342.5,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 342.5,39 L 315,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="315 39, 318.3013 36.74143, 318.3013 41.25857" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 315,101.64 L 342.5,101.64 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 342.5,101.64 L 342.5,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 342.5,39 L 370,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="370 39, 366.6987 41.25857, 366.6987 36.74143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 315,39 L 370,39 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="370 39, 366.6987 41.25857, 366.6987 36.74143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="11.5" y="79.14" width="120.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="10" y="80.64" width="120" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="40.246300000000005" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Approved brief</text>
+			<text x="44.67995" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">Scope / priority</text>
+			<rect x="176.5" y="79.14" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="175" y="80.64" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="215.59890000000001" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Audit evidence</text>
+			<text x="222.39555000000001" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">Crawler / GSC</text>
+			<rect x="371.5" y="79.14" width="135.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="370" y="80.64" width="135" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="401.297" y="104.64" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,209) scale(1,-1)">Approved changes</text>
+			<text x="417.5272" y="91.64" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,183) scale(1,-1)">CMS / ticket</text>
+			<rect x="176.5" y="16.5" width="140.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="175" y="18.0" width="140" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="212.0155" y="42.0" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,84) scale(1,-1)">Verify live result</text>
+			<text x="216.86945" y="29.0" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,58) scale(1,-1)">Recrawl / sample</text>
+			<rect x="371.5" y="16.5" width="135.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="370" y="18.0" width="135" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="400.3868" y="42.0" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,84) scale(1,-1)">Escalate ambiguity</text>
+			<text x="412.7165" y="29.0" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,58) scale(1,-1)">Specialist / dev</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Capture evidence, make approved fixes, recheck them, and escalate ambiguous template behavior.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Task</th><th>What to capture</th><th>When to escalate</th></tr></thead><tbody><tr><td>Crawler audit</td><td>URL, status, title, canonical, directive, inlinks; configuration and timestamp</td><td>Unexpected patterns across a template</td></tr><tr><td>Broken links</td><td>Source page, broken target, appropriate replacement</td><td>No equivalent destination or uncertain content intent</td></tr><tr><td>CMS changes</td><td>Approved title/description, heading, alt text, slug; before/after evidence</td><td>URL changes needing redirects; theme/template edits</td></tr><tr><td>GSC review</td><td>Affected URLs, inspection finding, date, intended indexability</td><td>Blocking/indexing behavior differs from the brief</td></tr><tr><td>Release verification</td><td>HTTP response, source/rendered HTML, mobile sample and recrawl</td><td>Fix creates new noindex, canonical or rendering errors</td></tr></tbody></table></div>
+<h3>Example ticket that a developer can use</h3>
+<aside>Issue: 28 product pages return 200 but canonicalize to an unrelated category. Evidence: crawl export and source HTML; sample URL /products/red-shirt. Expected: self-canonical for unique indexable products. Acceptance: affected pages use the approved canonical; internal links and sitemap agree; sampled rendered HTML preserves it.</aside>
+<h3>Specialist versus assistant</h3>
+<p>The specialist diagnoses systemic causes and sets priorities and rules. The assistant gathers evidence, executes approved changes and verifies them. This is a useful working distinction; the actual boundary must be confirmed with the employer.</p>
+<ul><li>Before a CMS edit: know the page purpose and approval scope. Keep the existing URL unless a move is explicitly planned.</li><li>After the edit: inspect the live result, not just the CMS preview. Save evidence and report exceptions.</li><li>Routine quality: reproducible exports, clear issue names, accurate URL lists, no duplicate tickets and traceable changes.</li></ul>
+<details><summary>You find 500 missing meta descriptions. Is that the top priority?</summary><p>Not without impact analysis. Check important pages and templates, then compare with broken status codes, blocked indexing or wrong canonicals. Counts alone do not set priority.</p></details>
+</section><section id="ap"><div class="eyebrow">11 / DOMAIN CHEAT SHEET</div><h2>Accounts payable / payment controls</h2><p class="deck">Match the obligation, approve the expense, reconcile the payment.</p>
+<figure>
+
+<svg role="img" aria-label="Purchase order and receipt support invoice matching; exceptions return for resolution before approved payment." width="511" height="166.79999999999998" preserveAspectRatio="xMinYMin meet" viewBox="0 0 511 166" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="511" height="166.79999999999998"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-166)" style="clip-path: url(#clip)">
+		<g transform="">
+			<path d="M 120,125.4 L 135,125.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 135,125.4 L 135,46.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 135,46.2 L 150,46.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="150 46.2, 146.6987 48.45857, 146.6987 43.94143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 120,46.2 L 150,46.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="150 46.2, 146.6987 48.45857, 146.6987 43.94143" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 210,104.4 L 210,67.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="210 67.2, 212.2586 70.50134, 207.7414 70.50134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 270,46.2 L 295,46.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 295,46.2 L 295,125.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 295,125.4 L 320,125.4 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="320 125.4, 316.6987 127.6586, 316.6987 123.1414" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<path d="M 410,104.4 L 410,67.2 Z" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="410 67.2, 412.2586 70.50134, 407.7414 70.50134" style="stroke: rgb(40%,40%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,38%); fill-rule: evenodd;"/>
+			<rect x="6.5" y="102.89999999999999" width="115.0" height="41.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="104.39999999999999" width="115" height="41.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="32.795500000000004" y="128.39999999999998" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,256) scale(1,-1)">Purchase order</text>
+			<text x="39.68385" y="115.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,230) scale(1,-1)">Authorization</text>
+			<rect x="6.5" y="23.7" width="115.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="5" y="25.2" width="115" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="47.4448" y="49.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,98) scale(1,-1)">Receipt</text>
+			<text x="40.191199999999995" y="36.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,72) scale(1,-1)">Delivered qty</text>
+			<rect x="151.5" y="102.89999999999999" width="120.0" height="41.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="150" y="104.39999999999999" width="120" height="41.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="180.5784" y="128.39999999999998" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,256) scale(1,-1)">Vendor invoice</text>
+			<text x="181.64315" y="115.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,230) scale(1,-1)">Payment request</text>
+			<rect x="151.5" y="23.7" width="120.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="150" y="25.2" width="120" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="180.2996" y="49.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,98) scale(1,-1)">Match + review</text>
+			<text x="184.7055" y="36.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,72) scale(1,-1)">Price / quantity</text>
+			<rect x="321.5" y="102.89999999999999" width="180.0" height="41.999999999999986" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="320" y="104.39999999999999" width="180" height="41.999999999999986" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="356.86400000000003" y="128.39999999999998" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,256) scale(1,-1)">Approve / payment release</text>
+			<text x="382.2965" y="115.39999999999999" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,230) scale(1,-1)">Defined controls</text>
+			<rect x="321.5" y="23.7" width="180.0" height="42.0" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,89%,87%); fill-rule: evenodd;"/>
+			<rect x="320" y="25.2" width="180" height="42.0" rx="5" ry="5" style="stroke: rgb(78%,77%,74%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(94%,94%,92%); fill-rule: evenodd;"/>
+			<text x="355.7488" y="49.2" style="font-family: Helvetica-Bold; font-size: 8.2px;fill: rgb(21%,20%,18%); stroke:none;" transform="translate(0,98) scale(1,-1)">Bank / ledger reconciliation</text>
+			<text x="371.0472" y="36.2" style="font-family: Helvetica; font-size: 7.3px;fill: rgb(40%,40%,38%); stroke:none;" transform="translate(0,72) scale(1,-1)">Cash status + allocation</text>
+		</g>
+	</g>
+</svg>
+<figcaption>Purchase order and receipt support invoice matching; exceptions return for resolution before approved payment.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Working meaning</th></tr></thead><tbody><tr><td>AP vs AR</td><td>AP: money owed to suppliers. AR: money owed by customers. An invoice, expense and cash payment are different events.</td></tr><tr><td>PO / receipt / invoice</td><td>Purchase order records authorization; receipt records delivery; supplier invoice requests payment.</td></tr><tr><td>Two-way / three-way</td><td>In D365, two-way matches invoice/PO price; three-way also checks receipt quantity, within policy tolerances [21].</td></tr><tr><td>Non-PO invoice / expenses</td><td>Route through approved coding and review; do not invent a purchase receipt to bypass the process.</td></tr><tr><td>Vendor reconciliation</td><td>Compare supplier statements with open ledger items, payments, credit notes and timing differences.</td></tr><tr><td>D365 / ERP</td><td>Vendor master, posting profiles, dimensions, invoice workflows, payment proposals, settlement and reporting [22].</td></tr></tbody></table></div>
+<h3>Illustrative exception</h3>
+<p>PO: 100 units at $10; received: 80; invoice: 100 at $10. Three-way matching exposes the quantity discrepancy. Investigate delivery or recording errors; follow the exception policy before payment. Invoice entry alone is not payment approval.</p>
+<h3>Controls and operational metrics</h3>
+<ul><li>Detect duplicates by vendor, legal entity, invoice number and amount/date checks. Independently verify bank-detail changes.</li><li>Separate vendor changes, invoice approval and payment release; retain audit evidence and resolve rejected payments.</li><li>Monitor overdue items, cycle time, exceptions, duplicate payments, on-time payments and unreconciled balances. Define each population.</li><li>Month-end: review unposted invoices, cutoff, received-not-invoiced items and accruals with finance. Tax/accounting treatment depends on company and jurisdiction.</li></ul>
+<details><summary>Supplier says an invoice is unpaid, but ERP says settled. What next?</summary><p>Check remittance, bank status, beneficiary, invoice allocation, credit notes, rejected/reversed payments and timing. Settlement in a ledger is not proof that cash reached the supplier.</p></details>
+</section><section id="cross-role"><div class="eyebrow">12 / DOMAIN CHEAT SHEET</div><h2>Cross-role diagnosis / follow the evidence</h2><p class="deck">One symptom can belong to several domains. Assign ownership after locating the failure.</p>
+<div class="table-wrap"><table><thead><tr><th>Observed symptom</th><th>First evidence</th><th>Likely owners / next move</th></tr></thead><tbody><tr><td>Ad CPA spikes after release</td><td>Spend, landing CVR, event delivery, checkout errors</td><td>Paid social + DevOps + engineering: distinguish conversion loss from measurement loss</td></tr><tr><td>Organic traffic drops after migration</td><td>Redirects, status, canonicals, noindex, GSC by template</td><td>SEO + engineering: inspect affected URL groups and release changes</td></tr><tr><td>Dashboard revenue doubles</td><td>Row counts, keys, joins, load retries</td><td>Analyst + data engineer: identify multiplicative joins or duplicate loads</td></tr><tr><td>Ad revenue exceeds POS revenue</td><td>Attribution scope, time basis, tax/returns, online/offline mix</td><td>Paid social + analyst: reconcile common orders, not aggregate claims</td></tr><tr><td>Supplier balance disagrees</td><td>Open items, credit notes, payments, cutoffs</td><td>AP + finance: reconcile statement-to-ledger records</td></tr><tr><td>Purchase tracking fires twice</td><td>Browser/server event paths, repeated requests</td><td>Marketing + engineering: inspect platform-specific deduplication and retry behavior</td></tr></tbody></table></div>
+<h3>A data contract every team can share</h3>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Example agreement</th></tr></thead><tbody><tr><td>Business event</td><td>Posted sale, not add-to-cart or invoice creation</td></tr><tr><td>Identity / owner</td><td>Global order ID; commerce system owns order status</td></tr><tr><td>Time basis</td><td>Business date in Asia/Ho_Chi_Minh; store original UTC timestamp</td></tr><tr><td>Money basis</td><td>Currency explicit; agreed tax/shipping/discount/refund treatment</td></tr><tr><td>Lifecycle</td><td>Created → paid → refunded; updates replay idempotently</td></tr><tr><td>Freshness / proof</td><td>Declared refresh lag; trace records back to authoritative source</td></tr></tbody></table></div>
+<aside>Conversation prompts: “Which conversion are we optimizing?” “What is the fact-table grain?” “What happens if the same payload is retried?” “Which pages should be indexed?” “Who can release a payment?” Each question exposes a boundary where errors often hide.</aside>
+<details><summary>Which single tool gives the full business truth?</summary><p>None. Agree on authoritative systems per event, then reconcile their handoffs. A polished dashboard cannot repair a missing definition.</p></details>
+</section><section id="refresh"><div class="eyebrow">13 / DOMAIN CHEAT SHEET</div><h2>Refresh plan / practise the handoffs</h2><p class="deck">Seven sessions of 45-60 minutes: a starting plan, not a promise of job readiness.</p>
+<div class="table-wrap"><table><thead><tr><th>Session</th><th>Hands-on task</th><th>Evidence you should produce</th></tr></thead><tbody><tr><td>1 / foundations</td><td>Explain the six workflows and define shared event/time/money terms</td><td>One role map and a 10-term glossary</td></tr><tr><td>2 / practical DevOps</td><td>Sketch AWS networking; review a Terraform plan; outline CI and rollback</td><td>Diagram, plan risks and release checklist</td></tr><tr><td>3 / practical analytics</td><td>Use synthetic POS rows with returns, duplicates and late updates</td><td>SQL plus source-to-report reconciliation</td></tr><tr><td>4 / practical SEO</td><td>Audit a permitted demo site; compare source and rendered HTML</td><td>Five prioritized issues with evidence</td></tr><tr><td>5 / practical paid social</td><td>Calculate funnel metrics and draft one client update</td><td>Metric sheet, hypothesis and decision</td></tr><tr><td>6 / practical AP</td><td>Match a synthetic PO, receipt, invoice and supplier statement</td><td>Exception log and reconciled balance</td></tr><tr><td>7 / modern → advanced</td><td>Review AI tool permissions; solve a cross-role incident; assess gaps</td><td>Reviewed automation draft and incident narrative</td></tr></tbody></table></div>
+<h3>Further exploration after the basics</h3>
+<p>DevOps: recovery drills, policy as code and cost controls. Analytics: history/CDC, semantic contracts and experimentation. SEO: migrations, large-site crawl control and internationalization. Paid social: incrementality and cohort economics. AP: close processes, exceptions and control design.</p>
+<h3>Quick evaluation with model answers</h3>
+<details><summary>1. Is ROAS 4x profitable?</summary><p>Only with the relevant margin and cost basis; at 25% pre-ad contribution it is simplified break-even. Attribution also does not establish causality.</p></details>
+<details><summary>2. Can robots.txt replace noindex?</summary><p>No. A crawl block can stop Google from seeing noindex and does not reliably remove a URL from the index.</p></details>
+<details><summary>3. How do you avoid counting a retried POS record twice?</summary><p>Use a stable business key, deterministic version ordering and idempotent loading; test reconciliation after replay.</p></details>
+<details><summary>4. Why can a rollback fail to recover the service?</summary><p>Schema, configuration, state or downstream changes may be incompatible with the previous image.</p></details>
+<details><summary>5. Is a supplier invoice sufficient evidence for payment?</summary><p>No. Apply authorization, matching/exception policies and payment controls.</p></details>
+<aside>Score each answer 0-2: 0 = incorrect; 1 = definition only; 2 = definition plus an operational consequence or example. Revisit weak areas; this short diagnostic measures these concepts, not professional seniority.</aside>
+</section><section id="sources"><div class="eyebrow">14 / DOMAIN CHEAT SHEET</div><h2>Sources / keep your knowledge current</h2><p class="deck">Primary references checked 05 October 2026. Numbered notes point to the specific guidance.</p>
+<p>Examples, exercises, diagrams, prioritization and reading order are educational synthesis. Numerical examples are invented and explicitly labeled. Tool capabilities and UI labels can change; check linked documentation when implementing.</p>
+<ol class="sources"><li><a href="https://developer.hashicorp.com/terraform/cloud-docs">HashiCorp: HCP Terraform naming</a><span>https://developer.hashicorp.com/terraform/cloud-docs</span></li><li><a href="https://developer.hashicorp.com/terraform/cloud-docs/workspaces">HashiCorp: workspaces</a><span>https://developer.hashicorp.com/terraform/cloud-docs/workspaces</span></li><li><a href="https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws">GitHub: OIDC in AWS</a><span>https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws</span></li><li><a href="https://docs.docker.com/build/building/multi-stage/">Docker: multi-stage builds</a><span>https://docs.docker.com/build/building/multi-stage/</span></li><li><a href="https://code.claude.com/docs/en/security">Anthropic: Claude Code security</a><span>https://code.claude.com/docs/en/security</span></li><li><a href="https://geminicli.com/docs/cli/sandbox/">Gemini CLI: sandboxing</a><span>https://geminicli.com/docs/cli/sandbox/</span></li><li><a href="https://business.linkedin.com/advertise/ads/insight-tag">LinkedIn: Insight Tag</a><span>https://business.linkedin.com/advertise/ads/insight-tag</span></li><li><a href="https://ads.tiktok.com/resources/help/article/events-api">TikTok: Events API</a><span>https://ads.tiktok.com/resources/help/article/events-api</span></li><li><a href="https://www.facebook.com/business/help/952192354843755">Meta: Pixel setup</a><span>https://www.facebook.com/business/help/952192354843755</span></li><li><a href="https://learn.microsoft.com/en-us/power-bi/guidance/star-schema">Microsoft: star-schema guidance</a><span>https://learn.microsoft.com/en-us/power-bi/guidance/star-schema</span></li><li><a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics">Microsoft: DAX basics</a><span>https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics</span></li><li><a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm">Tableau: level-of-detail expressions</a><span>https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm</span></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing">Google: noindex</a><span>https://developers.google.com/search/docs/crawling-indexing/block-indexing</span></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">Google: canonical URLs</a><span>https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls</span></li><li><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Google: structured data</a><span>https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data</span></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics">Google: JavaScript SEO</a><span>https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics</span></li><li><a href="https://support.google.com/analytics/answer/10089681">Google: GA4 event-based data</a><span>https://support.google.com/analytics/answer/10089681</span></li><li><a href="https://support.google.com/tagmanager/answer/6102821">Google: Tag Manager introduction</a><span>https://support.google.com/tagmanager/answer/6102821</span></li><li><a href="https://www.screamingfrog.co.uk/seo-spider/tutorials/crawl-javascript-seo/">Screaming Frog: JavaScript crawling</a><span>https://www.screamingfrog.co.uk/seo-spider/tutorials/crawl-javascript-seo/</span></li><li><a href="https://web.dev/articles/vitals">Google web.dev: Web Vitals</a><span>https://web.dev/articles/vitals</span></li><li><a href="https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching">Microsoft: D365 invoice matching</a><span>https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching</span></li><li><a href="https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable">Microsoft: D365 accounts payable</a><span>https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable</span></li></ol>
+<aside>Source limitation: Meta Pixel setup was retrievable; detailed Conversions API pages returned access/rate-limit errors. This guide does not claim to have verified Meta&#x27;s current deduplication specification. Confirm it directly before configuring browser/server events.</aside>
+</section></main></div><script>document.getElementById('answers').addEventListener('click',function(){const show=this.getAttribute('aria-pressed')!=='true';document.querySelectorAll('details').forEach(d=>d.open=show);this.setAttribute('aria-pressed',String(show));this.textContent=show?'Hide all model answers':'Show all model answers';});</script></body></html>

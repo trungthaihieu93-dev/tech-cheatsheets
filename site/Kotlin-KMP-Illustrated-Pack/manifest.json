@@ -1,0 +1,174 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 569,
+      "sha256": "c4dfbdb0ecf521e625fc654f0bc4e2acb5e87805839248fa0775a44d6f8d2a70"
+    },
+    {
+      "path": "figures/00-knowledge-map.svg",
+      "bytes": 11938,
+      "sha256": "1296ef3ba611d474dc1ddc259cbe4feff4070c17369c6e518f5903c3782216bf"
+    },
+    {
+      "path": "figures/01-nullability.svg",
+      "bytes": 2613,
+      "sha256": "d1baa46928899e34b91d3fb11d2ce44410072f48dae4701078a29ce95fa8f1f9"
+    },
+    {
+      "path": "figures/02-ownership.svg",
+      "bytes": 2511,
+      "sha256": "b45d109712b832494a6e568f5fe8ce9e00254554f40aa14ee4d7e21d5086f541"
+    },
+    {
+      "path": "figures/03-models.svg",
+      "bytes": 3228,
+      "sha256": "51b0ec5700d5ab290a9e89ae8b1b2d60a476128319bbc9f3145b063fc1bdddd4"
+    },
+    {
+      "path": "figures/04-functions.svg",
+      "bytes": 2256,
+      "sha256": "22817f0ac5a292020f4c15eac17c9ddc59bbe2571db281571434c5fa610e5cf0"
+    },
+    {
+      "path": "figures/05-coroutines.svg",
+      "bytes": 2377,
+      "sha256": "4207f466bad977941b6a4013befad18d44eb00cc60b4ed86c9041aa2bc147307"
+    },
+    {
+      "path": "figures/05-suspension.svg",
+      "bytes": 2931,
+      "sha256": "7a670810f6bb3a0b4ac24804ea4012a1256a291253f06382b7fcf09d9652e66a"
+    },
+    {
+      "path": "figures/06-flow.svg",
+      "bytes": 2831,
+      "sha256": "fece0c1bfc38f77b2f5fc807aaaa050dedfa4d5a1179c740562e9c3bb5f129b7"
+    },
+    {
+      "path": "figures/07-compilation.svg",
+      "bytes": 4289,
+      "sha256": "8ce2735e68e76ba57f710e7c607fc78e36ac18739875d31f89cd360786812742"
+    },
+    {
+      "path": "figures/07-source-sets.svg",
+      "bytes": 2605,
+      "sha256": "41455e87674fda575d9035f0459c87cdd07eeadd4c72f50002880da1de37e2e9"
+    },
+    {
+      "path": "figures/08-ports.svg",
+      "bytes": 2744,
+      "sha256": "40071705b94a714eebf0d3861cf5deee96f429159e7a8cba9cb28f3e033fd8cc"
+    },
+    {
+      "path": "figures/09-ui.svg",
+      "bytes": 3088,
+      "sha256": "21e22d09727287359a12d21c7d9de49af0f0ad11a8d0c83c5c680ca99416453e"
+    },
+    {
+      "path": "figures/10-interop.svg",
+      "bytes": 3939,
+      "sha256": "bd317fa1989755b0c47ce81cb3066c0909022139607135192cb79f3f1e79106d"
+    },
+    {
+      "path": "figures/11-memory.svg",
+      "bytes": 2598,
+      "sha256": "560216b96781ddc684f3b64a7071042c3d461c94b87945e191dfae0d4b763fca"
+    },
+    {
+      "path": "figures/12-validation.svg",
+      "bytes": 2749,
+      "sha256": "8064186f797fe9ebafeb0e6858a425f2dffa487b228662993492ac8132e5c9fc"
+    },
+    {
+      "path": "index.html",
+      "bytes": 132959,
+      "sha256": "bb8bfa181a4c193f0897dbd62a32c3732b88304695704bac04c69958e9966e73"
+    },
+    {
+      "path": "learning-map.md",
+      "bytes": 3273,
+      "sha256": "37ddfa70e4fa034d83e8a670c61393023286358d7ee06ab275979287cdac96e7"
+    },
+    {
+      "path": "pack.json",
+      "bytes": 58913,
+      "sha256": "55f454a791f910313e644aa97861025e967aaaec181ffe83b0db975c2d4dd400"
+    },
+    {
+      "path": "production-brief.md",
+      "bytes": 793,
+      "sha256": "24163b20e55a71a3425d721f0ea316f7e3b4ae1488a880b66139dad08a491245"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 16212,
+      "sha256": "799f04d84aca418ac69ba639a2a6eff163f9773b218cde8dbd4ecef6a3a11363"
+    },
+    {
+      "path": "sources.md",
+      "bytes": 12888,
+      "sha256": "f9166d57c77f638df17dda3dd5d91c9274c4dbcc625846072875101bda32eb56"
+    },
+    {
+      "path": "topics/01-nullability.html",
+      "bytes": 14054,
+      "sha256": "e6ae9013a8d8f352b773cf97839934e582396ded878ba1c45518708c4eb16959"
+    },
+    {
+      "path": "topics/02-ownership.html",
+      "bytes": 13494,
+      "sha256": "47891f035bc23a298cf5899b867a4136f543649a2db4364550967823264a6ed7"
+    },
+    {
+      "path": "topics/03-models.html",
+      "bytes": 15796,
+      "sha256": "dbc1a3a5177c64095030a218eef6e36c4c98acd8ce6e065cc40d77d4d65104fe"
+    },
+    {
+      "path": "topics/04-functions.html",
+      "bytes": 13787,
+      "sha256": "b77842b76525a7c4cddef8a9c9a7aacae82c3b1cd1eb0b60fa435dec3f194e1d"
+    },
+    {
+      "path": "topics/05-coroutines.html",
+      "bytes": 19092,
+      "sha256": "6cb19fea69a12f8a8edaef95f69c6cc4f624847fba8706e4f2a2bf6a6636dfdd"
+    },
+    {
+      "path": "topics/06-flows.html",
+      "bytes": 15159,
+      "sha256": "75d1da4ecbdc51dc69447c9e9d72292d1492df0229d7f91f2f069a9c5439a8ec"
+    },
+    {
+      "path": "topics/07-compilation.html",
+      "bytes": 21822,
+      "sha256": "9c813a503e1c036b21e44e980ae678791cb709c3ea0cd3236d29681f79d92086"
+    },
+    {
+      "path": "topics/08-ports.html",
+      "bytes": 13610,
+      "sha256": "f6408766ff46f770a10a4993747ea778025d01be6abd4021195880d69450e15a"
+    },
+    {
+      "path": "topics/09-ui-boundary.html",
+      "bytes": 15075,
+      "sha256": "816681f02a0744592d1bdab4971b9bbe3a4566048fdd4c04203d72e3e3e4796f"
+    },
+    {
+      "path": "topics/10-swift-interop.html",
+      "bytes": 17161,
+      "sha256": "15d1f5ceb1cabcf3eb74f95fc387cbeef88a23c2c201c10428e855a642d6a0ab"
+    },
+    {
+      "path": "topics/11-memory.html",
+      "bytes": 14098,
+      "sha256": "38aedf05566d2a0e861bc3a1d7241da7e1827a1ad791f227e893dd06eec2bfd5"
+    },
+    {
+      "path": "topics/12-validation.html",
+      "bytes": 16983,
+      "sha256": "0e66b5b095955040e023c10915ecea1bbac3b06dcda30b9e58df8344bb816e4d"
+    }
+  ]
+}

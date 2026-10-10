@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "S01",
+    "title": "Spring portfolio and Attic",
+    "url": "https://spring.io/projects/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Portfolio roles",
+      "Current projects and historical Attic entries"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S02",
+    "title": "Spring Boot system requirements",
+    "url": "https://docs.spring.io/spring-boot/system-requirements.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Spring Boot 4.1.1",
+    "supports": [
+      "Boot 4.1.1 requires Java 17+ and Framework 7.0.9+",
+      "Supported Java range and build tools"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S03",
+    "title": "JLS: types, values, variables",
+    "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "specification",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Primitive/reference distinction",
+      "Generics and final references"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S04",
+    "title": "JLS: classes and records",
+    "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "specification",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Inheritance and interfaces",
+      "Record components and final fields"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S05",
+    "title": "Object equality and hashing",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "equals/hashCode contract"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S06",
+    "title": "Collections package",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/package-summary.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Collection roles and implementations"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S07",
+    "title": "HashMap API",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "HashMap behavior and ordering limits"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S08",
+    "title": "Stream API",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Laziness",
+      "Terminal operations",
+      "Non-interference"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S09",
+    "title": "AutoCloseable",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Resource closure with try-with-resources"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S10",
+    "title": "BigDecimal",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Decimal arithmetic",
+      "Rounding",
+      "Scale-sensitive equality"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S11",
+    "title": "Concurrency utilities",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Executors and concurrency building blocks"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S12",
+    "title": "JLS: threads and locks",
+    "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "specification",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Happens-before",
+      "Visibility versus compound atomicity"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S13",
+    "title": "Virtual threads",
+    "url": "https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "I/O concurrency",
+      "Do not pool virtual threads",
+      "Limit scarce resources"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S14",
+    "title": "HotSpot technology overview",
+    "url": "https://docs.oracle.com/en/java/javase/25/vm/java-virtual-machine-technology-overview.html",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "Interpreter and adaptive compilation",
+      "Garbage collection"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S15",
+    "title": "Flight Recorder guide",
+    "url": "https://docs.oracle.com/en/java/javase/25/jfapi/flight-recorder-api-programmers-guide.pdf",
+    "publisher": "Oracle / OpenJDK",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Java SE 25",
+    "supports": [
+      "JFR events and recordings for runtime diagnosis"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S16",
+    "title": "Dependency injection",
+    "url": "https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Constructor injection",
+      "Dependency resolution"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S17",
+    "title": "Bean scopes",
+    "url": "https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Singleton per container and bean",
+      "Prototype lifecycle limits"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S18",
+    "title": "Bean lifecycle",
+    "url": "https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Initialization and destruction callbacks",
+      "Lifecycle management"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S19",
+    "title": "Spring AOP proxies",
+    "url": "https://docs.spring.io/spring-framework/reference/core/aop/proxying.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Proxy interception",
+      "Self-invocation bypass",
+      "Subclass limitations"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S20",
+    "title": "Bean and Configuration",
+    "url": "https://docs.spring.io/spring-framework/reference/core/beans/java/basic-concepts.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Java bean definitions",
+      "Configuration classes"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S21",
+    "title": "Boot auto-configuration",
+    "url": "https://docs.spring.io/spring-boot/reference/using/auto-configuration.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Conditional configuration",
+      "User beans can replace defaults"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S22",
+    "title": "Externalized configuration",
+    "url": "https://docs.spring.io/spring-boot/reference/features/external-config.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Property source precedence",
+      "ConfigurationProperties binding"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S23",
+    "title": "DispatcherServlet",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Front controller delegates MVC request processing"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S24",
+    "title": "MVC validation",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-validation.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Request and method validation"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S25",
+    "title": "HTTP error responses",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-ann-rest-exceptions.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "ProblemDetail",
+      "Central exception handling"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S26",
+    "title": "WebFlux overview",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webflux/new-framework.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Non-blocking execution",
+      "Backpressure",
+      "MVC applicability"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S27",
+    "title": "Spring Data query methods",
+    "url": "https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Derived queries and repository method contracts"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S28",
+    "title": "Spring Data JPA fetch plans",
+    "url": "https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "EntityGraph",
+      "Scrolling",
+      "JPA query customization"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S29",
+    "title": "Why Spring Data JDBC",
+    "url": "https://docs.spring.io/spring-data/relational/reference/jdbc/why.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "JDBC aggregate mapping without JPA persistence context"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S30",
+    "title": "Declarative transactions",
+    "url": "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Proxy entry required",
+      "Rollback defaults",
+      "Global rollback customization"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S31",
+    "title": "JPA transaction boundaries",
+    "url": "https://docs.spring.io/spring-data/jpa/reference/jpa/transactions.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Service facade boundaries",
+      "Read-only is an optimization hint"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S32",
+    "title": "Security servlet architecture",
+    "url": "https://docs.spring.io/spring-security/reference/servlet/architecture.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "FilterChainProxy",
+      "SecurityFilterChain",
+      "Authentication and authorization"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S33",
+    "title": "JWT resource server",
+    "url": "https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "JWT verification",
+      "Issuer validation",
+      "Claim-to-authority conversion"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S34",
+    "title": "CSRF protection",
+    "url": "https://docs.spring.io/spring-security/reference/features/exploits/csrf.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Browser ambient credentials",
+      "CSRF threats and tokens"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S35",
+    "title": "Spring Session",
+    "url": "https://docs.spring.io/spring-session/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Session abstraction",
+      "Shared session implementations"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S36",
+    "title": "Cache abstraction",
+    "url": "https://docs.spring.io/spring-framework/reference/integration/cache.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "CacheManager delegates to backing cache"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S37",
+    "title": "Cache annotations",
+    "url": "https://docs.spring.io/spring-framework/reference/integration/cache/annotations.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Cacheable and eviction",
+      "Key design and proxy behavior"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S38",
+    "title": "Kafka exactly-once semantics",
+    "url": "https://docs.spring.io/spring-kafka/reference/kafka/exactly-once.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Kafka transactional read/process/write boundary"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S39",
+    "title": "AMQP asynchronous consumer",
+    "url": "https://docs.spring.io/spring-amqp/reference/amqp/receiving-messages/async-consumer.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Listener containers and acknowledgement modes"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S40",
+    "title": "Integration overview",
+    "url": "https://docs.spring.io/spring-integration/reference/overview.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Messages",
+      "Channels",
+      "Routers",
+      "Adapters"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S41",
+    "title": "Batch chunks",
+    "url": "https://docs.spring.io/spring-batch/reference/step/chunk-oriented-processing.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Reader/processor/writer",
+      "Commit intervals"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S42",
+    "title": "Batch domain model",
+    "url": "https://docs.spring.io/spring-batch/reference/domain.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "JobInstance",
+      "JobExecution",
+      "StepExecution",
+      "Restart metadata"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S43",
+    "title": "Spring Cloud roles and compatibility",
+    "url": "https://spring.io/projects/spring-cloud/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Cloud project roles",
+      "Compatible release train BOMs"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S44",
+    "title": "REST clients",
+    "url": "https://docs.spring.io/spring-framework/reference/integration/rest-clients.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "RestClient",
+      "WebClient",
+      "HTTP service proxies",
+      "RestTemplate deprecated in Framework 7"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S45",
+    "title": "OpenFeign status",
+    "url": "https://docs.spring.io/spring-cloud-openfeign/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Feature-complete status",
+      "Maintainer recommendation to HTTP service clients"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S46",
+    "title": "GraphQL request execution",
+    "url": "https://docs.spring.io/spring-graphql/reference/request-execution.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Schema execution",
+      "DataLoader per-request batching"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S47",
+    "title": "Spring gRPC",
+    "url": "https://docs.spring.io/spring-grpc/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Spring-friendly gRPC integrations"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S48",
+    "title": "Boot testing",
+    "url": "https://docs.spring.io/spring-boot/reference/testing/spring-boot-applications.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Test slices",
+      "SpringBootTest",
+      "Different test scopes"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S49",
+    "title": "Boot observability",
+    "url": "https://docs.spring.io/spring-boot/reference/actuator/observability.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Micrometer Observation",
+      "Metrics/tracing",
+      "Cardinality"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S50",
+    "title": "Actuator endpoints",
+    "url": "https://docs.spring.io/spring-boot/reference/actuator/endpoints.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Endpoint exposure and security",
+      "Liveness/readiness"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S51",
+    "title": "Framework resilience",
+    "url": "https://docs.spring.io/spring-framework/reference/core/resilience.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Framework 7 retry/concurrency limit",
+      "EnableResilientMethods"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S52",
+    "title": "Cloud Circuit Breaker",
+    "url": "https://docs.spring.io/spring-cloud-circuitbreaker/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Circuit breaker abstraction"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S53",
+    "title": "Scheduling and async",
+    "url": "https://docs.spring.io/spring-framework/reference/integration/scheduling.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Executor/scheduler distinction",
+      "Async proxy invocation"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S54",
+    "title": "Modulith fundamentals",
+    "url": "https://docs.spring.io/spring-modulith/reference/fundamentals.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Module boundaries",
+      "Named interfaces",
+      "Dependency verification"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S55",
+    "title": "Spring AI introduction",
+    "url": "https://docs.spring.io/spring-ai/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Model abstractions",
+      "Embeddings and vector stores"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S56",
+    "title": "Spring AI tools",
+    "url": "https://docs.spring.io/spring-ai/reference/api/tools.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Tool callbacks",
+      "Model requests tools; application executes"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S57",
+    "title": "Spring AI RAG",
+    "url": "https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Retrieval and augmentation components"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S58",
+    "title": "Native image constraints",
+    "url": "https://docs.spring.io/spring-boot/reference/packaging/native-image/introducing-graalvm-native-images.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Closed-world assumption",
+      "AOT processing",
+      "Runtime bean graph constraints"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S59",
+    "title": "Spring Pulsar",
+    "url": "https://docs.spring.io/spring-pulsar/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Spring template/listener abstractions for Pulsar"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S60",
+    "title": "Spring Web Services",
+    "url": "https://docs.spring.io/spring-ws/docs/current/reference/html/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Contract-first SOAP",
+      "XML schema and message endpoints"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S61",
+    "title": "Spring LDAP",
+    "url": "https://docs.spring.io/spring-ldap/reference/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "LDAP integration"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S62",
+    "title": "Spring HATEOAS",
+    "url": "https://docs.spring.io/spring-hateoas/docs/current/reference/html/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Documentation retrieved 2026-10-09",
+    "supports": [
+      "Representation models",
+      "Links and affordances"
+    ],
+    "relevance": "Read the linked section to validate the mechanism and its version-specific constraints.",
+    "uncertainties": "Unversioned Spring URLs can change after the access date; project versions must be aligned through compatible BOMs."
+  },
+  {
+    "id": "S63",
+    "title": "Framework module overview",
+    "url": "https://docs.spring.io/spring-framework/reference/overview.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "Core, data, messaging and web module roles"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S64",
+    "title": "Spring Data family",
+    "url": "https://spring.io/projects/spring-data/",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "Store-specific module roles; main, community and archived modules"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S65",
+    "title": "Binding, conversion and validation",
+    "url": "https://docs.spring.io/spring-framework/reference/core/validation.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "DataBinder, Validator, conversion and formatting"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S66",
+    "title": "Spring Expression Language",
+    "url": "https://docs.spring.io/spring-framework/reference/core/expressions.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "SpEL expression evaluation"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S67",
+    "title": "Framework WebSockets",
+    "url": "https://docs.spring.io/spring-framework/reference/web/websocket.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "Full-duplex web communication"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S68",
+    "title": "Framework JMS",
+    "url": "https://docs.spring.io/spring-framework/reference/integration/jms.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "JMS template and listener integration"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S69",
+    "title": "MVC configuration",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "MVC configuration customization"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  },
+  {
+    "id": "S70",
+    "title": "MVC special beans",
+    "url": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet/special-bean-types.html",
+    "publisher": "Spring project maintainers",
+    "kind": "documentation",
+    "accessed": "2026-10-09",
+    "version": "Live documentation retrieved 2026-10-09",
+    "supports": [
+      "Mapping, adapters, conversion, exception resolution and localization roles"
+    ],
+    "relevance": "Use the linked capability reference to deepen the corresponding map entry."
+  }
+]

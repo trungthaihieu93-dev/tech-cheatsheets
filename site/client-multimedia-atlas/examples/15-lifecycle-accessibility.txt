@@ -1,0 +1,7 @@
+// Illustrative: mountHls is the adapter from topic 09.
+useEffect(() => {
+  const video = videoRef.current;
+  if (!video) return;
+  return mountHls(video, src, reportFailure);
+}, [src, reportFailure]);
+// Keep reportFailure stable. Do not add a second playback owner.

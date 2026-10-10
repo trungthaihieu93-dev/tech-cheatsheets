@@ -1,0 +1,8 @@
+// Documentation-aligned illustrative React snippet; not runtime-tested.
+import "@videojs/react/video/skin.css";
+import { VideoPlayer, VideoSkin, Video } from "@videojs/react/video";
+export function Clip({ src }) {
+  return <VideoPlayer><VideoSkin>
+    <Video src={src} playsInline />
+  </VideoSkin></VideoPlayer>;
+}

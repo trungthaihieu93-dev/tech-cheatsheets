@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TurboModule: typed service API</title>
+<style>:root{color-scheme:light;--paper:#FFFEF7;--ink:#18202a;--blue:#1E3A8A;--line:#bfd0dc;--yellow:#FEF08A;--purple:#7C3AED}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e2d6;color:var(--ink);font:17px/1.65 "Trebuchet MS",Arial,sans-serif}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{background:#FEF9C3}
+.notebook{max-width:1040px;margin:28px auto;padding:48px 52px 48px 66px;background:var(--paper);border:1px solid #dacfbf;border-radius:6px 24px 24px 6px;box-shadow:0 10px 35px #30240f18;position:relative}
+.notebook:before{content:"";position:absolute;left:15px;top:26px;bottom:26px;width:13px;background:radial-gradient(ellipse,#000000 0 28%,transparent 34%) 0 0/13px 42px repeat-y;border-right:1px solid #dbd2c6}
+header{margin-bottom:34px;border-bottom:3px dashed var(--blue);padding-bottom:26px}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;color:var(--blue)}
+h1,h2,h3{line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,54px);color:var(--blue);margin:14px 0 22px;font-weight:900;letter-spacing:-.035em}
+h1 span{background:linear-gradient(transparent 56%,var(--yellow) 56% 93%,transparent 93%)}
+h2{font-size:29px;margin:8px 0 12px;font-weight:900}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta,.prerequisites{font-size:14px;color:#485265}
+.depth{display:inline-block;background:#FEF9C3;border:2px solid var(--ink);padding:3px 13px;border-radius:8px 13px 7px 12px;font-weight:bold;color:var(--ink)}
+.toc{padding:20px 24px;background:#DBEAFE;border:2px solid #3B82F6;border-radius:15px 21px 14px 17px;margin:22px 0}
+.toc ol{padding-left:23px;margin:12px 0}
+.toc li{margin:7px 0}
+.stage-label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.topic{padding:27px 29px;margin:32px 0;border:2px solid var(--ink);border-radius:17px 25px 16px 22px;background:#FFFEF7;break-inside:auto}
+.topic.fundamentals{--tint:#DBEAFE;--accent:#3B82F6}
+.topic.applications{--tint:#FEF9C3;--accent:#EAB308}
+.topic.best-practices{--tint:#DCFCE7;--accent:#22C55E}
+.topic.further-improvements{--tint:#F3E8FF;--accent:#A855F7}
+.topic-head{background:var(--tint);padding:18px 21px;margin:-27px -29px 25px;border-radius:14px 22px 0 0;border-bottom:2px solid var(--accent)}
+.topic-head h2{padding-bottom:9px;border-bottom:3px solid var(--accent)}
+figure{margin:23px 0;padding:16px;border:2px solid var(--line);border-radius:13px 18px 12px 17px;background:#fffefb;break-inside:avoid}
+figure img{display:block;max-width:100%;width:auto;max-height:730px;margin:auto;height:auto}
+.figure-title{font-size:15px;font-weight:bold;margin:0 0 12px;color:var(--blue)}
+figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#465063}
+.evidence{font-size:11px;letter-spacing:.02em;padding:2px 6px;border-radius:5px;background:#edf2f8;color:#43536e}
+.synthesis{background:#FEF9C3;color:#6d4d13}.open-question{background:#FFE4E6;color:#7a3751}
+.citations{font-size:13px;display:inline}
+.takeaway{padding:15px 19px;background:var(--tint);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;margin:23px 0}
+details{border:1px solid #d4cab9;border-radius:10px;padding:13px 17px;background:#FFFEF7}
+summary{font-weight:bold;cursor:pointer}
+.answer{margin-top:10px}
+pre{background:#eff3f8;padding:18px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}
+.source-list{font-size:14px;padding-left:23px}
+.source-list li{margin:15px 0;overflow-wrap:anywhere;break-inside:avoid}
+.source-list p{margin:5px 0}
+footer{border-top:3px dotted var(--blue);padding-top:18px;margin-top:34px;font-size:13px}
+@media(max-width:650px){body{font-size:16px;background:var(--paper)}.notebook{margin:0;border:0;box-shadow:none;padding:30px 16px 30px 35px;border-radius:0}.notebook:before{left:9px;width:9px;background-size:9px 34px}.topic{padding:19px 17px}.topic-head{margin:-19px -17px 18px;padding:15px 17px}h2{font-size:25px}figure{padding:10px}}
+@media print{body{background:white;font-size:11pt}.notebook{max-width:none;margin:0;padding:0;border:0;box-shadow:none}.notebook:before{display:none}h1{font-size:30pt}h2{font-size:20pt}h3{font-size:13pt}.topic{break-before:page;border-width:1px;margin:0 0 20px}figure{break-inside:avoid}details{display:block}details .answer{display:block}a{color:var(--ink)}.toc{break-inside:avoid}.evidence,figcaption,.source-list{font-size:9pt}}
+</style>
+</head>
+<body>
+<main class="notebook">
+<nav><a href="../index.html#04-turbomodule-contract">← Back to atlas</a></nav><article id="04-turbomodule-contract" class="topic applications"><div class="topic-head"><div class="stage-label">Part 4 · Applications</div><h2>TurboModule: typed service API</h2><p class="prerequisites">Prerequisites: 02-jsi-versus-bridge</p></div><figure><p class="figure-title">TurboModule: typed service API — mechanism</p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDM2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPjx0aXRsZSBpZD0idGl0bGUiPlR1cmJvTW9kdWxlOiB0eXBlZCBzZXJ2aWNlIEFQSTwvdGl0bGU+PGRlc2MgaWQ9ImRlc2MiPkEgbm9udmlzdWFsIG5hdGl2ZSBzZXJ2aWNlIGNvbnRyYWN0LiBMYW5ndWFnZSBkZXRhaWxzIGFuZCBnZW5lcmF0ZWQgZ2x1ZSB2YXJ5IGJ5IG1vZHVsZSBpbXBsZW1lbnRhdGlvbi48L2Rlc2M+PGRlZnM+PG1hcmtlciBpZD0iYXJyb3ciIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wIDBMMTAgNUwwIDEwWiIgZmlsbD0iIzFFM0E4QSIvPjwvbWFya2VyPjwvZGVmcz48c3R5bGU+LmJpZ3tmb250OjcwMCAxOXB4IHN5c3RlbS11aSxzYW5zLXNlcmlmO2ZpbGw6IzE4MjAyQX0uc21hbGx7Zm9udDoxNXB4IHN5c3RlbS11aSxzYW5zLXNlcmlmO2ZpbGw6IzMzNDE1NX0uZWRnZXtmb250OjE0cHggc3lzdGVtLXVpLHNhbnMtc2VyaWY7ZmlsbDojMUUzQThBO3BhaW50LW9yZGVyOnN0cm9rZTtzdHJva2U6I0ZGRkVGNztzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iMzYwIiByeD0iMjIiIGZpbGw9IiNGRkZFRjciIHN0cm9rZT0iI0NCRDVFMSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTI2NSwxMzQgTDM1MCwxMzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFM0E4QSIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPjx0ZXh0IHg9IjMwNy41IiB5PSI4NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImVkZ2UiPmdlbmVyYXRlPC90ZXh0PjxwYXRoIGQ9Ik01MzAsMTM0IEw2ODAsOTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFM0E4QSIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPjx0ZXh0IHg9IjYwNS4wIiB5PSIxMDYuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImVkZ2UiPmltcGxlbWVudHM8L3RleHQ+PHBhdGggZD0iTTUzMCwxMzQgTDY4MCwyNDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFM0E4QSIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPjx0ZXh0IHg9IjYwNS4wIiB5PSIxODEuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImVkZ2UiPmltcGxlbWVudHM8L3RleHQ+PHJlY3QgeD0iODUiIHk9Ijk1IiB3aWR0aD0iMTgwIiBoZWlnaHQ9Ijc4IiByeD0iMTciIGZpbGw9IiNEQkVBRkUiIHN0cm9rZT0iIzNCODJGNiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMTc1IiB5PSIxMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJiaWciPlRTL0Zsb3cgc3BlYzwvdGV4dD48dGV4dCB4PSIxNzUiIHk9IjE1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InNtYWxsIj5mdW5jdGlvbnMgKyB0eXBlczwvdGV4dD48cmVjdCB4PSIzNTAiIHk9Ijk1IiB3aWR0aD0iMTgwIiBoZWlnaHQ9Ijc4IiByeD0iMTciIGZpbGw9IiNGRUY5QzMiIHN0cm9rZT0iI0VBQjMwOCIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iNDQwIiB5PSIxMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJiaWciPkNvZGVnZW48L3RleHQ+PHRleHQgeD0iNDQwIiB5PSIxNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzbWFsbCI+YmluZGluZ3M8L3RleHQ+PHJlY3QgeD0iNjgwIiB5PSI1NSIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI3OCIgcng9IjE3IiBmaWxsPSIjRENGQ0U3IiBzdHJva2U9IiMyMkM1NUUiIHN0cm9rZS13aWR0aD0iMyIvPjx0ZXh0IHg9Ijc3MCIgeT0iODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJiaWciPkFuZHJvaWQ8L3RleHQ+PHRleHQgeD0iNzcwIiB5PSIxMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzbWFsbCI+S290bGluIC8gSmF2YSAvIEMrKzwvdGV4dD48cmVjdCB4PSI2ODAiIHk9IjIwNSIgd2lkdGg9IjE4MCIgaGVpZ2h0PSI3OCIgcng9IjE3IiBmaWxsPSIjRjNFOEZGIiBzdHJva2U9IiNBODU1RjciIHN0cm9rZS13aWR0aD0iMyIvPjx0ZXh0IHg9Ijc3MCIgeT0iMjM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0iYmlnIj5pT1M8L3RleHQ+PHRleHQgeD0iNzcwIiB5PSIyNjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzbWFsbCI+U3dpZnQgLyBPYmotQysrIC8gQysrPC90ZXh0Pjwvc3ZnPg==" alt="A nonvisual native service contract. Language details and generated glue vary by module implementation. Nodes: TS/Flow spec, Codegen, Android, iOS."><figcaption>A nonvisual native service contract. Language details and generated glue vary by module implementation. <span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S11">[S11]</a></span></figcaption></figure><h3>Mental model <span class="evidence verified">verified</span></h3><p>A TurboModule exposes functions and events. A TypeScript or Flow spec describes types, Codegen emits platform glue, and native Android/iOS implementations fulfill that contract. Fabric components handle native views separately.</p><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S11">[S11]</a></span><h3>Worked example <span class="evidence synthesis">synthesis</span></h3><p>Define getBatteryLevel(): Promise&lt;number&gt; in a typed module spec, implement the platform query separately in Kotlin and Swift/Objective-C++, and handle rejection or missing capability in JS. This is pseudocode for contract shape, not copy-paste setup.</p><span class="citations"><a href="#source-S05">[S05]</a></span><h3>Engineering choice <span class="evidence synthesis">synthesis</span></h3><p>Choose TurboModule when you need RN Codegen contracts or lower-level C++ integration. Keep the exported surface small and versioned; errors and nullability belong in the API design.</p><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S06">[S06]</a></span><h3>Pitfall and next step <span class="evidence synthesis">synthesis</span></h3><p>Generated types do not make platform behavior identical. Test permission denial, lifecycle and device-specific availability on both platforms.</p><span class="citations"><a href="#source-S05">[S05]</a> <a href="#source-S11">[S11]</a></span><div class="takeaway"><strong>Keep this:</strong> A typed JS specification and Codegen tie a native service contract to Android and iOS implementations.</div><details><summary>Check yourself: Is a TurboModule the path for custom native visual components?</summary><p class="answer">Use a native component/Fabric view for visual surfaces; a TurboModule exposes nonvisual native functions and events.</p></details></article><section><h2>Sources &amp; further reading</h2><ol class="source-list"><li id="source-S05"><strong>[S05]</strong> <a href="https://reactnative.dev/docs/turbo-native-modules-introduction">Native Modules: Introduction</a><p class="meta">React Native · official documentation · accessed 2026-10-08 · current documentation as accessed</p><p>Supports: Typed TS or Flow spec and platform-specific Codegen interfaces.</p><p>Read the diagrams and API boundaries for typed ts or flow spec and platform-specific codegen interfaces.</p></li><li id="source-S06"><strong>[S06]</strong> <a href="https://docs.expo.dev/modules/overview/">Expo Modules API: Overview</a><p class="meta">Expo · official documentation · accessed 2026-10-08 · current documentation as accessed</p><p>Supports: Expo Modules API uses Swift and Kotlin and supports the New Architecture.</p><p>Read the diagrams and API boundaries for expo modules api uses swift and kotlin and supports the new architecture.</p></li><li id="source-S11"><strong>[S11]</strong> <a href="https://reactnative.dev/docs/the-new-architecture/native-modules-custom-events">Emitting Events in Native Modules</a><p class="meta">React Native · official documentation · accessed 2026-10-08 · current documentation as accessed</p><p>Supports: Native-to-JS events in TurboModules.</p><p>Read the diagrams and API boundaries for native-to-js events in turbomodules.</p></li></ol></section>
+</main>
+</body>
+</html>

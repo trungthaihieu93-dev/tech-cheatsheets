@@ -1,0 +1,7 @@
+// Illustrative v3 snippet; verify the chosen provider in your release.
+import ReactPlayer from "react-player";
+export function Lesson({ src }) {
+  return <ReactPlayer src={src} controls playsInline
+    width="100%" height="100%"
+    onError={(error) => console.error("playback", error)} />;
+}

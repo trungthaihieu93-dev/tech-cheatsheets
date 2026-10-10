@@ -1,0 +1,262 @@
+[
+  {
+    "id": "S01",
+    "title": "Using Hermes",
+    "url": "https://reactnative.dev/docs/hermes",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Hermes default, bundled version, release bytecode and measurement."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S02",
+    "title": "Toward Hermes being the Default",
+    "url": "https://reactnative.dev/blog/2021/10/26/toward-hermes-being-the-default",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Historical motivation for ahead-of-time compilation; results were context-specific."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S03",
+    "title": "Hermes repository",
+    "url": "https://github.com/facebook/hermes",
+    "publisher": "Meta / Hermes maintainers",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Engine source and project scope."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S04",
+    "title": "About the New Architecture",
+    "url": "https://reactnative.dev/architecture/landing-page",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "JSI references, module and renderer interoperability, limits of performance claims."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S05",
+    "title": "Render, Commit, and Mount",
+    "url": "https://reactnative.dev/architecture/render-pipeline",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Shadow trees, layout, diff and host view mounting."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S06",
+    "title": "Threading Model",
+    "url": "https://reactnative.dev/architecture/threading-model",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "JS, UI and render scheduling scenarios."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S07",
+    "title": "Fabric",
+    "url": "https://reactnative.dev/architecture/fabric-renderer",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "C++ renderer architecture and host interoperability."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S08",
+    "title": "Using Codegen",
+    "url": "https://reactnative.dev/docs/the-new-architecture/using-codegen",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Generated Android JNI/Java and iOS Objective-C++/C++ glue."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S09",
+    "title": "Native Modules: Introduction",
+    "url": "https://reactnative.dev/docs/turbo-native-modules-introduction",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Typed TurboModule specification and native implementations."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S10",
+    "title": "Fabric Native Components Introduction",
+    "url": "https://reactnative.dev/docs/next/fabric-native-components-introduction",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Typed props and events for custom host components."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S11",
+    "title": "Expo Modules API: Overview",
+    "url": "https://docs.expo.dev/modules/overview/",
+    "publisher": "Expo",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Expo Modules design and choice versus TurboModules."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S12",
+    "title": "Module API Reference",
+    "url": "https://docs.expo.dev/modules/module-api/",
+    "publisher": "Expo",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Function, AsyncFunction, queues, views, events and lifecycle."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S13",
+    "title": "Using shared objects",
+    "url": "https://docs.expo.dev/modules/shared-objects/",
+    "publisher": "Expo",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Long-lived native instances, JS references and deallocation."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S14",
+    "title": "React Native DevTools",
+    "url": "https://reactnative.dev/docs/react-native-devtools",
+    "publisher": "React Native",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "JS traces, heap snapshots and React profiling; native tools still needed."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S15",
+    "title": "Kotlin coroutines on Android",
+    "url": "https://developer.android.com/kotlin/coroutines",
+    "publisher": "Android Developers",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Async work and structured cancellation for Android."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S16",
+    "title": "Use Kotlin coroutines with lifecycle-aware components",
+    "url": "https://developer.android.com/topic/libraries/architecture/views/coroutines-views",
+    "publisher": "Android Developers",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Activity lifecycle scopes and cancellation."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S17",
+    "title": "UIKit",
+    "url": "https://developer.apple.com/documentation/uikit",
+    "publisher": "Apple Developer",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "UIKit objects are normally used from the main thread."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S18",
+    "title": "MainActor",
+    "url": "https://developer.apple.com/documentation/swift/mainactor",
+    "publisher": "Apple Developer",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Swift main actor execution contract."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S19",
+    "title": "Runtime versions and updates",
+    "url": "https://docs.expo.dev/eas-update/runtime-versions/",
+    "publisher": "Expo",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Native binary and JS update compatibility."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  },
+  {
+    "id": "S20",
+    "title": "Add custom native code",
+    "url": "https://docs.expo.dev/workflow/customizing/",
+    "publisher": "Expo",
+    "kind": "official documentation or maintainer source",
+    "accessed": "2026-10-09",
+    "version": "current documentation as accessed; examples conceptual",
+    "supports": [
+      "Development builds, prebuild and config plugins."
+    ],
+    "relevance": "Inspect the implementation boundary described by this source."
+  }
+]

@@ -1,0 +1,8 @@
+// Proposed application model, not a library API.
+type LessonMedia = {
+  id: string;
+  provider: "youtube" | "vimeo" | "owned-hls";
+  source: string;
+  status: "processing" | "ready" | "failed";
+  capabilities: { seek: boolean; captions: boolean; rate: boolean };
+};

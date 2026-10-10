@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform capabilities: contracts and adapters</title>
+<style>:root{color-scheme:light;--paper:#FFFEF7;--ink:#18202a;--blue:#1E3A8A;--line:#bfd0dc;--yellow:#FEF08A;--purple:#7C3AED}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e2d6;color:var(--ink);font:17px/1.65 "Trebuchet MS",Arial,sans-serif}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{background:#FEF9C3}
+.notebook{max-width:1040px;margin:28px auto;padding:48px 52px 48px 66px;background:var(--paper);border:1px solid #dacfbf;border-radius:6px 24px 24px 6px;box-shadow:0 10px 35px #30240f18;position:relative}
+.notebook:before{content:"";position:absolute;left:15px;top:26px;bottom:26px;width:13px;background:radial-gradient(ellipse,#000000 0 28%,transparent 34%) 0 0/13px 42px repeat-y;border-right:1px solid #dbd2c6}
+header{margin-bottom:34px;border-bottom:3px dashed var(--blue);padding-bottom:26px}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:bold;color:var(--blue)}
+h1,h2,h3{line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,54px);color:var(--blue);margin:14px 0 22px;font-weight:900;letter-spacing:-.035em}
+h1 span{background:linear-gradient(transparent 56%,var(--yellow) 56% 93%,transparent 93%)}
+h2{font-size:29px;margin:8px 0 12px;font-weight:900}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta,.prerequisites{font-size:14px;color:#485265}
+.depth{display:inline-block;background:#FEF9C3;border:2px solid var(--ink);padding:3px 13px;border-radius:8px 13px 7px 12px;font-weight:bold;color:var(--ink)}
+.toc{padding:20px 24px;background:#DBEAFE;border:2px solid #3B82F6;border-radius:15px 21px 14px 17px;margin:22px 0}
+.toc ol{padding-left:23px;margin:12px 0}
+.toc li{margin:7px 0}
+.stage-label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:bold}
+.topic{padding:27px 29px;margin:32px 0;border:2px solid var(--ink);border-radius:17px 25px 16px 22px;background:#FFFEF7;break-inside:auto}
+.topic.fundamentals{--tint:#DBEAFE;--accent:#3B82F6}
+.topic.applications{--tint:#FEF9C3;--accent:#EAB308}
+.topic.best-practices{--tint:#DCFCE7;--accent:#22C55E}
+.topic.further-improvements{--tint:#F3E8FF;--accent:#A855F7}
+.topic-head{background:var(--tint);padding:18px 21px;margin:-27px -29px 25px;border-radius:14px 22px 0 0;border-bottom:2px solid var(--accent)}
+.topic-head h2{padding-bottom:9px;border-bottom:3px solid var(--accent)}
+figure{margin:23px 0;padding:16px;border:2px solid var(--line);border-radius:13px 18px 12px 17px;background:#fffefb;break-inside:avoid}
+figure img{display:block;max-width:100%;width:auto;max-height:730px;margin:auto;height:auto}
+.figure-title{font-size:15px;font-weight:bold;margin:0 0 12px;color:var(--blue)}
+figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#465063}
+.evidence{font-size:11px;letter-spacing:.02em;padding:2px 6px;border-radius:5px;background:#edf2f8;color:#43536e}
+.synthesis{background:#FEF9C3;color:#6d4d13}.open-question{background:#FFE4E6;color:#7a3751}
+.citations{font-size:13px;display:inline}
+.takeaway{padding:15px 19px;background:var(--tint);border-left:5px solid var(--accent);border-radius:0 12px 12px 0;margin:23px 0}
+details{border:1px solid #d4cab9;border-radius:10px;padding:13px 17px;background:#FFFEF7}
+summary{font-weight:bold;cursor:pointer}
+.answer{margin-top:10px}
+pre{background:#eff3f8;padding:18px;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}
+.source-list{font-size:14px;padding-left:23px}
+.source-list li{margin:15px 0;overflow-wrap:anywhere;break-inside:avoid}
+.source-list p{margin:5px 0}
+footer{border-top:3px dotted var(--blue);padding-top:18px;margin-top:34px;font-size:13px}
+@media(max-width:650px){body{font-size:16px;background:var(--paper)}.notebook{margin:0;border:0;box-shadow:none;padding:30px 16px 30px 35px;border-radius:0}.notebook:before{left:9px;width:9px;background-size:9px 34px}.topic{padding:19px 17px}.topic-head{margin:-19px -17px 18px;padding:15px 17px}h2{font-size:25px}figure{padding:10px}}
+@media print{body{background:white;font-size:11pt}.notebook{max-width:none;margin:0;padding:0;border:0;box-shadow:none}.notebook:before{display:none}h1{font-size:30pt}h2{font-size:20pt}h3{font-size:13pt}.topic{break-before:page;border-width:1px;margin:0 0 20px}figure{break-inside:avoid}details{display:block}details .answer{display:block}a{color:var(--ink)}.toc{break-inside:avoid}.evidence,figcaption,.source-list{font-size:9pt}}
+
+h1{border-bottom:6px double #7C3AED;padding-bottom:14px}
+.overview{border:0;padding:0;margin:0 0 22px;background:transparent}
+.overview img{width:100%;max-height:none}
+.map-card{display:flex;align-items:center;gap:16px;border:2px solid var(--cardline);background:var(--cardbg);border-radius:16px;padding:16px;margin:14px 0}
+.map-card .badge{flex:0 0 42px;border-radius:50%;background:var(--badge);border:2px solid var(--cardline);text-align:center;font-size:22px;font-weight:900;height:42px;line-height:38px}
+.map-card h3{margin:0 0 6px;font-size:19px}.map-card p{font-size:15px;margin:0;line-height:1.65}
+.map-card .sketch{flex:0 0 74px}.map-card .content{flex:1;min-width:0}
+.diagram-link{font-size:13px;margin-top:10px}
+.topic figure{overflow-x:auto}.topic figure img{width:100%;min-width:510px}
+.toc{background:transparent;border:0;padding:0}
+@media(max-width:650px){.map-card{gap:10px;padding:12px}.map-card .sketch{display:none}.topic figure img{min-width:510px}.overview img{min-width:0}}
+</style>
+</head>
+<body>
+<main class="notebook">
+<nav><a href="../index.html#08-ports">← Back to atlas</a></nav><article id="08-ports" class="topic applications"><div class="topic-head"><div class="stage-label">Part 8 · Applications</div><h2>Platform capabilities: contracts and adapters</h2><p class="prerequisites">Prerequisites: 07-compilation</p></div><figure><p class="figure-title">Dependency inversion across platforms</p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNTEwIiByb2xlPSJpbWciPjx0aXRsZT4wOCAvIFBPUlRTIE5BTUUgQSBDQVBBQklMSVRZPC90aXRsZT48ZGVzYz5Db21tb24gY29kZSBjYWxscyBhIGNvbnRyYWN0OyBjb21wb3NpdGlvbiBjaG9vc2VzIGl0cyBhZGFwdGVyLjwvZGVzYz48ZGVmcz48bWFya2VyIGlkPSJhcnJvdyIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMCIgZmlsbD0iIzE4MjAyQSIvPjwvbWFya2VyPjwvZGVmcz48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjUxMCIgZmlsbD0iI0ZGRkVGNyIvPjxwYXRoIGQ9Ik0yOCAyOCBINTYwIiBzdHJva2U9IiNGRUYwOEEiIHN0cm9rZS13aWR0aD0iMjYiLz48dGV4dCB4PSIzMCIgeT0iMzYiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMUUzQThBIj4wOCAvIFBPUlRTIE5BTUUgQSBDQVBBQklMSVRZPC90ZXh0Pjx0ZXh0IHg9IjMwIiB5PSI3MCIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzE4MjAyQSI+Q29tbW9uIGNvZGUgY2FsbHMgYSBjb250cmFjdDsgY29tcG9zaXRpb24gY2hvb3NlcyBpdHMgYWRhcHRlci48L3RleHQ+PHJlY3QgeD0iMTYwIiB5PSIxMDAiIHdpZHRoPSIyODAiIGhlaWdodD0iNjQiIHJ4PSIxNSIgZmlsbD0iI0RCRUFGRSIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjMwMC4wIiB5PSIxMzkuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPlF1b3RlU2VydmljZTwvdGV4dD48cGF0aCBkPSJNMzAwIDE2NCBMMzAwIDIxNSIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMyIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMzAwLjAsMjE1LjAgMjk1LjUsMjA1LjAgMzA0LjUsMjA1LjAiIGZpbGw9IiMxODIwMkEiLz48cmVjdCB4PSIxNjAiIHk9IjIyMiIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI3MCIgcng9IjE1IiBmaWxsPSIjRkVGOUMzIiBzdHJva2U9IiMxODIwMkEiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHRleHQgeD0iMzAwLjAiIHk9IjI2NC4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE4MjAyQSI+VG9rZW5TdG9yZSBpbnRlcmZhY2U8L3RleHQ+PHJlY3QgeD0iMzAiIHk9IjM1MCIgd2lkdGg9IjI0NSIgaGVpZ2h0PSI4MCIgcng9IjE1IiBmaWxsPSIjRENGQ0U3IiBzdHJva2U9IiMxODIwMkEiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHRleHQgeD0iMTUyLjUiIHk9IjM4My4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE4MjAyQSI+QW5kcm9pZCBhZGFwdGVyPC90ZXh0Pjx0ZXh0IHg9IjE1Mi41IiB5PSI0MTEuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPnBsYXRmb3JtIHN0b3JhZ2U8L3RleHQ+PHJlY3QgeD0iMzI1IiB5PSIzNTAiIHdpZHRoPSIyNDUiIGhlaWdodD0iODAiIHJ4PSIxNSIgZmlsbD0iI0YzRThGRiIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMiIvPjx0ZXh0IHg9IjQ0Ny41IiB5PSIzODMuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPmlPUyBhZGFwdGVyPC90ZXh0Pjx0ZXh0IHg9IjQ0Ny41IiB5PSI0MTEuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxODIwMkEiPnBsYXRmb3JtIHN0b3JhZ2U8L3RleHQ+PHBhdGggZD0iTTE1MiAzNTAgVjMyMCBIMjY1IFYyOTIiIHN0cm9rZT0iIzE4MjAyQSIgc3Ryb2tlLXdpZHRoPSIyLjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1kYXNoYXJyYXk9IjcgNSIvPjxwb2x5Z29uIHBvaW50cz0iMjY1LjAsMjkyLjAgMjY5LjUsMzAyLjAgMjYwLjUsMzAyLjAiIGZpbGw9IiMxODIwMkEiLz48cGF0aCBkPSJNNDQ3IDM1MCBWMzIwIEgzMzUgVjI5MiIgc3Ryb2tlPSIjMTgyMDJBIiBzdHJva2Utd2lkdGg9IjIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWRhc2hhcnJheT0iNyA1Ii8+PHBvbHlnb24gcG9pbnRzPSIzMzUuMCwyOTIuMCAzMzkuNSwzMDIuMCAzMzAuNSwzMDIuMCIgZmlsbD0iIzE4MjAyQSIvPjx0ZXh0IHg9IjMwIiB5PSI0NjIiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMxRTNBOEEiPkRhc2hlZCBhcnJvd3M6IGFkYXB0ZXJzIGltcGxlbWVudCB0aGUgY29tbW9uIGNvbnRyYWN0LjwvdGV4dD48L3N2Zz4=" alt="QuoteService calls a common TokenStore interface; Android and iOS adapters implement it."><figcaption>Solid arrow: dependency. Dashed arrows: implementation. Platform composition creates and injects the adapter. <span class="citations"><a href="#source-S16">[S16]</a></span></figcaption><p class="diagram-link"><a href="../figures/08-ports.svg">Open editable SVG at full size</a></p></figure><h3>Purpose <span class="evidence synthesis">synthesis</span></h3><p>Share policy while supplying OS-specific behavior through a small seam.</p><span class="citations"></span><h3>Mental model <span class="evidence verified">verified</span></h3><p>expect declares a common contract and actual supplies target implementations. Ordinary common interfaces plus injected platform implementations are another option. They are especially useful when you need multiple instances, fakes, or a platform-supplied service.</p><span class="citations"><a href="#source-S16">[S16]</a></span><h3>Worked example <span class="evidence synthesis">synthesis</span></h3><pre>// commonMain: ordinary interface, no expect needed
+interface TokenStore {
+    suspend fun read(): String?
+}
+class QuoteService(private val tokens: TokenStore) {
+    suspend fun hasSession(): Boolean = tokens.read() != null
+}
+// The app supplies AndroidTokenStore or IosTokenStore.</pre><span class="citations"><a href="#source-S16">[S16]</a></span><h3>Decision + pitfall <span class="evidence synthesis">synthesis</span></h3><p>Use expect/actual for a small fixed platform primitive; prefer injection for a capability whose lifetime or implementation can vary. For token storage, choose OS-backed secure storage according to app requirements. Hiding plaintext preferences behind an interface does not make them secure. This is architectural synthesis, not a storage implementation.</p><span class="citations"><a href="#source-S16">[S16]</a></span><h3>Next improvement <span class="evidence synthesis">synthesis</span></h3><p>Create a fake TokenStore for common tests and run adapter integration tests on each platform. Verify failure, missing token, lifecycle, and cancellation. Keep Activity, UIViewController, and framework objects out of domain signatures.</p><span class="citations"><a href="#source-S16">[S16]</a> <a href="#source-S22">[S22]</a></span><div class="takeaway"><strong>Keep this:</strong> Name the capability in common code; choose its concrete implementation at composition.</div><details><summary>Check yourself: Must every shared interface use expect/actual?</summary><p class="answer">No. An ordinary common interface can be implemented by platform code and injected.</p></details></article><section><h2>Sources &amp; further reading</h2><ol class="source-list"><li id="source-S16"><strong>[S16]</strong> <a href="https://kotlinlang.org/docs/multiplatform/multiplatform-expect-actual.html">Expected and actual declarations</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Platform implementations and interface-based alternatives</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li><li id="source-S22"><strong>[S22]</strong> <a href="https://kotlinlang.org/docs/multiplatform/multiplatform-run-tests.html">Test your multiplatform app</a><p class="meta">JetBrains / Kotlin project · official documentation · accessed 2026-10-09 · Rolling documentation as accessed; use project-specific toolchain compatibility</p><p>Supports: Common tests across targets and platform-specific validation</p><p>Study the mechanism described above, then verify it against the versions used in your project.</p></li></ol></section>
+</main>
+</body>
+</html>
