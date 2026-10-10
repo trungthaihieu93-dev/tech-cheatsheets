@@ -1,0 +1,210 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/plan-format-kanban.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/plan-format-kanban.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "Edit|Write"
+      },
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/dev-rules-reminder.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/dev-rules-reminder.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "Write|Edit"
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/precompact-capture.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/precompact-capture.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "manual|auto"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/context-firewall.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/context-firewall.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/scout-block.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/scout-block.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/secrets-inject.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/secrets-inject.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      },
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/descriptive-name.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/descriptive-name.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "Write"
+      },
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/privacy-block.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/privacy-block.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "Write|Edit|Bash"
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-init.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-init.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "startup|resume|clear|compact"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/agent-behavior-linter.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/cook-after-plan-reminder.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/cook-after-plan-reminder.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-state.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-state.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/subagent-init.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/subagent-init.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/team-context-inject.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/team-context-inject.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-state.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-state.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/dev-rules-reminder.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/dev-rules-reminder.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/secret-output-guardrail.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/secret-output-guardrail.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/session-heartbeat.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/simplify-gate.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/simplify-gate.cjs",
+            "type": "command"
+          },
+          {
+            "command": "node '/home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs'",
+            "commandWindows": "node /home/tonythai93/Projects/tech-cheatsheets/engineer/.codex/hooks/usage-quota-cache-refresh.cjs",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  }
+}
